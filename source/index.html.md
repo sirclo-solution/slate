@@ -42,9 +42,8 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 
 ### HTTP Request 
-> cnx_url : https://api2.connexi.id.dmmy.me/v1 
 
-`***GET*** {cnx_url}/order` 
+`**GET** https://api2.connexi.id.dmmy.me/v1/order` 
 
 **Parameters**
 
@@ -140,7 +139,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 ### HTTP Request 
 > cnx_url : https://api2.connexi.id.dmmy.me/v1 
 
-`***POST*** {cnx_url}/order` 
+`**POST** https://api2.connexi.id.dmmy.me/v1/order` 
 
 **Parameters**
 
@@ -148,9 +147,10 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 | ---- | ---------- | ----------- | -------- | ---- |
 | api_key | header  |             | Yes      | string |
 | api_secret | header |           |          |        | 
-| Orders  | body   |              |          |        | 
+| Orders  | body   |              |        |        | 
  
 **Request Body**
+> 
 
 **Responses**
 
@@ -164,9 +164,8 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 
 ### HTTP Request 
-> cnx_url : https://api2.connexi.id.dmmy.me/v1 
 
-`***PATCH*** {cnx_url}/order` 
+`**PATCH** https://api2.connexi.id.dmmy.me/v1/order` 
 
 **Parameters**
 
@@ -177,6 +176,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 | Orders  | body  |               |          |        | 
  
 **Request Body**
+> 
 ```json
 [
     {
@@ -196,10 +196,9 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 **Summary: Get All Stocks**
 
-### HTTP Request 
-> cnx_url : https://api2.connexi.id.dmmy.me/v1 
+### HTTP Request  
 
-`***GET*** {cnx_url}/product/stocks`
+`**GET** https://api2.connexi.id.dmmy.me/v1/product/stocks`
 
 **Parameters**
 
