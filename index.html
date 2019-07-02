@@ -276,11 +276,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 <h1 id='order-api'>Order API</h1><h2 id='get-order'>Get Order</h2>
 <p><strong>Description:</strong> Get Order from Connexi  </p>
 <h3 id='http-request'>HTTP Request</h3>
-<blockquote>
-<p>cnx_url : https://api2.connexi.id.dmmy.me/v1 </p>
-</blockquote>
-
-<p><code>***GET*** {cnx_url}/order</code> </p>
+<p><code>**GET** https://api2.connexi.id.dmmy.me/v1/order</code> </p>
 
 <p><strong>Parameters</strong></p>
 
@@ -404,7 +400,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 <p>cnx_url : https://api2.connexi.id.dmmy.me/v1 </p>
 </blockquote>
 
-<p><code>***POST*** {cnx_url}/order</code> </p>
+<p><code>**POST** https://api2.connexi.id.dmmy.me/v1/order</code> </p>
 
 <p><strong>Parameters</strong></p>
 
@@ -442,6 +438,9 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 <p><strong>Request Body</strong></p>
 
+<blockquote>
+</blockquote>
+
 <p><strong>Responses</strong></p>
 
 <blockquote>
@@ -450,11 +449,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 <h2 id='update-order'>Update Order</h2>
 <p><strong>Description:</strong> Update Order </p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<blockquote>
-<p>cnx_url : https://api2.connexi.id.dmmy.me/v1 </p>
-</blockquote>
-
-<p><code>***PATCH*** {cnx_url}/order</code> </p>
+<p><code>**PATCH** https://api2.connexi.id.dmmy.me/v1/order</code> </p>
 
 <p><strong>Parameters</strong></p>
 
@@ -490,15 +485,16 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 </tr>
 </tbody></table>
 
-<p><strong>Request Body</strong>
-<code>json
-[
-    {
-        &quot;id&quot; : &quot;int&quot;,
-        &quot;status&quot; : &quot;string&quot;
-    }
-]
-</code></p>
+<p><strong>Request Body</strong></p>
+
+<blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></blockquote>
 
 <p><strong>Responses</strong></p>
 
@@ -508,11 +504,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 <h1 id='product'>Product</h1><h2 id='get-stocks'>Get Stocks</h2>
 <p><strong>Summary: Get All Stocks</strong></p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<blockquote>
-<p>cnx_url : https://api2.connexi.id.dmmy.me/v1 </p>
-</blockquote>
-
-<p><code>***GET*** {cnx_url}/product/stocks</code></p>
+<p><code>**GET** https://api2.connexi.id.dmmy.me/v1/product/stocks</code></p>
 
 <p><strong>Parameters</strong></p>
 
