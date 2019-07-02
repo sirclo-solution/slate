@@ -137,8 +137,6 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 
 ### HTTP Request 
-> cnx_url : https://api2.connexi.id.dmmy.me/v1 
-
 `**POST** https://api2.connexi.id.dmmy.me/v1/order` 
 
 **Parameters**
@@ -176,7 +174,8 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 | Orders  | body  |               |          |        | 
  
 **Request Body**
-> 
+> This request order in body : 
+
 ```json
 [
     {
