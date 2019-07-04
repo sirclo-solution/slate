@@ -43,16 +43,16 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 ### HTTP Request 
 
-`**GET** https://api2.connexi.id.dmmy.me/v1/order` 
+`**GET**, https://api2.connexi.id.dmmy.me/v1/order`
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| api_key | header  |             | Yes      | string |
-| api_secret | header |           |          |        | 
-| start  | url   |             |          |        | 
-| end    | url   |             |          |        |  
+| Name       | Located in | Description | Required | Type   |
+| ---------- | ---------- | ----------- | -------- | ------ |
+| api_key    | header     |             | Yes      | string |
+| api_secret | header     |             |          |        | 
+| start      | url        |             |          |        | 
+| end        | url        |             |          |        |  
 
 **Responses**
 
@@ -137,18 +137,143 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 
 ### HTTP Request 
-`**POST** https://api2.connexi.id.dmmy.me/v1/order` 
+`**POST**, https://api2.connexi.id.dmmy.me/v1/order`
+
+**Parameters**
+
+| Name       | Loca ted in | Description | Required | Type   |
+| -----------| ------------| ----------- | -------- | ------ |
+| api_key    | header      |             | Yes      | string |
+| api_secret | header      |             |          |        | 
+| Orders     | body        |             |          |        | 
+ 
+**Request Body**
+> 
+
+**Responses**
+
+> The above command returns JSON structured like this:
+
+## Create Accepted Order
+
+
+**Description:** Create Order with status "Accepted"
+
+
+### HTTP Request 
+`**POST**, https://api2.connexi.id.dmmy.me/v1/order`
+
+**Parameters**
+
+| Name                | Located in | Description | Required | Type |
+| ------------------- | ---------- | ----------- | -------- | ---- |
+|remote_order_status| header  |             | Yes      | string |
+|order_status        | header |           |          |        | 
+|marketplace_code (LEVS)| body   |              |        |      |
+|accepted_at |            |              |Yes  | timestamp |
+| accepted_by |           |         | No  | integer |  
+ 
+**Request Body**
+> This request order when status accepted  in body 
+
+**Responses**
+
+> The above command returns JSON structured like this:
+
+## Create Cancelled Order 
+
+
+**Description:** Create Order with status "Cancelled"
+
+
+### HTTP Request 
+`**POST**, https://api2.connexi.id.dmmy.me/v1/order`
 
 **Parameters**
 
 | Name | Located in | Description | Required | Type |
 | ---- | ---------- | ----------- | -------- | ---- |
-| api_key | header  |             | Yes      | string |
-| api_secret | header |           |          |        | 
-| Orders  | body   |              |        |        | 
+| remote_order_status | header  |             | Yes      | string |
+| order_status | header |           |          |        | 
+| marketplace_code (LEVS)  | body   |              |        |      |
+|accepted_at |            |              |Yes  | timestamp |
+| accepted_by |           |         | No  | integer | 
+| cancelled_at |          |                |Yes | timestamp |
+| cancelled_at |           |          | No | integer |
+| cancel_reason |          |           | No | string | 
  
 **Request Body**
-> 
+> This request order when status accepted  in body 
+
+**Responses**
+
+> The above command returns JSON structured like this:
+
+## Create Packed Order 
+
+
+**Description:** Create Order with status "Packed"
+
+
+### HTTP Request 
+`**POST**, https://api2.connexi.id.dmmy.me/v1/order`
+
+**Parameters**
+
+| Name | Located in | Description | Required | Type |
+| ---- | ---------- | ----------- | -------- | ---- |
+| remote_order_status | header  |             | Yes | string |
+| order_status | header |           |          | No | string
+| marketplace_code (LEVS)  | body   |              |No |string|
+|airwaybill_number |           |              |No  | string |
+| buyer_delivery_number |           |         | No  | string | 
+| accepted_at |          |                |Yes | timestamp |
+| accepted_by |           |          | No | integer |
+| packed_at|          |           | Yes | timestamp |
+| packed_by |         |           |No | integer |
+| processed_at |      |           | Yes | timestamp |
+| shipment_reference |         |        |Yes | string |
+| shipment_extras |         |        | No | json ???? |
+ 
+**Request Body**
+> This request order when status accepted  in body 
+
+**Responses**
+
+> The above command returns JSON structured like this:
+
+## Create Completed Order
+
+
+**Description:** Create Order with status "Completed"
+
+
+### HTTP Request 
+`**POST**, https://api2.connexi.id.dmmy.me/v1/order`
+
+**Parameters**
+
+| Name | Located in | Description | Required | Type |
+| ---- | ---------- | ----------- | -------- | ---- |
+| remote_order_status | header  |             | No| string |
+| order_status | header |           |          | No | string
+| marketplace_code (LEVS)  | body   |              |No |string|
+|airwaybill_number |           |              |No  | string |
+| buyer_delivery_number |           |         | No  | string | 
+| accepted_at |          |                |Yes | timestamp |
+| accepted_by |           |          | No | integer |
+| packed_at|          |           | Yes | timestamp |
+| packed_by |         |           |No | integer |
+| processed_at |      |           | Yes | timestamp |
+| shipment_reference |         |        |Yes | string |
+| shipment_extras |         |        | No | json ???? |
+| completed_by |        |         | No | integer | 
+| completed_at |        |         | Yes | timestamp |
+| received_by |       |          | No | string | 
+| received_at |       |          | No | timestamp | 
+ 
+**Request Body**
+> This request order when status accepted  in body 
 
 **Responses**
 
@@ -163,7 +288,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 ### HTTP Request 
 
-`**PATCH** https://api2.connexi.id.dmmy.me/v1/order` 
+`**PATCH**, https://api2.connexi.id.dmmy.me/v1/order` 
 
 **Parameters**
 
@@ -197,7 +322,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 ### HTTP Request  
 
-`**GET** https://api2.connexi.id.dmmy.me/v1/product/stocks`
+`**GET**, https://api2.connexi.id.dmmy.me/v1/product/stocks`
 
 **Parameters**
 
