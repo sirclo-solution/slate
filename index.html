@@ -234,6 +234,18 @@
                     <a href="#create-order" class="toc-h2 toc-link" data-title="Create Order">Create Order</a>
                   </li>
                   <li>
+                    <a href="#create-accepted-order" class="toc-h2 toc-link" data-title="Create Accepted Order">Create Accepted Order</a>
+                  </li>
+                  <li>
+                    <a href="#create-cancelled-order" class="toc-h2 toc-link" data-title="Create Cancelled Order">Create Cancelled Order</a>
+                  </li>
+                  <li>
+                    <a href="#create-packed-order" class="toc-h2 toc-link" data-title="Create Packed Order">Create Packed Order</a>
+                  </li>
+                  <li>
+                    <a href="#create-completed-order" class="toc-h2 toc-link" data-title="Create Completed Order">Create Completed Order</a>
+                  </li>
+                  <li>
                     <a href="#update-order" class="toc-h2 toc-link" data-title="Update Order">Update Order</a>
                   </li>
               </ul>
@@ -403,7 +415,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Located in</th>
+<th>Loca ted in</th>
 <th>Description</th>
 <th>Required</th>
 <th>Type</th>
@@ -442,9 +454,412 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
+<h2 id='create-accepted-order'>Create Accepted Order</h2>
+<p><strong>Description:</strong> Create Order with status &quot;Accepted&quot;</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>**POST**, https://api2.connexi.id.dmmy.me/v1/order</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>remote_order_status</td>
+<td>header</td>
+<td></td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>header</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>marketplace_code (LEVS)</td>
+<td>body</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>accepted_at</td>
+<td></td>
+<td></td>
+<td>Yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>accepted_by</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>integer</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Body</strong></p>
+
+<blockquote>
+<p>This request order when status accepted  in body </p>
+</blockquote>
+
+<p><strong>Responses</strong></p>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<h2 id='create-cancelled-order'>Create Cancelled Order</h2>
+<p><strong>Description:</strong> Create Order with status &quot;Cancelled&quot;</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>**POST**, https://api2.connexi.id.dmmy.me/v1/order</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>remote_order_status</td>
+<td>header</td>
+<td></td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>header</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>marketplace_code (LEVS)</td>
+<td>body</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>accepted_at</td>
+<td></td>
+<td></td>
+<td>Yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>accepted_by</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>cancelled_at</td>
+<td></td>
+<td></td>
+<td>Yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>cancelled_at</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>cancel_reason</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>string</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Body</strong></p>
+
+<blockquote>
+<p>This request order when status accepted  in body </p>
+</blockquote>
+
+<p><strong>Responses</strong></p>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<h2 id='create-packed-order'>Create Packed Order</h2>
+<p><strong>Description:</strong> Create Order with status &quot;Packed&quot;</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>**POST**, https://api2.connexi.id.dmmy.me/v1/order</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>remote_order_status</td>
+<td>header</td>
+<td></td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>header</td>
+<td></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>marketplace_code (LEVS)</td>
+<td>body</td>
+<td></td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>airwaybill_number</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>buyer_delivery_number</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>accepted_at</td>
+<td></td>
+<td></td>
+<td>Yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>accepted_by</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>packed_at</td>
+<td></td>
+<td></td>
+<td>Yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>packed_by</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>processed_at</td>
+<td></td>
+<td></td>
+<td>Yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>shipment_reference</td>
+<td></td>
+<td></td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>shipment_extras</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>json ????</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Body</strong></p>
+
+<blockquote>
+<p>This request order when status accepted  in body </p>
+</blockquote>
+
+<p><strong>Responses</strong></p>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<h2 id='create-completed-order'>Create Completed Order</h2>
+<p><strong>Description:</strong> Create Order with status &quot;Completed&quot;</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>**POST**, https://api2.connexi.id.dmmy.me/v1/order</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>remote_order_status</td>
+<td>header</td>
+<td></td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>header</td>
+<td></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>marketplace_code (LEVS)</td>
+<td>body</td>
+<td></td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>airwaybill_number</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>buyer_delivery_number</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>accepted_at</td>
+<td></td>
+<td></td>
+<td>Yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>accepted_by</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>packed_at</td>
+<td></td>
+<td></td>
+<td>Yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>packed_by</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>processed_at</td>
+<td></td>
+<td></td>
+<td>Yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>shipment_reference</td>
+<td></td>
+<td></td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>shipment_extras</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>json ????</td>
+</tr>
+<tr>
+<td>completed_by</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>completed_at</td>
+<td></td>
+<td></td>
+<td>Yes</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>received_by</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>received_at</td>
+<td></td>
+<td></td>
+<td>No</td>
+<td>timestamp</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request Body</strong></p>
+
+<blockquote>
+<p>This request order when status accepted  in body </p>
+</blockquote>
+
+<p><strong>Responses</strong></p>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
 <h2 id='update-order'>Update Order</h2>
 <p><strong>Description:</strong> Update Order </p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>**PATCH**, https://api2.connexi.id.dmmy.me/v1/order</code> </p>
 
 <p><strong>Parameters</strong></p>
@@ -500,7 +915,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 </blockquote>
 <h1 id='product'>Product</h1><h2 id='get-stocks'>Get Stocks</h2>
 <p><strong>Summary: Get All Stocks</strong></p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>**GET**, https://api2.connexi.id.dmmy.me/v1/product/stocks</code></p>
 
 <p><strong>Parameters</strong></p>
