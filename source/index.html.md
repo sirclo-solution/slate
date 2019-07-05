@@ -59,11 +59,84 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 > The above command returns JSON structured like this:
 
 ```json
-[
-    {
-
-    }
-]
+    [
+        {
+            "order_number" : "",
+            "quote_expiry_date" : "",
+            "required_date" : "",
+            "customer_code" : "",
+            "remote_order_id" : "",
+            "currency_code" : "",
+            "exchange_rate" : "",
+            "total" : "",
+            "customer_reference" : "",
+            "payment_method" : "",
+            "delivery_name" : "",
+            "delivery_street_address" : "",
+            "delivery_street_address" : "",
+            "delivery_suburb" : "",
+            "delivery_city" : "",
+            "delivery_region" : "",
+            "delivery_post_code" : "",
+            "delivery_country" : "",
+            "delivery_method" : "",
+            "delivery_number" : "",
+            "delivery_method_code" : "",
+            "remote_order_status" : "",
+            "discount" : "",
+            "tax_code" : "",
+            "tax_rate" : "",
+            "tax_total" : "",
+            "order_status" : "",
+            "remarks" : "",
+            "marketplace_code" : "",
+            "phone_number" : "",
+            "airwaybill_number" : "",
+            "buyer_delivery_number" : "",
+            "subtotal" : "",
+            "discount_total" : "",
+            "shipping_total" : "",
+            "shipment_tracked_at" : "",
+            "raw" : "",
+            "accepted_at" : "",
+            "accepted_by" : "",
+            "cancelled_at" : "",
+            "cancelled_by" : "",
+            "cancel_reason" : "",
+            "packed_at" : "",
+            "packed_by" : "",
+            "comment" : "",
+            "price_adjustment" : "",
+            "processed_at" : "",
+            "shipment_reference" : "",
+            "shipment_extras" : "",
+            "edited_at" : "",
+            "edit_reason" : "",
+            "completed_by" : "",
+            "completed_at" : "",
+            "received_by" : "",
+            "received_at" : "",
+            "order_line_item" : [
+                {
+                    "line_number" : "",
+                    "remote_order_item_id" : "",
+                    "product_code" : "",
+                    "product_description" : "",
+                    "order_quantity" : "",
+                    "unit_price" : "",
+                    "raw_price" : "",
+                    "discount_rate" : "",
+                    "line_discount" : "",
+                    "line_tax" : "",
+                    "shipping_amount" : "",
+                    "line_total" : "",
+                    "line_comments" : "",
+                    "line_item_status" : "",
+                    "description" : "",
+                }
+            ]
+        }
+    ]
 ```
 
 ## Create Order
@@ -86,81 +159,77 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 ### Request Body 
    **Request body parameter must be in the form JSON**
 
-|   Name                | Required | Type     | Description   |
-| ----------------------| ---------| -------- | --------------|
-|order_number           | No       | String   |               |   
-|quote_expiry_date      | No       | timestamp|               |
-|required_date          | No       | timestamp|               |
-|customer_code          | No       | string   |               |
-|currency_code          | No       | string   |               |
-|exchange_rate          | No       | double   |               |
-|total                  | No       | double   |               |
-|customer_reference     | No       | string   |               |
-|payment_method         | No       | string   |               |
-|delivery_name          | No       | String   |               |
-|delivery_street_address| No       | Text     |               |
-|delivery_street_address_2| No     | Text     |               |
-|delivery_suburb        | No       | String   |               |
-|delivery_city          | No       | String   |               |
-|delivery_region        | No       | String   |               |
-|delivery_post_code     | No       | String   |               |
-|delivery_country       | No       | String   |               |
-|delivery_method        | No       | String   |               |
-|delivery_method_code   | No       | String   |               |
-|remote_order_status    | Yes      | string   |               |  
-|discount               | No       |          |               |
-|tax_code               | No       | String   |               |
-|tax_rate               | No       | double   |               |
-|tax_total              | No       | double   |               |
-|order_status           | No       | String   |               |
-|remarks                | No       | Text     |               |
-|marketplace_code       | No       | String   |               |
-|phone_number           | No       | String   |               |
-|airwaybill_number      | No       | String   |               |
-|buyer_delivery_number  | No       | String   |               |
-|subtotal               | No       | double   |               | 
-|discount_total         | No       | double   |               |
-|shipping_total         | No       | double   |               |
-|shipment_tracked_at    | No       |timestamp |               |
-|raw                    | No       |text      |               |
-|accepted_at            | No       | integer  |               |
-|cancelled_at           | No       |timestamp |               |
-|cancelled_by           | No       |integer   |               |
-|cancel_reason          | No       |string    |               | 
-|accepted_at            | Yes      | timestamp|               |
-| accepted_by           | No       | integer  |               |
-| cancelled_at          | Yes      | timestamp|               |
-| cancelled_at          | No       | integer  |               |
-| cancel_reason         | No       | string   |               |
-| packed_at             | Yes      | timestamp|               |
-| packed_by             | No       | integer  |               |
-| comment               | No       | text     |               |
-| price_adjustment      | No       | double   |               |
-| processed_at          | No       | timestamp|               |
-| shipment_reference    |Yes       | text     |               |
-| shipment_extras       | No       | jsonb    |               |
-| edited_at             | No       | timestamp|               | 
-| edited_reason         | No       | text     |               |
-| completed_by          | No       | integer  |               |
-| completed_at          | Yes      | timestamp|               |
-| received_by           | No       | string   |               |
-| received_at           | No       | timestamp|               |
-| line_number           | No       | integer  |               |
-| remote_order_item_id  | No       | string   |               |
-| product_code          | No       | string   |               |
-| product_description   | No       | text     |               |
-| order_quantity        | No       | integer  |               |
-| unit_price            | No       | double   |               |
-| raw_price             | No       | double   |               |
-| discount_price        | No       | double   |               |
-| line_discount         | No       | double   |               |
-| line_tax              | No       | double   |               |
-| shipping_amoount      | No       | double   |               |
-| line_total            | No       | double   |               |
-| line_comments         | No       | text     |               |
-| line_item_status      | No       | string   |               |
-| discount_amount       | No       | double   |               |
-| description           | No       | text     |               |
+|   Name                | Required | Type     | Description                |
+| ----------------------| ---------| -------- | -------------------------- |
+|order_number           | No       | string   | order number               |   
+|quote_expiry_date      | No       | timestamp| quote expiry date of order |
+|required_date          | No       | timestamp|                            |
+|customer_code          | No       | string   |                            |
+|currency_code          | No       | string   |                            |
+|exchange_rate          | No       | double   |                            |
+|total                  | No       | double   |                            |
+|customer_reference     | No       | string   |                            |
+|payment_method         | No       | string   |                            |
+|delivery_name          | No       | string   |                            |
+|delivery_street_address| No       | text     |                            |
+|delivery_street_address_2| No     | text     |                            |
+|delivery_suburb        | No       | string   |                            |
+|delivery_city          | No       | string   |                            |
+|delivery_region        | No       | string   |                            |
+|delivery_post_code     | No       | string   |                            |
+|delivery_country       | No       | string   |                            |
+|delivery_method        | No       | string   |                            |
+|delivery_method_code   | No       | string   |                            |
+|remote_order_status    | Yes      | string   |                            |  
+|discount               | No       | double   |                            |
+|tax_code               | No       | string   |                            |
+|tax_rate               | No       | double   |                            |
+|tax_total              | No       | double   |                            |
+|order_status           | No       | string   |                            |
+|remarks                | No       | text     |                            |
+|marketplace_code       | No       | string   |                            |
+|phone_number           | No       | string   |                            |
+|airwaybill_number      | No       | string   |                            |
+|buyer_delivery_number  | No       | string   |                            |
+|subtotal               | No       | double   |                            | 
+|discount_total         | No       | double   |                            |
+|shipping_total         | No       | double   |                            |
+|shipment_tracked_at    | No       | timestamp|                            |
+|raw                    | No       | text     |                            |
+| accepted_at           | Yes      | timestamp|                            |
+| accepted_by           | No       | integer  |                            |
+|cancelled_at           | No       | timestamp|                            |
+|cancelled_by           | No       | integer  |                            |
+|cancel_reason          | No       | string   |                            | 
+| packed_at             | Yes      | timestamp|                            |
+| packed_by             | No       | integer  |                            |
+| comment               | No       | text     |                            |
+| price_adjustment      | No       | double   |                            |
+| processed_at          | No       | timestamp|                            |
+| shipment_reference    |Yes       | text     |                            |
+| shipment_extras       | No       | jsonb    |                            |
+| edited_at             | No       | timestamp|                            | 
+| edit_reason           | No       | text     |                            |
+| completed_by          | No       | integer  |                            |
+| completed_at          | Yes      | timestamp|                            |
+| received_by           | No       | string   |                            |
+| received_at           | No       | timestamp|                            |
+| line_number           | No       | integer  |                            |
+| remote_order_item_id  | No       | string   |                            |
+| product_code          | No       | string   |                            |
+| product_description   | No       | text     |                            |
+| order_quantity        | No       | integer  |                            |
+| unit_price            | No       | double   |                            |
+| raw_price             | No       | double   |                            |
+| discount_rate         | No       | double   |                            |
+| line_discount         | No       | double   |                            |
+| line_tax              | No       | double   |                            |
+| shipping_amount       | No       | double   |                            |
+| line_total            | No       | double   |                            |
+| line_comments         | No       | text     |                            |
+| line_item_status      | No       | string   |                            |
+| discount_amount       | No       | double   |                            |
+| description           | No       | text     |                            |
  
 **Request Body**
 
@@ -246,7 +315,6 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
         }
     ]
 ```
-**Responses**
 
 > The above command returns JSON structured like this:
 
@@ -363,9 +431,13 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 ]
 ```
 
-**Responses**
-
 > The above command returns JSON structured like this:
+
+```json 
+{
+
+}
+```
 
 # Product 
 
