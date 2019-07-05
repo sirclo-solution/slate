@@ -276,7 +276,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 <h1 id='order-api'>Order API</h1><h2 id='get-order'>Get Order</h2>
 <p><strong>Description:</strong> Get Order from Connexi  </p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>**GET**, https://api2.connexi.id.dmmy.me/v1/order</code></p>
+<p><code>**GET** https://api2.connexi.id.dmmy.me/v1/order</code></p>
 
 <p><strong>Parameters</strong></p>
 
@@ -284,17 +284,17 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 <tr>
 <th>Name</th>
 <th>Located in</th>
-<th>Description</th>
 <th>Required</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>api_key</td>
 <td>header</td>
-<td></td>
 <td>Yes</td>
 <td>string</td>
+<td></td>
 </tr>
 <tr>
 <td>api_secret</td>
@@ -368,86 +368,457 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 </tr>
 </tbody></table>
 <h3 id='request-body'>Request Body</h3>
-<p><strong>Request body parameter must be in the form JSON</strong>
-|   Name                | Required | Type     | Description   |
-| ----------------------| ---------| -------- | --------------|
-|order_number           | No       | String   |               |<br>
-|quote_expiry_date      | No       | timestamp|               |
-|required_date          | No       | timestamp|               |
-|customer_code          | No       | string   |               |
-|currency_code          | No       | string   |               |
-|exchange_rate          | No       | double   |               |
-|total                  | No       | double   |               |
-|customer_reference     | No       | string   |               |
-|payment_method         | No       | string   |               |
-|delivery_name          | No       | String   |               |
-|delivery_street_address| No       | Text     |               |
-|delivery_street_address_2| No     | Text     |               |
-|delivery_suburb        | No       | String   |               |
-|delivery_city          | No       | String   |               |
-|delivery_region        | No       | String   |               |
-|delivery_post_code     | No       | String   |               |
-|delivery_country       | No       | String   |               |
-|delivery_method        | No       | String   |               |
-|delivery_method_code   | No       | String   |               |
-|remote_order_status    | Yes      | string   |               |<br>
-|discount               | No       |          |               |
-|tax_code               | No       | String   |               |
-|tax_rate               | No       | double   |               |
-|tax_total              | No       | double   |               |
-|order_status           | No       | String   |               |
-|remarks                | No       | Text     |               |
-|marketplace_code       | No       | String   |               |
-|phone_number           | No       | String   |               |
-|airwaybill_number      | No       | String   |               |
-|buyer_delivery_number  | No       | String   |               |
-|subtotal               | No       | double   |               | 
-|discount_total         | No       | double   |               |
-|shipping_total         | No       | double   |               |
-|shipment_tracked_at    | No       |timestamp |               |
-|raw                    | No       |text      |               |
-|accepted_at            | No       | integer  |               |
-|cancelled_at           | No       |timestamp |               |
-|cancelled_by           | No       |integer   |               |
-|cancel_reason          | No       |string    |               | 
-|accepted_at            | Yes      | timestamp|               |
-| accepted_by           | No       | integer  |               |
-| cancelled_at          | Yes      | timestamp|               |
-| cancelled_at          | No       | integer  |               |
-| cancel_reason         | No       | string   |               |
-| packed_at             | Yes      | timestamp|               |
-| packed_by             | No       | integer  |               |
-| comment               | No       | text     |               |
-| price_adjustment      | No       | double   |               |
-| processed_at          | No       | timestamp|               |
-| shipment_reference    |Yes       | text     |               |
-| shipment_extras       | No       | jsonb    |               |
-| edited_at             | No       | timestamp|               | 
-| edited_reason         | No       | text     |               |
-| completed_by          | No       | integer  |               |
-| completed_at          | Yes      | timestamp|               |
-| received_by           | No       | string   |               |
-| received_at           | No       | timestamp|               |
-| line_number           | No       | integer  |               |
-| remote_order_item_id  | No       | string   |               |
-| product_code          | No       | string   |               |
-| product_description   | No       | text     |               |
-| order_quantity        | No       | integer  |               |
-| unit_price            | No       | double   |               |
-| raw_price             | No       | double   |               |
-| discount_price        | No       | double   |               |
-| line_discount         | No       | double   |               |
-| line_tax              | No       | double   |               |
-| shipping_amoount      | No       | double   |               |
-| line_total            | No       | double   |               |
-| line_comments         | No       | text     |               |
-| line_item_status      | No       | string   |               |
-| discount_amount       | No       | double   |               |
-| description           | No       | text     |               |</p>
+<p><strong>Request body parameter must be in the form JSON</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order_number</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>quote_expiry_date</td>
+<td>No</td>
+<td>timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>required_date</td>
+<td>No</td>
+<td>timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>customer_code</td>
+<td>No</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>currency_code</td>
+<td>No</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>exchange_rate</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>total</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>customer_reference</td>
+<td>No</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>No</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>delivery_name</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>delivery_street_address</td>
+<td>No</td>
+<td>Text</td>
+<td></td>
+</tr>
+<tr>
+<td>delivery_street_address_2</td>
+<td>No</td>
+<td>Text</td>
+<td></td>
+</tr>
+<tr>
+<td>delivery_suburb</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>delivery_city</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>delivery_region</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>delivery_post_code</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>delivery_country</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>delivery_method</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>delivery_method_code</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>remote_order_status</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>discount</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tax_code</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tax_rate</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>tax_total</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>order_status</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>No</td>
+<td>Text</td>
+<td></td>
+</tr>
+<tr>
+<td>marketplace_code</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>phone_number</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>airwaybill_number</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>buyer_delivery_number</td>
+<td>No</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>subtotal</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>discount_total</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>shipping_total</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>shipment_tracked_at</td>
+<td>No</td>
+<td>timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>raw</td>
+<td>No</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>accepted_at</td>
+<td>No</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>cancelled_at</td>
+<td>No</td>
+<td>timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>cancelled_by</td>
+<td>No</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>cancel_reason</td>
+<td>No</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>accepted_at</td>
+<td>Yes</td>
+<td>timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>accepted_by</td>
+<td>No</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>cancelled_at</td>
+<td>Yes</td>
+<td>timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>cancelled_at</td>
+<td>No</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>cancel_reason</td>
+<td>No</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>packed_at</td>
+<td>Yes</td>
+<td>timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>packed_by</td>
+<td>No</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>comment</td>
+<td>No</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>price_adjustment</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>processed_at</td>
+<td>No</td>
+<td>timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>shipment_reference</td>
+<td>Yes</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>shipment_extras</td>
+<td>No</td>
+<td>jsonb</td>
+<td></td>
+</tr>
+<tr>
+<td>edited_at</td>
+<td>No</td>
+<td>timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>edited_reason</td>
+<td>No</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>completed_by</td>
+<td>No</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>completed_at</td>
+<td>Yes</td>
+<td>timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>received_by</td>
+<td>No</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>received_at</td>
+<td>No</td>
+<td>timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>line_number</td>
+<td>No</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>remote_order_item_id</td>
+<td>No</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>product_code</td>
+<td>No</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>product_description</td>
+<td>No</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>order_quantity</td>
+<td>No</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>unit_price</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>raw_price</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>discount_price</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>line_discount</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>line_tax</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>shipping_amoount</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>line_total</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>line_comments</td>
+<td>No</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>line_item_status</td>
+<td>No</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>discount_amount</td>
+<td>No</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>No</td>
+<td>text</td>
+<td></td>
+</tr>
+</tbody></table>
 
 <p><strong>Request Body</strong></p>
-
-<blockquote>
 <pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"order_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -525,98 +896,95 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
                     </span><span class="s2">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
-</span></code></pre></blockquote>
 
-<p>}
-    ]
-```
-<strong>Responses</strong></p>
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p><strong>Responses</strong></p>
 
 <blockquote>
-<p>The above command returns JSON structured like this:
-```json
-    [
-        {
-            &quot;order_number&quot; : &quot;&quot;,
-            &quot;quote_expiry_date&quot; : &quot;&quot;,
-            &quot;required_date&quot; : &quot;&quot;,
-            &quot;customer_code&quot; : &quot;&quot;,
-            &quot;remote_order_id&quot; : &quot;&quot;,
-            &quot;currency_code&quot; : &quot;&quot;,
-            &quot;exchange_rate&quot; : &quot;&quot;,
-            &quot;total&quot; : &quot;&quot;,
-            &quot;customer_reference&quot; : &quot;&quot;,
-            &quot;payment_method&quot; : &quot;&quot;,
-            &quot;delivery_name&quot; : &quot;&quot;,
-            &quot;delivery_street_address&quot; : &quot;&quot;,
-            &quot;delivery_street_address&quot; : &quot;&quot;,
-            &quot;delivery_suburb&quot; : &quot;&quot;,
-            &quot;delivery_city&quot; : &quot;&quot;,
-            &quot;delivery_region&quot; : &quot;&quot;,
-            &quot;delivery_post_code&quot; : &quot;&quot;,
-            &quot;delivery_country&quot; : &quot;&quot;,
-            &quot;delivery_method&quot; : &quot;&quot;,
-            &quot;delivery_number&quot; : &quot;&quot;,
-            &quot;delivery_method_code&quot; : &quot;&quot;,
-            &quot;remote_order_status&quot; : &quot;&quot;,
-            &quot;discount&quot; : &quot;&quot;,
-            &quot;tax_code&quot; : &quot;&quot;,
-            &quot;tax_rate&quot; : &quot;&quot;,
-            &quot;tax_total&quot; : &quot;&quot;,
-            &quot;order_status&quot; : &quot;&quot;,
-            &quot;remarks&quot; : &quot;&quot;,
-            &quot;marketplace_code&quot; : &quot;&quot;,
-            &quot;phone_number&quot; : &quot;&quot;,
-            &quot;airwaybill_number&quot; : &quot;&quot;,
-            &quot;buyer_delivery_number&quot; : &quot;&quot;,
-            &quot;subtotal&quot; : &quot;&quot;,
-            &quot;discount_total&quot; : &quot;&quot;,
-            &quot;shipping_total&quot; : &quot;&quot;,
-            &quot;shipment_tracked_at&quot; : &quot;&quot;,
-            &quot;raw&quot; : &quot;&quot;,
-            &quot;accepted_at&quot; : &quot;&quot;,
-            &quot;accepted_by&quot; : &quot;&quot;,
-            &quot;cancelled_at&quot; : &quot;&quot;,
-            &quot;cancelled_by&quot; : &quot;&quot;,
-            &quot;cancel_reason&quot; : &quot;&quot;,
-            &quot;packed_at&quot; : &quot;&quot;,
-            &quot;packed_by&quot; : &quot;&quot;,
-            &quot;comment&quot; : &quot;&quot;,
-            &quot;price_adjustment&quot; : &quot;&quot;,
-            &quot;processed_at&quot; : &quot;&quot;,
-            &quot;shipment_reference&quot; : &quot;&quot;,
-            &quot;shipment_extras&quot; : &quot;&quot;,
-            &quot;edited_at&quot; : &quot;&quot;,
-            &quot;edit_reason&quot; : &quot;&quot;,
-            &quot;completed_by&quot; : &quot;&quot;,
-            &quot;completed_at&quot; : &quot;&quot;,
-            &quot;received_by&quot; : &quot;&quot;,
-            &quot;received_at&quot; : &quot;&quot;,
-            &quot;order_line_item&quot; : [
-                {
-                    &quot;line_number&quot; : &quot;&quot;,
-                    &quot;remote_order_item_id&quot; : &quot;&quot;,
-                    &quot;product_code&quot; : &quot;&quot;,
-                    &quot;product_description&quot; : &quot;&quot;,
-                    &quot;order_quantity&quot; : &quot;&quot;,
-                    &quot;unit_price&quot; : &quot;&quot;,
-                    &quot;raw_price&quot; : &quot;&quot;,
-                    &quot;discount_rate&quot; : &quot;&quot;,
-                    &quot;line_discount&quot; : &quot;&quot;,
-                    &quot;line_tax&quot; : &quot;&quot;,
-                    &quot;shipping_amount&quot; : &quot;&quot;,
-                    &quot;line_total&quot; : &quot;&quot;,
-                    &quot;line_comments&quot; : &quot;&quot;,
-                    &quot;line_item_status&quot; : &quot;&quot;,
-                    &quot;description&quot; : &quot;&quot;,
-                }
-            ]</p>
+<p>The above command returns JSON structured like this:</p>
 </blockquote>
+<pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"order_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"quote_expiry_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"required_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"customer_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remote_order_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"exchange_rate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"customer_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"payment_method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_street_address"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_street_address"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_suburb"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_city"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_region"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_post_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_method_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remote_order_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"discount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_rate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remarks"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"marketplace_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"airwaybill_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"buyer_delivery_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subtotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"discount_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shipment_tracked_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"raw"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"accepted_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"accepted_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cancelled_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cancelled_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cancel_reason"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"packed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"packed_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comment"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price_adjustment"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"processed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shipment_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shipment_extras"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"edited_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"edit_reason"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"received_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"received_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_line_item"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"line_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"remote_order_item_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"product_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"product_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"order_quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"unit_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"raw_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"discount_rate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"line_discount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"line_tax"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"shipping_amount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"line_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"line_comments"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"line_item_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
 
-<p>}
-    ]
-```</p>
-<h2 id='update-order'>Update Order</h2>
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='update-order'>Update Order</h2>
 <p><strong>Description:</strong> Update Order </p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>**PATCH**, https://api2.connexi.id.dmmy.me/v1/order</code> </p>
