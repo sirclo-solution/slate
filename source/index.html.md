@@ -43,16 +43,16 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 ### HTTP Request 
 
-`**GET**, https://api2.connexi.id.dmmy.me/v1/order`
+`**GET** https://api2.connexi.id.dmmy.me/v1/order`
 
 **Parameters**
 
-| Name       | Located in | Description | Required | Type   |
-| ---------- | ---------- | ----------- | -------- | ------ |
-| api_key    | header     |             | Yes      | string |
-| api_secret | header     |             |          |        | 
-| start      | url        |             |          |        | 
-| end        | url        |             |          |        |  
+| Name       | Located in |  Required | Type   |Description |
+| ---------- | ---------- |  -------- | ------ |----------- |
+| api_key    | header     |  Yes      | string |            |
+| api_secret | header     |           |        |            | 
+| start      | url        |           |        |            |
+| end        | url        |           |        |            |   
 
 **Responses**
 
@@ -85,6 +85,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 ### Request Body 
    **Request body parameter must be in the form JSON**
+
 |   Name                | Required | Type     | Description   |
 | ----------------------| ---------| -------- | --------------|
 |order_number           | No       | String   |               |   
@@ -162,7 +163,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 | description           | No       | text     |               |
  
 **Request Body**
->
+
 ```json
     [
         {
@@ -248,6 +249,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 **Responses**
 
 > The above command returns JSON structured like this:
+
 ```json
     [
         {
@@ -349,6 +351,7 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 | Orders    | body       |           |        |            |    | 
  
 **Request Body**
+
 > This request order in body : 
 
 ```json
