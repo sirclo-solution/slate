@@ -59,75 +59,11 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 > The above command returns JSON structured like this:
 
 ```json
-{
-    "orders": [
-        {
-            "id": 111,
-            "created_at": "2018-11-07T03:46:16.457936Z",
-            "updated_at": "2018-11-07T03:46:16.457938Z",
-            "order_number": "",
-            "order_date": "2018-11-07T03:40:57Z",
-            "customer_code": "",
-            "remote_order_id": "1362230256",
-            "currency_code": "IDR",
-            "exchange_rate": 1,
-            "customer_reference": "181362230256",
-            "quote_expiry_date": "0001-01-01T00:00:00Z",
-            "required_date": "0001-01-01T00:00:00Z",
-            "warehouse_code": "",
-            "payment_method": "",
-            "delivery_name": "Danny",
-            "delivery_street_address": "Jl Biak no 19C\r\nsebelah Bank Permata",
-            "delivery_street_address_2": "",
-            "delivery_suburb": "Gambir",
-            "delivery_city": "Jakarta Pusat",
-            "delivery_region": "DKI Jakarta",
-            "delivery_post_code": "10150",
-            "delivery_country": "Indonesia",
-            "delivery_method": "JNE REG",
-            "delivery_number": "",
-            "delivery_method_code": "",
-            "delivery_enterprise_code": "",
-            "delivery_enterprise_name": "",
-            "buyer_delivery_number": "",
-            "remote_order_status": "pending",
-            "discount": 0,
-            "tax_code": "PPN",
-            "tax_rate": 0.1,
-            "tax_total": 0,
-            "shipping_total": 45000,
-            "discount_total": 0,
-            "subtotal": 2500,
-            "total": 47500,
-            "order_status": "",
-            "remarks": "",
-            "marketplace_code": "bklp",
-            "phone_number": "087867255331",
-            "airwaybill_number": "",
-            "shipment_reference": "",
-            "shipment_extras": "",
-            "processed_at": "0001-01-01T00:00:00Z",
-            "accepted_at": "0001-01-01T00:00:00Z",
-            "packed_at": "0001-01-01T00:00:00Z",
-            "cancelled_at": "0001-01-01T00:00:00Z",
-            "shipment_tracked_at": "0001-01-01T00:00:00Z",
-            "edited_at": "0001-01-01T00:00:00Z",
-            "exported_at": "0001-01-01T00:00:00Z",
-            "printed_at": "0001-01-01T00:00:00Z",
-            "accepted_by": 0,
-            "packed_by": 0,
-            "cancelled_by": 0,
-            "printed_by": 0,
-            "line_items": null,
-            "store_id": 4,
-            "store_name": "",
-            "comment": "",
-            "price_adjustment": 0,
-            "edit_reason": "",
-            "cancel_reason": ""
-        },
-    ]
-}
+[
+    {
+
+    }
+]
 ```
 
 ## Create Order
@@ -141,144 +77,258 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 **Parameters**
 
-| Name       | Loca ted in | Description | Required | Type   |
-| -----------| ------------| ----------- | -------- | ------ |
-| api_key    | header      |             | Yes      | string |
-| api_secret | header      |             |          |        | 
-| Orders     | body        |             |          |        | 
+| Name       | Located in  |  Required | Type   |Description |
+| -----------| ------------|  -------- | ------ |----------- |
+| api_key    | header      | Yes       | string |            |
+| api_secret | header      |           |        |            | 
+| Orders     | body        |           |        |            |
+
+### Request Body 
+   **Request body parameter must be in the form JSON**
+|   Name                | Required | Type     | Description   |
+| ----------------------| ---------| -------- | --------------|
+|order_number           | No       | String   |               |   
+|quote_expiry_date      | No       | timestamp|               |
+|required_date          | No       | timestamp|               |
+|customer_code          | No       | string   |               |
+|currency_code          | No       | string   |               |
+|exchange_rate          | No       | double   |               |
+|total                  | No       | double   |               |
+|customer_reference     | No       | string   |               |
+|payment_method         | No       | string   |               |
+|delivery_name          | No       | String   |               |
+|delivery_street_address| No       | Text     |               |
+|delivery_street_address_2| No     | Text     |               |
+|delivery_suburb        | No       | String   |               |
+|delivery_city          | No       | String   |               |
+|delivery_region        | No       | String   |               |
+|delivery_post_code     | No       | String   |               |
+|delivery_country       | No       | String   |               |
+|delivery_method        | No       | String   |               |
+|delivery_method_code   | No       | String   |               |
+|remote_order_status    | Yes      | string   |               |  
+|discount               | No       |          |               |
+|tax_code               | No       | String   |               |
+|tax_rate               | No       | double   |               |
+|tax_total              | No       | double   |               |
+|order_status           | No       | String   |               |
+|remarks                | No       | Text     |               |
+|marketplace_code       | No       | String   |               |
+|phone_number           | No       | String   |               |
+|airwaybill_number      | No       | String   |               |
+|buyer_delivery_number  | No       | String   |               |
+|subtotal               | No       | double   |               | 
+|discount_total         | No       | double   |               |
+|shipping_total         | No       | double   |               |
+|shipment_tracked_at    | No       |timestamp |               |
+|raw                    | No       |text      |               |
+|accepted_at            | No       | integer  |               |
+|cancelled_at           | No       |timestamp |               |
+|cancelled_by           | No       |integer   |               |
+|cancel_reason          | No       |string    |               | 
+|accepted_at            | Yes      | timestamp|               |
+| accepted_by           | No       | integer  |               |
+| cancelled_at          | Yes      | timestamp|               |
+| cancelled_at          | No       | integer  |               |
+| cancel_reason         | No       | string   |               |
+| packed_at             | Yes      | timestamp|               |
+| packed_by             | No       | integer  |               |
+| comment               | No       | text     |               |
+| price_adjustment      | No       | double   |               |
+| processed_at          | No       | timestamp|               |
+| shipment_reference    |Yes       | text     |               |
+| shipment_extras       | No       | jsonb    |               |
+| edited_at             | No       | timestamp|               | 
+| edited_reason         | No       | text     |               |
+| completed_by          | No       | integer  |               |
+| completed_at          | Yes      | timestamp|               |
+| received_by           | No       | string   |               |
+| received_at           | No       | timestamp|               |
+| line_number           | No       | integer  |               |
+| remote_order_item_id  | No       | string   |               |
+| product_code          | No       | string   |               |
+| product_description   | No       | text     |               |
+| order_quantity        | No       | integer  |               |
+| unit_price            | No       | double   |               |
+| raw_price             | No       | double   |               |
+| discount_price        | No       | double   |               |
+| line_discount         | No       | double   |               |
+| line_tax              | No       | double   |               |
+| shipping_amoount      | No       | double   |               |
+| line_total            | No       | double   |               |
+| line_comments         | No       | text     |               |
+| line_item_status      | No       | string   |               |
+| discount_amount       | No       | double   |               |
+| description           | No       | text     |               |
  
 **Request Body**
-> 
+>
+```json
+    [
+        {
+            "order_number" : "string",
+            "quote_expiry_date" : "timestamp",
+            "required_date" : "timestamp",
+            "customer_code" : "string",
+            "remote_order_id" : "string",
+            "currency_code" : "string",
+            "exchange_rate" : "double",
+            "total" : "double",
+            "customer_reference" : "string",
+            "payment_method" : "string",
+            "delivery_name" : "string",
+            "delivery_street_address" : "text",
+            "delivery_street_address" : "text",
+            "delivery_suburb" : "string",
+            "delivery_city" : "string",
+            "delivery_region" : "string",
+            "delivery_post_code" : "string",
+            "delivery_country" : "string",
+            "delivery_method" : "string",
+            "delivery_number" : "string",
+            "delivery_method_code" : "string",
+            "remote_order_status" : "string",
+            "discount" : "double",
+            "tax_code" : "string",
+            "tax_rate" : "double",
+            "tax_total" : "double",
+            "order_status" : "string",
+            "remarks" : "text",
+            "marketplace_code" : "string",
+            "phone_number" : "string",
+            "airwaybill_number" : "string",
+            "buyer_delivery_number" : "string",
+            "subtotal" : "double",
+            "discount_total" : "double",
+            "shipping_total" : "double",
+            "shipment_tracked_at" : "timestamp",
+            "raw" : "text",
+            "accepted_at" : "timestamp",
+            "accepted_by" : "integer",
+            "cancelled_at" : "timestamp",
+            "cancelled_by" : "integer",
+            "cancel_reason" : "string",
+            "packed_at" : "timstamp",
+            "packed_by" : "integer",
+            "comment" : "text",
+            "price_adjustment" : "double",
+            "processed_at" : "timestamp",
+            "shipment_reference" : "text",
+            "shipment_extras" : "json",
+            "edited_at" : "timestamp",
+            "edit_reason" : "text",
+            "completed_by" : "integer",
+            "completed_at" : "timestamp",
+            "received_by" : "string",
+            "received_at" : "timestamp",
+            "order_line_item" : [
+                {
+                    "line_number" : "integer",
+                    "remote_order_item_id" : "string",
+                    "product_code" : "string",
+                    "product_description" : "text",
+                    "order_quantity" : "integer",
+                    "unit_price" : "double",
+                    "raw_price" : "double",
+                    "discount_rate" : "double",
+                    "line_discount" : "double",
+                    "line_tax" : "double",
+                    "shipping_amount" : "double",
+                    "line_total" : "double",
+                    "line_comments" : "text",
+                    "line_item_status" : "string",
+                    "discount_amount" : "double",
+                    "description" : "text",
+                }
+            ]
 
+        }
+    ]
+```
 **Responses**
 
 > The above command returns JSON structured like this:
+```json
+    [
+        {
+            "order_number" : "",
+            "quote_expiry_date" : "",
+            "required_date" : "",
+            "customer_code" : "",
+            "remote_order_id" : "",
+            "currency_code" : "",
+            "exchange_rate" : "",
+            "total" : "",
+            "customer_reference" : "",
+            "payment_method" : "",
+            "delivery_name" : "",
+            "delivery_street_address" : "",
+            "delivery_street_address" : "",
+            "delivery_suburb" : "",
+            "delivery_city" : "",
+            "delivery_region" : "",
+            "delivery_post_code" : "",
+            "delivery_country" : "",
+            "delivery_method" : "",
+            "delivery_number" : "",
+            "delivery_method_code" : "",
+            "remote_order_status" : "",
+            "discount" : "",
+            "tax_code" : "",
+            "tax_rate" : "",
+            "tax_total" : "",
+            "order_status" : "",
+            "remarks" : "",
+            "marketplace_code" : "",
+            "phone_number" : "",
+            "airwaybill_number" : "",
+            "buyer_delivery_number" : "",
+            "subtotal" : "",
+            "discount_total" : "",
+            "shipping_total" : "",
+            "shipment_tracked_at" : "",
+            "raw" : "",
+            "accepted_at" : "",
+            "accepted_by" : "",
+            "cancelled_at" : "",
+            "cancelled_by" : "",
+            "cancel_reason" : "",
+            "packed_at" : "",
+            "packed_by" : "",
+            "comment" : "",
+            "price_adjustment" : "",
+            "processed_at" : "",
+            "shipment_reference" : "",
+            "shipment_extras" : "",
+            "edited_at" : "",
+            "edit_reason" : "",
+            "completed_by" : "",
+            "completed_at" : "",
+            "received_by" : "",
+            "received_at" : "",
+            "order_line_item" : [
+                {
+                    "line_number" : "",
+                    "remote_order_item_id" : "",
+                    "product_code" : "",
+                    "product_description" : "",
+                    "order_quantity" : "",
+                    "unit_price" : "",
+                    "raw_price" : "",
+                    "discount_rate" : "",
+                    "line_discount" : "",
+                    "line_tax" : "",
+                    "shipping_amount" : "",
+                    "line_total" : "",
+                    "line_comments" : "",
+                    "line_item_status" : "",
+                    "description" : "",
+                }
+            ]
 
-## Create Accepted Order
-
-
-**Description:** Create Order with status "Accepted"
-
-
-### HTTP Request 
-`**POST**, https://api2.connexi.id.dmmy.me/v1/order`
-
-**Parameters**
-
-| Name                | Located in | Description | Required | Type |
-| ------------------- | ---------- | ----------- | -------- | ---- |
-|remote_order_status| header  |             | Yes      | string |
-|order_status        | header |           |          |        | 
-|marketplace_code (LEVS)| body   |              |        |      |
-|accepted_at |            |              |Yes  | timestamp |
-| accepted_by |           |         | No  | integer |  
- 
-**Request Body**
-> This request order when status accepted  in body 
-
-**Responses**
-
-> The above command returns JSON structured like this:
-
-## Create Cancelled Order 
-
-
-**Description:** Create Order with status "Cancelled"
-
-
-### HTTP Request 
-`**POST**, https://api2.connexi.id.dmmy.me/v1/order`
-
-**Parameters**
-
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| remote_order_status | header  |             | Yes      | string |
-| order_status | header |           |          |        | 
-| marketplace_code (LEVS)  | body   |              |        |      |
-|accepted_at |            |              |Yes  | timestamp |
-| accepted_by |           |         | No  | integer | 
-| cancelled_at |          |                |Yes | timestamp |
-| cancelled_at |           |          | No | integer |
-| cancel_reason |          |           | No | string | 
- 
-**Request Body**
-> This request order when status accepted  in body 
-
-**Responses**
-
-> The above command returns JSON structured like this:
-
-## Create Packed Order 
-
-
-**Description:** Create Order with status "Packed"
-
-
-### HTTP Request 
-`**POST**, https://api2.connexi.id.dmmy.me/v1/order`
-
-**Parameters**
-
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| remote_order_status | header  |             | Yes | string |
-| order_status | header |           |          | No | string
-| marketplace_code (LEVS)  | body   |              |No |string|
-|airwaybill_number |           |              |No  | string |
-| buyer_delivery_number |           |         | No  | string | 
-| accepted_at |          |                |Yes | timestamp |
-| accepted_by |           |          | No | integer |
-| packed_at|          |           | Yes | timestamp |
-| packed_by |         |           |No | integer |
-| processed_at |      |           | Yes | timestamp |
-| shipment_reference |         |        |Yes | string |
-| shipment_extras |         |        | No | json ???? |
- 
-**Request Body**
-> This request order when status accepted  in body 
-
-**Responses**
-
-> The above command returns JSON structured like this:
-
-## Create Completed Order
-
-
-**Description:** Create Order with status "Completed"
-
-
-### HTTP Request 
-`**POST**, https://api2.connexi.id.dmmy.me/v1/order`
-
-**Parameters**
-
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| remote_order_status | header  |             | No| string |
-| order_status | header |           |          | No | string
-| marketplace_code (LEVS)  | body   |              |No |string|
-|airwaybill_number |           |              |No  | string |
-| buyer_delivery_number |           |         | No  | string | 
-| accepted_at |          |                |Yes | timestamp |
-| accepted_by |           |          | No | integer |
-| packed_at|          |           | Yes | timestamp |
-| packed_by |         |           |No | integer |
-| processed_at |      |           | Yes | timestamp |
-| shipment_reference |         |        |Yes | string |
-| shipment_extras |         |        | No | json ???? |
-| completed_by |        |         | No | integer | 
-| completed_at |        |         | Yes | timestamp |
-| received_by |       |          | No | string | 
-| received_at |       |          | No | timestamp | 
- 
-**Request Body**
-> This request order when status accepted  in body 
-
-**Responses**
-
-> The above command returns JSON structured like this:
-
+        }
+    ]
+```
 
 ## Update Order
 
@@ -292,11 +342,11 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| api_key | header  |             | Yes      | string |
-| api_secret | header |           |          |        | 
-| Orders  | body  |               |          |        | 
+| Name      | Located in |  Required | Type   |Description |
+| ----------| ---------- |---------- | ----   |----------- |
+| api_key   | header     | Yes       | string |            | 
+| api_secret| header     |           |        |            | 
+| Orders    | body       |           |        |            |    | 
  
 **Request Body**
 > This request order in body : 
@@ -326,84 +376,21 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| api_key | header  |             | Yes      | string |
-| api_secret | header |           |          |        | 
-| start  | url   |             |          |        | 
-| end    | url   |             |          |        | 
+| Name       | Located in |  Required | Type   |Description |
+| -----------| ---------- |  -------- | ------ |----------- |
+| api_key    | header     | Yes       | string |            |
+| api_secret | header     |           |        |            |
+| start      | url        |           |        |            | 
+| end        | url        |           |        |            | 
 
 **Responses**
 
 > The above command returns JSON structured like this:
 
 ```json
-{
-    "locations": [
-        {
-            "location_code": "ID",
-            "provider_data": "INDONESIA",
-            "provinces": [
-                {
-                    "location_code": "ID-AC",
-                    "provider_data": "NANGGROE ACEH DARUSSALAM (NAD)",
-                    "cities": [
-                        {
-                            "location_code": "ID-AC01",
-                            "provider_data": "ACEH BARAT",
-                            "districts": [
-                                {
-                                    "location_code": "ID-AC0101",
-                                    "provider_data": "ACEH BARAT-ARONGAN LAMBALEK"
-                                },
-                                {
-                                    "location_code": "ID-AC0102",
-                                    "provider_data": "ACEH BARAT-BUBON"
-                                },
-                                {
-                                    "location_code": "ID-AC0103",
-                                    "provider_data": "ACEH BARAT-JOHAN PAHLAWAN"
-                                },
-                                {
-                                    "location_code": "ID-AC0104",
-                                    "provider_data": "ACEH BARAT-KAWAY XVI"
-                                },
-                                {
-                                    "location_code": "ID-AC0105",
-                                    "provider_data": "ACEH BARAT-MEUREUBO"
-                                },
-                                {
-                                    "location_code": "ID-AC0106",
-                                    "provider_data": "ACEH BARAT-PANTE CEUREUMEN (PANTAI CEUREMEN)"
-                                },
-                                {
-                                    "location_code": "ID-AC0107",
-                                    "provider_data": "ACEH BARAT-PANTON REU"
-                                },
-                                {
-                                    "location_code": "ID-AC0108",
-                                    "provider_data": "ACEH BARAT-SAMATIGA"
-                                },
-                                {
-                                    "location_code": "ID-AC0109",
-                                    "provider_data": "ACEH BARAT-SUNGAI MAS"
-                                },
-                                {
-                                    "location_code": "ID-AC010A",
-                                    "provider_data": "ACEH BARAT-WOYLA"
-                                },
-                                {
-                                    "location_code": "ID-AC010B",
-                                    "provider_data": "ACEH BARAT-WOYLA BARAT"
-                                },
-                                {
-                                    "location_code": "ID-AC010C",
-                                    "provider_data": "ACEH BARAT-WOYLA TIMUR"
-                                }
-                            ]
-                        }
-                     ]
-                },
+    {
+
+    }
 ```
 
 <!-- Converted with the swagger-to-slate https://github.com/lavkumarv/swagger-to-slate -->
