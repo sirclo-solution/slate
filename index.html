@@ -1052,28 +1052,28 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 <td>header</td>
 <td>Yes</td>
 <td>string</td>
-<td></td>
+<td>api key</td>
 </tr>
 <tr>
 <td>api_secret</td>
 <td>header</td>
 <td></td>
 <td></td>
-<td></td>
+<td>api secret</td>
 </tr>
 <tr>
 <td>Orders</td>
 <td>body</td>
 <td></td>
 <td></td>
-<td></td>
+<td>request orders parameter with json format in body</td>
 </tr>
 </tbody></table>
 
 <p><strong>Request Body</strong></p>
 
 <blockquote>
-<p>This request order in body : </p>
+<p>This request orders parameter in body : </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1085,9 +1085,12 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre><h1 id='product'>Product</h1><h2 id='get-stocks'>Get Stocks</h2>
 <p><strong>Summary: Get All Stocks</strong></p>
 <h3 id='http-request-4'>HTTP Request</h3>
