@@ -196,8 +196,8 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 |shipping_total         | No       | double   |                            |
 |shipment_tracked_at    | No       | timestamp|                            |
 |raw                    | No       | text     |                            |
-| accepted_at           | Yes      | timestamp|                            |
-| accepted_by           | No       | integer  |                            |
+|accepted_at            | Yes      | timestamp|                            |
+|accepted_by            | No       | integer  |                            |
 |cancelled_at           | No       | timestamp|                            |
 |cancelled_by           | No       | integer  |                            |
 |cancel_reason          | No       | string   |                            | 
@@ -412,15 +412,15 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 
 **Parameters**
 
-| Name      | Located in |  Required | Type   |Description |
-| ----------| ---------- |---------- | ----   |----------- |
-| api_key   | header     | Yes       | string |            | 
-| api_secret| header     |           |        |            | 
-| Orders    | body       |           |        |            |    | 
+| Name      | Located in |  Required | Type   |Description         |
+| ----------| ---------- |---------- | ----   |------------------- |
+| api_key   | header     | Yes       | string |api key             | 
+| api_secret| header     |           |        |api secret          | 
+| Orders    | body       |           |        |request orders parameter with json format in body| 
  
 **Request Body**
 
-> This request order in body : 
+> This request orders parameter in body : 
 
 ```json
 [
@@ -434,9 +434,12 @@ Don't share your <code>client_secret</code> and <code>access_token</code> with a
 > The above command returns JSON structured like this:
 
 ```json 
-{
-
-}
+[
+    {
+        "id" : "",
+        "status" : ""
+    }
+]
 ```
 
 # Product 
