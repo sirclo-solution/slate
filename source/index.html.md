@@ -30,7 +30,7 @@ You can used this API to connect your backend system to Sirclo system.
 
 ### HTTP Request 
 
-`**GET** https://api2.connexi.id/v1/order`
+`GET https://api2.connexi.id/v1/order`
 
 **Parameters**
 
@@ -135,7 +135,7 @@ You can used this API to connect your backend system to Sirclo system.
 
 
 ### HTTP Request 
-`**POST**, https://api2.connexi.id/v1/order`
+`POST https://api2.connexi.id/v1/order`
 
 **Parameters**
 
@@ -399,7 +399,7 @@ You can used this API to connect your backend system to Sirclo system.
 
 ### HTTP Request 
 
-`**PATCH**, https://api2.connexi.id/v1/order` 
+`PATCH https://api2.connexi.id/v1/order` 
 
 **Parameters**
 
@@ -418,7 +418,7 @@ You can used this API to connect your backend system to Sirclo system.
 ```json
 [
     {
-        "id" : "int",
+        "id" : "integer",
         "status" : "string"
     }
 ]
@@ -429,7 +429,7 @@ You can used this API to connect your backend system to Sirclo system.
 ```json 
 [
     {
-        "id" : "55",
+        "id" : 55,
         "status" : "accepted"
     }
 ]
@@ -443,7 +443,7 @@ Description : This endpoint used to get all stocks from partner system.
 
 ### HTTP Request  
 
-`**GET**, https://api2.connexi.id/v1/product/stocks`
+`GET https://api2.connexi.id/v1/product/stocks`
 
 **Parameters**
 
