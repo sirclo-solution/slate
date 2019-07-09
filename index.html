@@ -417,8 +417,8 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <tr>
 <td>api_secret</td>
 <td>header</td>
-<td></td>
-<td></td>
+<td>Yes</td>
+<td>string</td>
 <td>api secret to authentication</td>
 </tr>
 <tr>
@@ -1006,8 +1006,8 @@ You can used this API to connect your backend system to Sirclo system. </p>
                     </span><span class="s2">"product_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"order_quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"unit_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"100000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"raw_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-</span><span class="mi">0</span><span class="w">                    </span><span class="s2">"discount_rate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"raw_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"discount_rate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"line_discount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"line_tax"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"shipping_amount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -1059,7 +1059,8 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </tr>
 </tbody></table>
 
-<p><strong>Request Body</strong></p>
+<p><strong>Request Body</strong>
+<strong>Request body parameter must be in the form JSON</strong></p>
 
 <blockquote>
 <p>This request orders parameter in body : </p>
@@ -1108,7 +1109,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <td>header</td>
 <td>Yes</td>
 <td>string</td>
-<td>api secret to authenticatio</td>
+<td>api secret to authentication</td>
 </tr>
 <tr>
 <td>start</td>
@@ -1159,11 +1160,11 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- The Order and Product requested is hidden for administrators only.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The specified Order and Product could not be found.</td>
 </tr>
 <tr>
 <td>500</td>
