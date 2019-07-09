@@ -143,7 +143,7 @@ You can used this API to connect your backend system to Sirclo system.
 | Name       | Located in  |  Required | Type   |Description |
 | -----------| ------------|  -------- | ------ |----------- |
 | api_key    | header      | Yes       | string | api key to authentication |
-| api_secret | header      |           |        | api secret to authentication| 
+| api_secret | header      | Yes       | string | api secret to authentication| 
 | Orders     | body        |           |        | request body with json format|
 
 ### Request Body 
@@ -374,8 +374,8 @@ You can used this API to connect your backend system to Sirclo system.
                     "product_description" : "",
                     "order_quantity" : "2",
                     "unit_price" : "100000",
-                    "raw_price" : "",
-0                    "discount_rate" : "7",
+                    "raw_price" : "0",
+                    "discount_rate" : "7",
                     "line_discount" : "0",
                     "line_tax" : "",
                     "shipping_amount" : "",
@@ -409,6 +409,7 @@ You can used this API to connect your backend system to Sirclo system.
 | Orders    | body       | Yes       |        |request orders parameter with json format in body| 
  
 **Request Body**
+**Request body parameter must be in the form JSON**
 
 > This request orders parameter in body : 
 
@@ -447,7 +448,7 @@ You can used this API to connect your backend system to Sirclo system.
 | Name       | Located in |  Required | Type   |Description |
 | -----------| ---------- |  -------- | ------ |----------- |
 | api_key    | header     | Yes       | string | api key to authentication  |
-| api_secret | header     | Yes       | string | api secret to authenticatio|
+| api_secret | header     | Yes       | string | api secret to authentication|
 | start      | url        | Yes       | timestamp | start date | 
 | end        | url        | Yes       | timestamp | end date   | 
 
