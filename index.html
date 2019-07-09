@@ -260,7 +260,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 
 <p><strong>Version:</strong> 1.0 </p>
 <h1 id='order-api'>Order API</h1><h2 id='get-order'>Get Order</h2>
-<p><strong>Description:</strong> This endpoint used to get all orders in partner connexi.   </p>
+<p><strong>Description:</strong> This endpoint used to get all orders in partner system.   </p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>**GET** https://api2.connexi.id/v1/order</code></p>
 
@@ -313,7 +313,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"quote_expiry_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"required_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"customer_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -351,12 +351,12 @@ You can used this API to connect your backend system to Sirclo system. </p>
             </span><span class="s2">"shipment_tracked_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"raw"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"accepted_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"accepted_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-06T10:00:11.126466Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"accepted_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2018-11-06</span><span class="err">T</span><span class="mi">10</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">11.126466</span><span class="err">Z</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cancelled_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"cancelled_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cancelled_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0001-01-01</span><span class="err">T</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">Z</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cancel_reason"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"packed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-06T10:00:11.126466Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"packed_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"packed_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"comment"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"price_adjustment"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"processed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-02T02:29:42Z"</span><span class="p">,</span><span class="w">
@@ -364,17 +364,17 @@ You can used this API to connect your backend system to Sirclo system. </p>
             </span><span class="s2">"shipment_extras"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"edited_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"edit_reason"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"completed_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
             </span><span class="s2">"completed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"received_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"received_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"order_line_item"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"line_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"line_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"remote_order_item_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"product_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"A-29J"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"product_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"order_quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"order_quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"unit_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"100000"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"raw_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"discount_rate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
@@ -391,7 +391,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span></code></pre><h2 id='create-order'>Create Order</h2>
-<p><strong>Description:</strong> Create Order </p>
+<p><strong>Description:</strong> Use this endpoint to create order in connexi from partner system. </p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>**POST**, https://api2.connexi.id/v1/order</code></p>
 
@@ -851,7 +851,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <td>description</td>
 <td>No</td>
 <td>text</td>
-<td>description</td>
+<td>order description</td>
 </tr>
 </tbody></table>
 
@@ -981,12 +981,12 @@ You can used this API to connect your backend system to Sirclo system. </p>
             </span><span class="s2">"shipment_tracked_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"raw"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"accepted_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"accepted_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-06T10:00:11.126466Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"accepted_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2018-11-06</span><span class="err">T</span><span class="mi">10</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">11.126466</span><span class="err">Z</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cancelled_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"cancelled_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cancelled_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0001-01-01</span><span class="err">T</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">Z</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cancel_reason"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"packed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-06T10:00:11.126466Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"packed_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"packed_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"comment"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"price_adjustment"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"processed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-02T02:29:42Z"</span><span class="p">,</span><span class="w">
@@ -994,17 +994,17 @@ You can used this API to connect your backend system to Sirclo system. </p>
             </span><span class="s2">"shipment_extras"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"edited_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"edit_reason"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"completed_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
             </span><span class="s2">"completed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"received_by"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"received_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"order_line_item"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"line_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"line_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"remote_order_item_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"product_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"A-29J"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"product_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"order_quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"order_quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"unit_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"100000"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"raw_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"discount_rate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
@@ -1021,7 +1021,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span></code></pre><h2 id='update-order'>Update Order</h2>
-<p><strong>Description:</strong> This endpoint used to update order from partner connexi </p>
+<p><strong>Description:</strong> This endpoint used to update order from partner system.  </p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>**PATCH**, https://api2.connexi.id/v1/order</code> </p>
 
@@ -1081,7 +1081,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h1 id='product'>Product</h1><h2 id='get-stocks'>Get Stocks</h2>
-<p><strong>Summary: This endpoint used to get all stocks from partner connexi</strong></p>
+<p>Description : This endpoint used to get all stocks from partner system. </p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>**GET**, https://api2.connexi.id/v1/product/stocks</code></p>
 
