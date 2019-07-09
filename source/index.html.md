@@ -25,7 +25,7 @@ You can used this API to connect your backend system to Sirclo system.
 ## Get Order 
 
 
-**Description:** This endpoint used to get all orders in partner connexi.   
+**Description:** This endpoint used to get all orders in partner system.   
 
 
 ### HTTP Request 
@@ -49,7 +49,7 @@ You can used this API to connect your backend system to Sirclo system.
     [
         {
             "id" : 2,
-            "order_number" : 60,
+            "order_number" : "60",
             "quote_expiry_date" : "0001-01-01T00:00:00Z",
             "required_date" : "0001-01-01T00:00:00Z",
             "customer_code" : "",
@@ -87,12 +87,12 @@ You can used this API to connect your backend system to Sirclo system.
             "shipment_tracked_at" : "",
             "raw" : "",
             "accepted_at" : "0001-01-01T00:00:00Z",
-            "accepted_by" : "2018-11-06T10:00:11.126466Z",
+            "accepted_by" : 2018-11-06T10:00:11.126466Z,
             "cancelled_at" : "0001-01-01T00:00:00",
-            "cancelled_by" : "0001-01-01T00:00:00Z",
+            "cancelled_by" : 0001-01-01T00:00:00Z,
             "cancel_reason" : "",
             "packed_at" : "2018-11-06T10:00:11.126466Z",
-            "packed_by" : "0",
+            "packed_by" : 0,
             "comment" : "test",
             "price_adjustment" : "0",
             "processed_at" : "2018-11-02T02:29:42Z",
@@ -100,17 +100,17 @@ You can used this API to connect your backend system to Sirclo system.
             "shipment_extras" : "",
             "edited_at" : "0001-01-01T00:00:00Z",
             "edit_reason" : "0",
-            "completed_by" : "",
+            "completed_by" : ,
             "completed_at" : "",
             "received_by" : "",
             "received_at" : "",
             "order_line_item" : [
                 {
-                    "line_number" : "2",
+                    "line_number" : 2,
                     "remote_order_item_id" : "5",
                     "product_code" : "A-29J",
                     "product_description" : "",
-                    "order_quantity" : "2",
+                    "order_quantity" : 2,
                     "unit_price" : "100000",
                     "raw_price" : "0",
                     "discount_rate" : "7",
@@ -131,7 +131,7 @@ You can used this API to connect your backend system to Sirclo system.
 ## Create Order
 
 
-**Description:** Create Order 
+**Description:** Use this endpoint to create order in connexi from partner system. 
 
 
 ### HTTP Request 
@@ -160,66 +160,66 @@ You can used this API to connect your backend system to Sirclo system.
 |total                  | No       | double   | total price                |
 |customer_reference     | No       | string   | customer reference         | 
 |payment_method         | No       | string   | payment of method          |
-|delivery_name          | No       | string   | deliery name                |
-|delivery_street_address| No       | text     | delivery address            |
+|delivery_name          | No       | string   | deliery name               |
+|delivery_street_address| No       | text     | delivery address           |
 |delivery_street_address_2| No     | text     | delivery address           |
 |delivery_suburb        | No       | string   | delivery suburb            |
-|delivery_city          | No       | string   | delivery city             |
-|delivery_region        | No       | string   | delivery region           |
-|delivery_post_code     | No       | string   | delivery post code        |
+|delivery_city          | No       | string   | delivery city              |
+|delivery_region        | No       | string   | delivery region            |
+|delivery_post_code     | No       | string   | delivery post code         |
 |delivery_country       | No       | string   | delivery country           |
-|delivery_method        | No       | string   | delivery method         |
-|delivery_method_code   | No       | string   | delivery method code     |
-|remote_order_status    | Yes      | string   | remote order status       |  
-|discount               | No       | double   | discount                |
-|tax_code               | No       | string   | tax code                  |
-|tax_rate               | No       | double   | tax rate                |
-|tax_total              | No       | double   | tax total               |
-|order_status           | No       | string   | order status           |
-|remarks                | No       | text     | remarks                 |
-|marketplace_code       | No       | string   | marketplace code        |
-|phone_number           | No       | string   | phone number             |
-|airwaybill_number      | No       | string   | airwaybill number     |
-|buyer_delivery_number  | No       | string   | buyer delivery number   |
-|subtotal               | No       | double   | subtotal                 | 
-|discount_total         | No       | double   | discount total           |
-|shipping_total         | No       | double   | shipping total           |
-|shipment_tracked_at    | No       | timestamp| shipment tracked at      |
-|raw                    | No       | text     | raw                      |
-|accepted_at            | Yes      | timestamp| accepted at              |
-|accepted_by            | No       | integer  | accepted by              |
-|cancelled_at           | No       | timestamp| cancelled at             |
-|cancelled_by           | No       | integer  | cancelled by             |
-|cancel_reason          | No       | string   | cancel reason            | 
-| packed_at             | Yes      | timestamp| packed at                |
-| packed_by             | No       | integer  | packed by                |
-| comment               | No       | text     | comment                  |
-| price_adjustment      | No       | double   | price adjustment         |
-| processed_at          | No       | timestamp| processed at             |
-| shipment_reference    |Yes       | text     | shipment reference       |
-| shipment_extras       | No       | jsonb    | shipment extras          |
-| edited_at             | No       | timestamp| edited at                | 
-| edit_reason           | No       | text     | edit reason              |
-| completed_by          | No       | integer  | completed by             |
-| completed_at          | Yes      | timestamp| completed at             |
-| received_by           | No       | string   | received by              |
-| received_at           | No       | timestamp| received at              |
-| line_number           | No       | integer  | line number              |
-| remote_order_item_id  | No       | string   | remote order item id     |
-| product_code          | No       | string   | product code             |
-| product_description   | No       | text     | product description      |
-| order_quantity        | No       | integer  | order quantity           |
-| unit_price            | No       | double   | unit price               |
-| raw_price             | No       | double   |   raw price                |
-| discount_rate         | No       | double   |   discount rate            |
-| line_discount         | No       | double   |   line discount            |
-| line_tax              | No       | double   |   line tax                 |
-| shipping_amount       | No       | double   |   shipping amount          |
-| line_total            | No       | double   |   line total               |
-| line_comments         | No       | text     |   line comments            |
-| line_item_status      | No       | string   |   line item status         |
-| discount_amount       | No       | double   |   discount amount          |
-| description           | No       | text     |   description              |
+|delivery_method        | No       | string   | delivery method            |
+|delivery_method_code   | No       | string   | delivery method code       |
+|remote_order_status    | Yes      | string   | remote order status        |  
+|discount               | No       | double   | discount                   |
+|tax_code               | No       | string   | tax code                   |
+|tax_rate               | No       | double   | tax rate                   |
+|tax_total              | No       | double   | tax total                  |
+|order_status           | No       | string   | order status               |
+|remarks                | No       | text     | remarks                    |
+|marketplace_code       | No       | string   | marketplace code           |
+|phone_number           | No       | string   | phone number               |
+|airwaybill_number      | No       | string   | airwaybill number          |
+|buyer_delivery_number  | No       | string   | buyer delivery number      |
+|subtotal               | No       | double   | subtotal                   | 
+|discount_total         | No       | double   | discount total             |
+|shipping_total         | No       | double   | shipping total             |
+|shipment_tracked_at    | No       | timestamp| shipment tracked at        |
+|raw                    | No       | text     | raw                        |
+|accepted_at            | Yes      | timestamp| accepted at                |
+|accepted_by            | No       | integer  | accepted by                |
+|cancelled_at           | No       | timestamp| cancelled at               |
+|cancelled_by           | No       | integer  | cancelled by               |
+|cancel_reason          | No       | string   | cancel reason              |   
+| packed_at             | Yes      | timestamp| packed at                  |
+| packed_by             | No       | integer  | packed by                  |
+| comment               | No       | text     | comment                    |
+| price_adjustment      | No       | double   | price adjustment           |
+| processed_at          | No       | timestamp| processed at               | 
+| shipment_reference    | Yes      | text     | shipment reference         |
+| shipment_extras       | No       | jsonb    | shipment extras            |
+| edited_at             | No       | timestamp| edited at                  | 
+| edit_reason           | No       | text     | edit reason                |
+| completed_by          | No       | integer  | completed by               |
+| completed_at          | Yes      | timestamp| completed at               |
+| received_by           | No       | string   | received by                |
+| received_at           | No       | timestamp| received at                |
+| line_number           | No       | integer  | line number                |
+| remote_order_item_id  | No       | string   | remote order item id       |
+| product_code          | No       | string   | product code               |
+| product_description   | No       | text     | product description        |
+| order_quantity        | No       | integer  | order quantity             |
+| unit_price            | No       | double   | unit price                 |
+| raw_price             | No       | double   | raw price                  |
+| discount_rate         | No       | double   | discount rate              |
+| line_discount         | No       | double   | line discount              |
+| line_tax              | No       | double   | line tax                   |
+| shipping_amount       | No       | double   | shipping amount            |
+| line_total            | No       | double   | line total                 |
+| line_comments         | No       | text     | line comments              |
+| line_item_status      | No       | string   | line item status           | 
+| discount_amount       | No       | double   | discount amount            |
+| description           | No       | text     | order description          |
  
 **Request Body**
 
@@ -350,12 +350,12 @@ You can used this API to connect your backend system to Sirclo system.
             "shipment_tracked_at" : "",
             "raw" : "",
             "accepted_at" : "0001-01-01T00:00:00Z",
-            "accepted_by" : "2018-11-06T10:00:11.126466Z",
+            "accepted_by" : 2018-11-06T10:00:11.126466Z,
             "cancelled_at" : "0001-01-01T00:00:00",
-            "cancelled_by" : "0001-01-01T00:00:00Z",
+            "cancelled_by" : 0001-01-01T00:00:00Z,
             "cancel_reason" : "",
             "packed_at" : "2018-11-06T10:00:11.126466Z",
-            "packed_by" : "0",
+            "packed_by" : 0,
             "comment" : "test",
             "price_adjustment" : "0",
             "processed_at" : "2018-11-02T02:29:42Z",
@@ -363,17 +363,17 @@ You can used this API to connect your backend system to Sirclo system.
             "shipment_extras" : "",
             "edited_at" : "0001-01-01T00:00:00Z",
             "edit_reason" : "0",
-            "completed_by" : "",
+            "completed_by" : ,
             "completed_at" : "",
             "received_by" : "",
             "received_at" : "",
             "order_line_item" : [
                 {
-                    "line_number" : "2",
+                    "line_number" : 2,
                     "remote_order_item_id" : "5",
                     "product_code" : "A-29J",
                     "product_description" : "",
-                    "order_quantity" : "2",
+                    "order_quantity" : 2,
                     "unit_price" : "100000",
                     "raw_price" : "0",
                     "discount_rate" : "7",
@@ -394,7 +394,7 @@ You can used this API to connect your backend system to Sirclo system.
 ## Update Order
 
 
-**Description:** This endpoint used to update order from partner connexi 
+**Description:** This endpoint used to update order from partner system.  
 
 
 ### HTTP Request 
@@ -439,7 +439,7 @@ You can used this API to connect your backend system to Sirclo system.
 
 ## Get Stocks 
 
-**Summary: This endpoint used to get all stocks from partner connexi**
+Description : This endpoint used to get all stocks from partner system. 
 
 ### HTTP Request  
 
