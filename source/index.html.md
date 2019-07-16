@@ -48,7 +48,7 @@ You can used this API to connect your backend system to Sirclo system.
 ```json
     [
         {
-            "id" : 2,
+            "id" : 6,
             "order_number" : "60",
             "customer_reference" : "DHU9868NGY",
             "status" : "accepted",
@@ -295,7 +295,7 @@ You can used this API to connect your backend system to Sirclo system.
                 "sku" : "CKS973",
                 "name" : "product",
                 "quantity" : 4,
-                "line" : "800000",
+                "total" : "800000",
                 "created_at" : "2018-11-07T03:46:16.457936Z",
                 "update_at" : "2018-11-07T03:46:16.457938Z",
             },
