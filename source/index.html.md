@@ -45,43 +45,42 @@ You can used this API to connect your backend system to Sirclo system.
 
 > The above command returns JSON structured like this:
 
-```json
-    [
-        {
-            "id" : 6,
-            "order_number" : "60",
-            "customer_reference" : "DHU9868NGY",
-            "status" : "accepted",
-            "delivery_name" : "Angga",
-            "delivery_email" : "angga@gmail.com",
-            "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
-            "delivery_region" : "DKI Jakarta",
-            "delivery_city" : "Kota Jakarta Barat - Cengkareng",
-            "delivery_country" : "Indonesia",
-            "delivery_post_code" : "11720",
-            "delivery_method" : "JNE REG",
-            "delivery_mobile" : "082101871618",
-            "airwaybill_number" : "",
-            "currency_code" : "", 
-            "subtotal" : "489000",
-            "discount_total" : "0",
-            "shipping_total" : "27000",
-            "tax_total" : "0",
-            "total" : "75900", 
-            "order_line_item" : 
-                {
-                    "id" : 3,
-                    "sku" : "DKL0907",
-                    "order_quantity" : 2,
-                    "total" : "80000",
-                    "created_at" : "2018-11-07T03:46:16.457936Z",
-                    "update_at" : "2018-11-07T03:46:16.457938Z",
-                },
-            "shipment_tracked_at" : "0001-01-01T00:00:00Z",
-            "created_at" : "2018-11-07T03:46:16.8927649",
-            "updated_at" : "2018-11-07T03:55:20.149784Z"
+```query {
+    salesOrders {
+        id
+        orderNumber
+        customerReference
+        status
+        deliveryName
+        deliveryEmail
+        deliveryStreetAddress
+        deliveryRegion
+        deliveryCity
+        deliveryCountry
+        deliveryPostCode
+        deliveryMethod
+        deliveryMobile
+        airwaybillNumber
+        currencyCode
+        subTotal
+        discountTotal
+        shippingTotal
+        taxTotal
+        total
+        lineItem {
+            id
+            sku
+            name
+            quantity
+            total
+            createdAt
+            updatedAt
         }
-    ]
+        shipmentTrackedAt
+        createdAt
+        updatedAt
+    }
+}
 ```
 
 ## Create Order
@@ -136,88 +135,73 @@ You can used this API to connect your backend system to Sirclo system.
 |shipment_tracked_at    | No       | timestamp| shipment tracked at        |
 
  
-**Request Body**
+**Request Body and response structured like this**
 
-```json
-    [
-        {
-            "order_number" : "string",
-            "customer_reference" : "string",
-            "shipment_reference" : "text",
-            "status" : "string",
-            "delivery_name" : "string",
-            "delivery_email" : "string",
-            "delivery_street_address" : "text",
-            "delivery_region" : "string",
-            "delivery_city" : "string",
-            "delivery_country" : "string", 
-            "delivery_post_code" : "string",
-            "delivery_method" : "string",
-            "delivery_mobile" : "string",
-            "airwaybill_number" : "string",
-            "currency_code" : "",
-            "subtotal" : "double",
-            "discount_total" : "double",
-            "shipping_total" : "double",
-            "tax_total" : "double",
-            "total" : "double",    
-            "line_item" : [
-                {
-                   "sku" : "string",
-                   "name" : "string",
-                   "quantity" : "integer",
-                   "total" :"double"
-                }
-            ],
-            "shipment_tracked_at" : "timestamp",
-          
+``` json {
+    createSalesOrder(
+        orderNumber: "orderNumber",
+        customerReference: "customerReference",
+        shipmentReference: "shipmentReference",
+        status: "status",
+        deliveryName: "deliveryName",
+        deliveryEmail: "deliveryEmail",
+        deliveryStreetAddress: "deliveryStreetAddress",
+        deliveryRegion: "deliveryRegion",
+        deliveryCity: "deliveryCity",
+        deliveryCountry: "deliveryCountry",
+        deliveryPostCode: "deliveryPostCode",
+        deliveryMethod: "deliveryMethod",
+        deliveryMobile: "deliveryMobile",
+        airwaybillNumber: "airwaybillNumber",
+        currencyCode: "currencyCode",
+        subTotal: 0,
+        discountTotal: 0,
+        shippingTotal: 0,
+        taxTotal: 0,
+        total: 0,
+        lineItem: [{
+            sku: "sku",
+            name: "name",
+            quantity: 0,
+            total: 0
+        }],
+        shipmentTrackedAt: "shipmentTrackedAt"
+    ) {
+        id
+        orderNumber
+        customerReference
+        shipmentReference
+        status
+        deliveryName
+        deliveryEmail
+        deliveryStreetAddress
+        deliveryRegion
+        deliveryCity
+        deliveryCountry
+        deliveryPostCode
+        deliveryMethod
+        deliveryMobile
+        airwaybillNumber
+        currencyCode
+        subTotal
+        discountTotal
+        shippingTotal
+        taxTotal
+        total
+        lineItem {
+            id
+            sku
+            name
+            quantity
+            total
+            createdAt
+            updatedAt
         }
-    ]
-```
-
-> The above command returns JSON structured like this:
-
-```json
-     [
-        {
-            "id" : 2,
-            "order_number" : "30",
-            "customer_reference" : "JNH7438B",
-            "shipment_reference" : "",
-            "status" : "pending",
-            "delivery_name" : "Artia",
-            "delivery_email" : "artia2@gmail.com",
-            "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
-            "delivery_region" : "DKI Jakarta",
-            "delivery_city" : "Kota Jakarta Barat - Cengkareng",
-            "delivery_country" : "Indonesia", 
-            "delivery_post_code" : "11720",
-            "delivery_method" : "JNE REG",
-            "delivery_mobile" : "082101871618",
-            "airwaybill_number" : "",
-            "currency_code" : "",
-            "subtotal" : "489000",
-            "discount_total" : "0",
-            "shipping_total" : "27000",
-            "tax_total" : "0",
-            "total" : "75900",    
-            "line_item" : [
-                {
-                    "id" : 2,
-                    "sku" : "CKS973",
-                    "name" : "product",
-                    "quantity" : 4,
-                    "total" : "800000",
-                    "created_at" : "2018-11-07T03:46:16.457936Z",
-                    "update_at" : "2018-11-07T03:46:16.457938Z",
-                }
-            ],
-            "shipment_tracked_at" : "0001-01-01T00:00:00Z",
-            "created_at" : "2018-11-07T03:46:16.8927649",
-            "updated_at" : "2018-11-07T03:55:20.149784Z"
-        }
-    ]
-```
+        shipmentTrackedAt
+        createdAt
+        updatedAt
+    }
+}```
 
 ## Update Order
 
@@ -239,72 +223,59 @@ You can used this API to connect your backend system to Sirclo system.
  
 ###Request Body
 
-**Request body parameter must be in the form JSON**
+> This request and response structured like this : 
 
-> This request orders parameter in body : 
-
-```json
-[
-    {
-        "id" : "integer",
-        "shipment_reference" : "text",
-        "status" : "string",
-        "delivery_name" : "string",
-        "delivery_email" : "string",
-        "delivery_street_address" : "text", 
-        "delivery_region" : "string",
-        "delivery_city" : "string",
-        "delivery_country" : "string",
-        "delivery_post_code" : "string",
-        "delivery_method" : "string",
-        "delivery_mobile" : "string",
-        "airwaybill_number" : "string", 
+```json {
+        updateSalesOrder(
+        id: "1",
+        shipmentReference: "shipmentReference",
+        status: "accepted",
+        deliveryName: "deliveryName",
+        deliveryEmail: "deliveryEmail",
+        deliveryStreetAddress: "deliveryStreetAddress",
+        deliveryRegion: "deliveryRegion",
+        deliveryCity: "deliveryCity",
+        deliveryCountry: "deliveryCountry",
+        deliveryPostCode: "deliveryPostCode",
+        deliveryMethod: "deliveryMethod",
+        deliveryMobile: "deliveryMobile",
+        airwaybillNumber: "airwaybillNumber",
+    ) {
+        id
+        orderNumber
+        customerReference
+        shipmentReference
+        status
+        deliveryName
+        deliveryEmail
+        deliveryStreetAddress
+        deliveryRegion
+        deliveryCity
+        deliveryCountry
+        deliveryPostCode
+        deliveryMethod
+        deliveryMobile
+        airwaybillNumber
+        currencyCode
+        subTotal
+        discountTotal
+        shippingTotal
+        taxTotal
+        total
+        lineItem {
+            id
+            sku
+            name
+            quantity
+            total
+            createdAt
+            updatedAt
+        }
+        shipmentTrackedAt
+        createdAt
+        updatedAt
     }
-]
-```
-
-> The above command returns JSON structured like this:
-
-```json 
-[
-    {
-        "id" : 55,
-        "order_number" : "76",
-        "customer_reference" : "GHG867V",
-        "shipment_reference" : "",
-        "status" : "cancelled",
-        "delivery_name" : "Artia",
-        "delivery_email" : "artia2@gmail.com",
-        "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
-        "delivery_region" : "DKI Jakarta",
-        "delivery_city" : "Kota Jakarta Barat - Cengkareng",
-        "delivery_country" : "Indonesia", 
-        "delivery_post_code" : "11720",
-        "delivery_method" : "JNE REG",
-        "delivery_mobile" : "082101871618",
-        "airwaybill_number" : "",
-        "currency_code" : "",
-        "subtotal" : "489000",
-        "discount_total" : "0",
-        "shipping_total" : "27000",
-        "tax_total" : "0",
-        "total" : "75900",
-        "line_item": 
-            {
-                "id" : 2,
-                "sku" : "CKS973",
-                "name" : "product",
-                "quantity" : 4,
-                "total" : "800000",
-                "created_at" : "2018-11-07T03:46:16.457936Z",
-                "update_at" : "2018-11-07T03:46:16.457938Z",
-            },
-        "shipment_tracked_at" : "0001-01-01T00:00:00Z",
-        "created_at" : "2018-11-07T03:46:16.8927649",
-        "updated_at" : "2018-11-07T03:55:20.149784Z"
-    }
-]
-```
+}```
 
 # Product 
 
@@ -329,17 +300,15 @@ Description : This endpoint used to get stock from partner system.
 
 > The above command returns JSON structured like this:
 
-```json
-[
-    {
-        "id" : 5,
-        "sku" : "DR0003",
-        "name" : "product",
-        "available" : "20",
-        "created_at" : "2018-11-07T03:46:16.457936Z",
-        "update_at" : "2018-11-07T03:46:16.457938Z"
+```query {
+    products {
+        id
+        sku
+        name
+        available
+        createdAt
+        updatedAt
     }
-]
-```
+}```
 
 <!-- Converted with the swagger-to-slate https://github.com/lavkumarv/swagger-to-slate -->
