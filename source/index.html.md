@@ -45,41 +45,40 @@ You can used this API to connect your backend system to Sirclo system.
 
 > The above command returns JSON structured like this:
 
-```json {
+```query {
     salesOrders {
-        "id"
-        "orderNumber"
-        "customerReference"
-        "status"
-        "deliveryName"
-        "deliveryEmail"
-        "deliveryStreetAddress"
-        "deliveryRegion"
-        "deliveryCity"
-        "deliveryCountry"
-        "deliveryPostCode"
-        "deliveryMethod"
-        "deliveryMobile"
-        "airwaybillNumber"
-        "currencyCode"
-        "subTotal"
-        "discountTotal"
-        "shippingTotal"
-        "taxTotal"
-        "total"
-        "lineItem": 
-        {
-            "id"
-            "sku"
-            "name"
-            "quantity"
-            "total"
-            "createdAt"
-            "updatedAt"
-        },
-        "shipmentTrackedAt"
-        "createdAt"
-        "updatedAt"
+        id
+        orderNumber
+        customerReference
+        status
+        deliveryName
+        deliveryEmail
+        deliveryStreetAddress
+        deliveryRegion
+        deliveryCity
+        deliveryCountry
+        deliveryPostCode
+        deliveryMethod
+        deliveryMobile
+        airwaybillNumber
+        currencyCode
+        subTotal
+        discountTotal
+        shippingTotal
+        taxTotal
+        total
+        lineItem {
+            id
+            sku
+            name
+            quantity
+            total
+            createdAt
+            updatedAt
+        }
+        shipmentTrackedAt
+        createdAt
+        updatedAt
     }
 }
 ```
@@ -224,59 +223,72 @@ You can used this API to connect your backend system to Sirclo system.
  
 ###Request Body
 
-> This request and response structured like this : 
+**Request body parameter must be in the form JSON**
 
-```json {
-        updateSalesOrder(
-        id: "1",
-        shipmentReference: "shipmentReference",
-        status: "accepted",
-        deliveryName: "deliveryName",
-        deliveryEmail: "deliveryEmail",
-        deliveryStreetAddress: "deliveryStreetAddress",
-        deliveryRegion: "deliveryRegion",
-        deliveryCity: "deliveryCity",
-        deliveryCountry: "deliveryCountry",
-        deliveryPostCode: "deliveryPostCode",
-        deliveryMethod: "deliveryMethod",
-        deliveryMobile: "deliveryMobile",
-        airwaybillNumber: "airwaybillNumber",
-    ) {
-        id
-        orderNumber
-        customerReference
-        shipmentReference
-        status
-        deliveryName
-        deliveryEmail
-        deliveryStreetAddress
-        deliveryRegion
-        deliveryCity
-        deliveryCountry
-        deliveryPostCode
-        deliveryMethod
-        deliveryMobile
-        airwaybillNumber
-        currencyCode
-        subTotal
-        discountTotal
-        shippingTotal
-        taxTotal
-        total
-        lineItem {
-            id
-            sku
-            name
-            quantity
-            total
-            createdAt
-            updatedAt
-        }
-        shipmentTrackedAt
-        createdAt
-        updatedAt
+> This request orders parameter in body : 
+
+```json
+[
+    {
+        "id" : "integer",
+        "shipment_reference" : "text",
+        "status" : "string",
+        "delivery_name" : "string",
+        "delivery_email" : "string",
+        "delivery_street_address" : "text", 
+        "delivery_region" : "string",
+        "delivery_city" : "string",
+        "delivery_country" : "string",
+        "delivery_post_code" : "string",
+        "delivery_method" : "string",
+        "delivery_mobile" : "string",
+        "airwaybill_number" : "string", 
     }
-}```
+]
+```
+
+> The above command returns JSON structured like this:
+
+```json 
+[
+    {
+        "id" : 55,
+        "order_number" : "76",
+        "customer_reference" : "GHG867V",
+        "shipment_reference" : "",
+        "status" : "cancelled",
+        "delivery_name" : "Artia",
+        "delivery_email" : "artia2@gmail.com",
+        "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
+        "delivery_region" : "DKI Jakarta",
+        "delivery_city" : "Kota Jakarta Barat - Cengkareng",
+        "delivery_country" : "Indonesia", 
+        "delivery_post_code" : "11720",
+        "delivery_method" : "JNE REG",
+        "delivery_mobile" : "082101871618",
+        "airwaybill_number" : "",
+        "currency_code" : "",
+        "subtotal" : "489000",
+        "discount_total" : "0",
+        "shipping_total" : "27000",
+        "tax_total" : "0",
+        "total" : "75900",
+        "line_item": 
+            {
+                "id" : 2,
+                "sku" : "CKS973",
+                "name" : "product",
+                "quantity" : 4,
+                "total" : "800000",
+                "created_at" : "2018-11-07T03:46:16.457936Z",
+                "update_at" : "2018-11-07T03:46:16.457938Z",
+            },
+        "shipment_tracked_at" : "0001-01-01T00:00:00Z",
+        "created_at" : "2018-11-07T03:46:16.8927649",
+        "updated_at" : "2018-11-07T03:55:20.149784Z"
+    }
+]
+```
 
 # Product 
 
@@ -301,15 +313,17 @@ Description : This endpoint used to get stock from partner system.
 
 > The above command returns JSON structured like this:
 
-```query {
-    products {
-        id
-        sku
-        name
-        available
-        createdAt
-        updatedAt
+```json
+[
+    {
+        "id" : 5,
+        "sku" : "DR0003",
+        "name" : "product",
+        "available" : "20",
+        "created_at" : "2018-11-07T03:46:16.457936Z",
+        "update_at" : "2018-11-07T03:46:16.457938Z"
     }
-}```
+]
+```
 
 <!-- Converted with the swagger-to-slate https://github.com/lavkumarv/swagger-to-slate -->
