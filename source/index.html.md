@@ -163,10 +163,18 @@ You can used this API to connect your backend system to Sirclo system.
             "total" : "double",    
             "line_item" : [
                 {
-
+                   "id" : "integer",
+                    "product_code" : "string",
+                    "product_description" : "text",
+                    "order_quantity" : "integer",
+                    "line_total" : "double",
+                    "created_at" : "timestamp",
+                    "update_at" : "timestamp",
                 }
             ],
             "shipment_tracked_at" : "timestamp",
+            "created_at" : "timestamp",
+            "updated_at" : "timestamp"
         }
     ]
 ```
