@@ -45,7 +45,7 @@ You can used this API to connect your backend system to Sirclo system.
 
 > The above command returns JSON structured like this:
 
-```json query {
+```json {
     salesOrders {
         "id"
         "orderNumber"
