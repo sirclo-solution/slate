@@ -50,36 +50,36 @@ You can used this API to connect your backend system to Sirclo system.
         {
             "id" : 2,
             "order_number" : "60",
-            "customer_reference" : "",
-            "status" : "",
+            "customer_reference" : "DHU9868NGY",
+            "status" : "accepted",
             "delivery_name" : "Angga",
-            "delivery_email" : "",
-            "delivery_street_address" : "Melati 6 no 38 Kapuk Cengkareng",
+            "delivery_email" : "angga@gmail.com",
+            "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
             "delivery_region" : "DKI Jakarta",
             "delivery_city" : "Kota Jakarta Barat - Cengkareng",
             "delivery_country" : "Indonesia",
             "delivery_post_code" : "11720",
             "delivery_method" : "JNE REG",
-            "delivery_mobile" : "",
+            "delivery_mobile" : "082101871618",
             "airwaybill_number" : "",
-            "currecycode" : "", 
-            "subtotal"``` : "489000",
+            "currency_code" : "", 
+            "subtotal" : "489000",
             "discount_total" : "0",
             "shipping_total" : "27000",
-            "tax_total" : "",
-            "total" : "", 
+            "tax_total" : "0",
+            "total" : "75900", 
             "order_line_item" : 
                 {
-                    "id" : ,
-                    "sku" : "",
-                    "quantity" : "",
-                    "total" : "",
-                    "created_at" : "",
-                    "update_at" : "",
+                    "id" : 3,
+                    "sku" : "DKL0907",
+                    "order_quantity" : 2,
+                    "total" : "80000",
+                    "created_at" : "2018-11-07T03:46:16.457936Z",
+                    "update_at" : "2018-11-07T03:46:16.457938Z",
                 },
-            "shipment_tracked_at" : "",
-            "created_at" : "",
-            "updated_at" : ""
+            "shipment_tracked_at" : "0001-01-01T00:00:00Z",
+            "created_at" : "2018-11-07T03:46:16.8927649",
+            "updated_at" : "2018-11-07T03:55:20.149784Z"
         }
     ]
 ```
@@ -110,29 +110,29 @@ You can used this API to connect your backend system to Sirclo system.
 |order_number           | No       | string   | order number               | 
 |customer_reference     | No       | string   | customer reference         |
 |shipment_reference     | Yes      | text     | shipment reference         |
-|status                 |          | text     | Status of orders           | 
+|status                 | No       | text     | Status of orders           | 
 |delivery_name          | No       | string   | deliery name               |
-|delivery_email         |          | string   |                            |
+|delivery_email         | No       | string   | delivery email             |
 |delivery_street_address| No       | text     | delivery address           |
 |delivery_region        | No       | string   | delivery region            |
 |delivery_city          | No       | string   | delivery city              |
 |delivery_country       | No       | string   | delivery country           |
 |delivery_post_code     | No       | string   | delivery post code         |
 |delivery_method        | No       | string   | delivery method            |
-|delivery_mobile        |          |          |                            |
+|delivery_mobile        | No       | string   | delivery mobile number     |
 |airwaybill_number      | No       | string   | airwaybill number          |
-|currencycode           |          |          |                            |
-|subtotal               | No       | double   | subtotal                   | 
+|currency_code          | No       | string   | currency code              |
+|subtotal               | No       | double   | subtotal of order          | 
 |discount_total         | No       | double   | discount total             |
 |shipping_total         | No       | double   | shipping total             |
 |tax_total              | No       | double   | tax total                  |
-|total                  |          |          |                            |
+|total                  | No       | double   | total                      |
 | product_code          | No       | string   | product code               |
 | product_description   | No       | text     | product description        |
 | order_quantity        | No       | integer  | order quantity             |
 | line_total            | No       | double   | line total                 |
-| created_at            |          |          |                            |
-| updated_at            |          |          |                            |
+| created_at            | Yes      | timestamp| time of created order      |
+| updated_at            | Yes      | timestamp| time of updated order      |
 |shipment_tracked_at    | No       | timestamp| shipment tracked at        |
 
  
@@ -160,25 +160,10 @@ You can used this API to connect your backend system to Sirclo system.
             "discount_total" : "double",
             "shipping_total" : "double",
             "tax_total" : "double",
-            "total" : "",    
+            "total" : "double",    
             "line_item" : [
                 {
-                    "line_number" : "integer",
-                    "remote_order_item_id" : "string",
-                    "product_code" : "string",
-                    "product_description" : "text",
-                    "order_quantity" : "integer",
-                    "unit_price" : "double",
-                    "raw_price" : "double",
-                    "discount_rate" : "double",
-                    "line_discount" : "double",
-                    "line_tax" : "double",
-                    "shipping_amount" : "double",
-                    "line_total" : "double",
-                    "line_comments" : "text",
-                    "line_item_status" : "string",
-                    "discount_amount" : "double",
-                    "description" : "text",
+
                 }
             ],
             "shipment_tracked_at" : "timestamp",
@@ -191,49 +176,40 @@ You can used this API to connect your backend system to Sirclo system.
 ```json
      [
         {
-            "order_number" : "string",
-            "customer_reference" : "string",
-            "shipment_reference" : "text",
-            "status" : "string",
-            "delivery_name" : "string",
-            "delivery_email" : "string",
-            "delivery_street_address" : "text",
-            "delivery_region" : "string",
-            "delivery_city" : "string",
-            "delivery_country" : "string", 
-            "delivery_post_code" : "string",
-            "delivery_method" : "string",
-            "delivery_mobile" : "string",
-            "airwaybill_number" : "string",
+            "order_number" : "30",
+            "customer_reference" : "JNH7438B",
+            "shipment_reference" : "",
+            "status" : "pending",
+            "delivery_name" : "Artia",
+            "delivery_email" : "artia2@gmail.com",
+            "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
+            "delivery_region" : "DKI Jakarta",
+            "delivery_city" : "Kota Jakarta Barat - Cengkareng",
+            "delivery_country" : "Indonesia", 
+            "delivery_post_code" : "11720",
+            "delivery_method" : "JNE REG",
+            "delivery_mobile" : "082101871618",
+            "airwaybill_number" : "",
             "currency_code" : "",
-            "subtotal" : "double",
-            "discount_total" : "double",
-            "shipping_total" : "double",
-            "tax_total" : "double",
-            "total" : "",    
+            "subtotal" : "489000",
+            "discount_total" : "0",
+            "shipping_total" : "27000",
+            "tax_total" : "0",
+            "total" : "75900",    
             "line_item" : [
                 {
-                    "line_number" : "integer",
-                    "remote_order_item_id" : "string",
-                    "product_code" : "string",
-                    "product_description" : "text",
-                    "order_quantity" : "integer",
-                    "unit_price" : "double",
-                    "raw_price" : "double",
-                    "discount_rate" : "double",
-                    "line_discount" : "double",
-                    "line_tax" : "double",
-                    "shipping_amount" : "double",
-                    "line_total" : "double",
-                    "line_comments" : "text",
-                    "line_item_status" : "string",
-                    "discount_amount" : "double",
-                    "description" : "text",
+                    "id" : 2,
+                    "product_code" : "CKS973",
+                    "product_description" : "",
+                    "order_quantity" : 4,
+                    "line_total" : "800000",
+                    "created_at" : "2018-11-07T03:46:16.457936Z",
+                    "update_at" : "2018-11-07T03:46:16.457938Z",
                 }
             ],
-            "shipment_tracked_at" : "timestamp",
-             "created_at" : "",
-             "updated_at" : ""
+            "shipment_tracked_at" : "0001-01-01T00:00:00Z",
+            "created_at" : "2018-11-07T03:46:16.8927649",
+            "updated_at" : "2018-11-07T03:55:20.149784Z"
         }
     ]
 ```
@@ -266,18 +242,18 @@ You can used this API to connect your backend system to Sirclo system.
 [
     {
         "id" : "integer",
-        "shipment_reference" : "",
+        "shipment_reference" : "text",
         "status" : "string",
-        "delivery_name" : "",
-        "delivery_email" : "",
-        "delivery_street_address" : "", 
-        "delivery_region" : "",
-        "delivery_city" : "",
-        "delivery_country" : "",
-        "delivery_post_code" : "",
-        "delivery_method" : "",
-        "delivery_mobile" : "",
-        "airwaybill_number" : "", 
+        "delivery_name" : "string",
+        "delivery_email" : "string",
+        "delivery_street_address" : "text", 
+        "delivery_region" : "string",
+        "delivery_city" : "string",
+        "delivery_country" : "string",
+        "delivery_post_code" : "string",
+        "delivery_method" : "string",
+        "delivery_mobile" : "string",
+        "airwaybill_number" : "string", 
     }
 ]
 ```
@@ -288,39 +264,39 @@ You can used this API to connect your backend system to Sirclo system.
 [
     {
         "id" : 55,
-        "order_number" : "",
-        "customer_reference" : "",
+        "order_number" : "76",
+        "customer_reference" : "GHG867V",
         "shipment_reference" : "",
-        "status" : "accepted",
-        "delivery_name" : "",
-        "delivery_email" : "",
-        "delivery_street_address" : "", 
-        "delivery_region" : "",
-        "delivery_city" : "",
-        "delivery_country" : "",
-        "delivery_post_code" : "",
-        "delivery_method" : "",
-        "delivery_mobile" : "",
-        "airwaybill_number" : "", 
+        "status" : "cancelled",
+        "delivery_name" : "Artia",
+        "delivery_email" : "artia2@gmail.com",
+        "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
+        "delivery_region" : "DKI Jakarta",
+        "delivery_city" : "Kota Jakarta Barat - Cengkareng",
+        "delivery_country" : "Indonesia", 
+        "delivery_post_code" : "11720",
+        "delivery_method" : "JNE REG",
+        "delivery_mobile" : "082101871618",
+        "airwaybill_number" : "",
         "currency_code" : "",
-        "subtotal" : "",
-        "discount_total" : "",
-        "shipping_total" : "",
-        "tax_total" : "",
-        "total" : "",
+        "subtotal" : "489000",
+        "discount_total" : "0",
+        "shipping_total" : "27000",
+        "tax_total" : "0",
+        "total" : "75900",
         "line_item": 
-        {
-            "id" : "",
-            "product_code" : "",
-            "product_description" : "",
-            "order_quantity" : "",
-            "line_total" : "",
-            "created_at" : "",
-            "update_at" : "",
-        },
-        "shipment_tracked_at" : "",
-        "created_at" : "",
-        "updated_at" : "",
+            {
+                "id" : 2,
+                "product_code" : "CKS973",
+                "product_description" : "",
+                "order_quantity" : 4,
+                "line_total" : "800000",
+                "created_at" : "2018-11-07T03:46:16.457936Z",
+                "update_at" : "2018-11-07T03:46:16.457938Z",
+            },
+        "shipment_tracked_at" : "0001-01-01T00:00:00Z",
+        "created_at" : "2018-11-07T03:46:16.8927649",
+        "updated_at" : "2018-11-07T03:55:20.149784Z"
     }
 ]
 ```
@@ -329,7 +305,7 @@ You can used this API to connect your backend system to Sirclo system.
 
 ## Get Stocks 
 
-Description : This endpoint used to get all stocks from partner system. 
+Description : This endpoint used to get stock from partner system. 
 
 ### HTTP Request  
 
@@ -353,10 +329,10 @@ Description : This endpoint used to get all stocks from partner system.
     {
         "id" : 5,
         "SKU" : "DR0003",
-        "name" : "",
-        "available" : "",
-        "created_at" : "",
-        "update_at" : ""
+        "name" : "product",
+        "available" : "20",
+        "created_at" : "2018-11-07T03:46:16.457936Z",
+        "update_at" : "2018-11-07T03:46:16.457938Z"
     }
 ]
 ```
