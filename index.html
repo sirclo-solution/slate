@@ -584,18 +584,14 @@ You can used this API to connect your backend system to Sirclo system. </p>
             </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">    
             </span><span class="s2">"line_item"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
-                   </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"product_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"product_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"order_quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"line_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"update_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="s2">"double"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
             </span><span class="s2">"shipment_tracked_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="w">
+
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -604,6 +600,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">     </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
             </span><span class="s2">"order_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"customer_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"JNH7438B"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"shipment_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -627,10 +624,10 @@ You can used this API to connect your backend system to Sirclo system. </p>
             </span><span class="s2">"line_item"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"product_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CKS973"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"product_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"order_quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"line_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"800000"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CKS973"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"product"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"800000"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-07T03:46:16.457936Z"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"update_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-07T03:46:16.457938Z"</span><span class="p">,</span><span class="w">
                 </span><span class="p">}</span><span class="w">
@@ -731,10 +728,10 @@ You can used this API to connect your backend system to Sirclo system. </p>
         </span><span class="s2">"line_item"</span><span class="p">:</span><span class="w"> 
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"product_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CKS973"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"product_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"order_quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"line_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"800000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CKS973"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"product"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"line"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"800000"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-07T03:46:16.457936Z"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"update_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-07T03:46:16.457938Z"</span><span class="p">,</span><span class="w">
             </span><span class="p">},</span><span class="w">
@@ -797,7 +794,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"SKU"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"DR0003"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"DR0003"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"product"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"available"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-07T03:46:16.457936Z"</span><span class="p">,</span><span class="w">
