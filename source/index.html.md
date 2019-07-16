@@ -163,18 +163,14 @@ You can used this API to connect your backend system to Sirclo system.
             "total" : "double",    
             "line_item" : [
                 {
-                   "id" : "integer",
-                    "product_code" : "string",
-                    "product_description" : "text",
-                    "order_quantity" : "integer",
-                    "line_total" : "double",
-                    "created_at" : "timestamp",
-                    "update_at" : "timestamp",
+                   "sku" : "string",
+                   "name" : "string",
+                   "quantity" : "integer",
+                   "total" :"double"
                 }
             ],
             "shipment_tracked_at" : "timestamp",
-            "created_at" : "timestamp",
-            "updated_at" : "timestamp"
+          
         }
     ]
 ```
@@ -184,6 +180,7 @@ You can used this API to connect your backend system to Sirclo system.
 ```json
      [
         {
+            "id" : 2,
             "order_number" : "30",
             "customer_reference" : "JNH7438B",
             "shipment_reference" : "",
@@ -207,10 +204,10 @@ You can used this API to connect your backend system to Sirclo system.
             "line_item" : [
                 {
                     "id" : 2,
-                    "product_code" : "CKS973",
-                    "product_description" : "",
-                    "order_quantity" : 4,
-                    "line_total" : "800000",
+                    "sku" : "CKS973",
+                    "name" : "product",
+                    "quantity" : 4,
+                    "total" : "800000",
                     "created_at" : "2018-11-07T03:46:16.457936Z",
                     "update_at" : "2018-11-07T03:46:16.457938Z",
                 }
@@ -295,10 +292,10 @@ You can used this API to connect your backend system to Sirclo system.
         "line_item": 
             {
                 "id" : 2,
-                "product_code" : "CKS973",
-                "product_description" : "",
-                "order_quantity" : 4,
-                "line_total" : "800000",
+                "sku" : "CKS973",
+                "name" : "product",
+                "quantity" : 4,
+                "line" : "800000",
                 "created_at" : "2018-11-07T03:46:16.457936Z",
                 "update_at" : "2018-11-07T03:46:16.457938Z",
             },
@@ -336,7 +333,7 @@ Description : This endpoint used to get stock from partner system.
 [
     {
         "id" : 5,
-        "SKU" : "DR0003",
+        "sku" : "DR0003",
         "name" : "product",
         "available" : "20",
         "created_at" : "2018-11-07T03:46:16.457936Z",
