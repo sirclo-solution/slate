@@ -45,40 +45,41 @@ You can used this API to connect your backend system to Sirclo system.
 
 > The above command returns JSON structured like this:
 
-```query {
+```json query {
     salesOrders {
-        id
-        orderNumber
-        customerReference
-        status
-        deliveryName
-        deliveryEmail
-        deliveryStreetAddress
-        deliveryRegion
-        deliveryCity
-        deliveryCountry
-        deliveryPostCode
-        deliveryMethod
-        deliveryMobile
-        airwaybillNumber
-        currencyCode
-        subTotal
-        discountTotal
-        shippingTotal
-        taxTotal
-        total
-        lineItem {
-            id
-            sku
-            name
-            quantity
-            total
-            createdAt
-            updatedAt
-        }
-        shipmentTrackedAt
-        createdAt
-        updatedAt
+        "id"
+        "orderNumber"
+        "customerReference"
+        "status"
+        "deliveryName"
+        "deliveryEmail"
+        "deliveryStreetAddress"
+        "deliveryRegion"
+        "deliveryCity"
+        "deliveryCountry"
+        "deliveryPostCode"
+        "deliveryMethod"
+        "deliveryMobile"
+        "airwaybillNumber"
+        "currencyCode"
+        "subTotal"
+        "discountTotal"
+        "shippingTotal"
+        "taxTotal"
+        "total"
+        "lineItem": 
+        {
+            "id"
+            "sku"
+            "name"
+            "quantity"
+            "total"
+            "createdAt"
+            "updatedAt"
+        },
+        "shipmentTrackedAt"
+        "createdAt"
+        "updatedAt"
     }
 }
 ```
