@@ -36,8 +36,8 @@ You can used this API to connect your backend system to Sirclo system.
 
 | Name       | Located in |  Required | Type   |Description |
 | -----------| ---------- |  -------- | ------ |----------- |
-| api_key    | header     | Yes       | string | api key to authentication  |
-| api_secret | header     | Yes       | string | api secret to authentication|
+| api_key    | header     | Yes       | string | api key used to authentication  |
+| api_secret | header     | Yes       | string | api secret used to authentication|
 | start      | url        | Yes       | timestamp | start date | 
 | end        | url        | Yes       | timestamp | end date   |  
 
@@ -233,8 +233,8 @@ You can used this API to connect your backend system to Sirclo system.
 
 | Name      | Located in |  Required | Type   |Description         |
 | ----------| ---------- |---------- | ----   |------------------- |
-| api_key   | header     | Yes       | string |api key to authentication | 
-| api_secret| header     | Yes       | string |api secret to authentication | 
+| api_key   | header     | Yes       | string |api key used to authentication | 
+| api_secret| header     | Yes       | string |api secret used to authentication | 
 | Orders    | body       | Yes       |        |request orders parameter with json format in body| 
  
 ###Request Body
@@ -320,8 +320,8 @@ Description : This endpoint used to get stock from partner system.
 
 | Name       | Located in |  Required | Type   |Description |
 | -----------| ---------- |  -------- | ------ |----------- |
-| api_key    | header     | Yes       | string | api key to authentication  |
-| api_secret | header     | Yes       | string | api secret to authentication|
+| api_key    | header     | Yes       | string | api key used to authentication  |
+| api_secret | header     | Yes       | string | api secret used to authentication|
 | start      | url        | Yes       | timestamp | start date | 
 | end        | url        | Yes       | timestamp | end date   | 
 
