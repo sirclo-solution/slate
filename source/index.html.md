@@ -49,7 +49,6 @@ You can used this API to connect your backend system to Sirclo system.
     [
         {
             "id" : 2,
-            "order_number" : "60",
             "customer_reference" : "DHU9868NGY",
             "status" : "accepted",
             "delivery_name" : "Angga",
@@ -106,8 +105,7 @@ You can used this API to connect your backend system to Sirclo system.
    **Request body parameter must be in the form JSON**
 
 |   Name                | Required | Type     | Description                |
-| ----------------------| ---------| -------- | -------------------------- |
-|order_number           | No       | string   | order number               | 
+| ----------------------| ---------| -------- | -------------------------- | 
 |customer_reference     | No       | string   | customer reference         |
 |shipment_reference     | Yes      | string   | shipment reference         |
 |status                 | No       | string   | Status of orders           | 
@@ -129,7 +127,7 @@ You can used this API to connect your backend system to Sirclo system.
 |total                  | No       | double   | total all orders           |
 | product_code          | No       | string   | product code               |
 | product_description   | No       | string   | product description        |
-| order_quantity        | No       | integer  | order quantity             |
+| quantity              | No       | integer  | quantity                   |
 | total                 | No       | double   | total in order line item   |
 | created_at            | Yes      | timestamp| time of created order      |
 | updated_at            | Yes      | timestamp| time of updated order      |
@@ -141,7 +139,6 @@ You can used this API to connect your backend system to Sirclo system.
 ```json
     [
         {
-            "order_number" : "string",
             "customer_reference" : "string",
             "shipment_reference" : "text",
             "status" : "string",
@@ -182,7 +179,6 @@ You can used this API to connect your backend system to Sirclo system.
      [
         {
             "id" : 2,
-            "order_number" : "30",
             "customer_reference" : "JNH7438B",
             "shipment_reference" : "",
             "status" : "pending",
@@ -269,7 +265,6 @@ You can used this API to connect your backend system to Sirclo system.
 [
     {
         "id" : 55,
-        "order_number" : "76",
         "customer_reference" : "GHG867V",
         "shipment_reference" : "",
         "status" : "cancelled",
