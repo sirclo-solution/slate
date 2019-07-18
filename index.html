@@ -261,8 +261,36 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <p><strong>Version:</strong> 1.0 </p>
 <h1 id='order-api'>Order API</h1><h2 id='get-order'>Get Order</h2>
 <p><strong>Description:</strong> This endpoint used to get all orders in partner system.   </p>
+
+<table><thead>
+<tr>
+<th>Environment</th>
+<th>Host URL</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Production</td>
+<td>https://api2.connexi.id</td>
+</tr>
+</tbody></table>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api2.connexi.id/v1/order</code></p>
+<p>`GET /v1/order/:start/:end </p>
+<h3 id='path-parameters'>Path Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>start</td>
+<td>start date</td>
+</tr>
+<tr>
+<td>end</td>
+<td>end date</td>
+</tr>
+</tbody></table>
 
 <p><strong>Parameters</strong></p>
 
@@ -289,20 +317,6 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <td>string</td>
 <td>api secret used to authentication</td>
 </tr>
-<tr>
-<td>start</td>
-<td>url</td>
-<td>Yes</td>
-<td>timestamp</td>
-<td>start date</td>
-</tr>
-<tr>
-<td>end</td>
-<td>url</td>
-<td>Yes</td>
-<td>timestamp</td>
-<td>end date</td>
-</tr>
 </tbody></table>
 
 <p><strong>Responses</strong></p>
@@ -313,7 +327,6 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"customer_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"DHU9868NGY"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"delivery_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Angga"</span><span class="p">,</span><span class="w">
@@ -395,12 +408,6 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>order_number</td>
-<td>No</td>
-<td>string</td>
-<td>order number</td>
-</tr>
 <tr>
 <td>customer_reference</td>
 <td>No</td>
@@ -528,10 +535,10 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <td>product description</td>
 </tr>
 <tr>
-<td>order_quantity</td>
+<td>quantity</td>
 <td>No</td>
 <td>integer</td>
-<td>order quantity</td>
+<td>quantity</td>
 </tr>
 <tr>
 <td>total</td>
@@ -562,7 +569,6 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <p><strong>Request Body</strong></p>
 <pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"order_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"customer_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"shipment_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -602,7 +608,6 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <pre class="highlight json tab-json"><code><span class="w">     </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"customer_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"JNH7438B"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"shipment_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
@@ -705,7 +710,6 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"76"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"customer_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GHG867V"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"shipment_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
