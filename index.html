@@ -274,7 +274,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </tr>
 </tbody></table>
 <h3 id='http-request'>HTTP Request</h3>
-<p>`GET /v1/order/:start/:end </p>
+<p><code>GET /v1/order/:start/:end</code></p>
 <h3 id='path-parameters'>Path Parameters</h3>
 <table><thead>
 <tr>
@@ -284,37 +284,29 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </thead><tbody>
 <tr>
 <td>start</td>
-<td>start date</td>
+<td>fulfillment start</td>
 </tr>
 <tr>
 <td>end</td>
-<td>end date</td>
+<td>fulfillment end</td>
 </tr>
 </tbody></table>
-
-<p><strong>Parameters</strong></p>
-
+<h3 id='header-parameters'>Header Parameters</h3>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Located in</th>
 <th>Required</th>
-<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>api_key</td>
-<td>header</td>
 <td>Yes</td>
-<td>string</td>
 <td>api key used to authentication</td>
 </tr>
 <tr>
 <td>api_secret</td>
-<td>header</td>
 <td>Yes</td>
-<td>string</td>
 <td>api secret used to authentication</td>
 </tr>
 </tbody></table>
