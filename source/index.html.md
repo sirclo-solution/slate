@@ -84,7 +84,6 @@ You can used this API to connect your backend system to Sirclo system.
                     "created_at" : "2018-11-07T03:46:16.457936Z",
                     "update_at" : "2018-11-07T03:46:16.457938Z",
                 },
-            "shipment_tracked_at" : "0001-01-01T00:00:00Z",
             "created_at" : "2018-11-07T03:46:16.8927649",
             "updated_at" : "2018-11-07T03:55:20.149784Z"
         }
@@ -136,9 +135,6 @@ You can used this API to connect your backend system to Sirclo system.
 | product_description   | No       | string   | product description        |
 | quantity              | No       | integer  | quantity of order line item|
 | total                 | No       | double   | total in order line item   |
-| created_at            | Yes      | timestamp| time of created order      |
-| updated_at            | Yes      | timestamp| time of updated order      |
-|shipment_tracked_at    | No       | timestamp| shipment tracked at        |
 
 > This request orders parameter in body : 
 
@@ -173,8 +169,6 @@ You can used this API to connect your backend system to Sirclo system.
                    "total" :"double"
                 }
             ],
-            "shipment_tracked_at" : "timestamp",
-          
         }
     ]
 ```
@@ -214,7 +208,6 @@ You can used this API to connect your backend system to Sirclo system.
                     "update_at" : "2018-11-07T03:46:16.457938Z",
                 }
             ],
-            "shipment_tracked_at" : "0001-01-01T00:00:00Z",
             "created_at" : "2018-11-07T03:46:16.8927649",
             "updated_at" : "2018-11-07T03:55:20.149784Z"
         }
@@ -299,7 +292,6 @@ You can used this API to connect your backend system to Sirclo system.
                 "created_at" : "2018-11-07T03:46:16.457936Z",
                 "update_at" : "2018-11-07T03:46:16.457938Z",
             },
-        "shipment_tracked_at" : "0001-01-01T00:00:00Z",
         "created_at" : "2018-11-07T03:46:16.8927649",
         "updated_at" : "2018-11-07T03:55:20.149784Z"
     }
