@@ -33,21 +33,21 @@ You can used this API to connect your backend system to Sirclo system.
 
 ### HTTP Request 
 
-`GET /v1/order/:start/:end 
+`GET /v1/order/:start/:end`
 
 ### Path Parameters 
 
-| Parameter |  Description   |
-|-----------|----------------|
-|start      |start date      |
-|end        |end date        |
+| Parameter |  Description     |
+|-----------|------------------|
+|start      |fulfillment start |
+|end        |fulfillment end   |
 
-**Parameters**
+### Header Parameters
 
-| Name       | Located in |  Required | Type   |Description |
-| -----------| ---------- |  -------- | ------ |----------- |
-| api_key    | header     | Yes       | string | api key used to authentication  |
-| api_secret | header     | Yes       | string | api secret used to authentication| 
+| Name       |  Required |Description                       |
+| -----------|  -------- |--------------------------------- |
+| api_key    | Yes       | api key used to authentication   |
+| api_secret | Yes       | api secret used to authentication| 
 
 **Responses**
 
