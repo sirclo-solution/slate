@@ -100,13 +100,12 @@ You can used this API to connect your backend system to Sirclo system.
 ### HTTP Request 
 `POST https://api2.connexi.id/v1/order`
 
-**Parameters**
+**Header Parameters**
 
-| Name       | Located in  |  Required | Type   |Description |
-| -----------| ------------|  -------- | ------ |----------- |
-| api_key    | header      | Yes       | string | api key used to authentication |
-| api_secret | header      | Yes       | string | api secret used to authentication| 
-| Orders     | body        |           |        | request body with json format|
+| Name       |  Required | Type   |Description                       |
+| -----------|  -------- | ------ |----------------------------------|
+| api_key    | Yes       | string | api key used to authentication   |
+| api_secret | Yes       | string | api secret used to authentication| 
 
 ### Request Body 
 
@@ -140,9 +139,6 @@ You can used this API to connect your backend system to Sirclo system.
 | created_at            | Yes      | timestamp| time of created order      |
 | updated_at            | Yes      | timestamp| time of updated order      |
 |shipment_tracked_at    | No       | timestamp| shipment tracked at        |
-
- 
-**Request Body**
 
 ```json
     [
@@ -233,13 +229,12 @@ You can used this API to connect your backend system to Sirclo system.
 
 `PATCH https://api2.connexi.id/v1/order` 
 
-**Parameters**
+### Header Parameters
 
-| Name      | Located in |  Required | Type   |Description         |
-| ----------| ---------- |---------- | ----   |------------------- |
-| api_key   | header     | Yes       | string |api key used to authentication | 
-| api_secret| header     | Yes       | string |api secret used to authentication | 
-| Orders    | body       | Yes       |        |request orders parameter with json format in body| 
+| Name      |  Required | Type   |Description         |
+| ----------|---------- | ----   |------------------- |
+| api_key   | Yes       | string |api key used to authentication | 
+| api_secret| Yes       | string |api secret used to authentication | 
  
 ###Request Body
 
@@ -315,18 +310,27 @@ You can used this API to connect your backend system to Sirclo system.
 
 Description : This endpoint used to get stock from partner system. 
 
+|Environment | Host URL               | 
+|------------|------------------------|
+|Production  |https://api2.connexi.id |
+
 ### HTTP Request  
 
-`GET https://api2.connexi.id/v1/product/stocks`
+`GET /v1/product/stocks/:start/:end`
 
-**Parameters**
+### Path Parameters 
 
-| Name       | Located in |  Required | Type   |Description |
-| -----------| ---------- |  -------- | ------ |----------- |
-| api_key    | header     | Yes       | string | api key used to authentication  |
-| api_secret | header     | Yes       | string | api secret used to authentication|
-| start      | url        | Yes       | timestamp | start date | 
-| end        | url        | Yes       | timestamp | end date   | 
+| Parameter |  Description     |
+|-----------|------------------|
+|start      |fulfillment start |
+|end        |fulfillment end   |
+
+### Header Parameters
+
+| Name       |  Required |Description                       |
+| -----------|  -------- |--------------------------------- |
+| api_key    | Yes       | api key used to authentication   |
+| api_secret | Yes       | api secret used to authentication| 
 
 **Responses**
 
