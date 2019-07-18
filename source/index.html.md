@@ -134,11 +134,14 @@ You can used this API to connect your backend system to Sirclo system.
 |total                  | No       | double   | total all orders           |
 | product_code          | No       | string   | product code               |
 | product_description   | No       | string   | product description        |
-| quantity              | No       | integer  | quantity                   |
+| quantity              | No       | integer  | quantity of order line item|
 | total                 | No       | double   | total in order line item   |
 | created_at            | Yes      | timestamp| time of created order      |
 | updated_at            | Yes      | timestamp| time of updated order      |
 |shipment_tracked_at    | No       | timestamp| shipment tracked at        |
+
+> This request orders parameter in body : 
+
 ```json
     [
         {
@@ -330,6 +333,7 @@ Description : This endpoint used to get stock from partner system.
 | -----------|  -------- |--------------------------------- |
 | api_key    | Yes       | api key used to authentication   |
 | api_secret | Yes       | api secret used to authentication| 
+
 
 **Responses**
 
