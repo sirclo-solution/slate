@@ -139,7 +139,6 @@ You can used this API to connect your backend system to Sirclo system.
 | created_at            | Yes      | timestamp| time of created order      |
 | updated_at            | Yes      | timestamp| time of updated order      |
 |shipment_tracked_at    | No       | timestamp| shipment tracked at        |
-
 ```json
     [
         {
