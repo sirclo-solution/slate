@@ -72,8 +72,8 @@ You can used this API to connect your backend system to Sirclo system.
                 {
                     "id" : 3,
                     "sku" : "DKL0907",
-                    "order_quantity" : 2,
-                    "line_total" : "80000",
+                    "quantity" : 2,
+                    "total" : "80000",
                     "created_at" : "2018-11-07T03:46:16.457936Z",
                     "update_at" : "2018-11-07T03:46:16.457938Z",
                 },
@@ -130,7 +130,7 @@ You can used this API to connect your backend system to Sirclo system.
 | product_code          | No       | string   | product code               |
 | product_description   | No       | string   | product description        |
 | order_quantity        | No       | integer  | order quantity             |
-| line_total            | No       | double   | total in order line item   |
+| total                 | No       | double   | total in order line item   |
 | created_at            | Yes      | timestamp| time of created order      |
 | updated_at            | Yes      | timestamp| time of updated order      |
 |shipment_tracked_at    | No       | timestamp| shipment tracked at        |
@@ -165,9 +165,9 @@ You can used this API to connect your backend system to Sirclo system.
                 {
                    "sku" : "string",
                    "name" : "string",
-                   "order_quantity" : "integer",
+                   "quantity" : "integer",
                    "id" : "integer",
-                   "line_total" :"double"
+                   "total" :"double"
                 }
             ],
             "shipment_tracked_at" : "timestamp",
@@ -206,8 +206,8 @@ You can used this API to connect your backend system to Sirclo system.
                 {
                     "id" : 2,
                     "sku" : "CKS973",
-                    "order_quantity" : 4,
-                    "line_total" : "800000",
+                    "quantity" : 4,
+                    "total" : "800000",
                     "created_at" : "2018-11-07T03:46:16.457936Z",
                     "update_at" : "2018-11-07T03:46:16.457938Z",
                 }
@@ -294,8 +294,8 @@ You can used this API to connect your backend system to Sirclo system.
                 "id" : 2,
                 "product_code" : "CKS973",
                 "product_description" : "",
-                "order_quantity" : 4,
-                "line_total" : "800000",
+                "quantity" : 4,
+                "total" : "800000",
                 "created_at" : "2018-11-07T03:46:16.457936Z",
                 "update_at" : "2018-11-07T03:46:16.457938Z",
             },
