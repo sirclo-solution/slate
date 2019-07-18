@@ -27,19 +27,27 @@ You can used this API to connect your backend system to Sirclo system.
 
 **Description:** This endpoint used to get all orders in partner system.   
 
+|Environment | Host URL               | 
+|------------|------------------------|
+|Production  |https://api2.connexi.id |
 
 ### HTTP Request 
 
-`GET https://api2.connexi.id/v1/order`
+`GET /v1/order/:start/:end 
+
+### Path Parameters 
+
+| Parameter |  Description   |
+|-----------|----------------|
+|start      |start date      |
+|end        |end date        |
 
 **Parameters**
 
 | Name       | Located in |  Required | Type   |Description |
 | -----------| ---------- |  -------- | ------ |----------- |
 | api_key    | header     | Yes       | string | api key used to authentication  |
-| api_secret | header     | Yes       | string | api secret used to authentication|
-| start      | url        | Yes       | timestamp | start date | 
-| end        | url        | Yes       | timestamp | end date   |  
+| api_secret | header     | Yes       | string | api secret used to authentication| 
 
 **Responses**
 
