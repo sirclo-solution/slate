@@ -529,7 +529,10 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </tr>
 </tbody></table>
 
-<p>[
+<blockquote>
+<p>This request orders parameter in body : 
+<code>json
+    [
         {
             &quot;customer_reference&quot; : &quot;string&quot;,
             &quot;shipment_reference&quot; : &quot;text&quot;,
@@ -549,7 +552,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
             &quot;discount_total&quot; : &quot;double&quot;,
             &quot;shipping_total&quot; : &quot;double&quot;,
             &quot;tax_total&quot; : &quot;double&quot;,
-            &quot;total&quot; : &quot;double&quot;,<br>
+            &quot;total&quot; : &quot;double&quot;,    
             &quot;line_item&quot; : [
                 {
                    &quot;sku&quot; : &quot;string&quot;,
@@ -561,9 +564,8 @@ You can used this API to connect your backend system to Sirclo system. </p>
             ],
         }
     ]
-```</p>
+</code></p>
 
-<blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">     </span><span class="p">[</span><span class="w">
