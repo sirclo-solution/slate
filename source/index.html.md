@@ -29,7 +29,7 @@ You can used this API to connect your backend system to Sirclo system.
 
 |Environment | Host URL               | 
 |------------|------------------------|
-|Production  |https://api2.connexi.id |
+|Production  |https://api.connexi.id |
 
 ### HTTP Request 
 
@@ -120,7 +120,7 @@ You can used this API to connect your backend system to Sirclo system.
 | ----------------------| ---------| -------- | -------------------------- | 
 |customer_reference     | No       | string   | customer reference         |
 |shipment_reference     | Yes      | string   | shipment reference         |
-|status                 | No       | string   | Status of orders           | 
+|status                 | No       | string   | status of orders           | 
 |delivery_name          | No       | string   | name of the buyer             |
 |delivery_email         | No       | string   | email of the buyer            |
 |delivery_street_address| No       | string   | street address of the buyer   |
@@ -128,7 +128,7 @@ You can used this API to connect your backend system to Sirclo system.
 |delivery_city          | No       | string   | city address of the buyer     |
 |delivery_country       | No       | string   | country address of the buyer  |
 |delivery_post_code     | No       | string   | post code address of the buyer|
-|delivery_method        | No       | string   | delivery method            |
+|delivery_method        | No       | string   | the method of delivery     |
 |delivery_mobile        | No       | string   | mobile number of the buyer |
 |airwaybill_number      | No       | string   | airwaybill number from 3PL |
 |currency_code          | No       | string   | currency code              |
@@ -187,7 +187,7 @@ You can used this API to connect your backend system to Sirclo system.
     ]
 ``` 
 
-> The above command returns JSON structured like this:
+> The above request will return response like this:
 
 ```json
      [
@@ -277,7 +277,7 @@ You can used this API to connect your backend system to Sirclo system.
 ]
 ```
 
-> The above command returns JSON structured like this:
+> The above request will return response like this:
 
 ```json 
 [
@@ -353,7 +353,7 @@ Description : This endpoint used to get stock from partner system.
 
 **Responses**
 
-> The above command returns JSON structured like this:
+> The above request will return response like this:
 
 ```json
 [
