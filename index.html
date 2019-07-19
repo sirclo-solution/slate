@@ -530,42 +530,42 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </tbody></table>
 
 <blockquote>
-<p>This request orders parameter in body : 
-<code>json
-    [
-        {
-            &quot;customer_reference&quot; : &quot;string&quot;,
-            &quot;shipment_reference&quot; : &quot;text&quot;,
-            &quot;status&quot; : &quot;string&quot;,
-            &quot;delivery_name&quot; : &quot;string&quot;,
-            &quot;delivery_email&quot; : &quot;string&quot;,
-            &quot;delivery_street_address&quot; : &quot;text&quot;,
-            &quot;delivery_region&quot; : &quot;string&quot;,
-            &quot;delivery_city&quot; : &quot;string&quot;,
-            &quot;delivery_country&quot; : &quot;string&quot;, 
-            &quot;delivery_post_code&quot; : &quot;string&quot;,
-            &quot;delivery_method&quot; : &quot;string&quot;,
-            &quot;delivery_mobile&quot; : &quot;string&quot;,
-            &quot;airwaybill_number&quot; : &quot;string&quot;,
-            &quot;currency_code&quot; : &quot;&quot;,
-            &quot;subtotal&quot; : &quot;double&quot;,
-            &quot;discount_total&quot; : &quot;double&quot;,
-            &quot;shipping_total&quot; : &quot;double&quot;,
-            &quot;tax_total&quot; : &quot;double&quot;,
-            &quot;total&quot; : &quot;double&quot;,    
-            &quot;line_item&quot; : [
-                {
-                   &quot;sku&quot; : &quot;string&quot;,
-                   &quot;name&quot; : &quot;string&quot;,
-                   &quot;quantity&quot; : &quot;integer&quot;,
-                   &quot;id&quot; : &quot;integer&quot;,
-                   &quot;total&quot; :&quot;double&quot;
-                }
-            ],
-        }
-    ]
-</code></p>
-
+<p>This request orders parameter in body : </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"customer_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shipment_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_street_address"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_region"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_city"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"delivery_post_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_mobile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"airwaybill_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subtotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"discount_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">    
+            </span><span class="s2">"line_item"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                   </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="s2">"double"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">     </span><span class="p">[</span><span class="w">
