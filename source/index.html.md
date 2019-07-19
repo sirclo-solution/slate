@@ -147,9 +147,8 @@ You can used this API to connect your backend system to Sirclo system.
 | shipping_total        | No       | double   | shipping total in line item |
 | total                 | No       | double   | total in order line item   |
 
-> This request orders parameter in body : 
-
-```json
+`> This request orders parameter in body :`
+````json
     [
         {
             "customer_reference" : "DHU9868NGY",
@@ -185,7 +184,7 @@ You can used this API to connect your backend system to Sirclo system.
             ],
         }
     ]
-```
+````
 
 > The above command returns JSON structured like this:
 
