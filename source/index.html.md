@@ -206,7 +206,14 @@ You can used this API to connect your backend system to Sirclo system.
 | ----------------------| ---------| -------- | -------------------------- | 
 |customer_reference     | No       | string   | customer reference         |
 |shipment_reference     | Yes      | string   | shipment reference         |
-|status                 | No       | string   | status of orders           | 
+|status                 | No       | string   | status of orders 
+If status is empty, then it will be assigned as "pending"
+The acceptable statuses are:
+1. PENDING
+2. ACCEPTED
+3. PACKED
+4. SHIPPED
+5. COMPLETED           | 
 |delivery_name          | No       | string   | name of the buyer             |
 |delivery_email         | No       | string   | email of the buyer            |
 |delivery_street_address| No       | string   | street address of the buyer   |
