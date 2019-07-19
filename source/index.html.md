@@ -35,13 +35,6 @@ You can used this API to connect your backend system to Sirclo system.
 
 `GET /v1/order/:start/:end`
 
-### Path Parameters 
-
-| Parameter |  Description     |
-|-----------|------------------|
-|start      |fulfillment start |
-|end        |fulfillment end   |
-
 ### Header Parameters
 
 | Name       |  Required |Description                       |
@@ -49,9 +42,16 @@ You can used this API to connect your backend system to Sirclo system.
 | api_key    | Yes       | api key used to authentication   |
 | api_secret | Yes       | api secret used to authentication| 
 
+### Path Parameters 
+
+| Parameter |  Description                                    |
+|-----------|-------------------------------------------------|
+|start      |ISO 8601 timestamp from which the order requested|
+|end        |ISO 8601 timestamp to which the order requested  |
+
 **Responses**
 
-> The above command returns JSON structured like this:
+> The above request will return response like this:
 
 ```json
     [
@@ -70,23 +70,23 @@ You can used this API to connect your backend system to Sirclo system.
             "delivery_mobile" : "082101871618",
             "airwaybill_number" : "",
             "currency_code" : "", 
-            "subtotal" : "103000",
-            "discount_total" : "0",
-            "shipping_total" : "15000",
-            "tax_total" : "0",
-            "total" : "103000", 
+            "subtotal" : 93000,
+            "discount_total" : 10000,
+            "shipping_total" : 15000,
+            "tax_total" : 0,
+            "total" : 93000, 
             "line_item" : 
                 {
                     "id" : 3,   
                     "sku" : "DKL0907",
                     "name" : "Product",
                     "quantity" : 2,
-                    "unit_price" : "40000",
-                    "total_price" : "80000",
-                    "discount" : "",
-                    "tax" : "8000",
-                    "shipping_total" : "15000",
-                    "total" : "103000",
+                    "unit_price" : 40000,
+                    "total_price" : 80000,
+                    "discount" : 10000,
+                    "tax" : 8000,
+                    "shipping_total" : 15000,
+                    "total" : 93000,
                     "created_at" :"2018-11-07T03:46:16.457936Z",
                     "update_at" : "2018-11-07T03:46:16.457938Z",
                 },
@@ -103,7 +103,7 @@ You can used this API to connect your backend system to Sirclo system.
 
 
 ### HTTP Request 
-`POST https://api2.connexi.id/v1/order`
+`POST https://api.connexi.id/v1/order`
 
 **Header Parameters**
 
@@ -114,23 +114,23 @@ You can used this API to connect your backend system to Sirclo system.
 
 ### Request Body 
 
-   **Request body parameter must be in the form JSON**
+   Request body parameter must be in the form of JSON
 
 |   Name                | Required | Type     | Description                |
 | ----------------------| ---------| -------- | -------------------------- | 
 |customer_reference     | No       | string   | customer reference         |
 |shipment_reference     | Yes      | string   | shipment reference         |
 |status                 | No       | string   | Status of orders           | 
-|delivery_name          | No       | string   | deliery name               |
-|delivery_email         | No       | string   | delivery email             |
-|delivery_street_address| No       | string   | delivery address           |
-|delivery_region        | No       | string   | delivery region            |
-|delivery_city          | No       | string   | delivery city              |
-|delivery_country       | No       | string   | delivery country           |
-|delivery_post_code     | No       | string   | delivery post code         |
+|delivery_name          | No       | string   | name of the buyer             |
+|delivery_email         | No       | string   | email of the buyer            |
+|delivery_street_address| No       | string   | street address of the buyer   |
+|delivery_region        | No       | string   | region address of the buyer   |
+|delivery_city          | No       | string   | city address of the buyer     |
+|delivery_country       | No       | string   | country address of the buyer  |
+|delivery_post_code     | No       | string   | post code address of the buyer|
 |delivery_method        | No       | string   | delivery method            |
-|delivery_mobile        | No       | string   | delivery mobile number     |
-|airwaybill_number      | No       | string   | airwaybill number          |
+|delivery_mobile        | No       | string   | mobile number of the buyer |
+|airwaybill_number      | No       | string   | airwaybill number from 3PL |
 |currency_code          | No       | string   | currency code              |
 |subtotal               | No       | double   | subtotal of orders         | 
 |discount_total         | No       | double   | discount total all orders  |
@@ -140,7 +140,7 @@ You can used this API to connect your backend system to Sirclo system.
 | product_code          | No       | string   | product code               |
 | product_description   | No       | string   | product description        |
 | quantity              | No       | integer  | quantity of order line item|
-| unit price            | No       | double   | unit price product in line item |
+| unit price            | No       | double   | price per unit of product |
 | total_price           | No       | double   | total price product in line item |
 | discount              | No       | double   | discount product in line item |
 | tax                   | No       | double   | tax order in line item |
@@ -165,11 +165,11 @@ You can used this API to connect your backend system to Sirclo system.
             "delivery_mobile" : "082101871618",
             "airwaybill_number" : "",
             "currency_code" : "IDR", 
-            "subtotal" : 103000,
+            "subtotal" : 93000,
             "discount_total" : 0,
             "shipping_total" : 15000,
             "tax_total" : 0,
-            "total" : 103000,     
+            "total" : 93000,     
             "line_item" : [
                 { 
                     "sku" : "DKL0907",
@@ -177,10 +177,10 @@ You can used this API to connect your backend system to Sirclo system.
                     "quantity" : 2,
                     "unit_price" : 40000,
                     "total_price" : 80000,
-                    "discount" : ,
+                    "discount" :10000 ,
                     "tax" : 8000,
                     "shipping_total" : 15000,
-                    "total" : 103000,
+                    "total" : 93000,
                 }
             ],
         }
@@ -207,11 +207,11 @@ You can used this API to connect your backend system to Sirclo system.
             "delivery_mobile" : "082101871618",
             "airwaybill_number" : "",
             "currency_code" : "IDR",
-            "subtotal" : 103000,
+            "subtotal" : 93000,
             "discount_total" : 0,
             "shipping_total" : 15000,
             "tax_total" : 0,
-            "total" : 103000,    
+            "total" : 93000,    
             "line_item" : [
                 {
                     "id" : 3,   
@@ -220,10 +220,10 @@ You can used this API to connect your backend system to Sirclo system.
                     "quantity" : 2,
                     "unit_price" : 40000,
                     "total_price" : 80000,
-                    "discount" : ,
+                    "discount" :10000 ,
                     "tax" : 8000,
                     "shipping_total" : 15000,
-                    "total" : 103000,
+                    "total" : 93000,
                     "created_at" : "2018-11-07T03:46:16.457936Z",
                     "update_at" : "2018-11-07T03:46:16.457938Z",
                 }
@@ -242,7 +242,7 @@ You can used this API to connect your backend system to Sirclo system.
 
 ### HTTP Request 
 
-`PATCH https://api2.connexi.id/v1/order` 
+`PATCH https://api.connexi.id/v1/order` 
 
 ### Header Parameters
 
@@ -297,11 +297,11 @@ You can used this API to connect your backend system to Sirclo system.
         "delivery_mobile" : "082101871618",
         "airwaybill_number" : "",
         "currency_code" : "IDR",
-        "subtotal" : 103000,
+        "subtotal" : 93000,
         "discount_total" : 0,
         "shipping_total" : 15000,
         "tax_total" : 0,
-        "total" : 103000, 
+        "total" : 93000, 
         "line_item": 
             {
                 "id" : 3,   
@@ -310,10 +310,10 @@ You can used this API to connect your backend system to Sirclo system.
                 "quantity" : 2,
                 "unit_price" : 40000,
                 "total_price" : 80000,
-                "discount" : ,
+                "discount" :10000 ,
                 "tax" : 8000,
                 "shipping_total" : 15000,
-                "total" : 103000,
+                "total" : 93000,
                 "created_at" : "2018-11-07T03:46:16.457936Z",
                 "update_at" : "2018-11-07T03:46:16.457938Z",
             },
@@ -331,18 +331,11 @@ Description : This endpoint used to get stock from partner system.
 
 |Environment | Host URL               | 
 |------------|------------------------|
-|Production  |https://api2.connexi.id |
+|Production  |https://api.connexi.id  |
 
 ### HTTP Request  
 
 `GET /v1/product/stocks/:start/:end`
-
-### Path Parameters 
-
-| Parameter |  Description     |
-|-----------|------------------|
-|start      |fulfillment start |
-|end        |fulfillment end   |
 
 ### Header Parameters
 
@@ -351,6 +344,12 @@ Description : This endpoint used to get stock from partner system.
 | api_key    | Yes       | api key used to authentication   |
 | api_secret | Yes       | api secret used to authentication| 
 
+### Path Parameters 
+
+| Parameter |  Description                                    |
+|-----------|-------------------------------------------------|
+|start      |ISO 8601 timestamp from which the order requested|
+|end        |ISO 8601 timestamp to which the order requested  |
 
 **Responses**
 
