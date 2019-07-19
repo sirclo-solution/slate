@@ -275,22 +275,6 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </tbody></table>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET /v1/order/:start/:end</code></p>
-<h3 id='path-parameters'>Path Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>start</td>
-<td>fulfillment start</td>
-</tr>
-<tr>
-<td>end</td>
-<td>fulfillment end</td>
-</tr>
-</tbody></table>
 <h3 id='header-parameters'>Header Parameters</h3>
 <table><thead>
 <tr>
@@ -310,11 +294,27 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <td>api secret used to authentication</td>
 </tr>
 </tbody></table>
+<h3 id='path-parameters'>Path Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>start</td>
+<td>ISO 8601 timestamp from which the order requested</td>
+</tr>
+<tr>
+<td>end</td>
+<td>ISO 8601 timestamp to which the order requested</td>
+</tr>
+</tbody></table>
 
 <p><strong>Responses</strong></p>
 
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above request will return response like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -332,23 +332,23 @@ You can used this API to connect your backend system to Sirclo system. </p>
             </span><span class="s2">"delivery_mobile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"airwaybill_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"subtotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"103000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"discount_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"15000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"tax_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"103000"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"subtotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">93000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"discount_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">93000</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"line_item"</span><span class="w"> </span><span class="p">:</span><span class="w"> 
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">   
                     </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Product"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"unit_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"40000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"total_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"80000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"discount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"tax"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"15000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"103000"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"unit_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"total_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">80000</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"discount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"tax"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">93000</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="s2">"2018-11-07T03:46:16.457936Z"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"update_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-07T03:46:16.457938Z"</span><span class="p">,</span><span class="w">
                 </span><span class="p">},</span><span class="w">
@@ -359,7 +359,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </span></code></pre><h2 id='create-order'>Create Order</h2>
 <p><strong>Description:</strong> Use this endpoint to create order in connexi from partner system. </p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST https://api2.connexi.id/v1/order</code></p>
+<p><code>POST https://api.connexi.id/v1/order</code></p>
 
 <p><strong>Header Parameters</strong></p>
 
@@ -385,7 +385,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </tr>
 </tbody></table>
 <h3 id='request-body'>Request Body</h3>
-<p><strong>Request body parameter must be in the form JSON</strong></p>
+<p>Request body parameter must be in the form of JSON</p>
 
 <table><thead>
 <tr>
@@ -417,43 +417,43 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <td>delivery_name</td>
 <td>No</td>
 <td>string</td>
-<td>deliery name</td>
+<td>name of the buyer</td>
 </tr>
 <tr>
 <td>delivery_email</td>
 <td>No</td>
 <td>string</td>
-<td>delivery email</td>
+<td>email of the buyer</td>
 </tr>
 <tr>
 <td>delivery_street_address</td>
 <td>No</td>
 <td>string</td>
-<td>delivery address</td>
+<td>street address of the buyer</td>
 </tr>
 <tr>
 <td>delivery_region</td>
 <td>No</td>
 <td>string</td>
-<td>delivery region</td>
+<td>region address of the buyer</td>
 </tr>
 <tr>
 <td>delivery_city</td>
 <td>No</td>
 <td>string</td>
-<td>delivery city</td>
+<td>city address of the buyer</td>
 </tr>
 <tr>
 <td>delivery_country</td>
 <td>No</td>
 <td>string</td>
-<td>delivery country</td>
+<td>country address of the buyer</td>
 </tr>
 <tr>
 <td>delivery_post_code</td>
 <td>No</td>
 <td>string</td>
-<td>delivery post code</td>
+<td>post code address of the buyer</td>
 </tr>
 <tr>
 <td>delivery_method</td>
@@ -465,13 +465,13 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <td>delivery_mobile</td>
 <td>No</td>
 <td>string</td>
-<td>delivery mobile number</td>
+<td>mobile number of the buyer</td>
 </tr>
 <tr>
 <td>airwaybill_number</td>
 <td>No</td>
 <td>string</td>
-<td>airwaybill number</td>
+<td>airwaybill number from 3PL</td>
 </tr>
 <tr>
 <td>currency_code</td>
@@ -531,7 +531,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <td>unit price</td>
 <td>No</td>
 <td>double</td>
-<td>unit price product in line item</td>
+<td>price per unit of product</td>
 </tr>
 <tr>
 <td>total_price</td>
@@ -583,11 +583,11 @@ You can used this API to connect your backend system to Sirclo system. </p>
             </span><span class="s2">"delivery_mobile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"airwaybill_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"subtotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">103000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subtotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">93000</span><span class="p">,</span><span class="w">
             </span><span class="s2">"discount_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
             </span><span class="s2">"tax_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">103000</span><span class="p">,</span><span class="w">     
+            </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">93000</span><span class="p">,</span><span class="w">     
             </span><span class="s2">"line_item"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w"> 
                     </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
@@ -595,10 +595,10 @@ You can used this API to connect your backend system to Sirclo system. </p>
                     </span><span class="s2">"quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"unit_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"total_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">80000</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"discount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"discount"</span><span class="w"> </span><span class="p">:</span><span class="mi">10000</span><span class="w"> </span><span class="p">,</span><span class="w">
                     </span><span class="s2">"tax"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">103000</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">93000</span><span class="p">,</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -624,11 +624,11 @@ You can used this API to connect your backend system to Sirclo system. </p>
             </span><span class="s2">"delivery_mobile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"airwaybill_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"subtotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">103000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subtotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">93000</span><span class="p">,</span><span class="w">
             </span><span class="s2">"discount_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
             </span><span class="s2">"tax_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">103000</span><span class="p">,</span><span class="w">    
+            </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">93000</span><span class="p">,</span><span class="w">    
             </span><span class="s2">"line_item"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">   
@@ -637,10 +637,10 @@ You can used this API to connect your backend system to Sirclo system. </p>
                     </span><span class="s2">"quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"unit_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"total_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">80000</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"discount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"discount"</span><span class="w"> </span><span class="p">:</span><span class="mi">10000</span><span class="w"> </span><span class="p">,</span><span class="w">
                     </span><span class="s2">"tax"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">103000</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">93000</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-07T03:46:16.457936Z"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"update_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-07T03:46:16.457938Z"</span><span class="p">,</span><span class="w">
                 </span><span class="p">}</span><span class="w">
@@ -652,7 +652,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </span></code></pre><h2 id='update-order'>Update Order</h2>
 <p><strong>Description:</strong> This endpoint used to update order from partner system.  </p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>PATCH https://api2.connexi.id/v1/order</code> </p>
+<p><code>PATCH https://api.connexi.id/v1/order</code> </p>
 <h3 id='header-parameters-2'>Header Parameters</h3>
 <table><thead>
 <tr>
@@ -719,11 +719,11 @@ You can used this API to connect your backend system to Sirclo system. </p>
         </span><span class="s2">"delivery_mobile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"airwaybill_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"subtotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">103000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subtotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">93000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"discount_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tax_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">103000</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">93000</span><span class="p">,</span><span class="w"> 
         </span><span class="s2">"line_item"</span><span class="p">:</span><span class="w"> 
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">   
@@ -732,10 +732,10 @@ You can used this API to connect your backend system to Sirclo system. </p>
                 </span><span class="s2">"quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"unit_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"total_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">80000</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"discount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">,</span><span class="w">
+                </span><span class="s2">"discount"</span><span class="w"> </span><span class="p">:</span><span class="mi">10000</span><span class="w"> </span><span class="p">,</span><span class="w">
                 </span><span class="s2">"tax"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">103000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">93000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-07T03:46:16.457936Z"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"update_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-07T03:46:16.457938Z"</span><span class="p">,</span><span class="w">
             </span><span class="p">},</span><span class="w">
@@ -754,27 +754,11 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </thead><tbody>
 <tr>
 <td>Production</td>
-<td>https://api2.connexi.id</td>
+<td>https://api.connexi.id</td>
 </tr>
 </tbody></table>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET /v1/product/stocks/:start/:end</code></p>
-<h3 id='path-parameters-2'>Path Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>start</td>
-<td>fulfillment start</td>
-</tr>
-<tr>
-<td>end</td>
-<td>fulfillment end</td>
-</tr>
-</tbody></table>
 <h3 id='header-parameters-3'>Header Parameters</h3>
 <table><thead>
 <tr>
@@ -792,6 +776,22 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <td>api_secret</td>
 <td>Yes</td>
 <td>api secret used to authentication</td>
+</tr>
+</tbody></table>
+<h3 id='path-parameters-2'>Path Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>start</td>
+<td>ISO 8601 timestamp from which the order requested</td>
+</tr>
+<tr>
+<td>end</td>
+<td>ISO 8601 timestamp to which the order requested</td>
 </tr>
 </tbody></table>
 
