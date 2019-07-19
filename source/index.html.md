@@ -113,8 +113,9 @@ You can used this API to connect your backend system to Sirclo system.
 | api_secret | Yes       | string | api secret used to authentication| 
 
 ### Request Body 
+   Request body parameter must be in the form of JSON
 
-> This request orders parameter in body :
+   > This request orders parameter in body :
 
 ```json
     [
@@ -153,39 +154,6 @@ You can used this API to connect your backend system to Sirclo system.
         }
     ]
 ``` 
-
-   Request body parameter must be in the form of JSON
-
-|   Name                | Required | Type     | Description                |
-| ----------------------| ---------| -------- | -------------------------- | 
-|customer_reference     | No       | string   | customer reference         |
-|shipment_reference     | Yes      | string   | shipment reference         |
-|status                 | No       | string   | status of orders           | 
-|delivery_name          | No       | string   | name of the buyer             |
-|delivery_email         | No       | string   | email of the buyer            |
-|delivery_street_address| No       | string   | street address of the buyer   |
-|delivery_region        | No       | string   | region address of the buyer   |
-|delivery_city          | No       | string   | city address of the buyer     |
-|delivery_country       | No       | string   | country address of the buyer  |
-|delivery_post_code     | No       | string   | post code address of the buyer|
-|delivery_method        | No       | string   | the method of delivery     |
-|delivery_mobile        | No       | string   | mobile number of the buyer |
-|airwaybill_number      | No       | string   | airwaybill number from 3PL |
-|currency_code          | No       | string   | currency code              |
-|subtotal               | No       | double   | subtotal of orders         | 
-|discount_total         | No       | double   | discount total all orders  |
-|shipping_total         | No       | double   | shipping total all orders  |
-|tax_total              | No       | double   | tax total all orders       |
-|total                  | No       | double   | total all orders           |
-| product_code          | No       | string   | product code               |
-| product_description   | No       | string   | product description        |
-| quantity              | No       | integer  | quantity of order line item|
-| unit price            | No       | double   | price per unit of product |
-| total_price           | No       | double   | total price product in line item |
-| discount              | No       | double   | discount product in line item |
-| tax                   | No       | double   | tax order in line item |
-| shipping_total        | No       | double   | shipping total in line item |
-| total                 | No       | double   | total in order line item   |
 
 > The above request will return response like this:
 
@@ -233,6 +201,39 @@ You can used this API to connect your backend system to Sirclo system.
         }
     ]
 ```
+
+|   Name                | Required | Type     | Description                |
+| ----------------------| ---------| -------- | -------------------------- | 
+|customer_reference     | No       | string   | customer reference         |
+|shipment_reference     | Yes      | string   | shipment reference         |
+|status                 | No       | string   | status of orders           | 
+|delivery_name          | No       | string   | name of the buyer             |
+|delivery_email         | No       | string   | email of the buyer            |
+|delivery_street_address| No       | string   | street address of the buyer   |
+|delivery_region        | No       | string   | region address of the buyer   |
+|delivery_city          | No       | string   | city address of the buyer     |
+|delivery_country       | No       | string   | country address of the buyer  |
+|delivery_post_code     | No       | string   | post code address of the buyer|
+|delivery_method        | No       | string   | the method of delivery     |
+|delivery_mobile        | No       | string   | mobile number of the buyer |
+|airwaybill_number      | No       | string   | airwaybill number from 3PL |
+|currency_code          | No       | string   | currency code              |
+|subtotal               | No       | double   | subtotal of orders         | 
+|discount_total         | No       | double   | discount total all orders  |
+|shipping_total         | No       | double   | shipping total all orders  |
+|tax_total              | No       | double   | tax total all orders       |
+|total                  | No       | double   | total all orders           |
+| product_code          | No       | string   | product code               |
+| product_description   | No       | string   | product description        |
+| quantity              | No       | integer  | quantity of order line item|
+| unit price            | No       | double   | price per unit of product |
+| total_price           | No       | double   | total price product in line item |
+| discount              | No       | double   | discount product in line item |
+| tax                   | No       | double   | tax order in line item |
+| shipping_total        | No       | double   | shipping total in line item |
+| total                 | No       | double   | total in order line item   |
+
+
 
 ## Update Order
 
