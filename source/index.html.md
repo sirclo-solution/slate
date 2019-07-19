@@ -135,7 +135,9 @@ You can used this API to connect your backend system to Sirclo system.
 | product_description   | No       | string   | product description        |
 | quantity              | No       | integer  | quantity of order line item|
 | total                 | No       | double   | total in order line item   |
+
 > This request orders parameter in body : 
+
 ```json
     [
         {
