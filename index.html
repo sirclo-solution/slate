@@ -498,40 +498,199 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <td>string</td>
 <td>status of orders</td>
 </tr>
+<tr>
+<td>If status is empty, then it will be assigned as &quot;pending&quot;</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>The acceptable statuses are:</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1. PENDING</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2. ACCEPTED</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3. PACKED</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4. SHIPPED</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5. COMPLETED</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>delivery_name</td>
+<td>No</td>
+<td>string</td>
+<td>name of the buyer</td>
+</tr>
+<tr>
+<td>delivery_email</td>
+<td>No</td>
+<td>string</td>
+<td>email of the buyer</td>
+</tr>
+<tr>
+<td>delivery_street_address</td>
+<td>No</td>
+<td>string</td>
+<td>street address of the buyer</td>
+</tr>
+<tr>
+<td>delivery_region</td>
+<td>No</td>
+<td>string</td>
+<td>region address of the buyer</td>
+</tr>
+<tr>
+<td>delivery_city</td>
+<td>No</td>
+<td>string</td>
+<td>city address of the buyer</td>
+</tr>
+<tr>
+<td>delivery_country</td>
+<td>No</td>
+<td>string</td>
+<td>country address of the buyer</td>
+</tr>
+<tr>
+<td>delivery_post_code</td>
+<td>No</td>
+<td>string</td>
+<td>post code address of the buyer</td>
+</tr>
+<tr>
+<td>delivery_method</td>
+<td>No</td>
+<td>string</td>
+<td>the method of delivery</td>
+</tr>
+<tr>
+<td>delivery_mobile</td>
+<td>No</td>
+<td>string</td>
+<td>mobile number of the buyer</td>
+</tr>
+<tr>
+<td>airwaybill_number</td>
+<td>No</td>
+<td>string</td>
+<td>airwaybill number from 3PL</td>
+</tr>
+<tr>
+<td>currency_code</td>
+<td>No</td>
+<td>string</td>
+<td>currency code</td>
+</tr>
+<tr>
+<td>subtotal</td>
+<td>No</td>
+<td>double</td>
+<td>subtotal of orders</td>
+</tr>
+<tr>
+<td>discount_total</td>
+<td>No</td>
+<td>double</td>
+<td>discount total all orders</td>
+</tr>
+<tr>
+<td>shipping_total</td>
+<td>No</td>
+<td>double</td>
+<td>shipping total all orders</td>
+</tr>
+<tr>
+<td>tax_total</td>
+<td>No</td>
+<td>double</td>
+<td>tax total all orders</td>
+</tr>
+<tr>
+<td>total</td>
+<td>No</td>
+<td>double</td>
+<td>total all orders</td>
+</tr>
+<tr>
+<td>product_code</td>
+<td>No</td>
+<td>string</td>
+<td>product code</td>
+</tr>
+<tr>
+<td>product_description</td>
+<td>No</td>
+<td>string</td>
+<td>product description</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>No</td>
+<td>integer</td>
+<td>quantity of order line item</td>
+</tr>
+<tr>
+<td>unit price</td>
+<td>No</td>
+<td>double</td>
+<td>price per unit of product</td>
+</tr>
+<tr>
+<td>total_price</td>
+<td>No</td>
+<td>double</td>
+<td>total price product in line item</td>
+</tr>
+<tr>
+<td>discount</td>
+<td>No</td>
+<td>double</td>
+<td>discount product in line item</td>
+</tr>
+<tr>
+<td>tax</td>
+<td>No</td>
+<td>double</td>
+<td>tax order in line item</td>
+</tr>
+<tr>
+<td>shipping_total</td>
+<td>No</td>
+<td>double</td>
+<td>shipping total in line item</td>
+</tr>
+<tr>
+<td>total</td>
+<td>No</td>
+<td>double</td>
+<td>total in order line item</td>
+</tr>
 </tbody></table>
-
-<p>If status is empty, then it will be assigned as &quot;pending&quot;
-The acceptable statuses are:
-1. PENDING
-2. ACCEPTED
-3. PACKED
-4. SHIPPED
-5. COMPLETED           | 
-|delivery_name          | No       | string   | name of the buyer             |
-|delivery_email         | No       | string   | email of the buyer            |
-|delivery_street_address| No       | string   | street address of the buyer   |
-|delivery_region        | No       | string   | region address of the buyer   |
-|delivery_city          | No       | string   | city address of the buyer     |
-|delivery_country       | No       | string   | country address of the buyer  |
-|delivery_post_code     | No       | string   | post code address of the buyer|
-|delivery_method        | No       | string   | the method of delivery     |
-|delivery_mobile        | No       | string   | mobile number of the buyer |
-|airwaybill_number      | No       | string   | airwaybill number from 3PL |
-|currency_code          | No       | string   | currency code              |
-|subtotal               | No       | double   | subtotal of orders         | 
-|discount_total         | No       | double   | discount total all orders  |
-|shipping_total         | No       | double   | shipping total all orders  |
-|tax_total              | No       | double   | tax total all orders       |
-|total                  | No       | double   | total all orders           |
-| product_code          | No       | string   | product code               |
-| product_description   | No       | string   | product description        |
-| quantity              | No       | integer  | quantity of order line item|
-| unit price            | No       | double   | price per unit of product |
-| total_price           | No       | double   | total price product in line item |
-| discount              | No       | double   | discount product in line item |
-| tax                   | No       | double   | tax order in line item |
-| shipping_total        | No       | double   | shipping total in line item |
-| total                 | No       | double   | total in order line item   |</p>
 <h2 id='update-order'>Update Order</h2>
 <p><strong>Description:</strong> This endpoint used to update order from partner system.  </p>
 <h3 id='http-request-3'>HTTP Request</h3>
