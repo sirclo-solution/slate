@@ -46,49 +46,48 @@ You can used this API to connect your backend system to Sirclo system.
 
 | Parameter |  Description                                    |
 |-----------|-------------------------------------------------|
-|start      |ISO 8601 timestamp from which the order requested|
-|end        |ISO 8601 timestamp to which the order requested  |
+|start      |The current time in ISO8601 format timestamp from which the order requested|
+|end        |The current time in ISO8601 format timestamp to which the order requested  |
 
 **Responses**
 
 > The above request will return response like this:
 
 ```json
-    [
+     [
         {
-            "id" : 2,
-            "customer_reference" : "DHU9868NGY",
+            "order_id" : 123,
+            "order_date" : "2006-01-02T15:04:05Z07:00",
+            "customer_reference" : "JNH7438B",
+            "shipment_reference" : "",
             "status" : "accepted",
             "delivery_name" : "Artia",
-            "delivery_email" : "artia@gmail.com",
+            "delivery_email" : "artia2@gmail.com",
             "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
             "delivery_region" : "DKI Jakarta",
             "delivery_city" : "Kota Jakarta Barat - Cengkareng",
-            "delivery_country" : "Indonesia",
+            "delivery_country" : "Indonesia", 
             "delivery_post_code" : "11720",
             "delivery_method" : "JNE REG",
             "delivery_mobile" : "082101871618",
-            "airwaybill_number" : "",
-            "currency_code" : "", 
-            "subtotal" : 125000,
+            "airwaybill_number" : "AWB12345678",
+            "currency_code" : "IDR",
+            "subtotal" : 110000,
             "discount_total" : 10000,
             "shipping_total" : 15000,
-            "tax_total" : 0,
-            "total" : 125000, 
-            "line_item" : 
+            "total" : 115000,    
+            "line_item" : [
                 {
                     "id" : 3,   
                     "sku" : "DKL0907",
-                    "name" : "Product",
+                    "name" : "Product ABC",
                     "quantity" : 2,
-                    "unit_price" : 55000,
+                    "unit_price" : 100000,
                     "discount" :10000,
                     "shipping_total" : 15000,
-                    "created_at" :"2018-11-07T03:46:16.457936Z",
-                    "update_at" : "2018-11-07T03:46:16.457938Z",
-                },
-            "created_at" : "2018-11-07T03:46:16.8927649",
-            "updated_at" : "2018-11-07T03:55:20.149784Z"
+                }
+            ],
+           "total_count" :100,
         }
     ]
 ```
@@ -117,10 +116,13 @@ You can used this API to connect your backend system to Sirclo system.
 ```json
     [
         {
+            "order_id": 123,
+            "order_date" : "2006-01-02T15:04:05Z07:00",
             "customer_reference" : "DHU9868NGY",
-            "status" : "",
+            "shipment_reference":"",
+            "status" : "accepted",
             "delivery_name" : "Artia",
-            "delivery_email" : "artia@gmail.com",
+            "delivery_email" : "artia2@gmail.com",
             "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
             "delivery_region" : "DKI Jakarta",
             "delivery_city" : "Kota Jakarta Barat - Cengkareng",
@@ -128,19 +130,16 @@ You can used this API to connect your backend system to Sirclo system.
             "delivery_post_code" : "11720",
             "delivery_method" : "JNE REG",
             "delivery_mobile" : "082101871618",
-            "airwaybill_number" : "",
-            "currency_code" : "IDR", 
-            "subtotal" : 125000,
-            "discount_total" : 0,
+            "airwaybill_number" : "AWB12345678",
             "shipping_total" : 15000,
-            "tax_total" : 0,
-            "total" : 125000,     
+            "shipment_tracked_at" : "2006-01-02T15:04:05Z07:00",    
             "line_item" : [
                 {   
+                    "id" : 3,
                     "sku" : "DKL0907",
-                    "name" : "Product",
+                    "name" : "Product ABC",
                     "quantity" : 2,
-                    "unit_price" : 55000,
+                    "raw_price" : 100000,
                     "discount" :10000,
                     "shipping_total" : 15000,
                 }
@@ -154,10 +153,11 @@ You can used this API to connect your backend system to Sirclo system.
 ```json
      [
         {
-            "id" : 2,
+            "order_id" : 123,
+            "order_date" : "2006-01-02T15:04:05Z07:00",
             "customer_reference" : "JNH7438B",
             "shipment_reference" : "",
-            "status" : "pending",
+            "status" : "accepted",
             "delivery_name" : "Artia",
             "delivery_email" : "artia2@gmail.com",
             "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
@@ -167,28 +167,24 @@ You can used this API to connect your backend system to Sirclo system.
             "delivery_post_code" : "11720",
             "delivery_method" : "JNE REG",
             "delivery_mobile" : "082101871618",
-            "airwaybill_number" : "",
+            "airwaybill_number" : "AWB12345678",
             "currency_code" : "IDR",
-            "subtotal" : 125000,
-            "discount_total" : 0,
+            "subtotal" : 110000,
+            "discount_total" : 10000,
             "shipping_total" : 15000,
-            "tax_total" : 0,
-            "total" : 125000,    
+            "total" : 115000,    
             "line_item" : [
                 {
                     "id" : 3,   
                     "sku" : "DKL0907",
-                    "name" : "Product",
+                    "name" : "Product ABC",
                     "quantity" : 2,
-                    "unit_price" : 55000,
+                    "unit_price" : 100000,
                     "discount" :10000,
                     "shipping_total" : 15000,
-                    "created_at" : "2018-11-07T03:46:16.457936Z",
-                    "update_at" : "2018-11-07T03:46:16.457938Z",
                 }
             ],
-            "created_at" : "2018-11-07T03:46:16.8927649",
-            "updated_at" : "2018-11-07T03:55:20.149784Z"
+           "total_count" :100,
         }
     ]
 ```
@@ -197,6 +193,8 @@ You can used this API to connect your backend system to Sirclo system.
 | ----------------------| ---------| -------- | -------------------------- | 
 |customer_reference     | No       | string   | customer reference         |
 |shipment_reference     | Yes      | string   | shipment reference         |
+|shipment_tracked_at    | No       |Timestamp | this shipment tracked time must be  must be in RFC3339 format|
+|order_date             | No       |Timestamp | the date of order and must be in RFC3339 format|
 |status                 | No       | string   | status of orders, If status is empty, then it will be assigned as "pending"|
 |                       |          |          | The acceptable statuses are:|
 |                       |          |          | 1. Pending                  |
@@ -205,8 +203,8 @@ You can used this API to connect your backend system to Sirclo system.
 |                       |          |          | 4. Shipped                  |             
 |                       |          |          | 5. Completed                |
 |                       |          |          | 6. Cancelled                |      
-|delivery_name          | No       | string   | name of the buyer             |
-|delivery_email         | No       | string   | email of the buyer            |
+|delivery_name          | No       | string   | name of the buyer in this order|
+|delivery_email         | No       | string   | email address of the buyer in this order|
 |delivery_street_address| No       | string   | street address of the buyer   |
 |delivery_region        | No       | string   | region address of the buyer   |
 |delivery_city          | No       | string   | city address of the buyer     |
@@ -215,21 +213,21 @@ You can used this API to connect your backend system to Sirclo system.
 |delivery_method        | No       | string   | the method of delivery     |
 |delivery_mobile        | No       | string   | mobile number of the buyer |
 |airwaybill_number      | No       | string   | airwaybill number from 3PL |
-|currency_code          | No       | string   | currency code              |
-|subtotal               | No       | double   | subtotal of orders         | 
-|discount_total         | No       | double   | discount total all orders  |
-|shipping_total         | No       | double   | shipping total all orders  |
+|currency_code          | No       | string   | currency code for this order is "IDR"  |
+|subtotal               | No       | double   | this total value of order before discount and after tax  
+|discount_total         | No       | double   | this total discount value for this order (sum of every line_item.discount)|
+|shipping_total         | No       | double   | This total shipping cost value for this order|
 |tax_total              | No       | double   | tax total all orders       |
-|total                  | No       | double   | total all orders           |
+|total                  | No       | double   | this total value of order after discount, tax and shipping cost|
 | product_code          | No       | string   | product code               |
 | product_description   | No       | string   | product description        |
 | quantity              | No       | integer  | quantity of order line item|
-| unit price            | No       | double   | price per unit of product |
+| raw_price             | No       | double   | this raw price in order line item after discount and tax)
 | total_price           | No       | double   | total price product in line item |
 | discount              | No       | double   | discount product in line item |
 | tax                   | No       | double   | tax order in line item |
-| shipping_total        | No       | double   | shipping total in line item |
-| total                 | No       | double   | total in order line item   |
+| shipping_total        | No       | double   | this shipping total in line item, can be same value with "shipping_total" above, could be optional  |
+|total_count            | No       | integer  | this total count of available records |
 
 
 
@@ -261,7 +259,7 @@ You can used this API to connect your backend system to Sirclo system.
     {
         "id" : 2,
         "shipment_reference" : "",
-        "status" : "pending",
+        "status" : "shipped",
         "delivery_name" : "Artia",
         "delivery_email" : "artia2@gmail.com",
         "delivery_street_address" : "Jl. Anggrek No.106 Blok C5", 
@@ -271,52 +269,50 @@ You can used this API to connect your backend system to Sirclo system.
         "delivery_post_code" : "11720",
         "delivery_method" : "JNE REG",
         "delivery_mobile" : "082101871618",
-        "airwaybill_number" : "", 
+        "airwaybill_number" : "AWB12345678", 
     }
 ]
 ```
 
 > The above request will return response like this:
 
-```json 
-[
-    {
-        "id" : 2,
-        "customer_reference" : "JNH7438B",
-        "shipment_reference" : "",
-        "status" : "accepted",
-        "delivery_name" : "Artia",
-        "delivery_email" : "artia2@gmail.com",
-        "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
-        "delivery_region" : "DKI Jakarta",
-        "delivery_city" : "Kota Jakarta Barat - Cengkareng",
-        "delivery_country" : "Indonesia", 
-        "delivery_post_code" : "11720",
-        "delivery_method" : "JNE REG",
-        "delivery_mobile" : "082101871618",
-        "airwaybill_number" : "",
-        "currency_code" : "IDR",
-        "subtotal" : 125000,
-        "discount_total" : 0,
-        "shipping_total" : 15000,
-        "tax_total" : 0,
-        "total" : 125000, 
-        "line_item": 
-            {
-                "id" : 3,   
-                "sku" : "DKL0907",
-                "name" : "Product",
-                "quantity" : 2,
-                "unit_price" : 55000,
-                "discount" :10000,
-                "shipping_total" : 15000,
-                "created_at" : "2018-11-07T03:46:16.457936Z",
-                "update_at" : "2018-11-07T03:46:16.457938Z",
-            },
-        "created_at" : "2018-11-07T03:46:16.8927649",
-        "updated_at" : "2018-11-07T03:55:20.149784Z"
-    }
-]
+```json
+     [
+        {
+            "order_id" : 123,
+            "order_date" : "2006-01-02T15:04:05Z07:00",
+            "customer_reference" : "JNH7438B",
+            "shipment_reference" : "",
+            "status" : "shipped",
+            "delivery_name" : "Artia",
+            "delivery_email" : "artia2@gmail.com",
+            "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
+            "delivery_region" : "DKI Jakarta",
+            "delivery_city" : "Kota Jakarta Barat - Cengkareng",
+            "delivery_country" : "Indonesia", 
+            "delivery_post_code" : "11720",
+            "delivery_method" : "JNE REG",
+            "delivery_mobile" : "082101871618",
+            "airwaybill_number" : "AWB12345678",
+            "currency_code" : "IDR",
+            "subtotal" : 110000,
+            "discount_total" : 10000,
+            "shipping_total" : 15000,
+            "total" : 115000,    
+            "line_item" : [
+                {
+                    "id" : 3,   
+                    "sku" : "DKL0907",
+                    "name" : "Product ABC",
+                    "quantity" : 2,
+                    "unit_price" : 100000,
+                    "discount" :10000,
+                    "shipping_total" : 15000,
+                }
+            ],
+           "total_count" :100,
+        }
+    ]
 ```
 
 # Product 
@@ -344,8 +340,8 @@ Description : This endpoint used to get stock from partner system.
 
 | Parameter |  Description                                    |
 |-----------|-------------------------------------------------|
-|start      |ISO 8601 timestamp from which the order requested|
-|end        |ISO 8601 timestamp to which the order requested  |
+|start      |The current time in ISO8601 format timestamp from which the order requested|
+|end        |The current time in ISO8601 format timestamp to which the order requested  |
 
 **Responses**
 
@@ -355,8 +351,8 @@ Description : This endpoint used to get stock from partner system.
 [
     {
         "id" : 5,
-        "sku" : "DR0003",
-        "name" : "product",
+        "sku" : "DKL0907",
+        "name" : "product ABC ",
         "available" : "20",
         "created_at" : "2018-11-07T03:46:16.457936Z",
         "update_at" : "2018-11-07T03:46:16.457938Z"
