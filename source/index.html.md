@@ -33,7 +33,7 @@ You can used this API to connect your backend system to Sirclo system.
 
 ### HTTP Request 
 
-`GET /v1/order/:start/:end`
+`GET /v1/order/?since=&until=&limit=&offset=`
 
 ### Header Parameters
 
@@ -44,10 +44,12 @@ You can used this API to connect your backend system to Sirclo system.
 
 ### Path Parameters 
 
-| Parameter |  Description                                    |
-|-----------|-------------------------------------------------|
-|start      |The current time in ISO8601 format timestamp from which the order requested|
-|end        |The current time in ISO8601 format timestamp to which the order requested  |
+| Parameter |Required   |  Description                                    |
+|-----------|-----------|-------------------------------------------------|
+|since      | Yes       |The current time in ISO8601 format timestamp from which the order requested|
+|until      | Yes       |The current time in ISO8601 format timestamp to which the order requested  |
+|limit      | Yes       |The maximum number of orders that can be returned, this supported maximum number is 100| 
+|offset     | Yes       |The number of lines to retrieve the next batch of records. For example, if your limit is 100, specifying an offset of 10 will return records 10. If not specified, the default is 0|
 
 **Responses**
 
@@ -193,7 +195,7 @@ You can used this API to connect your backend system to Sirclo system.
 | ----------------------| ---------| -------- | -------------------------- | 
 |customer_reference     | No       | string   | customer reference         |
 |shipment_reference     | Yes      | string   | shipment reference         |
-|shipment_tracked_at    | No       |Timestamp | this shipment tracked time must be  must be in RFC3339 format|
+|shipment_tracked_at    | No       |Timestamp | this shipment tracked time must be must be in RFC3339 format|
 |order_date             | No       |Timestamp | the date of order and must be in RFC3339 format|
 |status                 | No       | string   | status of orders, If status is empty, then it will be assigned as "pending"|
 |                       |          |          | The acceptable statuses are:|
@@ -327,7 +329,7 @@ Description : This endpoint used to get stock from partner system.
 
 ### HTTP Request  
 
-`GET /v1/product/stocks/:start/:end`
+`GET /v1/order/?since=&until=&limit=&offset=`
 
 ### Header Parameters
 
@@ -338,10 +340,12 @@ Description : This endpoint used to get stock from partner system.
 
 ### Path Parameters 
 
-| Parameter |  Description                                    |
-|-----------|-------------------------------------------------|
-|start      |The current time in ISO8601 format timestamp from which the order requested|
-|end        |The current time in ISO8601 format timestamp to which the order requested  |
+| Parameter |Required   |  Description                                    |
+|-----------|-----------|-------------------------------------------------|
+|since      | Yes       |The current time in ISO8601 format timestamp from which the order requested|
+|until      | Yes       |The current time in ISO8601 format timestamp to which the order requested  |
+|limit      | Yes       |The maximum number of orders that can be returned, this supported maximum number is 100| 
+|offset     | Yes       |The number of lines to retrieve the next batch of records. For example, if your limit is 100, specifying an offset of 10 will return records 10. If not specified, the default is 0|
 
 **Responses**
 
