@@ -257,23 +257,47 @@ You can used this API to connect your backend system to Sirclo system.
 > This request orders parameter in body : 
 
 ```json
-[
-    {
-        "id" : 2,
-        "shipment_reference" : "",
-        "status" : "shipped",
-        "delivery_name" : "Artia",
-        "delivery_email" : "artia2@gmail.com",
-        "delivery_street_address" : "Jl. Anggrek No.106 Blok C5", 
-        "delivery_region" : "DKI Jakarta",
-        "delivery_city" : "Kota Jakarta Barat - Cengkareng",
-        "delivery_country" : "Indonesia",
-        "delivery_post_code" : "11720",
-        "delivery_method" : "JNE REG",
-        "delivery_mobile" : "082101871618",
-        "airwaybill_number" : "AWB12345678", 
-    }
-]
+
+{  
+   "orders": [  
+        {  
+            "order_id":123,
+            "order_status":"accept",
+            "updated_at":"2017-05-07 18:06:51",
+            "order_number":"order001",
+            "airwaybill_number":"",
+            "received_by":"",
+            "cancel_reason":""
+        },
+        {  
+            "order_id":456,
+            "order_status":"pack",
+            "updated_at":"2017-05-09 18:06:51",
+            "order_number":"order010",
+            "airwaybill_number":"awb002",
+            "received_by":"",
+            "cancel_reason":""
+        },
+        {  
+            "order_id":789,
+            "order_status":"complete",
+            "updated_at":"2017-05-09 18:06:51",
+            "order_number":"order015",
+            "airwaybill_number":"awb006",
+            "received_by":"Kurniawan",
+            "cancel_reason":""
+        },
+        {  
+            "order_id":135,
+            "order_status":"cancel",
+            "updated_at":"2017-05-09 18:06:51",
+            "order_number":"order005",
+            "airwaybill_number":"",
+            "received_by":"",
+            "cancel_reason":"salah beli barang"
+        }
+    ]
+}
 ```
 
 > The above request will return response like this:
