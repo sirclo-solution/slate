@@ -274,7 +274,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </tr>
 </tbody></table>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /v1/order/:start/:end</code></p>
+<p><code>GET /v1/order/?since=&amp;until=&amp;limit=&amp;offset=</code></p>
 <h3 id='header-parameters'>Header Parameters</h3>
 <table><thead>
 <tr>
@@ -298,16 +298,29 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>start</td>
+<td>since</td>
+<td>Yes</td>
 <td>The current time in ISO8601 format timestamp from which the order requested</td>
 </tr>
 <tr>
-<td>end</td>
+<td>until</td>
+<td>Yes</td>
 <td>The current time in ISO8601 format timestamp to which the order requested</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Yes</td>
+<td>The maximum number of orders that can be returned, this supported maximum number is 100</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Yes</td>
+<td>The number of lines to retrieve the next batch of records. For example, if your limit is 100, specifying an offset of 10 will return records 10. If not specified, the default is 0</td>
 </tr>
 </tbody></table>
 
@@ -483,7 +496,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <td>shipment_tracked_at</td>
 <td>No</td>
 <td>Timestamp</td>
-<td>this shipment tracked time must be  must be in RFC3339 format</td>
+<td>this shipment tracked time must be must be in RFC3339 format</td>
 </tr>
 <tr>
 <td>order_date</td>
@@ -794,7 +807,7 @@ You can used this API to connect your backend system to Sirclo system. </p>
 </tr>
 </tbody></table>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET /v1/product/stocks/:start/:end</code></p>
+<p><code>GET /v1/order/?since=&amp;until=&amp;limit=&amp;offset=</code></p>
 <h3 id='header-parameters-3'>Header Parameters</h3>
 <table><thead>
 <tr>
@@ -818,16 +831,29 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>start</td>
+<td>since</td>
+<td>Yes</td>
 <td>The current time in ISO8601 format timestamp from which the order requested</td>
 </tr>
 <tr>
-<td>end</td>
+<td>until</td>
+<td>Yes</td>
 <td>The current time in ISO8601 format timestamp to which the order requested</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Yes</td>
+<td>The maximum number of orders that can be returned, this supported maximum number is 100</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Yes</td>
+<td>The number of lines to retrieve the next batch of records. For example, if your limit is 100, specifying an offset of 10 will return records 10. If not specified, the default is 0</td>
 </tr>
 </tbody></table>
 
