@@ -284,7 +284,7 @@ You can used this API to connect your backend system to Sirclo system.
             "updated_at":"2017-05-09 18:06:51",
             "order_number":"order015",
             "airwaybill_number":"awb006",
-            "received_by":"Kurniawan",
+            "received_by":"kurniawan",
             "cancel_reason":""
         },
         {  
