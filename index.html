@@ -735,44 +735,33 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <blockquote>
 <p>This request orders parameter in body : </p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w">
-</span><span class="p">{</span><span class="w">  
-   </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+    </span><span class="s2">"accepted_orders"</span><span class="p">:[</span><span class="w">  
         </span><span class="p">{</span><span class="w">  
-            </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_status"</span><span class="p">:</span><span class="s2">"accept"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">101</span><span class="p">,</span><span class="w">
             </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="s2">"2017-05-07 18:06:51"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_number"</span><span class="p">:</span><span class="s2">"order001"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"received_by"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"cancel_reason"</span><span class="p">:</span><span class="s2">""</span><span class="w">
-        </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"order_number"</span><span class="p">:</span><span class="s2">"order001"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"packed_orders"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">  
-            </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">456</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_status"</span><span class="p">:</span><span class="s2">"pack"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">102</span><span class="p">,</span><span class="w">
             </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="s2">"2017-05-09 18:06:51"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_number"</span><span class="p">:</span><span class="s2">"order010"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="s2">"awb002"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"received_by"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"cancel_reason"</span><span class="p">:</span><span class="s2">""</span><span class="w">
-        </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="s2">"awb002"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"completed_orders"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">  
-            </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">789</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_status"</span><span class="p">:</span><span class="s2">"complete"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">103</span><span class="p">,</span><span class="w">
             </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="s2">"2017-05-09 18:06:51"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_number"</span><span class="p">:</span><span class="s2">"order015"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="s2">"awb006"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"received_by"</span><span class="p">:</span><span class="s2">"kurniawan"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"cancel_reason"</span><span class="p">:</span><span class="s2">""</span><span class="w">
-        </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"received_by"</span><span class="p">:</span><span class="s2">"Yosua"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"cancelled_orders"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">  
-            </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_status"</span><span class="p">:</span><span class="s2">"cancel"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">104</span><span class="p">,</span><span class="w">
             </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="s2">"2017-05-09 18:06:51"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_number"</span><span class="p">:</span><span class="s2">"order005"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"received_by"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"cancel_reason"</span><span class="p">:</span><span class="s2">"salah beli barang"</span><span class="w">
+            </span><span class="s2">"cancel_reason"</span><span class="p">:</span><span class="s2">"Salah beli barang"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -780,42 +769,42 @@ You can used this API to connect your backend system to Sirclo system. </p>
 <blockquote>
 <p>The above request will return response like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w">     </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"order_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z07:00"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"customer_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"JNH7438B"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"shipment_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"shipped"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"delivery_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Artia"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"delivery_email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"delivery_street_address"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"delivery_region"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"delivery_city"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"delivery_country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"delivery_post_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"delivery_method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"delivery_mobile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"airwaybill_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"subtotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">110000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"discount_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">115000</span><span class="p">,</span><span class="w">    
-            </span><span class="s2">"line_item"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">   
-                    </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"unit_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"discount"</span><span class="w"> </span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-           </span><span class="s2">"total_count"</span><span class="w"> </span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">{</span><span class="w">  
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"succeed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">101</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_status"</span><span class="p">:</span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="s2">"2008-09-15T15:53:00"</span><span class="p">,</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">102</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_status"</span><span class="p">:</span><span class="s2">"packed"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="s2">"2008-09-15T15:53:00"</span><span class="p">,</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">103</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_status"</span><span class="p">:</span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="s2">"2008-09-15T15:53:00"</span><span class="p">,</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">104</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_status"</span><span class="p">:</span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="s2">"2008-09-15T15:53:00"</span><span class="p">,</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"failed"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"order_id"</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_status"</span><span class="p">:</span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="s2">"2008-09-15T15:53:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"error_message"</span><span class="p">:</span><span class="s2">"Parameter yang diberikan salah"</span><span class="w"> 
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"4 dari 5 order berhasil diubah"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as0b2-b3as8-kv1c6-3sj6z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre><h1 id='product'>Product</h1><h2 id='get-stocks'>Get Stocks</h2>
 <p>Description : This endpoint used to get stock from partner system. </p>
 
