@@ -26,13 +26,13 @@ You can used this API to connect to SIRCLO Platform.
 
 **Description:** This endpoint is used to get all orders from partner.
 
-| Environment | Host URL               |
-| ----------- | ---------------------- |
-| Production  | https://api.connexi.id |
+| Environment | Host URL                  |
+| ----------- | ------------------------- |
+| Production  | https://api.connexi.id/v1 |
 
 ### HTTP Request
 
-`GET /v1/order/?since=&until=&limit=&offset=`
+`GET /order/?since=&until=&limit=&offset=`
 
 ### Header Parameters
 
@@ -105,7 +105,7 @@ You can used this API to connect to SIRCLO Platform.
 
 ### HTTP Request
 
-`POST https://api.connexi.id/v1/order`
+`POST /order`
 
 **Header Parameters**
 
@@ -198,7 +198,7 @@ Request body parameter must be in the form of JSON
 | Name                    | Required | Type      | Description                                                                 |
 | ----------------------- | -------- | --------- | --------------------------------------------------------------------------- |
 | order_id                | Yes      | string    | your order id                                                               |
-| order_date              | Yes      | Timestamp | the date of order and must be in RFC3339 format timestamp                   |
+| order_date              | Yes      | timestamp | the date of order and must be in RFC3339 format timestamp                   |
 | customer_reference      | No       | string    | customer reference                                                          |
 | shipment_reference      | Yes      | string    | shipment reference                                                          |
 | status                  | No       | string    | status of orders, If status is empty, then it will be assigned as "pending" |
@@ -218,8 +218,8 @@ Request body parameter must be in the form of JSON
 | delivery_method         | No       | string    | the method of delivery                                                      |
 | delivery_mobile         | No       | string    | mobile number of the buyer                                                  |
 | airwaybill_number       | No       | string    | airwaybill number from 3PL                                                  |
-| shipping_total          | No       | double    | This total shipping cost value for this order                               |
-| line_items              | Yes      | array     |                                                                             |
+| shipping_total          | No       | double    | this total shipping cost value for this order                               |
+| line_items              | Yes      | array     | array of product in this order                                              |
 | line_items - id         | Yes      | int       | id of the product                                                           |
 | line_items - sku        | Yes      | string    | sku of the product                                                          |
 | line_items - name       | Yes      | string    | name of the product                                                         |
@@ -233,7 +233,7 @@ Request body parameter must be in the form of JSON
 
 ### HTTP Request
 
-`PATCH https://api.connexi.id/v1/order`
+`PATCH /order`
 
 ### Header Parameters
 
@@ -306,6 +306,24 @@ Request body parameter must be in the form of JSON
 }
 ```
 
+| Name                       | Required | Type      | Description                                                                        |
+| -------------------------- | -------- | --------- | ---------------------------------------------------------------------------------- |
+| accepted                   | No       | array     | array of order that want to be accepted                                            |
+| accepted - id              | Yes      | int       | SIRCLO Platform order id                                                           |
+| accepted - updated_at      | Yes      | timestamp | the last updated timestamp for this order and must be in RFC3339 format timestamp  |
+| packed                     | No       | array     | array of order that want to be packed                                              |
+| packed - id                | Yes      | int       | SIRCLO Platform order id                                                           |
+| packed - airwaybill_number | Yes      | string    | the airwaybill number for this order                                               |
+| packed - updated_at        | Yes      | timestamp | the last updated timestamp for this order and must be in RFC3339 format timestamp  |
+| completed                  | No       | array     | array of order that want to be completed                                           |
+| completed - id             | Yes      | int       | SIRCLO Platform order id                                                           |
+| completed - received_by    | No       | string    | name of the receiver                                                               |
+| completed - updated_at     | Yes      | timestamp | the last updated timestamp for this order and must be in RFC3339 format timestamp  |
+| cancelled                  | No       | array     | array of order that want to be cancelled                                           |
+| cancelled - id             | Yes      | int       | SIRCLO Platform order id                                                           |
+| cancelled - cancel_reason  | No       | string    | reason why the order is cancelled                                                  |
+| cancelled - updated_at     | Yes      | timestamp | the last updated timestamp for this order and must be in RFCC3339 format timestamp |  |
+
 # Product
 
 ## Get Stocks
@@ -318,7 +336,7 @@ Description : This endpoint used to get stock from partner system.
 
 ### HTTP Request
 
-`GET /v1/order/?since=&until=&limit=&offset=`
+`GET /product/stock?limit=&offset=`
 
 ### Header Parameters
 
