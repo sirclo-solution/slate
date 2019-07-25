@@ -17,11 +17,12 @@ search: true
 # Introduction 
 
 **Welcome To SIRCLO API Documentation**
-You can used this API to connect your backend system to Sirclo system. 
+You can used this API to connect your backend system to SIRCLO Platform. 
 
 **Version:** 1.0 
 
 # Order API 
+
 ## Get Order 
 
 
@@ -56,48 +57,51 @@ You can used this API to connect your backend system to Sirclo system.
 > The above request will return response like this:
 
 ```json
-     [
+{
+  "data": [
+    {
+      "id": 1,
+      "order_date": "2006-01-02T15:04:05Z07:00",
+      "customer_reference": "JNH7438B",
+      "shipment_reference": "",
+      "status": "accepted",
+      "delivery_name": "Artia",
+      "delivery_email": "artia2@gmail.com",
+      "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
+      "delivery_region": "DKI Jakarta",
+      "delivery_city": "Kota Jakarta Barat - Cengkareng",
+      "delivery_country": "Indonesia",
+      "delivery_post_code": "11720",
+      "delivery_method": "JNE REG",
+      "delivery_mobile": "082101871618",
+      "airwaybill_number": "AWB12345678",
+      "currency_code": "IDR",
+      "subtotal": 110000,
+      "discount_total": 10000,
+      "shipping_total": 15000,
+      "total": 115000,
+      "line_item": [
         {
-            "order_id" : 123,
-            "order_date" : "2006-01-02T15:04:05Z07:00",
-            "customer_reference" : "JNH7438B",
-            "shipment_reference" : "",
-            "status" : "accepted",
-            "delivery_name" : "Artia",
-            "delivery_email" : "artia2@gmail.com",
-            "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
-            "delivery_region" : "DKI Jakarta",
-            "delivery_city" : "Kota Jakarta Barat - Cengkareng",
-            "delivery_country" : "Indonesia", 
-            "delivery_post_code" : "11720",
-            "delivery_method" : "JNE REG",
-            "delivery_mobile" : "082101871618",
-            "airwaybill_number" : "AWB12345678",
-            "currency_code" : "IDR",
-            "subtotal" : 110000,
-            "discount_total" : 10000,
-            "shipping_total" : 15000,
-            "total" : 115000,    
-            "line_item" : [
-                {
-                    "id" : 3,   
-                    "sku" : "DKL0907",
-                    "name" : "Product ABC",
-                    "quantity" : 2,
-                    "unit_price" : 100000,
-                    "discount" :10000,
-                    "shipping_total" : 15000,
-                }
-            ],
-           "total_count" :100,
+          "id": 3,
+          "sku": "DKL0907",
+          "name": "Product ABC",
+          "quantity": 2,
+          "unit_price": 100000,
+          "discount": 10000,
+          "shipping_total": 15000
         }
-    ]
+      ],
+      "total_count": 100
+    }
+  ],
+  "message": "",
+  "reference": ""
+}
 ```
 
 ## Create Order
 
-
-**Description:** Use this endpoint to create order in connexi from partner system. 
+**Description:** Use this endpoint to create order. 
 
 
 ### HTTP Request 
@@ -134,7 +138,7 @@ You can used this API to connect your backend system to Sirclo system.
             "delivery_mobile" : "082101871618",
             "airwaybill_number" : "AWB12345678",
             "shipping_total" : 15000,
-            "shipment_tracked_at" : "2006-01-02T15:04:05Z07:00",    
+            "shipment_tracked_at" : "2006-01-02T15:04:05Z07:00", 
             "line_item" : [
                 {   
                     "id" : 3,
@@ -143,9 +147,9 @@ You can used this API to connect your backend system to Sirclo system.
                     "quantity" : 2,
                     "raw_price" : 100000,
                     "discount" :10000,
-                    "shipping_total" : 15000,
+                    "shipping_total" : 15000
                 }
-            ],
+            ]
         }
     ]
 ``` 
@@ -153,42 +157,44 @@ You can used this API to connect your backend system to Sirclo system.
 > The above request will return response like this:
 
 ```json
-     [
-        {
-            "order_id" : 123,
-            "order_date" : "2006-01-02T15:04:05Z07:00",
-            "customer_reference" : "JNH7438B",
-            "shipment_reference" : "",
-            "status" : "accepted",
-            "delivery_name" : "Artia",
-            "delivery_email" : "artia2@gmail.com",
-            "delivery_street_address" : "Jl. Anggrek No.106 Blok C5",
-            "delivery_region" : "DKI Jakarta",
-            "delivery_city" : "Kota Jakarta Barat - Cengkareng",
-            "delivery_country" : "Indonesia", 
-            "delivery_post_code" : "11720",
-            "delivery_method" : "JNE REG",
-            "delivery_mobile" : "082101871618",
-            "airwaybill_number" : "AWB12345678",
-            "currency_code" : "IDR",
-            "subtotal" : 110000,
-            "discount_total" : 10000,
-            "shipping_total" : 15000,
-            "total" : 115000,    
-            "line_item" : [
-                {
-                    "id" : 3,   
-                    "sku" : "DKL0907",
-                    "name" : "Product ABC",
-                    "quantity" : 2,
-                    "unit_price" : 100000,
-                    "discount" :10000,
-                    "shipping_total" : 15000,
-                }
-            ],
-           "total_count" :100,
-        }
-    ]
+{
+  "data": {
+    "order_id": 123,
+    "order_date": "2006-01-02T15:04:05Z07:00",
+    "customer_reference": "JNH7438B",
+    "shipment_reference": "",
+    "status": "accepted",
+    "delivery_name": "Artia",
+    "delivery_email": "artia2@gmail.com",
+    "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
+    "delivery_region": "DKI Jakarta",
+    "delivery_city": "Kota Jakarta Barat - Cengkareng",
+    "delivery_country": "Indonesia",
+    "delivery_post_code": "11720",
+    "delivery_method": "JNE REG",
+    "delivery_mobile": "082101871618",
+    "airwaybill_number": "AWB12345678",
+    "currency_code": "IDR",
+    "subtotal": 110000,
+    "discount_total": 10000,
+    "shipping_total": 15000,
+    "total": 115000,
+    "line_item": [
+      {
+        "id": 3,
+        "sku": "DKL0907",
+        "name": "Product ABC",
+        "quantity": 2,
+        "unit_price": 100000,
+        "discount": 10000,
+        "shipping_total": 15000
+      }
+    ],
+    "total_count": 100
+  },
+  "message": "",
+  "reference": ""
+}
 ```
 
 |   Name                | Required | Type     | Description                |
@@ -365,16 +371,20 @@ Description : This endpoint used to get stock from partner system.
 > The above request will return response like this:
 
 ```json
-[
+{
+  "data": [
     {
-        "id" : 5,
-        "sku" : "DKL0907",
-        "name" : "product ABC ",
-        "available" : "20",
-        "created_at" : "2018-11-07T03:46:16.457936Z",
-        "update_at" : "2018-11-07T03:46:16.457938Z"
+      "id": 5,
+      "sku": "DKL0907",
+      "name": "product ABC ",
+      "available": "20",
+      "created_at": "2018-11-07T03:46:16.457936Z",
+      "update_at": "2018-11-07T03:46:16.457938Z"
     }
-]
+  ],
+  "message": "",
+  "reference": ""
+}
 ```
 
 <!-- Converted with the swagger-to-slate https://github.com/lavkumarv/swagger-to-slate -->
