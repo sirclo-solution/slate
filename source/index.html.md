@@ -253,14 +253,12 @@ Request body parameter must be in the form of JSON
   "accepted": [
     {
       "id": 123,
-      "order_number": "order001",
       "updated_at": "2019-05-27 06:05:11.979185"
     }
   ],
   "packed": [
     {
       "id": 456,
-      "order_number": "order002",
       "airwaybill_number": "awb002",
       "updated_at": "2019-05-27 06:05:11.979185"
     }
@@ -268,7 +266,6 @@ Request body parameter must be in the form of JSON
   "completed": [
     {
       "id": 789,
-      "order_number": "order003",
       "received_by": "Yosua",
       "updated_at": "2019-05-27 06:05:11.979185"
     }
@@ -276,7 +273,6 @@ Request body parameter must be in the form of JSON
   "cancelled": [
     {
       "id": 135,
-      "order_number": "order004",
       "cancel_reason": "",
       "updated_at": "2019-05-27 06:05:11.979185"
     }
