@@ -333,6 +333,7 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_number0"</span><span class="w"> </span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z07:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNH7438B"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -351,6 +352,7 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
       </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tax_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">115000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"line_item"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -403,9 +405,8 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
 <blockquote>
 <p>This request orders parameter in body :</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w">        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"order_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z07:00"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"customer_reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"DHU9868NGY"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -423,18 +424,15 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
             </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
             </span><span class="s2">"shipment_tracked_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z07:00"</span><span class="p">,</span><span class="w"> 
             </span><span class="s2">"line_item"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">   
-                    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"quantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"raw_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"discount"</span><span class="w"> </span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"shipping_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="w">
+                </span><span class="p">{</span><span class="w">   </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"raw_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>The above request will return response like this:</p>
@@ -442,6 +440,7 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z07:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNH7438B"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -476,7 +475,7 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
 <table><thead>
 <tr>
@@ -486,6 +485,18 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>order_number</td>
+<td>No</td>
+<td>string</td>
+<td>order number</td>
+</tr>
+<tr>
+<td>order_date</td>
+<td>Yes</td>
+<td>Timestamp</td>
+<td>the date of order and must be in ISO8601 format timestamp</td>
+</tr>
 <tr>
 <td>customer_reference</td>
 <td>No</td>
@@ -497,18 +508,6 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
 <td>Yes</td>
 <td>string</td>
 <td>shipment reference</td>
-</tr>
-<tr>
-<td>shipment_tracked_at</td>
-<td>No</td>
-<td>Timestamp</td>
-<td>this shipment tracked time must be must be in RFC3339 format</td>
-</tr>
-<tr>
-<td>order_date</td>
-<td>No</td>
-<td>Timestamp</td>
-<td>the date of order and must be in RFC3339 format</td>
 </tr>
 <tr>
 <td>status</td>
@@ -526,37 +525,31 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
 <td></td>
 <td></td>
 <td></td>
-<td>1. Pending</td>
+<td>1. pending</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td></td>
-<td>2. Accepted</td>
+<td>2. accepted</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td></td>
-<td>3. Packed</td>
+<td>3. packed</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td></td>
-<td>4. Shipped</td>
+<td>4. completed</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td></td>
-<td>5. Completed</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>6. Cancelled</td>
+<td>5. cancelled</td>
 </tr>
 <tr>
 <td>delivery_name</td>
@@ -655,58 +648,52 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
 <td>this total value of order after discount, tax and shipping cost</td>
 </tr>
 <tr>
-<td>product_code</td>
-<td>No</td>
-<td>string</td>
-<td>product code</td>
+<td>line_items</td>
+<td>Yes</td>
+<td>array</td>
+<td></td>
 </tr>
 <tr>
-<td>product_description</td>
-<td>No</td>
+<td>line_items - sku</td>
+<td>Yes</td>
 <td>string</td>
-<td>product description</td>
+<td>sku of the product</td>
 </tr>
 <tr>
-<td>quantity</td>
-<td>No</td>
+<td>line_items - quantity</td>
+<td>Yes</td>
 <td>integer</td>
-<td>quantity of order line item</td>
+<td>quantity of the order line item</td>
 </tr>
 <tr>
-<td>raw_price</td>
-<td>No</td>
+<td>line_items - raw_price</td>
+<td>Yes</td>
 <td>double</td>
 <td>this raw price in order line item after discount and tax)</td>
 </tr>
 <tr>
-<td>total_price</td>
-<td>No</td>
-<td>double</td>
-<td>total price product in line item</td>
-</tr>
-<tr>
-<td>discount</td>
-<td>No</td>
+<td>line_items - discount</td>
+<td>Yes</td>
 <td>double</td>
 <td>discount product in line item</td>
 </tr>
 <tr>
-<td>tax</td>
-<td>No</td>
+<td>line_items - tax</td>
+<td>Yes</td>
 <td>double</td>
 <td>tax order in line item</td>
 </tr>
 <tr>
-<td>shipping_total</td>
-<td>No</td>
+<td>line_items - shipping_total</td>
+<td>Yes</td>
 <td>double</td>
 <td>this shipping total in line item, can be same value with &quot;shipping_total&quot; above, could be optional</td>
 </tr>
 <tr>
-<td>total_count</td>
-<td>No</td>
-<td>integer</td>
-<td>this total count of available records</td>
+<td>line_items - total_price</td>
+<td>Yes</td>
+<td>double</td>
+<td>total price product in line item</td>
 </tr>
 </tbody></table>
 <h2 id='update-order'>Update Order</h2>
@@ -770,7 +757,7 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
             </span><span class="s2">"cancel_reason"</span><span class="p">:</span><span class="s2">"Salah beli barang"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>The above request will return response like this:</p>
@@ -855,16 +842,6 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
 </tr>
 </thead><tbody>
 <tr>
-<td>since</td>
-<td>Yes</td>
-<td>The current time in ISO8601 format timestamp from which the order requested</td>
-</tr>
-<tr>
-<td>until</td>
-<td>Yes</td>
-<td>The current time in ISO8601 format timestamp to which the order requested</td>
-</tr>
-<tr>
 <td>limit</td>
 <td>Yes</td>
 <td>The maximum number of orders that can be returned, this supported maximum number is 100</td>
@@ -894,7 +871,7 @@ You can used this API to connect your backend system to SIRCLO Platform. </p>
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
 <!-- Converted with the swagger-to-slate https://github.com/lavkumarv/swagger-to-slate -->
 <h1 id='errors'>Errors</h1>
