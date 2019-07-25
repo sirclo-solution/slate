@@ -61,6 +61,7 @@ You can used this API to connect your backend system to SIRCLO Platform.
   "data": [
     {
       "id": 1,
+      "order_number0" :"",
       "order_date": "2006-01-02T15:04:05Z07:00",
       "customer_reference": "JNH7438B",
       "shipment_reference": "",
@@ -79,6 +80,7 @@ You can used this API to connect your backend system to SIRCLO Platform.
       "subtotal": 110000,
       "discount_total": 10000,
       "shipping_total": 15000,
+      "tax_total" : 0,
       "total": 115000,
       "line_item": [
         {
@@ -120,9 +122,8 @@ You can used this API to connect your backend system to SIRCLO Platform.
    > This request orders parameter in body :
 
 ```json
-    [
         {
-            "order_id": 123,
+            "order_id": "",
             "order_date" : "2006-01-02T15:04:05Z07:00",
             "customer_reference" : "DHU9868NGY",
             "shipment_reference":"",
@@ -140,18 +141,15 @@ You can used this API to connect your backend system to SIRCLO Platform.
             "shipping_total" : 15000,
             "shipment_tracked_at" : "2006-01-02T15:04:05Z07:00", 
             "line_item" : [
-                {   
-                    "id" : 3,
-                    "sku" : "DKL0907",
-                    "name" : "Product ABC",
-                    "quantity" : 2,
-                    "raw_price" : 100000,
-                    "discount" :10000,
-                    "shipping_total" : 15000
+                {   "sku": "DKL0907",
+                    "quantity": 2,
+                    "raw_price": 100000,
+                    "discount": 10000,
+                    "tax": 0,
+                    "shipping_total": 15000
                 }
             ]
         }
-    ]
 ``` 
 
 > The above request will return response like this:
@@ -160,6 +158,7 @@ You can used this API to connect your backend system to SIRCLO Platform.
 {
   "data": {
     "order_id": 123,
+    "order_number" : "",
     "order_date": "2006-01-02T15:04:05Z07:00",
     "customer_reference": "JNH7438B",
     "shipment_reference": "",
@@ -194,50 +193,46 @@ You can used this API to connect your backend system to SIRCLO Platform.
   },
   "message": "",
   "reference": ""
-}
+]
 ```
 
 |   Name                | Required | Type     | Description                |
 | ----------------------| ---------| -------- | -------------------------- | 
-|customer_reference     | No       | string   | customer reference         |
-|shipment_reference     | Yes      | string   | shipment reference         |
-|shipment_tracked_at    | No       |Timestamp | this shipment tracked time must be must be in RFC3339 format|
-|order_date             | No       |Timestamp | the date of order and must be in RFC3339 format|
-|status                 | No       | string   | status of orders, If status is empty, then it will be assigned as "pending"|
-|                       |          |          | The acceptable statuses are:|
-|                       |          |          | 1. Pending                  |
-|                       |          |          | 2. Accepted                 |       
-|                       |          |          | 3. Packed                   |             
-|                       |          |          | 4. Shipped                  |             
-|                       |          |          | 5. Completed                |
-|                       |          |          | 6. Cancelled                |      
-|delivery_name          | No       | string   | name of the buyer in this order|
-|delivery_email         | No       | string   | email address of the buyer in this order|
-|delivery_street_address| No       | string   | street address of the buyer   |
-|delivery_region        | No       | string   | region address of the buyer   |
-|delivery_city          | No       | string   | city address of the buyer     |
-|delivery_country       | No       | string   | country address of the buyer  |
-|delivery_post_code     | No       | string   | post code address of the buyer|
-|delivery_method        | No       | string   | the method of delivery     |
-|delivery_mobile        | No       | string   | mobile number of the buyer |
-|airwaybill_number      | No       | string   | airwaybill number from 3PL |
-|currency_code          | No       | string   | currency code for this order is "IDR"  |
-|subtotal               | No       | double   | this total value of order before discount and after tax  
-|discount_total         | No       | double   | this total discount value for this order (sum of every line_item.discount)|
-|shipping_total         | No       | double   | This total shipping cost value for this order|
-|tax_total              | No       | double   | tax total all orders       |
-|total                  | No       | double   | this total value of order after discount, tax and shipping cost|
-| product_code          | No       | string   | product code               |
-| product_description   | No       | string   | product description        |
-| quantity              | No       | integer  | quantity of order line item|
-| raw_price             | No       | double   | this raw price in order line item after discount and tax)
-| total_price           | No       | double   | total price product in line item |
-| discount              | No       | double   | discount product in line item |
-| tax                   | No       | double   | tax order in line item |
-| shipping_total        | No       | double   | this shipping total in line item, can be same value with "shipping_total" above, could be optional  |
-|total_count            | No       | integer  | this total count of available records |
-
-
+| order_number                | No       | string    | order number                                                                                       |
+| order_date                  | Yes      | Timestamp | the date of order and must be in ISO8601 format timestamp                                          |
+| customer_reference          | No       | string    | customer reference                                                                                 |
+| shipment_reference          | Yes      | string    | shipment reference                                                                                 |
+| status                      | No       | string    | status of orders, If status is empty, then it will be assigned as "pending"                        |
+|                             |          |           | The acceptable statuses are:                                                                       |
+|                             |          |           | 1. pending                                                                                         |
+|                             |          |           | 2. accepted                                                                                        |
+|                             |          |           | 3. packed                                                                                          |
+|                             |          |           | 4. completed                                                                                       |
+|                             |          |           | 5. cancelled                                                                                       |
+| delivery_name               | No       | string    | name of the buyer in this order                                                                    |
+| delivery_email              | No       | string    | email address of the buyer in this order                                                           |
+| delivery_street_address     | No       | string    | street address of the buyer                                                                        |
+| delivery_region             | No       | string    | region address of the buyer                                                                        |
+| delivery_city               | No       | string    | city address of the buyer                                                                          |
+| delivery_country            | No       | string    | country address of the buyer                                                                       |
+| delivery_post_code          | No       | string    | post code address of the buyer                                                                     |
+| delivery_method             | No       | string    | the method of delivery                                                                             |
+| delivery_mobile             | No       | string    | mobile number of the buyer                                                                         |
+| airwaybill_number           | No       | string    | airwaybill number from 3PL                                                                         |
+| currency_code               | No       | string    | currency code for this order is "IDR"                                                              |
+| subtotal                    | No       | double    | this total value of order before discount and after tax                                            |
+| discount_total              | No       | double    | this total discount value for this order (sum of every line_item.discount)                         |
+| shipping_total              | No       | double    | This total shipping cost value for this order                                                      |
+| tax_total                   | No       | double    | tax total all orders                                                                               |
+| total                       | No       | double    | this total value of order after discount, tax and shipping cost                                    |
+| line_items                  | Yes      | array     |                                                                                                    |
+| line_items - sku            | Yes      | string    | sku of the product                                                                                 |
+| line_items - quantity       | Yes      | integer   | quantity of the order line item                                                                    |
+| line_items - raw_price      | Yes      | double    | this raw price in order line item after discount and tax)                                          |
+| line_items - discount       | Yes      | double    | discount product in line item                                                                      |
+| line_items - tax            | Yes      | double    | tax order in line item                                                                             |
+| line_items - shipping_total | Yes      | double    | this shipping total in line item, can be same value with "shipping_total" above, could be optional |
+| line_items - total_price    | Yes      | double    | total price product in line item                                                                   |
 
 ## Update Order
 
@@ -292,7 +287,7 @@ You can used this API to connect your backend system to SIRCLO Platform.
             "cancel_reason":"Salah beli barang"
         }
     ]
-}
+]
 ```
 
 > The above request will return response like this:
@@ -359,10 +354,8 @@ Description : This endpoint used to get stock from partner system.
 
 ### Path Parameters 
 
-| Parameter |Required   |  Description                                    |
-|-----------|-----------|-------------------------------------------------|
-|since      | Yes       |The current time in ISO8601 format timestamp from which the order requested|
-|until      | Yes       |The current time in ISO8601 format timestamp to which the order requested  |
+| Parameter |Required   |  Description                      |
+|-----------|-----------|-----------------------------------------|
 |limit      | Yes       |The maximum number of orders that can be returned, this supported maximum number is 100| 
 |offset     | Yes       |The number of lines to retrieve the next batch of records. For example, if your limit is 100, specifying an offset of 10 will return records 10. If not specified, the default is 0|
 
@@ -384,7 +377,7 @@ Description : This endpoint used to get stock from partner system.
   ],
   "message": "",
   "reference": ""
-}
+]
 ```
 
 <!-- Converted with the swagger-to-slate https://github.com/lavkumarv/swagger-to-slate -->
