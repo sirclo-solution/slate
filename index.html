@@ -270,11 +270,11 @@ You can used this API to connect to SIRCLO Platform.</p>
 </thead><tbody>
 <tr>
 <td>Production</td>
-<td>https://api.connexi.id</td>
+<td>https://api.connexi.id/v1</td>
 </tr>
 </tbody></table>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /v1/order/?since=&amp;until=&amp;limit=&amp;offset=</code></p>
+<p><code>GET /order/?since=&amp;until=&amp;limit=&amp;offset=</code></p>
 <h3 id='header-parameters'>Header Parameters</h3>
 <table><thead>
 <tr>
@@ -377,7 +377,7 @@ You can used this API to connect to SIRCLO Platform.</p>
 </span></code></pre><h2 id='create-order'>Create Order</h2>
 <p><strong>Description:</strong> Use this endpoint to create order.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST https://api.connexi.id/v1/order</code></p>
+<p><code>POST /order</code></p>
 
 <p><strong>Header Parameters</strong></p>
 
@@ -497,7 +497,7 @@ You can used this API to connect to SIRCLO Platform.</p>
 <tr>
 <td>order_date</td>
 <td>Yes</td>
-<td>Timestamp</td>
+<td>timestamp</td>
 <td>the date of order and must be in RFC3339 format timestamp</td>
 </tr>
 <tr>
@@ -618,13 +618,13 @@ You can used this API to connect to SIRCLO Platform.</p>
 <td>shipping_total</td>
 <td>No</td>
 <td>double</td>
-<td>This total shipping cost value for this order</td>
+<td>this total shipping cost value for this order</td>
 </tr>
 <tr>
 <td>line_items</td>
 <td>Yes</td>
 <td>array</td>
-<td></td>
+<td>array of product in this order</td>
 </tr>
 <tr>
 <td>line_items - id</td>
@@ -666,7 +666,7 @@ You can used this API to connect to SIRCLO Platform.</p>
 <h2 id='update-order'>Update Order</h2>
 <p><strong>Description:</strong> This endpoint used to update order from partner system.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>PATCH https://api.connexi.id/v1/order</code></p>
+<p><code>PATCH /order</code></p>
 <h3 id='header-parameters-2'>Header Parameters</h3>
 <table><thead>
 <tr>
@@ -749,7 +749,107 @@ You can used this API to connect to SIRCLO Platform.</p>
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='product'>Product</h1><h2 id='get-stocks'>Get Stocks</h2>
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accepted</td>
+<td>No</td>
+<td>array</td>
+<td>array of order that want to be accepted</td>
+</tr>
+<tr>
+<td>accepted - id</td>
+<td>Yes</td>
+<td>int</td>
+<td>SIRCLO Platform order id</td>
+</tr>
+<tr>
+<td>accepted - updated_at</td>
+<td>Yes</td>
+<td>timestamp</td>
+<td>the last updated timestamp for this order and must be in RFC3339 format timestamp</td>
+</tr>
+<tr>
+<td>packed</td>
+<td>No</td>
+<td>array</td>
+<td>array of order that want to be packed</td>
+</tr>
+<tr>
+<td>packed - id</td>
+<td>Yes</td>
+<td>int</td>
+<td>SIRCLO Platform order id</td>
+</tr>
+<tr>
+<td>packed - airwaybill_number</td>
+<td>Yes</td>
+<td>string</td>
+<td>the airwaybill number for this order</td>
+</tr>
+<tr>
+<td>packed - updated_at</td>
+<td>Yes</td>
+<td>timestamp</td>
+<td>the last updated timestamp for this order and must be in RFC3339 format timestamp</td>
+</tr>
+<tr>
+<td>completed</td>
+<td>No</td>
+<td>array</td>
+<td>array of order that want to be completed</td>
+</tr>
+<tr>
+<td>completed - id</td>
+<td>Yes</td>
+<td>int</td>
+<td>SIRCLO Platform order id</td>
+</tr>
+<tr>
+<td>completed - received_by</td>
+<td>No</td>
+<td>string</td>
+<td>name of the receiver</td>
+</tr>
+<tr>
+<td>completed - updated_at</td>
+<td>Yes</td>
+<td>timestamp</td>
+<td>the last updated timestamp for this order and must be in RFC3339 format timestamp</td>
+</tr>
+<tr>
+<td>cancelled</td>
+<td>No</td>
+<td>array</td>
+<td>array of order that want to be cancelled</td>
+</tr>
+<tr>
+<td>cancelled - id</td>
+<td>Yes</td>
+<td>int</td>
+<td>SIRCLO Platform order id</td>
+</tr>
+<tr>
+<td>cancelled - cancel_reason</td>
+<td>No</td>
+<td>string</td>
+<td>reason why the order is cancelled</td>
+</tr>
+<tr>
+<td>cancelled - updated_at</td>
+<td>Yes</td>
+<td>timestamp</td>
+<td>the last updated timestamp for this order and must be in RFCC3339 format timestamp</td>
+</tr>
+</tbody></table>
+<h1 id='product'>Product</h1><h2 id='get-stocks'>Get Stocks</h2>
 <p>Description : This endpoint used to get stock from partner system.</p>
 
 <table><thead>
@@ -764,7 +864,7 @@ You can used this API to connect to SIRCLO Platform.</p>
 </tr>
 </tbody></table>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET /v1/order/?since=&amp;until=&amp;limit=&amp;offset=</code></p>
+<p><code>GET /product/stock?limit=&amp;offset=</code></p>
 <h3 id='header-parameters-3'>Header Parameters</h3>
 <table><thead>
 <tr>
