@@ -47,8 +47,8 @@ These parameters exist in the http request query string
 
 | Parameter | Required | Description                                                                                                                                                                         |
 | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| since     | Yes      | Start range of order date of the requested orders with current time in RFC3339 format timestamp                                                                                     |
-| until     | Yes      | End range of order date of the requested orders current time in RFC3339 format timestamp                                                                                            |               |
+| since     | Yes      | Start range of order date of the requested orders (must be in RFC3339 format)                                                                                     |
+| until     | Yes      | End range of order date of the requested orders (must be in RFC3339 format)                                                                                            |               |
 | pageNo    | Yes      | The maximum number of orders that can be returned, this supported maximum number is 100                                                                                             |
 | perpage   | Yes      | The number of records to be returned in 1 page |
 
@@ -75,7 +75,7 @@ These parameters exist in the http request query string
   "data": [
     {
       "id": 1,
-      "order_number": "ABC123",
+      "order_id": "ABC123",
       "order_date": "2006-01-02T15:04:05Z07:00",
       "customer_reference": "JNH7438B",
       "shipment_reference": "",
@@ -156,7 +156,6 @@ These parameters exist in the HTTP request headers
   "shipping_total": 15000,
   "line_items": [
     {
-      "id": 3,
       "sku": "DKL0907",
       "name": "Product ABC",
       "quantity": 2,
