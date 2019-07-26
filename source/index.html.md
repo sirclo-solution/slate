@@ -56,6 +56,7 @@ These parameters exist in the http request query string
 
 `GET /v1/partner/page/2?since=2018-10-13T13:3A34:3A52:2B07:3A00&until=2018-10-16T19:3A22:3A39:2B07:3A00&perpage=1`
 
+|              |                |
 |--------------|----------------|
 | Host :       | api.connexi.id |
 | partner_id : | B98KL87        |
@@ -168,8 +169,43 @@ Request body parameter must be in the form of JSON
 
 ```json
 {
-  "message": "order created successfully",
-  "reference": "9756dabb-1e1c-4f1e-9003-16c052aab4fb"
+  "data": {
+    "id": 123,
+    "order_id": "ORD-123",
+    "order_date": "2006-01-02T15:04:05Z07:00",
+    "customer_reference": "JNH7438B",
+    "shipment_reference": "",
+    "status": "accepted",
+    "delivery_name": "Artia",
+    "delivery_email": "artia2@gmail.com",
+    "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
+    "delivery_region": "DKI Jakarta",
+    "delivery_city": "Kota Jakarta Barat - Cengkareng",
+    "delivery_country": "Indonesia",
+    "delivery_post_code": "11720",
+    "delivery_method": "JNE REG",
+    "delivery_mobile": "082101871618",
+    "airwaybill_number": "AWB12345678",
+    "currency_code": "IDR",
+    "subtotal": 110000,
+    "discount_total": 10000,
+    "shipping_total": 15000,
+    "total": 115000,
+    "line_items": [
+      {
+        "id": 3,
+        "sku": "DKL0907",
+        "name": "Product ABC",
+        "quantity": 2,
+        "raw_price": 100000,
+        "discount": 10000
+      }
+    ],
+    "createdAt": "2019-05-27 06:05:11.979185",
+    "updatedAt": "2019-05-27 06:05:11.979185"
+  },
+  "message": "",
+  "reference": ""
 }
 ```
 Request body must be a JSON document with the following properties
