@@ -56,6 +56,7 @@ These parameters exist in the http request query string
 
 `GET /v1/partner/page/2?since=2018-10-13T13:3A34:3A52:2B07:3A00&until=2018-10-16T19:3A22:3A39:2B07:3A00&perpage=1`
 
+|--------------|----------------|
 | Host :       | api.connexi.id |
 | partner_id : | B98KL87        |
 | MAC :        | a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM= |    
