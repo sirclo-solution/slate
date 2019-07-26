@@ -40,7 +40,7 @@ These parameters exist in the HTTP request headers
 | Name       | Required | Description                       |
 | ---------- | -------- |--------------------------------- |
 | partner_id | Yes      | Partner id value (given from sirclo) used for partner identification by sirclo    |
-| MAC        | Yes      | HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: Composing HMAC |
+| MAC        | Yes      | HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: "**Composing HMAC**" |
 
 ### Query String Parameters
 These parameters exist in the http request query string
@@ -51,6 +51,10 @@ These parameters exist in the http request query string
 | until     | Yes      | End range of order date of the requested orders current time in RFC3339 format timestamp                                                                                            |               |
 | pageNo    | Yes      | The maximum number of orders that can be returned, this supported maximum number is 100                                                                                             |
 | perpage   | Yes      | The number of records to be returned in 1 page |
+
+**Example RFC3339 formatted date time :**
+> 2018-12-31T23:59:59+07:00
+> is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 59, in timezone UTC+7
 
 **Request example**
 
@@ -114,7 +118,7 @@ These parameters exist in the http request query string
 
 ## Create Order
 
-**Description:** Use this endpoint to create order.
+**Description:** Use this endpoint to create new order.
 
 ### HTTP Request
 
@@ -126,7 +130,7 @@ These parameters exist in the HTTP request headers
 | Name       | Required | Description                                                                                                                    |
 | ---------- | -------- |--------------------------------------------------------------------------------------------------------------------------------|
 | partner_id | Yes      | Partner id value (given from sirclo) used for partner identification by sirclo                                                 |
-| MAC        | Yes      |HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: Composing HMAC |
+| MAC        | Yes      |HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: "**Composing HMAC**" |
 
 ### Request Body
 
@@ -208,37 +212,32 @@ These parameters exist in the HTTP request headers
 ```
 Request body must be a JSON document with the following properties
 
-| Name                    | Required | Type      | Description                                                                 |
-| ----------------------- | -------- | --------- | --------------------------------------------------------------------------- |
-| order_id                | Yes      | string    | your order id                                                               |
-| order_date              | Yes      | Timestamp | the date of order and must be in RFC3339 format timestamp                   |
-| customer_reference      | No       | string    | customer reference                                                          |
-| shipment_reference      | Yes      | string    | shipment reference                                                          |
-| status                  | No       | string    | status of orders, If status is empty, then it will be assigned as "pending" |
-|                         |          |           | The acceptable statuses are:                                                |
-|                         |          |           | 1. pending                                                                  |
-|                         |          |           | 2. accepted                                                                 |
-|                         |          |           | 3. packed                                                                   |
-|                         |          |           | 4. completed                                                                |
-|                         |          |           | 5. cancelled                                                                |
-| delivery_name           | No       | string    | name of the buyer in this order                                             |
-| delivery_email          | No       | string    | email address of the buyer in this order                                    |
-| delivery_street_address | No       | string    | street address of the buyer                                                 |
-| delivery_region         | No       | string    | region address of the buyer                                                 |
-| delivery_city           | No       | string    | city address of the buyer                                                   |
-| delivery_country        | No       | string    | country address of the buyer                                                |
-| delivery_post_code      | No       | string    | post code address of the buyer                                              |
-| delivery_method         | No       | string    | the method of delivery                                                      |
-| delivery_mobile         | No       | string    | mobile number of the buyer                                                  |
-| airwaybill_number       | No       | string    | airwaybill number from 3PL                                                  |
-| shipping_total          | No       | double    | This total shipping cost value for this order                               |
-| line_items              | Yes      | array     |                                                                             |
-| line_items - id         | Yes      | int       | id of the product                                                           |
-| line_items - sku        | Yes      | string    | sku of the product                                                          |
-| line_items - name       | Yes      | string    | name of the product                                                         |
-| line_items - quantity   | Yes      | integer   | quantity of the order line item                                             |
-| line_items - raw_price  | Yes      | double    | this raw price in order line item after discount and tax)                   |
-| line_items - discount   | Yes      | double    | discount product in line item                                               |
+| Name                    | Required | Type      | Description                                                                                    |
+| ----------------------- | -------- | --------- | ---------------------------------------------------------------------------------------------- |
+| order_id                | Yes      | string    | Id of the order in partner's application                                                       |
+| order_date              | Yes      | Timestamp | the date of order ( must be in RFC3339 format timestamp )                                      |
+| customer_reference      | No       | string    | customer reference value                                                                       |
+| shipment_reference      | Yes      | string    | shipment reference value                                                                       |
+| status                  | No       | string    | status of orders, If status is empty, then it will be assigned as "pending"                    |
+|                         |          |           | <table><tr><td>Value</td><td>Description</td></tr><tr><td>pending</td><td>Order is received from buyer but not yet accepted/acknowledged by seller.</td></tr><tr><td>accepted</td><td>Order is already accepted by seller. Waiting for buyer payment or seller to send ordered items.</td></tr><tr><td>packed</td><td>Order is already sent by seller. Order should have airway bill no from 3PL/shipping courier/logistics company.</td></tr><tr><td>completed</td><td>Ordered items is already received by buyer.</td></tr><tr><td>canceled</td><td>Order has been canceled by buyer or seller</td></tr></table>                                                               |
+| delivery_name           | No       | string    | name of the buyer/delivery recipient in this order                                             |
+| delivery_email          | No       | string    | email address of the buyer/delivery recipient in this order                                    |
+| delivery_street_address | No       | string    | street address for order delivery                                                              |
+| delivery_region         | No       | string    | region (province/district) of the delivery recipient                                           |
+| delivery_city           | No       | string    | city of the delivery recipient                                                                 |
+| delivery_country        | No       | string    | country address of the buyer                                                                   |
+| delivery_post_code      | No       | string    | post code of the delivery recipient                                                            |
+| delivery_method         | No       | string    | logistics service information (name of the logistics company/service used for order delivery)  |
+| delivery_mobile         | No       | string    | mobile number of the delivery recipient                                                        |
+| airwaybill_number       | No       | string    | airwaybill number from 3PL 3PL (Logistics/Shipping company)                                    |
+| shipping_total          | No       | double    | This total shipping cost value for this order                                                  |
+| line_items              | Yes      | array     |                                                                                                |
+| line_items - id         | Yes      | int       | id of the product                                                                              |
+|line_items - sku         | Yes      |string     | sku of the purchased line item                                                                 |
+|line_items - name        | Yes      |string     | name of the purchased line item                                                                |
+|line_items - quantity    | Yes      |integer    | quantity of the line item                                                                      |
+|line_items - unit_price  | Yes      |double     | unit price of the line item (after discount)                                                   |                                            
+|line_items - discount    | Yes      |double     |  discount value applied on the line item                                                       |
 
 ## Update Order
 
