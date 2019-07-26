@@ -48,7 +48,7 @@ These parameters exist in the http request query string
 | Parameter | Required | Description                                                                                                                                                                         |
 | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | since     | Yes      | Start range of order date of the requested orders with current time in RFC3339 format timestamp                                                                                     |
-| until     | Yes      | End range of order date of the requested orders current time in RFC3339 format timestamp to which the order requested                                                                                                           |
+| until     | Yes      | End range of order date of the requested orders current time in RFC3339 format timestamp                                                                                            |               |
 | pageNo    | Yes      | The maximum number of orders that can be returned, this supported maximum number is 100                                                                                             |
 | perpage   | Yes      | The number of records to be returned in 1 page |
 
