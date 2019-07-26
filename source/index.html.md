@@ -130,8 +130,6 @@ These parameters exist in the HTTP request headers
 
 ### Request Body
 
-Request body parameter must be in the form of JSON
-
 > This request orders parameter in body :
 
 ```json
