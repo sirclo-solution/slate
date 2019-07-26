@@ -24,7 +24,7 @@ You can used this API to connect to SIRCLO Platform.
 
 ## Get Order
 
-**Description:** This endpoint is used to get all orders from partner.
+**Description:** Call this endpoint to get orders data that you have previously sent using create order endpoint.
 
 | Environment | Host URL               |
 | ----------- | ---------------------- |
@@ -32,23 +32,33 @@ You can used this API to connect to SIRCLO Platform.
 
 ### HTTP Request
 
-`GET /v1/order/?since=&until=&limit=&offset=`
+`GET /v1/partner/page/{pageNo}?since={since}&until={until}&perpage={perpage}`
 
 ### Header Parameters
+These parameters exist in the HTTP request headers
 
-| Name       | Required | Type   | Description                       |
-| ---------- | -------- | ------ | --------------------------------- |
-| api_key    | Yes      | string | api key used to authentication    |
-| api_secret | Yes      | string | api secret used to authentication |
+| Name       | Required | Description                       |
+| ---------- | -------- |--------------------------------- |
+| partner_id | Yes      | Partner id value (given from sirclo) used for partner identification by sirclo    |
+| MAC        | Yes      | HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: Composing HMAC |
 
-### Path Parameters
+### Query String Parameters
+These parameters exist in the http request query string
 
 | Parameter | Required | Description                                                                                                                                                                         |
 | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| since     | Yes      | The current time in RFC3339 format timestamp from which the order requested                                                                                                         |
-| until     | Yes      | The current time in RFC3339 format timestamp to which the order requested                                                                                                           |
-| limit     | Yes      | The maximum number of orders that can be returned, this supported maximum number is 100                                                                                             |
-| offset    | Yes      | The number of lines to retrieve the next batch of records. For example, if your limit is 100, specifying an offset of 10 will return records 10. If not specified, the default is 0 |
+| since     | Yes      | Start range of order date of the requested orders with current time in RFC3339 format timestamp                                                                                     |
+| until     | Yes      | End range of order date of the requested orders current time in RFC3339 format timestamp to which the order requested                                                                                                           |
+| pageNo    | Yes      | The maximum number of orders that can be returned, this supported maximum number is 100                                                                                             |
+| perpage   | Yes      | The number of records to be returned in 1 page |
+
+**Request example**
+
+`GET /v1/partner/page/2?since=2018-10-13T13:3A34:3A52:2B07:3A00&until=2018-10-16T19:3A22:3A39:2B07:3A00&perpage=1`
+
+| Host :       | api.connexi.id |
+| partner_id : | B98KL87        |
+| MAC :        | a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM= |    
 
 **Responses**
 
@@ -59,7 +69,7 @@ You can used this API to connect to SIRCLO Platform.
   "data": [
     {
       "id": 1,
-      "order_number": "",
+      "order_number": "ABC123",
       "order_date": "2006-01-02T15:04:05Z07:00",
       "customer_reference": "JNH7438B",
       "shipment_reference": "",
@@ -94,6 +104,7 @@ You can used this API to connect to SIRCLO Platform.
       "updatedAt": "2019-05-27 06:05:11.979185"
     }
   ],
+  "total_record" : 1,
   "message": "",
   "reference": ""
 }
@@ -108,11 +119,12 @@ You can used this API to connect to SIRCLO Platform.
 `POST https://api.connexi.id/v1/order`
 
 **Header Parameters**
+These parameters exist in the HTTP request headers
 
-| Name       | Required | Type   | Description                       |
-| ---------- | -------- | ------ | --------------------------------- |
-| api_key    | Yes      | string | api key used to authentication    |
-| api_secret | Yes      | string | api secret used to authentication |
+| Name       | Required | Description                                                                                                                    |
+| ---------- | -------- |--------------------------------------------------------------------------------------------------------------------------------|
+| partner_id | Yes      | Partner id value (given from sirclo) used for partner identification by sirclo                                                 |
+| MAC        | Yes      |HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: Composing HMAC |
 
 ### Request Body
 
@@ -155,45 +167,11 @@ Request body parameter must be in the form of JSON
 
 ```json
 {
-  "data": {
-    "id": 123,
-    "order_id": "ORD-123",
-    "order_date": "2006-01-02T15:04:05Z07:00",
-    "customer_reference": "JNH7438B",
-    "shipment_reference": "",
-    "status": "accepted",
-    "delivery_name": "Artia",
-    "delivery_email": "artia2@gmail.com",
-    "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
-    "delivery_region": "DKI Jakarta",
-    "delivery_city": "Kota Jakarta Barat - Cengkareng",
-    "delivery_country": "Indonesia",
-    "delivery_post_code": "11720",
-    "delivery_method": "JNE REG",
-    "delivery_mobile": "082101871618",
-    "airwaybill_number": "AWB12345678",
-    "currency_code": "IDR",
-    "subtotal": 110000,
-    "discount_total": 10000,
-    "shipping_total": 15000,
-    "total": 115000,
-    "line_items": [
-      {
-        "id": 3,
-        "sku": "DKL0907",
-        "name": "Product ABC",
-        "quantity": 2,
-        "raw_price": 100000,
-        "discount": 10000
-      }
-    ],
-    "createdAt": "2019-05-27 06:05:11.979185",
-    "updatedAt": "2019-05-27 06:05:11.979185"
-  },
-  "message": "",
-  "reference": ""
+  "message": "order created successfully",
+  "reference": "9756dabb-1e1c-4f1e-9003-16c052aab4fb"
 }
 ```
+Request body must be a JSON document with the following properties
 
 | Name                    | Required | Type      | Description                                                                 |
 | ----------------------- | -------- | --------- | --------------------------------------------------------------------------- |
