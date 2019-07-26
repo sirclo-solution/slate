@@ -52,9 +52,9 @@ These parameters exist in the http request query string
 | pageNo    | Yes      | The maximum number of orders that can be returned, this supported maximum number is 100                                                                                             |
 | perpage   | Yes      | The number of records to be returned in 1 page |
 
-**Example RFC3339 formatted date time :**
- `2018-12-31T23:59:59+07:00`
-`is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 59, in timezone UTC+7`
+> **Example RFC3339 formatted date time :**
+> 2018-12-31T23:59:59+07:00
+> is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 59, in timezone UTC+7
 
 **Request example**
 
@@ -218,7 +218,7 @@ Request body must be a JSON document with the following properties
 | order_date              | Yes      | Timestamp | the date of order ( must be in RFC3339 format timestamp )                                      |
 | customer_reference      | No       | string    | customer reference value                                                                       |
 | shipment_reference      | Yes      | string    | shipment reference value                                                                       |
-| status                  | No       | string    | status of orders, If status is empty, then it will be assigned as "pending"                    |
+| status                  | No       | string    | Status of the order. The acceptable status values are:                                         |
 |                         |          |           | <table><tr><td>Value</td><td>Description</td></tr><tr><td>pending</td><td>Order is received from buyer but not yet accepted/acknowledged by seller.</td></tr><tr><td>accepted</td><td>Order is already accepted by seller. Waiting for buyer payment or seller to send ordered items.</td></tr><tr><td>packed</td><td>Order is already sent by seller. Order should have airway bill no from 3PL/shipping courier/logistics company.</td></tr><tr><td>completed</td><td>Ordered items is already received by buyer.</td></tr><tr><td>canceled</td><td>Order has been canceled by buyer or seller</td></tr></table> |                                                              |
 | delivery_name           | No       | string    | name of the buyer/delivery recipient in this order                                             |
 | delivery_email          | No       | string    | email address of the buyer/delivery recipient in this order                                    |
