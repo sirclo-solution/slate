@@ -122,9 +122,10 @@ These parameters exist in the http request query string
 
 ### HTTP Request
 
-`POST https://api.connexi.id/v1/order`
+`POST v1/partner/order`
 
 **Header Parameters**
+
 These parameters exist in the HTTP request headers
 
 | Name       | Required | Description                                                                                                                    |
