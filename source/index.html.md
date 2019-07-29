@@ -6,7 +6,7 @@ toc_footers:
 
 includes:
   - introduction
-  - composing-secret
+  - secret
   - order
   - product
   - errors

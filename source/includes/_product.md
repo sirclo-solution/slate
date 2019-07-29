@@ -1,30 +1,24 @@
-# Product
+# Products
 
-## Get Stocks
-
-Description : This endpoint used to get stock from partner system.
-
-| Environment | Host URL               |
-| ----------- | ---------------------- |
-| Production  | https://api.connexi.id |
+## Get Stock
 
 ### HTTP Request
 
-`GET /product/stock?limit=&offset=`
+`GET /v1/partner/product/stock?limit=&offset=`
 
 ### Header Parameters
 
-| Name       | Required | Type   | Description                                                                                                                                                       |
-| ---------- | -------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| partner_id | Yes      | String | Partner id value (given from sirclo) used for partner identification by sirclo                                                                                    |
-| Secret     | Yes      | String | HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: <a href="#composing-secret">Composing Secret</a> |
+| Name       | Required | Type   | Description                                                                                                       |
+| ---------- | -------- | ------ | ----------------------------------------------------------------------------------------------------------------- |
+| partner_id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
+| secret     | Yes      | String | HMAC (Hash Based Message Authentication Code), refer to section: <a href="#composing-secret">Composing Secret</a> |
 
 ### Path Parameters
 
-| Parameter | Required | Type    | Description                                                                                                                                                                         |
-| --------- | -------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| limit     | Yes      | Integer | The maximum number of orders that can be returned, this supported maximum number is 100                                                                                             |
-| offset    | Yes      | Integer | The number of lines to retrieve the next batch of records. For example, if your limit is 100, specifying an offset of 10 will return records 10. If not specified, the default is 0 |
+| Parameter | Required | Type    | Description                                                                                            |
+| --------- | -------- | ------- | ------------------------------------------------------------------------------------------------------ |
+| limit     | No       | Integer | Number of orders that want to be returned (by default the number is 100)                               |
+| offset    | No       | Integer | To be used for pagination (use value 10 if you want to skip 10 first datas, by default the value is 0) |
 
 > The above request returns JSON structured like this:
 
@@ -36,8 +30,8 @@ Description : This endpoint used to get stock from partner system.
       "sku": "DKL0907",
       "name": "Product ABC",
       "available": "20",
-      "created_at": "2018-11-07T03:46:16.457936Z",
-      "update_at": "2018-11-07T03:46:16.457938Z"
+      "created_at": "2018-11-07T03:46:16Z",
+      "update_at": "2018-11-07T03:46:16Z"
     }
   ],
   "message": "",
