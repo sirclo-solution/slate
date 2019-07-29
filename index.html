@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Order</title>
+    <title>SIRCLO Public API</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,9 +210,6 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -220,6 +217,17 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#composing-secret" class="toc-h1 toc-link" data-title="Composing Secret">Composing Secret</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#example" class="toc-h2 toc-link" data-title="Example">Example</a>
+                  </li>
+                  <li>
+                    <a href="#another-example" class="toc-h2 toc-link" data-title="Another example">Another example</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#order-api" class="toc-h1 toc-link" data-title="Order API">Order API</a>
@@ -254,13 +262,13 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p><strong>Welcome To SIRCLO API Documentation</strong>
-You can used this API to connect to SIRCLO Platform. </p>
+        <!-- Converted with the swagger-to-slate https://github.com/lavkumarv/swagger-to-slate -->
+<h1 id='introduction'>Introduction</h1>
+<p><strong>Welcome To SIRCLO API Documentation</strong></p>
 
 <p><strong>Version:</strong> 1.0</p>
-<h1 id='order-api'>Order API</h1><h2 id='get-order'>Get Order</h2>
-<p><strong>Description:</strong> Call this endpoint to get orders data that you have previously sent using create order endpoint.</p>
+
+<p>You can used this API to connect to SIRCLO Platform.</p>
 
 <table><thead>
 <tr>
@@ -270,98 +278,182 @@ You can used this API to connect to SIRCLO Platform. </p>
 </thead><tbody>
 <tr>
 <td>Production</td>
-<td>https://api.connexi.id</td>
+<td><a href="https://api.connexi.id">https://api.connexi.id</a></td>
+</tr>
+<tr>
+<td>Staging</td>
+<td><a href="https://api2.connexi.id.dmmy.me">https://api2.connexi.id.dmmy.me</a></td>
 </tr>
 </tbody></table>
+<h1 id='composing-secret'>Composing Secret</h1>
+<p>For every request sent, partner must include <strong><em>partner_id</em></strong> and <strong><em>secret</em></strong> in the HTTP request headers.</p>
+
+<ul>
+<li><strong><em>partner_id</em></strong> value to use is given by Sirclo.</li>
+<li><strong><em>secret</em></strong> value to send is HMAC (Hash Based Message Authentication Code) using SHA-256 algorithm.</li>
+<li>To compose the HMAC value, partner must use the HTTP Request URI joined with the request Body as the message to hash using a certain <strong><em>partner_secret</em></strong> value (given by SIRCLO)</li>
+<li>The resulting hash after HMAC calculation is then base64 encoded and placed in HTTP header <strong><em>secret</em></strong> in the request.</li>
+</ul>
+<h2 id='example'>Example</h2>
+<p>Given <strong><em>partner_id</em></strong> and <strong><em>partner_secret</em></strong>:</p>
+
+<table><thead>
+<tr>
+<th>partner_id</th>
+<th>partner_secret</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>B98KL87</td>
+<td>a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM</td>
+</tr>
+</tbody></table>
+
+<p>With request URI <strong><em>POST /v1/partner/order</em></strong> and the HTTP Request Body Parameter example like on the right side</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-256/20190627/FMCG/OA"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-02T16:31:55Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DHU9868NGY"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.fictional.smith@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE Reguler"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organic Instant Noodles Special Chicken Flavor - 150 gr"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"raw_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CCF0985"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organic Instant Coffee With Brown Sugar - 100 gr"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"raw_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The message used for HMAC calculation is taken from the HTTP request URI joined with the HTTP request body:</p>
+<pre class="highlight plaintext"><code>message_to_be_hashed = /v1/partner/order/create{"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","ariwaybill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
+</code></pre>
+<p>The <strong><em>message_to_be_hashed</em></strong> is then used with the <strong><em>partner_secret</em></strong> value when calculating the HMAC</p>
+<pre class="highlight plaintext"><code>hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
+</code></pre>
+<p>The resulting hmac is in binary format, it is then base64 encoded</p>
+<pre class="highlight plaintext"><code>result = bas64_encode(hmac)
+       = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
+</code></pre>
+<p>Partner must include this HMAC value in HTTP header: &quot;<strong><em>secret</em></strong>&quot; along with HTTP header &quot;<strong><em>partner_id</em></strong>&quot;. Example request that the partner needs to send becomes as follows:</p>
+<pre class="highlight plaintext"><code>POST /v1/partner/order/create HTTP/1.1
+Host: api.connexi.id
+Content-Type: application/json
+partner_id: B98KL87
+secret: +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
+
+{"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","airway_bill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
+</code></pre>
+<p>Code examples of on how to calculate HMAC in various programming languages: <a href="https://github.com/danharper/hmac-examples">https://github.com/danharper/hmac-examples</a></p>
+<h2 id='another-example'>Another example</h2>
+<ul>
+<li>The partner wants to send a HTTP request like the following:</li>
+</ul>
+<pre class="highlight plaintext"><code>GET /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0 HTTP/1.1
+Host: api.connexi.id
+</code></pre>
+<p>The request URI of the HTTP request is &quot;<em>/v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0</em>&quot;</p>
+
+<aside class="notice">Note: The query string values in the request URI should be in their original form (i.e. not URL encoded) when composing HMAC. For example:</aside>
+
+<ul>
+<li>&quot;<em>since</em>&quot; in the example above is &quot;<em>2018-10-13T13:34:52Z</em>&quot;, not URL encoded value &quot;<em>2018-10-13T13%3A34%3A52Z</em>&quot;,</li>
+<li>&quot;<em>until</em>&quot; is &quot;<em>2018-10-16T19:22:39Z</em>&quot;, not URL encoded value &quot;<em>2018-10-16T19%3A22%3A39Z</em>&quot;</li>
+</ul>
+<pre class="highlight plaintext"><code>message_to_be_hashed = /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0
+hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
+secret = bas64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
+</code></pre>
+<p>The HTTP request to send then becomes as follows:</p>
+<pre class="highlight plaintext"><code>GET /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0
+partner_id: B98KL87
+secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
+</code></pre><h1 id='order-api'>Order API</h1><h2 id='get-order'>Get Order</h2>
+<p><strong>Description:</strong> Call this endpoint to get orders data that you have previously sent using create order endpoint.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET /order?since=&amp;until=&amp;limit=&amp;offset=</code></p>
 <h3 id='header-parameters'>Header Parameters</h3>
-<p>These parameters exist in the HTTP request headers</p>
-
 <table><thead>
 <tr>
 <th>Name</th>
 <th>Required</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>partner_id</td>
 <td>Yes</td>
-<td>Partner id value (given from sirclo) used for partner identification by sirclo</td>
+<td>String</td>
+<td>Partner id value (given from SIRCLO) used for partner identification by SIRCLO</td>
 </tr>
 <tr>
-<td>MAC</td>
+<td>Secret</td>
 <td>Yes</td>
-<td>HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: &quot;<strong>Composing HMAC</strong>&quot;</td>
+<td>String</td>
+<td>HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: <a href="#composing-secret">Composing Secret</a></td>
 </tr>
 </tbody></table>
 <h3 id='query-string-parameters'>Query String Parameters</h3>
-<p>These parameters exist in the http request query string</p>
-
 <table><thead>
 <tr>
 <th>Parameter</th>
 <th>Required</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>since</td>
 <td>Yes</td>
+<td>Timestamp</td>
 <td>Start range of order date of the requested orders (must be in RFC3339 format)</td>
 </tr>
 <tr>
 <td>until</td>
 <td>Yes</td>
+<td>Timestamp</td>
 <td>End range of order date of the requested orders (must be in RFC3339 format)</td>
 </tr>
 <tr>
-<td>pageNo</td>
+<td>limit</td>
 <td>Yes</td>
+<td>Integer</td>
 <td>The maximum number of orders that can be returned, this supported maximum number is 100</td>
 </tr>
 <tr>
-<td>perpage</td>
+<td>offset</td>
 <td>Yes</td>
+<td>Integer</td>
 <td>The number of records to be returned in 1 page</td>
 </tr>
 </tbody></table>
 
 <blockquote>
-<p><strong>Example RFC3339 formatted date time :</strong>
-2018-12-31T23:59:59+07:00
-is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 59, in timezone UTC+7</p>
-</blockquote>
+<p>Request example
+<code>GET /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0</code></p>
 
-<p><strong>Request example</strong></p>
-
-<p><code>GET /v1/partner/page/2?since=2018-10-13T13:3A34:3A52:2B07:3A00&amp;until=2018-10-16T19:3A22:3A39:2B07:3A00&amp;perpage=1</code></p>
-
-<table><thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Host :</td>
-<td>api.connexi.id</td>
-</tr>
-<tr>
-<td>partner_id :</td>
-<td>B98KL87</td>
-</tr>
-<tr>
-<td>MAC :</td>
-<td>a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM=</td>
-</tr>
-</tbody></table>
-
-<p><strong>Responses</strong></p>
-
-<blockquote>
-<p>The above request will return response like this:</p>
+<p>The above request returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -402,40 +494,41 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
       </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27 06:05:11.979185"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"total_record"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_record"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='create-order'>Create Order</h2>
 <p><strong>Description:</strong> Use this endpoint to create new order.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST v1/partner/order</code></p>
+<p><code>POST /order</code></p>
 
 <p><strong>Header Parameters</strong></p>
-
-<p>These parameters exist in the HTTP request headers</p>
 
 <table><thead>
 <tr>
 <th>Name</th>
 <th>Required</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>partner_id</td>
 <td>Yes</td>
-<td>Partner id value (given from sirclo) used for partner identification by sirclo</td>
+<td>String</td>
+<td>Partner id value (given from SIRCLO) used for partner identification by SIRCLO</td>
 </tr>
 <tr>
-<td>MAC</td>
+<td>Secret</td>
 <td>Yes</td>
-<td>HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: &quot;<strong>Composing HMAC</strong>&quot;</td>
+<td>String</td>
+<td>HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: <a href="#composing-secret">Composing Secret</a></td>
 </tr>
 </tbody></table>
-<h3 id='request-body'>Request Body</h3>
+
 <blockquote>
-<p>This request orders parameter in body :</p>
+<p>Request body example :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-123"</span><span class="p">,</span><span class="w">
@@ -466,7 +559,7 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>The above request will return response like this:</p>
+<p>The above request returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -546,13 +639,37 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
 <td>status</td>
 <td>No</td>
 <td>string</td>
-<td>Status of the order. The acceptable status values are:</td>
+<td>Status of the order (by default pending if empty. The acceptable status values are:</td>
 </tr>
 <tr>
+<td>1. Pending</td>
 <td></td>
 <td></td>
+<td>Order is received from buyer but not yet accepted/acknowledged by seller.</td>
+</tr>
+<tr>
+<td>2. Accepted</td>
 <td></td>
-<td><table><tr><td>Value</td><td>Description</td></tr><tr><td>pending</td><td>Order is received from buyer but not yet accepted/acknowledged by seller.</td></tr><tr><td>accepted</td><td>Order is already accepted by seller. Waiting for buyer payment or seller to send ordered items.</td></tr><tr><td>packed</td><td>Order is already sent by seller. Order should have airway bill no from 3PL/shipping courier/logistics company.</td></tr><tr><td>completed</td><td>Ordered items is already received by buyer.</td></tr><tr><td>canceled</td><td>Order has been canceled by buyer or seller</td></tr></table></td>
+<td></td>
+<td>Order is already accepted by seller. Waiting for buyer payment or seller to send ordered items.</td>
+</tr>
+<tr>
+<td>3. Packed</td>
+<td></td>
+<td></td>
+<td>Order is already sent by seller. Order should have airway bill no from 3PL/shipping courier/logistics company.</td>
+</tr>
+<tr>
+<td>4. Completed</td>
+<td></td>
+<td></td>
+<td>Ordered items is already received by buyer.</td>
+</tr>
+<tr>
+<td>5. Cancelled</td>
+<td></td>
+<td></td>
+<td>Order has been canceled by buyer or seller</td>
 </tr>
 <tr>
 <td>delivery_name</td>
@@ -666,7 +783,7 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
 <h2 id='update-order'>Update Order</h2>
 <p><strong>Description:</strong> This endpoint used to update order from partner system.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>PATCH https://api.connexi.id/v1/order</code></p>
+<p><code>PATCH /order</code></p>
 <h3 id='header-parameters-2'>Header Parameters</h3>
 <table><thead>
 <tr>
@@ -677,36 +794,32 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
 </tr>
 </thead><tbody>
 <tr>
-<td>api_key</td>
+<td>partner_id</td>
 <td>Yes</td>
-<td>string</td>
-<td>api key used to authentication</td>
+<td>String</td>
+<td>Partner id value (given from SIRCLO) used for partner identification by SIRCLO</td>
 </tr>
 <tr>
-<td>api_secret</td>
+<td>Secret</td>
 <td>Yes</td>
-<td>string</td>
-<td>api secret used to authentication</td>
+<td>String</td>
+<td>HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: <a href="#composing-secret">Composing Secret</a></td>
 </tr>
 </tbody></table>
-<h3 id='request-body-2'>Request Body</h3>
-<p><strong>Request body parameter must be in the form JSON</strong></p>
 
 <blockquote>
-<p>This request orders parameter in body :</p>
+<p>Request body example :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"accepted"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order001"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27 06:05:11.979185"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"packed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order002"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awb002"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27 06:05:11.979185"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -714,7 +827,6 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
   </span><span class="s2">"completed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order003"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"received_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yosua"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27 06:05:11.979185"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -722,7 +834,6 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
   </span><span class="s2">"cancelled"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">135</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order004"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"cancel_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27 06:05:11.979185"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -730,7 +841,7 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>The above request will return response like this:</p>
+<p>The above request returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -753,7 +864,107 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='product'>Product</h1><h2 id='get-stocks'>Get Stocks</h2>
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accepted</td>
+<td>No</td>
+<td>array</td>
+<td>array of order that want to be accepted</td>
+</tr>
+<tr>
+<td>accepted - id</td>
+<td>Yes</td>
+<td>int</td>
+<td>SIRCLO Platform order id</td>
+</tr>
+<tr>
+<td>accepted - updated_at</td>
+<td>Yes</td>
+<td>timestamp</td>
+<td>the last updated timestamp for this order and must be in RFC3339 format timestamp</td>
+</tr>
+<tr>
+<td>packed</td>
+<td>No</td>
+<td>array</td>
+<td>array of order that want to be packed</td>
+</tr>
+<tr>
+<td>packed - id</td>
+<td>Yes</td>
+<td>int</td>
+<td>SIRCLO Platform order id</td>
+</tr>
+<tr>
+<td>packed - airwaybill_number</td>
+<td>Yes</td>
+<td>string</td>
+<td>the airwaybill number for this order</td>
+</tr>
+<tr>
+<td>packed - updated_at</td>
+<td>Yes</td>
+<td>timestamp</td>
+<td>the last updated timestamp for this order and must be in RFC3339 format timestamp</td>
+</tr>
+<tr>
+<td>completed</td>
+<td>No</td>
+<td>array</td>
+<td>array of order that want to be completed</td>
+</tr>
+<tr>
+<td>completed - id</td>
+<td>Yes</td>
+<td>int</td>
+<td>SIRCLO Platform order id</td>
+</tr>
+<tr>
+<td>completed - received_by</td>
+<td>No</td>
+<td>string</td>
+<td>name of the receiver</td>
+</tr>
+<tr>
+<td>completed - updated_at</td>
+<td>Yes</td>
+<td>timestamp</td>
+<td>the last updated timestamp for this order and must be in RFC3339 format timestamp</td>
+</tr>
+<tr>
+<td>cancelled</td>
+<td>No</td>
+<td>array</td>
+<td>array of order that want to be cancelled</td>
+</tr>
+<tr>
+<td>cancelled - id</td>
+<td>Yes</td>
+<td>int</td>
+<td>SIRCLO Platform order id</td>
+</tr>
+<tr>
+<td>cancelled - cancel_reason</td>
+<td>No</td>
+<td>string</td>
+<td>reason why the order is cancelled</td>
+</tr>
+<tr>
+<td>cancelled - updated_at</td>
+<td>Yes</td>
+<td>timestamp</td>
+<td>the last updated timestamp for this order and must be in RFCC3339 format timestamp</td>
+</tr>
+</tbody></table>
+<h1 id='product'>Product</h1><h2 id='get-stocks'>Get Stocks</h2>
 <p>Description : This endpoint used to get stock from partner system.</p>
 
 <table><thead>
@@ -767,9 +978,9 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
 <td>https://api.connexi.id</td>
 </tr>
 </tbody></table>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET /v1/order/?since=&amp;until=&amp;limit=&amp;offset=</code></p>
-<h3 id='header-parameters-3'>Header Parameters</h3>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /product/stock?limit=&amp;offset=</code></p>
+<h3 id='header-parameters'>Header Parameters</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -779,16 +990,16 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
 </tr>
 </thead><tbody>
 <tr>
-<td>api_key</td>
+<td>partner_id</td>
 <td>Yes</td>
-<td>string</td>
-<td>api key used to authentication</td>
+<td>String</td>
+<td>Partner id value (given from sirclo) used for partner identification by sirclo</td>
 </tr>
 <tr>
-<td>api_secret</td>
+<td>Secret</td>
 <td>Yes</td>
-<td>string</td>
-<td>api secret used to authentication</td>
+<td>String</td>
+<td>HMAC (Hash Based Message Authentication Code) composed by hashing the HTTP request body using, refer to section: <a href="#composing-secret">Composing Secret</a></td>
 </tr>
 </tbody></table>
 <h3 id='path-parameters'>Path Parameters</h3>
@@ -796,17 +1007,20 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
 <tr>
 <th>Parameter</th>
 <th>Required</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>limit</td>
 <td>Yes</td>
+<td>Integer</td>
 <td>The maximum number of orders that can be returned, this supported maximum number is 100</td>
 </tr>
 <tr>
 <td>offset</td>
 <td>Yes</td>
+<td>Integer</td>
 <td>The number of lines to retrieve the next batch of records. For example, if your limit is 100, specifying an offset of 10 will return records 10. If not specified, the default is 0</td>
 </tr>
 </tbody></table>
@@ -814,7 +1028,7 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
 <p><strong>Responses</strong></p>
 
 <blockquote>
-<p>The above request will return response like this:</p>
+<p>The above request returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -830,9 +1044,7 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<!-- Converted with the swagger-to-slate https://github.com/lavkumarv/swagger-to-slate -->
-<h1 id='errors'>Errors</h1>
+</span></code></pre><h1 id='errors'>Errors</h1>
 <!-- <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
 </aside> -->
@@ -873,9 +1085,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-          </div>
       </div>
     </div>
   </body>
