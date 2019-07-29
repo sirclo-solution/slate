@@ -26,9 +26,9 @@ You can used this API to connect to SIRCLO Platform.
 
 **Description:** Call this endpoint to get orders data that you have previously sent using create order endpoint.
 
-| Environment | Host URL               |
-| ----------- | ---------------------- |
-| Production  | https://api.connexi.id |
+| Environment | Host URL                  |
+| ----------- | ------------------------- |
+| Production  | https://api.connexi.id/v1 |
 
 ### HTTP Request
 
@@ -122,7 +122,7 @@ These parameters exist in the http request query string
 
 ### HTTP Request
 
-`POST v1/partner/order`
+`POST /order`
 
 **Header Parameters**
 
@@ -245,7 +245,7 @@ Request body must be a JSON document with the following properties
 
 ### HTTP Request
 
-`PATCH https://api.connexi.id/v1/order`
+`PATCH /order`
 
 ### Header Parameters
 
@@ -265,14 +265,12 @@ Request body must be a JSON document with the following properties
   "accepted": [
     {
       "id": 123,
-      "order_number": "order001",
       "updated_at": "2019-05-27 06:05:11.979185"
     }
   ],
   "packed": [
     {
       "id": 456,
-      "order_number": "order002",
       "airwaybill_number": "awb002",
       "updated_at": "2019-05-27 06:05:11.979185"
     }
@@ -280,7 +278,6 @@ Request body must be a JSON document with the following properties
   "completed": [
     {
       "id": 789,
-      "order_number": "order003",
       "received_by": "Yosua",
       "updated_at": "2019-05-27 06:05:11.979185"
     }
@@ -288,7 +285,6 @@ Request body must be a JSON document with the following properties
   "cancelled": [
     {
       "id": 135,
-      "order_number": "order004",
       "cancel_reason": "",
       "updated_at": "2019-05-27 06:05:11.979185"
     }
@@ -322,6 +318,24 @@ Request body must be a JSON document with the following properties
 }
 ```
 
+| Name                       | Required | Type      | Description                                                                        |
+| -------------------------- | -------- | --------- | ---------------------------------------------------------------------------------- |
+| accepted                   | No       | array     | array of order that want to be accepted                                            |
+| accepted - id              | Yes      | int       | SIRCLO Platform order id                                                           |
+| accepted - updated_at      | Yes      | timestamp | the last updated timestamp for this order and must be in RFC3339 format timestamp  |
+| packed                     | No       | array     | array of order that want to be packed                                              |
+| packed - id                | Yes      | int       | SIRCLO Platform order id                                                           |
+| packed - airwaybill_number | Yes      | string    | the airwaybill number for this order                                               |
+| packed - updated_at        | Yes      | timestamp | the last updated timestamp for this order and must be in RFC3339 format timestamp  |
+| completed                  | No       | array     | array of order that want to be completed                                           |
+| completed - id             | Yes      | int       | SIRCLO Platform order id                                                           |
+| completed - received_by    | No       | string    | name of the receiver                                                               |
+| completed - updated_at     | Yes      | timestamp | the last updated timestamp for this order and must be in RFC3339 format timestamp  |
+| cancelled                  | No       | array     | array of order that want to be cancelled                                           |
+| cancelled - id             | Yes      | int       | SIRCLO Platform order id                                                           |
+| cancelled - cancel_reason  | No       | string    | reason why the order is cancelled                                                  |
+| cancelled - updated_at     | Yes      | timestamp | the last updated timestamp for this order and must be in RFCC3339 format timestamp |  |
+
 # Product
 
 ## Get Stocks
@@ -334,7 +348,7 @@ Description : This endpoint used to get stock from partner system.
 
 ### HTTP Request
 
-`GET /v1/order/?since=&until=&limit=&offset=`
+`GET /product/stock?limit=&offset=`
 
 ### Header Parameters
 
