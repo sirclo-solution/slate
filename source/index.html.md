@@ -16,7 +16,7 @@ search: true
 # Introduction
 
 **Welcome To SIRCLO API Documentation**
-You can used this API to connect to SIRCLO Platform.
+You can used this API to connect to SIRCLO Platform. 
 
 **Version:** 1.0
 
@@ -32,7 +32,7 @@ You can used this API to connect to SIRCLO Platform.
 
 ### HTTP Request
 
-`GET /v1/partner/page/{pageNo}?since={since}&until={until}&perpage={perpage}`
+`GET /order?since=&until=&limit=&offset=`
 
 ### Header Parameters
 These parameters exist in the HTTP request headers
