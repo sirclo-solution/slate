@@ -536,25 +536,25 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>order_id</td>
 <td>Yes</td>
 <td>string</td>
-<td>Id of the order in partner&#39;s application</td>
+<td>ID of the order in partner&#39;s application</td>
 </tr>
 <tr>
 <td>order_date</td>
 <td>Yes</td>
 <td>Timestamp</td>
-<td>the date of order ( must be in RFC3339 format timestamp )</td>
+<td>The date of order ( must be in RFC3339 format timestamp )</td>
 </tr>
 <tr>
 <td>customer_reference</td>
 <td>No</td>
 <td>string</td>
-<td>customer reference value</td>
+<td>Customer reference value</td>
 </tr>
 <tr>
 <td>shipment_reference</td>
 <td>Yes</td>
 <td>string</td>
-<td>shipment reference value</td>
+<td>Shipment reference value</td>
 </tr>
 <tr>
 <td>status</td>
@@ -596,67 +596,67 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>delivery_name</td>
 <td>No</td>
 <td>string</td>
-<td>name of the buyer/delivery recipient in this order</td>
+<td>Name of the buyer/delivery recipient in this order</td>
 </tr>
 <tr>
 <td>delivery_email</td>
 <td>No</td>
 <td>string</td>
-<td>email address of the buyer/delivery recipient in this order</td>
+<td>Email address of the buyer/delivery recipient in this order</td>
 </tr>
 <tr>
 <td>delivery_street_address</td>
 <td>No</td>
 <td>string</td>
-<td>street address for order delivery</td>
+<td>Street address for order delivery</td>
 </tr>
 <tr>
 <td>delivery_region</td>
 <td>No</td>
 <td>string</td>
-<td>region (province/district) of the delivery recipient</td>
+<td>Region (province/district) of the delivery recipient</td>
 </tr>
 <tr>
 <td>delivery_city</td>
 <td>No</td>
 <td>string</td>
-<td>city of the delivery recipient</td>
+<td>City of the delivery recipient</td>
 </tr>
 <tr>
 <td>delivery_country</td>
 <td>No</td>
 <td>string</td>
-<td>country address of the buyer</td>
+<td>Country address of the buyer</td>
 </tr>
 <tr>
 <td>delivery_post_code</td>
 <td>No</td>
 <td>string</td>
-<td>post code of the delivery recipient</td>
+<td>Postal code of the delivery recipient</td>
 </tr>
 <tr>
 <td>delivery_method</td>
 <td>No</td>
 <td>string</td>
-<td>logistics service information (name of the logistics company/service used for order delivery)</td>
+<td>Logistics service information (name of the logistics company/service used for order delivery)</td>
 </tr>
 <tr>
 <td>delivery_mobile</td>
 <td>No</td>
 <td>string</td>
-<td>mobile number of the delivery recipient</td>
+<td>Mobile number of the delivery recipient</td>
 </tr>
 <tr>
 <td>airwaybill_number</td>
 <td>No</td>
 <td>string</td>
-<td>airwaybill number from 3PL 3PL (Logistics/Shipping company)</td>
+<td>Airwaybill number from 3PL 3PL (Logistics/Shipping company)</td>
 </tr>
 <tr>
 <td>shipping_total</td>
 <td>No</td>
 <td>double</td>
-<td>This total shipping cost value for this order</td>
+<td>The total shipping cost value for this order</td>
 </tr>
 <tr>
 <td>line_items</td>
@@ -668,37 +668,37 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>line_items - id</td>
 <td>Yes</td>
 <td>int</td>
-<td>id of the product</td>
+<td>ID of the product</td>
 </tr>
 <tr>
 <td>line_items - sku</td>
 <td>Yes</td>
 <td>string</td>
-<td>sku of the purchased line item</td>
+<td>SKU of the purchased line item</td>
 </tr>
 <tr>
 <td>line_items - name</td>
 <td>Yes</td>
 <td>string</td>
-<td>name of the purchased line item</td>
+<td>Name of the purchased line item</td>
 </tr>
 <tr>
 <td>line_items - quantity</td>
 <td>Yes</td>
 <td>integer</td>
-<td>quantity of the line item</td>
+<td>Quantity of the line item</td>
 </tr>
 <tr>
 <td>line_items - unit_price</td>
 <td>Yes</td>
 <td>double</td>
-<td>unit price of the line item (after discount)</td>
+<td>Unit price of the line item (after discount)</td>
 </tr>
 <tr>
 <td>line_items - discount</td>
 <td>Yes</td>
 <td>double</td>
-<td>discount value applied on the line item</td>
+<td>Discount value applied on the line item</td>
 </tr>
 </tbody></table>
 
@@ -814,7 +814,7 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>accepted</td>
 <td>No</td>
 <td>array</td>
-<td>array of order that want to be accepted</td>
+<td>Array of order that want to be accepted</td>
 </tr>
 <tr>
 <td>accepted - id</td>
@@ -826,13 +826,13 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>accepted - updated_at</td>
 <td>Yes</td>
 <td>timestamp</td>
-<td>the last updated timestamp for this order and must be in RFC3339 format timestamp</td>
+<td>The last updated timestamp for this order and must be in RFC3339 format timestamp</td>
 </tr>
 <tr>
 <td>packed</td>
 <td>No</td>
 <td>array</td>
-<td>array of order that want to be packed</td>
+<td>Array of order that want to be packed</td>
 </tr>
 <tr>
 <td>packed - id</td>
@@ -844,19 +844,19 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>packed - airwaybill_number</td>
 <td>Yes</td>
 <td>string</td>
-<td>the airwaybill number for this order</td>
+<td>The airwaybill number for this order</td>
 </tr>
 <tr>
 <td>packed - updated_at</td>
 <td>Yes</td>
 <td>timestamp</td>
-<td>the last updated timestamp for this order and must be in RFC3339 format timestamp</td>
+<td>The last updated timestamp for this order and must be in RFC3339 format timestamp</td>
 </tr>
 <tr>
 <td>completed</td>
 <td>No</td>
 <td>array</td>
-<td>array of order that want to be completed</td>
+<td>Array of order that want to be completed</td>
 </tr>
 <tr>
 <td>completed - id</td>
@@ -868,19 +868,19 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>completed - received_by</td>
 <td>No</td>
 <td>string</td>
-<td>name of the receiver</td>
+<td>Name of the receiver</td>
 </tr>
 <tr>
 <td>completed - updated_at</td>
 <td>Yes</td>
 <td>timestamp</td>
-<td>the last updated timestamp for this order and must be in RFC3339 format timestamp</td>
+<td>The last updated timestamp for this order and must be in RFC3339 format timestamp</td>
 </tr>
 <tr>
 <td>cancelled</td>
 <td>No</td>
 <td>array</td>
-<td>array of order that want to be cancelled</td>
+<td>Array of order that want to be cancelled</td>
 </tr>
 <tr>
 <td>cancelled - id</td>
@@ -892,13 +892,13 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>cancelled - cancel_reason</td>
 <td>No</td>
 <td>string</td>
-<td>reason why the order is cancelled</td>
+<td>Reason why the order is cancelled</td>
 </tr>
 <tr>
 <td>cancelled - updated_at</td>
 <td>Yes</td>
 <td>timestamp</td>
-<td>the last updated timestamp for this order and must be in RFCC3339 format timestamp</td>
+<td>The last updated timestamp for this order and must be in RFCC3339 format timestamp</td>
 </tr>
 </tbody></table>
 
