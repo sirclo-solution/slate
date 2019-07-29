@@ -256,7 +256,7 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p><strong>Welcome To SIRCLO API Documentation</strong>
-You can used this API to connect to SIRCLO Platform.</p>
+You can used this API to connect to SIRCLO Platform. </p>
 
 <p><strong>Version:</strong> 1.0</p>
 <h1 id='order-api'>Order API</h1><h2 id='get-order'>Get Order</h2>
@@ -274,7 +274,7 @@ You can used this API to connect to SIRCLO Platform.</p>
 </tr>
 </tbody></table>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /v1/partner/page/{pageNo}?since={since}&amp;until={until}&amp;perpage={perpage}</code></p>
+<p><code>GET /order?since=&amp;until=&amp;limit=&amp;offset=</code></p>
 <h3 id='header-parameters'>Header Parameters</h3>
 <p>These parameters exist in the HTTP request headers</p>
 
@@ -409,10 +409,11 @@ is the RFC3339 format of December 31st, 2018, at hour: 23, minute: 59, seconds: 
 </span></code></pre><h2 id='create-order'>Create Order</h2>
 <p><strong>Description:</strong> Use this endpoint to create new order.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST https://api.connexi.id/v1/order</code></p>
+<p><code>POST v1/partner/order</code></p>
 
-<p><strong>Header Parameters</strong>
-These parameters exist in the HTTP request headers</p>
+<p><strong>Header Parameters</strong></p>
+
+<p>These parameters exist in the HTTP request headers</p>
 
 <table><thead>
 <tr>
