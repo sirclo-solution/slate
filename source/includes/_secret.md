@@ -56,7 +56,7 @@ Given **_partner_id_** and **_partner_secret_**:
 
 > The message used for HMAC calculation is taken from the HTTP request URI joined with the HTTP request body:
 
-```
+```text
 message_to_be_hashed = /v1/partner/order{"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","ariwaybill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
 ```
 
@@ -103,10 +103,10 @@ The request URI of the HTTP request is "_/v1/partner/order?since=2018-10-13T13:3
 - "_since_" in the example above is "_2018-10-13T13:34:52Z_", not URL encoded value "_2018-10-13T13%3A34%3A52Z_",
 - "_until_" is "_2018-10-16T19:22:39Z_", not URL encoded value "_2018-10-16T19%3A22%3A39Z_"
 
-```
+```text
 message_to_be_hashed = /v1/partner/order?since=2018-10-13T13:34:52Z&until=2018-10-16T19:22:39Z&limit=100&offset=0
 hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
-secret = bas64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
+secret = base64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 ```
 
 > The HTTP request to send then becomes as follows:
