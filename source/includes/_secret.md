@@ -62,15 +62,14 @@ message_to_be_hashed = /v1/partner/order{"order_id":"ORD-256/20190627/FMCG/OA","
 
 > The **_message_to_be_hashed_** is then used with the **_partner_secret_** value when calculating the HMAC
 
-```
+```text
 hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
 ```
 
 > The resulting hmac is in binary format, it is then base64 encoded
 
-```
-result = bas64_encode(hmac)
-       = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
+```text
+result = base64_encode(hmac) = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
 ```
 
 > Partner must include this HMAC value in HTTP header: "**_secret_**" along with HTTP header "**_partner_id_**". Example request that the partner needs to send becomes as follows:
