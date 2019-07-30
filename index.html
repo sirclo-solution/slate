@@ -360,8 +360,7 @@
 <blockquote>
 <p>The resulting hmac is in binary format, it is then base64 encoded</p>
 </blockquote>
-<pre class="highlight plaintext"><code>result = bas64_encode(hmac)
-       = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
+<pre class="highlight plaintext"><code>result = base64_encode(hmac) = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
 </code></pre>
 <blockquote>
 <p>Partner must include this HMAC value in HTTP header: &quot;<strong><em>secret</em></strong>&quot; along with HTTP header &quot;<strong><em>partner_id</em></strong>&quot;. Example request that the partner needs to send becomes as follows:</p>
