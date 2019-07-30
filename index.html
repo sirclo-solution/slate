@@ -289,7 +289,7 @@
 <p>For every request sent, partner must include <strong><em>partner_id</em></strong> and <strong><em>secret</em></strong> in the HTTP request headers.</p>
 
 <ul>
-<li><strong><em>partner_id</em></strong> value to use is given by Sirclo.</li>
+<li><strong><em>partner_id</em></strong> value to use is given by SIRCLO.</li>
 <li><strong><em>secret</em></strong> value to send is HMAC (Hash Based Message Authentication Code) using SHA-256 algorithm.</li>
 <li>To compose the HMAC value, partner must use the HTTP Request URI joined with the request Body as the message to hash using a certain <strong><em>partner_secret</em></strong> value (given by SIRCLO)</li>
 <li>The resulting hash after HMAC calculation is then base64 encoded and placed in HTTP header <strong><em>secret</em></strong> in the request.</li>
