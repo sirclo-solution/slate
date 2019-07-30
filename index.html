@@ -309,7 +309,9 @@
 </tr>
 </tbody></table>
 
+<blockquote>
 <p>With request URI <strong><em>POST /v1/partner/order</em></strong> and the HTTP Request Body Parameter example like on the right side</p>
+</blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-256/20190627/FMCG/OA"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-02T16:31:55Z"</span><span class="p">,</span><span class="w">
@@ -345,17 +347,25 @@
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<blockquote>
 <p>The message used for HMAC calculation is taken from the HTTP request URI joined with the HTTP request body:</p>
+</blockquote>
 <pre class="highlight plaintext"><code>message_to_be_hashed = /v1/partner/order/create{"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","ariwaybill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
 </code></pre>
+<blockquote>
 <p>The <strong><em>message_to_be_hashed</em></strong> is then used with the <strong><em>partner_secret</em></strong> value when calculating the HMAC</p>
+</blockquote>
 <pre class="highlight plaintext"><code>hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
 </code></pre>
+<blockquote>
 <p>The resulting hmac is in binary format, it is then base64 encoded</p>
+</blockquote>
 <pre class="highlight plaintext"><code>result = bas64_encode(hmac)
        = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
 </code></pre>
+<blockquote>
 <p>Partner must include this HMAC value in HTTP header: &quot;<strong><em>secret</em></strong>&quot; along with HTTP header &quot;<strong><em>partner_id</em></strong>&quot;. Example request that the partner needs to send becomes as follows:</p>
+</blockquote>
 <pre class="highlight plaintext"><code>POST /v1/partner/order/create HTTP/1.1
 Host: api.connexi.id
 Content-Type: application/json
@@ -366,9 +376,9 @@ secret: +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
 </code></pre>
 <p>Code examples of on how to calculate HMAC in various programming languages: <a href="https://github.com/danharper/hmac-examples">https://github.com/danharper/hmac-examples</a></p>
 <h2 id='another-example'>Another example</h2>
-<ul>
-<li>The partner wants to send a HTTP request like the following:</li>
-</ul>
+<blockquote>
+<p>The partner wants to send a HTTP request like the following:</p>
+</blockquote>
 <pre class="highlight plaintext"><code>GET /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0 HTTP/1.1
 Host: api.connexi.id
 </code></pre>
@@ -384,7 +394,9 @@ Host: api.connexi.id
 hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
 secret = bas64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 </code></pre>
+<blockquote>
 <p>The HTTP request to send then becomes as follows:</p>
+</blockquote>
 <pre class="highlight plaintext"><code>GET /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0
 Host : api.connexi.id
 partner_id: B98KL87
