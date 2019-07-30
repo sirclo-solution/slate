@@ -2,7 +2,7 @@
 
 For every request sent, partner must include **_partner_id_** and **_secret_** in the HTTP request headers.
 
-- **_partner_id_** value to use is given by Sirclo.
+- **_partner_id_** value to use is given by SIRCLO.
 - **_secret_** value to send is HMAC (Hash Based Message Authentication Code) using SHA-256 algorithm.
 - To compose the HMAC value, partner must use the HTTP Request URI joined with the request Body as the message to hash using a certain **_partner_secret_** value (given by SIRCLO)
 - The resulting hash after HMAC calculation is then base64 encoded and placed in HTTP header **_secret_** in the request.
