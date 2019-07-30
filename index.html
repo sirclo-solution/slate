@@ -392,7 +392,7 @@ Host: api.connexi.id
 </ul>
 <pre class="highlight plaintext"><code>message_to_be_hashed = /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0
 hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
-secret = bas64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
+secret = base64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 </code></pre>
 <blockquote>
 <p>The HTTP request to send then becomes as follows:</p>
