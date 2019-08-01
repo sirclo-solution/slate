@@ -94,8 +94,8 @@ Request body must be a JSON document with the following properties
 | ----------------------- | -------- | --------- | -------------------------------------------------------------------------------------------------------------- |
 | order_id                | Yes      | string    | ID of the order in partner's application                                                                       |
 | order_date              | Yes      | Timestamp | The date of order ( must be in RFC3339 format timestamp )                                                      |
-| customer_reference      | No       | string    | Customer reference value                                                                                       |
-| shipment_reference      | Yes      | string    | Shipment reference value                                                                                       |
+| customer_reference      | Yes      | string    | Customer reference value                                                                                       |
+| shipment_reference      | No       | string    | Shipment reference value                                                                                       |
 | status                  | No       | string    | Status of the order (by default pending if empty. The acceptable status values are:                            |
 | 1. Pending              |          |           | Order is received from buyer but not yet accepted/acknowledged by seller.                                      |
 | 2. Accepted             |          |           | Order is already accepted by seller. Waiting for buyer payment or seller to send ordered items.                |
