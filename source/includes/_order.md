@@ -114,7 +114,7 @@ Request body must be a JSON document with the following properties
 | airwaybill_number       | No       | string    | Airwaybill number from 3PL 3PL (Logistics/Shipping company)                                                    |
 | shipping_total          | No       | double    | The total shipping cost value for this order                                                                   |
 | line_items              | Yes      | array     |                                                                                                                |
-| line_items - id         | Yes      | int       | ID of the product                                                                                              |
+| line_items - id         | Yes      | int       | ID of the product in SIRCLO Platform                                                                           |
 | line_items - sku        | Yes      | string    | SKU of the purchased line item                                                                                 |
 | line_items - name       | Yes      | string    | Name of the purchased line item                                                                                |
 | line_items - quantity   | Yes      | integer   | Quantity of the line item                                                                                      |
