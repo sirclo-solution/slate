@@ -382,13 +382,6 @@ secret: +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
 Host: api.connexi.id
 </code></pre>
 <p>The request URI of the HTTP request is &quot;<em>/v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0</em>&quot;</p>
-
-<aside class="notice">Note: The query string values in the request URI should be in their original form (i.e. not URL encoded) when composing HMAC. For example:</aside>
-
-<ul>
-<li>&quot;<em>since</em>&quot; in the example above is &quot;<em>2018-10-13T13:34:52Z</em>&quot;, not URL encoded value &quot;<em>2018-10-13T13%3A34%3A52Z</em>&quot;,</li>
-<li>&quot;<em>until</em>&quot; is &quot;<em>2018-10-16T19:22:39Z</em>&quot;, not URL encoded value &quot;<em>2018-10-16T19%3A22%3A39Z</em>&quot;</li>
-</ul>
 <pre class="highlight plaintext"><code>message_to_be_hashed = /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0
 hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
 secret = base64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
