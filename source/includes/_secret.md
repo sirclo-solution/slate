@@ -97,11 +97,6 @@ Host: api.connexi.id
 
 The request URI of the HTTP request is "_/v1/partner/order?since=2018-10-13T13:34:52Z&until=2018-10-16T19:22:39Z&limit=100&offset=0_"
 
-<aside class="notice">Note: The query string values in the request URI should be in their original form (i.e. not URL encoded) when composing HMAC. For example:</aside>
-
-- "_since_" in the example above is "_2018-10-13T13:34:52Z_", not URL encoded value "_2018-10-13T13%3A34%3A52Z_",
-- "_until_" is "_2018-10-16T19:22:39Z_", not URL encoded value "_2018-10-16T19%3A22%3A39Z_"
-
 ```text
 message_to_be_hashed = /v1/partner/order?since=2018-10-13T13:34:52Z&until=2018-10-16T19:22:39Z&limit=100&offset=0
 hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
