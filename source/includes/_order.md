@@ -108,7 +108,7 @@ Request body must be a JSON document with the following properties
 | delivery_region         | No       | string    | Region (province/district) of the delivery recipient                                                           |
 | delivery_city           | No       | string    | City of the delivery recipient                                                                                 |
 | delivery_country        | No       | string    | Country address of the buyer                                                                                   |
-| delivery_post_code      | No       | string    | Postal code of the delivery recipient                                                                          |
+| delivery_postcode       | No       | string    | Postal code of the delivery recipient                                                                          |
 | delivery_method         | No       | string    | Logistics service information (name of the logistics company/service used for order delivery)                  |
 | delivery_mobile         | No       | string    | Mobile number of the delivery recipient                                                                        |
 | airwaybill_number       | No       | string    | Airwaybill number from 3PL 3PL (Logistics/Shipping company)                                                    |
@@ -116,7 +116,7 @@ Request body must be a JSON document with the following properties
 | line_items              | Yes      | array     |                                                                                                                |
 | line_items - sku        | Yes      | string    | SKU of the purchased line item                                                                                 |
 | line_items - quantity   | Yes      | integer   | Quantity of the line item                                                                                      |
-| line_items - unit_price | Yes      | double    | Unit price of the line item (after discount)                                                                   |
+| line_items - raw_price  | Yes      | double    | Unit price of the line item (after discount)                                                                   |
 | line_items - discount   | Yes      | double    | Discount value applied on the line item                                                                        |
 
 > Request body example:
@@ -270,14 +270,14 @@ Request body must be a JSON document with the following properties
     "succeed": [
       {
         "id": 123,
-        "order_status": "accepted",
+        "status": "accepted",
         "updated_at": "2019-05-27T06:06:11Z"
       }
     ],
     "failed": [
       {
         "id": 456,
-        "order_status": "pending",
+        "status": "pending",
         "message": "Parameter yang diberikan salah",
         "updated_at": "2019-05-27T06:06:11Z"
       }
