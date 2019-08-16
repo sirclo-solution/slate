@@ -38,14 +38,14 @@
       "shipment_reference": "",
       "status": "accepted",
       "delivery_name": "Artia",
+      "delivery_mobile": "082101871618",
       "delivery_email": "artia2@gmail.com",
       "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
-      "delivery_region": "DKI Jakarta",
       "delivery_city": "Kota Jakarta Barat - Cengkareng",
+      "delivery_region": "DKI Jakarta",
       "delivery_country": "Indonesia",
       "delivery_post_code": "11720",
       "delivery_method": "JNE REG",
-      "delivery_mobile": "082101871618",
       "airwaybill_number": "AWB12345678",
       "currency_code": "IDR",
       "subtotal": 110000,
@@ -103,14 +103,14 @@ Request body must be a JSON document with the following properties
 | 4. Completed            |          |           | Ordered items is already received by buyer.                                                                    |
 | 5. Cancelled            |          |           | Order has been canceled by buyer or seller                                                                     |
 | delivery_name           | No       | string    | Name of the buyer/delivery recipient in this order                                                             |
+| delivery_mobile         | No       | string    | Mobile number of the delivery recipient                                                                        |
 | delivery_email          | No       | string    | Email address of the buyer/delivery recipient in this order                                                    |
 | delivery_street_address | No       | string    | Street address for order delivery                                                                              |
-| delivery_region         | No       | string    | Region (province/district) of the delivery recipient                                                           |
 | delivery_city           | No       | string    | City of the delivery recipient                                                                                 |
+| delivery_region         | No       | string    | Region (province/district) of the delivery recipient                                                           |
 | delivery_country        | No       | string    | Country address of the buyer                                                                                   |
 | delivery_postcode       | No       | string    | Postal code of the delivery recipient                                                                          |
 | delivery_method         | No       | string    | Logistics service information (name of the logistics company/service used for order delivery)                  |
-| delivery_mobile         | No       | string    | Mobile number of the delivery recipient                                                                        |
 | airwaybill_number       | No       | string    | Airwaybill number from 3PL 3PL (Logistics/Shipping company)                                                    |
 | shipping_total          | No       | double    | The total shipping cost value for this order                                                                   |
 | line_items              | Yes      | array     |                                                                                                                |
@@ -129,14 +129,14 @@ Request body must be a JSON document with the following properties
   "shipment_reference": "",
   "status": "accepted",
   "delivery_name": "Artia",
+  "delivery_mobile": "082101871618",
   "delivery_email": "artia2@gmail.com",
   "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
-  "delivery_region": "DKI Jakarta",
   "delivery_city": "Kota Jakarta Barat - Cengkareng",
+  "delivery_region": "DKI Jakarta",
   "delivery_country": "Indonesia",
   "delivery_post_code": "11720",
   "delivery_method": "JNE REG",
-  "delivery_mobile": "082101871618",
   "airwaybill_number": "AWB12345678",
   "shipping_total": 15000,
   "line_items": [
@@ -162,14 +162,14 @@ Request body must be a JSON document with the following properties
     "shipment_reference": "",
     "status": "accepted",
     "delivery_name": "Artia",
+    "delivery_mobile": "082101871618",
     "delivery_email": "artia2@gmail.com",
     "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
-    "delivery_region": "DKI Jakarta",
     "delivery_city": "Kota Jakarta Barat - Cengkareng",
+    "delivery_region": "DKI Jakarta",
     "delivery_country": "Indonesia",
     "delivery_post_code": "11720",
     "delivery_method": "JNE REG",
-    "delivery_mobile": "082101871618",
     "airwaybill_number": "AWB12345678",
     "currency_code": "IDR",
     "subtotal": 110000,
