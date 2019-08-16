@@ -468,14 +468,14 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
       </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Artia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000</span><span class="p">,</span><span class="w">
@@ -603,6 +603,12 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>Name of the buyer/delivery recipient in this order</td>
 </tr>
 <tr>
+<td>delivery_mobile</td>
+<td>No</td>
+<td>string</td>
+<td>Mobile number of the delivery recipient</td>
+</tr>
+<tr>
 <td>delivery_email</td>
 <td>No</td>
 <td>string</td>
@@ -615,16 +621,16 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>Street address for order delivery</td>
 </tr>
 <tr>
-<td>delivery_region</td>
-<td>No</td>
-<td>string</td>
-<td>Region (province/district) of the delivery recipient</td>
-</tr>
-<tr>
 <td>delivery_city</td>
 <td>No</td>
 <td>string</td>
 <td>City of the delivery recipient</td>
+</tr>
+<tr>
+<td>delivery_region</td>
+<td>No</td>
+<td>string</td>
+<td>Region (province/district) of the delivery recipient</td>
 </tr>
 <tr>
 <td>delivery_country</td>
@@ -643,12 +649,6 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>No</td>
 <td>string</td>
 <td>Logistics service information (name of the logistics company/service used for order delivery)</td>
-</tr>
-<tr>
-<td>delivery_mobile</td>
-<td>No</td>
-<td>string</td>
-<td>Mobile number of the delivery recipient</td>
 </tr>
 <tr>
 <td>airwaybill_number</td>
@@ -704,14 +704,14 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
   </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Artia"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
   </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -736,14 +736,14 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
     </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Artia"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000</span><span class="p">,</span><span class="w">
