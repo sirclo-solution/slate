@@ -350,17 +350,17 @@
 <blockquote>
 <p>The message used for HMAC calculation is taken from the HTTP request URI joined with the HTTP request body:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>message_to_be_hashed = /v1/partner/order{"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","ariwaybill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
+<pre class="highlight plaintext"><code>message_to_be_hashed = /v1/partner/order{"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","airwaybill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
 </code></pre>
 <blockquote>
 <p>The <strong><em>message_to_be_hashed</em></strong> is then used with the <strong><em>partner_secret</em></strong> value when calculating the HMAC</p>
 </blockquote>
-<pre class="highlight plaintext"><code>hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
+<pre class="highlight plaintext"><code>hmac = hmac_sha256(message_to_be_hashed, a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM)
 </code></pre>
 <blockquote>
 <p>The resulting hmac is in binary format, it is then base64 encoded</p>
 </blockquote>
-<pre class="highlight plaintext"><code>result = base64_encode(hmac) = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
+<pre class="highlight plaintext"><code>result = base64_encode(hmac) = YfbcLEz3mFnytfKRXPm/TKQQO+ST019IZ8AO6fS1aBI=
 </code></pre>
 <blockquote>
 <p>Partner must include this HMAC value in HTTP header: &quot;<strong><em>secret</em></strong>&quot; along with HTTP header &quot;<strong><em>partner_id</em></strong>&quot;. Example request that the partner needs to send becomes as follows:</p>
@@ -369,7 +369,7 @@
 Host: api.connexi.id
 Content-Type: application/json
 partner_id: B98KL87
-secret: +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
+secret: YfbcLEz3mFnytfKRXPm/TKQQO+ST019IZ8AO6fS1aBI=
 
 {"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","airway_bill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
 </code></pre>
@@ -383,8 +383,8 @@ Host: api.connexi.id
 </code></pre>
 <p>The request URI of the HTTP request is &quot;<em>/v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0</em>&quot;</p>
 <pre class="highlight plaintext"><code>message_to_be_hashed = /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0
-hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
-secret = base64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
+hmac = hmac_sha256(message_to_be_hashed, a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM)
+secret = base64_encode(hmac) = cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
 </code></pre>
 <blockquote>
 <p>The HTTP request to send then becomes as follows:</p>
@@ -392,7 +392,7 @@ secret = base64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <pre class="highlight plaintext"><code>GET /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0
 Host : api.connexi.id
 partner_id: B98KL87
-secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
+secret: cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
 </code></pre><h1 id='orders'>Orders</h1><h2 id='get-order'>Get Order</h2><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET /v1/partner/order?since=&amp;until=&amp;limit=&amp;offset=</code></p>
 <h3 id='header-parameters'>Header Parameters</h3>
@@ -450,11 +450,17 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>Integer</td>
 <td>To be used for pagination (use value 10 if you want to skip 10 first datas, by default the value is 0)</td>
 </tr>
+<tr>
+<td>withDO</td>
+<td>Yes</td>
+<td>Boolean</td>
+<td>Flag value for determining if the returned sales order data include associated delivery orders or not</td>
+</tr>
 </tbody></table>
 
 <blockquote>
 <p>Request example
-<code>GET /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0</code></p>
+<code>GET /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0withDO=true</code></p>
 
 <p>The above request returns JSON structured like this:</p>
 </blockquote>
@@ -468,14 +474,14 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
       </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Artia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000</span><span class="p">,</span><span class="w">
@@ -493,11 +499,37 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
           </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
+       </span><span class="s2">"delivery_orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sales_order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"do_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sent_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"delivery_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC partial order delivery"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w"> 
+          </span><span class="s2">"order_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jakarta"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
       </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27T06:05:11Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27T06:05:11Z"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w"> 
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"total_record"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -603,12 +635,6 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>Name of the buyer/delivery recipient in this order</td>
 </tr>
 <tr>
-<td>delivery_mobile</td>
-<td>No</td>
-<td>string</td>
-<td>Mobile number of the delivery recipient</td>
-</tr>
-<tr>
 <td>delivery_email</td>
 <td>No</td>
 <td>string</td>
@@ -621,16 +647,16 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>Street address for order delivery</td>
 </tr>
 <tr>
-<td>delivery_city</td>
-<td>No</td>
-<td>string</td>
-<td>City of the delivery recipient</td>
-</tr>
-<tr>
 <td>delivery_region</td>
 <td>No</td>
 <td>string</td>
 <td>Region (province/district) of the delivery recipient</td>
+</tr>
+<tr>
+<td>delivery_city</td>
+<td>No</td>
+<td>string</td>
+<td>City of the delivery recipient</td>
 </tr>
 <tr>
 <td>delivery_country</td>
@@ -649,6 +675,12 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <td>No</td>
 <td>string</td>
 <td>Logistics service information (name of the logistics company/service used for order delivery)</td>
+</tr>
+<tr>
+<td>delivery_mobile</td>
+<td>No</td>
+<td>string</td>
+<td>Mobile number of the delivery recipient</td>
 </tr>
 <tr>
 <td>airwaybill_number</td>
@@ -704,14 +736,14 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
   </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Artia"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
   </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -736,14 +768,14 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
     </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Artia"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000</span><span class="p">,</span><span class="w">
