@@ -286,20 +286,20 @@
 </tr>
 </tbody></table>
 <h1 id='composing-secret'>Composing Secret</h1>
-<p>For every request sent, partner must include <strong><em>partner_id</em></strong> and <strong><em>secret</em></strong> in the HTTP request headers.</p>
+<p>For every request sent, partner must include <strong><em>partner-id</em></strong> and <strong><em>secret</em></strong> in the HTTP request headers.</p>
 
 <ul>
-<li><strong><em>partner_id</em></strong> value to use is given by SIRCLO.</li>
+<li><strong><em>partner-id</em></strong> value to use is given by SIRCLO.</li>
 <li><strong><em>secret</em></strong> value to send is HMAC (Hash Based Message Authentication Code) using SHA-256 algorithm.</li>
 <li>To compose the HMAC value, partner must use the HTTP Request URI joined with the request Body as the message to hash using a certain <strong><em>partner_secret</em></strong> value (given by SIRCLO)</li>
 <li>The resulting hash after HMAC calculation is then base64 encoded and placed in HTTP header <strong><em>secret</em></strong> in the request.</li>
 </ul>
 <h2 id='example'>Example</h2>
-<p>Given <strong><em>partner_id</em></strong> and <strong><em>partner_secret</em></strong>:</p>
+<p>Given <strong><em>partner-id</em></strong> and <strong><em>partner_secret</em></strong>:</p>
 
 <table><thead>
 <tr>
-<th>partner_id</th>
+<th>partner-id</th>
 <th>partner_secret</th>
 </tr>
 </thead><tbody>
@@ -363,12 +363,12 @@
 <pre class="highlight plaintext"><code>result = base64_encode(hmac) = YfbcLEz3mFnytfKRXPm/TKQQO+ST019IZ8AO6fS1aBI=
 </code></pre>
 <blockquote>
-<p>Partner must include this HMAC value in HTTP header: &quot;<strong><em>secret</em></strong>&quot; along with HTTP header &quot;<strong><em>partner_id</em></strong>&quot;. Example request that the partner needs to send becomes as follows:</p>
+<p>Partner must include this HMAC value in HTTP header: &quot;<strong><em>secret</em></strong>&quot; along with HTTP header &quot;<strong><em>partner-id</em></strong>&quot;. Example request that the partner needs to send becomes as follows:</p>
 </blockquote>
 <pre class="highlight plaintext"><code>POST /v1/partner/order HTTP/1.1
 Host: api.connexi.id
 Content-Type: application/json
-partner_id: B98KL87
+partner-id: B98KL87
 secret: YfbcLEz3mFnytfKRXPm/TKQQO+ST019IZ8AO6fS1aBI=
 
 {"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","airway_bill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
@@ -391,7 +391,7 @@ secret = base64_encode(hmac) = cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
 </blockquote>
 <pre class="highlight plaintext"><code>GET /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0
 Host : api.connexi.id
-partner_id: B98KL87
+partner-id: B98KL87
 secret: cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
 </code></pre><h1 id='orders'>Orders</h1><h2 id='get-order'>Get Order</h2><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET /v1/partner/order?since=&amp;until=&amp;limit=&amp;offset=</code></p>
@@ -405,7 +405,7 @@ secret: cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
 </tr>
 </thead><tbody>
 <tr>
-<td>partner_id</td>
+<td>partner-id</td>
 <td>Yes</td>
 <td>String</td>
 <td>Partner ID value (given from SIRCLO) used for partner identification</td>
@@ -546,7 +546,7 @@ secret: cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
 </tr>
 </thead><tbody>
 <tr>
-<td>partner_id</td>
+<td>partner-id</td>
 <td>Yes</td>
 <td>String</td>
 <td>Partner ID value (given from SIRCLO) used for partner identification</td>
@@ -826,7 +826,7 @@ secret: cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
 </tr>
 </thead><tbody>
 <tr>
-<td>partner_id</td>
+<td>partner-id</td>
 <td>Yes</td>
 <td>String</td>
 <td>Partner ID value (given from SIRCLO) used for partner identification</td>
@@ -1010,7 +1010,7 @@ secret: cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
 </tr>
 </thead><tbody>
 <tr>
-<td>partner_id</td>
+<td>partner-id</td>
 <td>Yes</td>
 <td>String</td>
 <td>Partner ID value (given from SIRCLO) used for partner identification</td>
