@@ -10,7 +10,11 @@
 
 | Name       | Required | Type   | Description                                                                                                       |
 | ---------- | -------- | ------ | ----------------------------------------------------------------------------------------------------------------- |
+<<<<<<< HEAD
 | partner-id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
+=======
+| partner_id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
+>>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
 | secret     | Yes      | String | HMAC (Hash Based Message Authentication Code), refer to section: <a href="#composing-secret">Composing Secret</a> |
 
 ### Path Parameters
@@ -28,6 +32,7 @@
     {
       "id": 5,
       "sku": "DKL0907",
+<<<<<<< HEAD
       "partner_sku" :"PRODABCDE0001",
       "partner_variant_sku" : "",
       "name": "Product ABC",
@@ -51,5 +56,15 @@
   "limit" : 2,
   "message": "",
   "reference": "e444c078-3bee-4606-949d-da120886424e"
+=======
+      "name": "Product ABC",
+      "stock": 20,
+      "created_at": "2018-11-07T03:46:16Z",
+      "update_at": "2018-11-07T03:46:16Z"
+    }
+  ],
+  "message": "",
+  "reference": ""
+>>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
 }
 ```
