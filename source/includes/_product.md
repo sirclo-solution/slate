@@ -4,7 +4,7 @@
 
 ### HTTP Request
 
-`GET /v1/partner/product/stock?limit=2&offset=0`
+`GET /v1/partner/product/stock?limit=&offset=`
 
 ### Header Parameters
 
