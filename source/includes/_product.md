@@ -110,6 +110,7 @@ Request body must be a JSON document with the following properties
   }
 ```
 > The above request returns JSON structured like this:
+
 ```json
 {
   "data":{
