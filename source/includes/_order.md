@@ -10,11 +10,7 @@
 
 | Name       | Required | Type   | Description                                                                                                       |
 | ---------- | -------- | ------ | ----------------------------------------------------------------------------------------------------------------- |
-<<<<<<< HEAD
 | partner-id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
-=======
-| partner_id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
->>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
 | secret     | Yes      | String | HMAC (Hash Based Message Authentication Code), refer to section: <a href="#composing-secret">Composing Secret</a> |
 
 ### Query String Parameters
@@ -25,16 +21,10 @@
 | until     | Yes      | Timestamp | End range of order date of the requested orders (must be in RFC3339 format)                            |
 | limit     | No       | Integer   | Number of orders that want to be returned (by default the number is 100)                               |
 | offset    | No       | Integer   | To be used for pagination (use value 10 if you want to skip 10 first datas, by default the value is 0) |
-<<<<<<< HEAD
 | withDO    | Yes      | Boolean   | Flag value for determining if the returned sales order data include associated delivery orders or not  |   
 
 > Request example
 > `GET /v1/partner/order?since=2018-10-13T13:34:52Z&until=2018-10-16T19:22:39Z&limit=10&offset=0withDO=true`
-=======
-
-> Request example
-> `GET /v1/partner/order?since=2018-10-13T13:34:52Z&until=2018-10-16T19:22:39Z&limit=100&offset=0`
->>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
 
 > The above request returns JSON structured like this:
 
@@ -43,25 +33,16 @@
   "data": [
     {
       "id": 1,
-<<<<<<< HEAD
       "created_at" : "2019-07-31T07:39:29.646799Z",
       "updated_at" : "2019-07-31T07:39:29.646799Z",
       "order_id": "ABC123",
       "order_date": "2006-01-02T15:04:05Z",
       "customer_reference": "JNH7438B",
       "order_status": "accepted",
-=======
-      "order_id": "ABC123",
-      "order_date": "2006-01-02T15:04:05Z",
-      "customer_reference": "JNH7438B",
-      "shipment_reference": "",
-      "status": "accepted",
->>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
       "delivery_name": "Artia",
       "delivery_mobile": "082101871618",
       "delivery_email": "artia2@gmail.com",
       "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
-<<<<<<< HEAD
       "delivery_region": "DKI Jakarta",
       "delivery_city": "Kota Jakarta Barat - Cengkareng",
       "delivery_country": "Indonesia",
@@ -72,13 +53,6 @@
       "store_id" : "40",
       "marketplace_code" : "levs",
       "payment_method" : "Bank Transfer", 
-=======
-      "delivery_city": "Kota Jakarta Barat - Cengkareng",
-      "delivery_region": "DKI Jakarta",
-      "delivery_country": "Indonesia",
-      "delivery_post_code": "11720",
-      "delivery_method": "JNE REG",
->>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
       "airwaybill_number": "AWB12345678",
       "currency_code": "IDR",
       "subtotal": 110000,
@@ -89,7 +63,6 @@
       "line_items": [
         {
           "id": 3,
-<<<<<<< HEAD
           "created_at" : "2019-07-31T07:39:29.646799Z",
           "updated_at" : "2019-07-31T07:39:29.646799Z",
           "sku": "DKL0907",
@@ -97,7 +70,7 @@
           "quantity": 2,
           "unit_price": 100000,
           "discount": 10000,
-          "remote_order_item_id" : ""
+          "order_item_id" : ""
         }
       ],
        "delivery_orders": [
@@ -122,28 +95,15 @@
               "location": "Stock/Commerce",
             }
           ]
-=======
-          "sku": "DKL0907",
-          "name": "Product ABC",
-          "quantity": 2,
-          "raw_price": 100000,
-          "discount": 10000
->>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
         }
       ],
       "created_at": "2019-05-27T06:05:11Z",
       "updated_at": "2019-05-27T06:05:11Z"
-<<<<<<< HEAD
     } 
   ],
   "total_record": 1,
   "offset": 0,
   "limit": 10,
-=======
-    }
-  ],
-  "total_record": 1,
->>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
   "message": "",
   "reference": ""
 }
@@ -159,11 +119,7 @@
 
 | Name       | Required | Type   | Description                                                                                                       |
 | ---------- | -------- | ------ | ----------------------------------------------------------------------------------------------------------------- |
-<<<<<<< HEAD
 | partner-id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
-=======
-| partner_id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
->>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
 | secret     | Yes      | String | HMAC (Hash Based Message Authentication Code), refer to section: <a href="#composing-secret">Composing Secret</a> |
 
 ### Request Body Parameters
@@ -183,7 +139,6 @@ Request body must be a JSON document with the following properties
 | 4. Completed            |          |           | Ordered items is already received by buyer.                                                                    |
 | 5. Cancelled            |          |           | Order has been canceled by buyer or seller                                                                     |
 | delivery_name           | No       | string    | Name of the buyer/delivery recipient in this order                                                             |
-<<<<<<< HEAD
 | delivery_email          | No       | string    | Email address of the buyer/delivery recipient in this order                                                    |
 | delivery_street_address | No       | string    | Street address for order delivery                                                                              |
 | delivery_region         | No       | string    | Region (province/district) of the delivery recipient                                                           |
@@ -195,35 +150,18 @@ Request body must be a JSON document with the following properties
 | airwaybill_number       | No       | string    | Airwaybill number from 3PL 3PL (Logistics/Shipping company)                                                    |
 | payment_method          | Yes      | string    | Name of payment method                                                                                         |
 | shipping_total          | No       | double    | The total shipping cost value for this order                                                                   |
-| remote_order_item_id    | No       |           | List of id for any order item                                                                                  |
+| order_item_id           | No       | string    | List of id for any order item                                                                                  |
 | line_items              | Yes      | array     |                                                                                                                |
 | line_items - name       | Yes      | string    | Name of the line item                                                                                          |
 | line_items - sku        | Yes      | string    | SKU of the purchased line item                                                                                 |
 | line_items - quantity   | Yes      | integer   | Quantity of the line item                                                                                      |
 | line_items - unit_price | Yes      | double    | Unit price of the line item (after discount)                                                                   |
-=======
-| delivery_mobile         | No       | string    | Mobile number of the delivery recipient                                                                        |
-| delivery_email          | No       | string    | Email address of the buyer/delivery recipient in this order                                                    |
-| delivery_street_address | No       | string    | Street address for order delivery                                                                              |
-| delivery_city           | No       | string    | City of the delivery recipient                                                                                 |
-| delivery_region         | No       | string    | Region (province/district) of the delivery recipient                                                           |
-| delivery_country        | No       | string    | Country address of the buyer                                                                                   |
-| delivery_postcode       | No       | string    | Postal code of the delivery recipient                                                                          |
-| delivery_method         | No       | string    | Logistics service information (name of the logistics company/service used for order delivery)                  |
-| airwaybill_number       | No       | string    | Airwaybill number from 3PL 3PL (Logistics/Shipping company)                                                    |
-| shipping_total          | No       | double    | The total shipping cost value for this order                                                                   |
-| line_items              | Yes      | array     |                                                                                                                |
-| line_items - sku        | Yes      | string    | SKU of the purchased line item                                                                                 |
-| line_items - quantity   | Yes      | integer   | Quantity of the line item                                                                                      |
-| line_items - raw_price  | Yes      | double    | Unit price of the line item (after discount)                                                                   |
->>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
 | line_items - discount   | Yes      | double    | Discount value applied on the line item                                                                        |
 
 > Request body example:
 
 ```json
 {
-<<<<<<< HEAD
   "orders" :
   [
     {
@@ -246,6 +184,7 @@ Request body must be a JSON document with the following properties
       "shipping_total": 15000,
       "line_items": [
       {
+        "order_item_id" : "",
         "name" : "Product ABC",
         "sku": "DKL0907",
         "quantity": 2,
@@ -276,36 +215,10 @@ Request body must be a JSON document with the following properties
           "name": "Sepatu Test",
           "quantity": 2,
           "unit_price": 75000,
-          "discount": 10000,
-          "order_item_id": "12914ADNAL"
+          "discount": 10000
       }
       ]
     },
-=======
-  "order_id": "ORD-123",
-  "order_date": "2006-01-02T15:04:05Z07:00",
-  "customer_reference": "DHU9868NGY",
-  "shipment_reference": "",
-  "status": "accepted",
-  "delivery_name": "Artia",
-  "delivery_mobile": "082101871618",
-  "delivery_email": "artia2@gmail.com",
-  "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
-  "delivery_city": "Kota Jakarta Barat - Cengkareng",
-  "delivery_region": "DKI Jakarta",
-  "delivery_country": "Indonesia",
-  "delivery_post_code": "11720",
-  "delivery_method": "JNE REG",
-  "airwaybill_number": "AWB12345678",
-  "shipping_total": 15000,
-  "line_items": [
-    {
-      "sku": "DKL0907",
-      "quantity": 2,
-      "raw_price": 100000,
-      "discount": 10000
-    }
->>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
   ]
 }
 ```
@@ -314,8 +227,7 @@ Request body must be a JSON document with the following properties
 
 ```json
 {
-<<<<<<< HEAD
-  "orders/data":
+  "data":
   [
     {
       "id": 123,
@@ -351,7 +263,7 @@ Request body must be a JSON document with the following properties
           "quantity": 2,
           "unit_price": 100000,
           "discount": 10000,
-          "remote_order_item_id" : ""
+          "order_item_id" : "" 
         }
       ],
       "created_at": "2019-05-27T06:05:11Z",
@@ -380,7 +292,7 @@ Request body must be a JSON document with the following properties
           "quantity": 2,
           "unit_price": 75000,
           "discount": 10000,
-          "remote_order_item_id" : ""
+          "order_item_id" : ""
         }
       ],
       "created_at": "2019-05-27T06:05:11Z",
@@ -389,44 +301,6 @@ Request body must be a JSON document with the following properties
   ],    
   "message" : "Order created successfully",
   "reference" : "8608798c-3ca1-42ce-8b7d-0ab3d65ef312"
-=======
-  "data": {
-    "id": 123,
-    "order_id": "ORD-123",
-    "order_date": "2006-01-02T15:04:05Z",
-    "customer_reference": "JNH7438B",
-    "shipment_reference": "",
-    "status": "accepted",
-    "delivery_name": "Artia",
-    "delivery_mobile": "082101871618",
-    "delivery_email": "artia2@gmail.com",
-    "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
-    "delivery_city": "Kota Jakarta Barat - Cengkareng",
-    "delivery_region": "DKI Jakarta",
-    "delivery_country": "Indonesia",
-    "delivery_post_code": "11720",
-    "delivery_method": "JNE REG",
-    "airwaybill_number": "AWB12345678",
-    "currency_code": "IDR",
-    "subtotal": 110000,
-    "discount_total": 10000,
-    "shipping_total": 15000,
-    "total": 115000,
-    "line_items": [
-      {
-        "id": 3,
-        "sku": "DKL0907",
-        "quantity": 2,
-        "raw_price": 100000,
-        "discount": 10000
-      }
-    ],
-    "created_at": "2019-05-27T06:05:11Z",
-    "updated_at": "2019-05-27T06:05:11Z"
-  },
-  "message": "",
-  "reference": ""
->>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
 }
 ```
 
@@ -440,11 +314,7 @@ Request body must be a JSON document with the following properties
 
 | Name       | Required | Type   | Description                                                                                                       |
 | ---------- | -------- | ------ | ----------------------------------------------------------------------------------------------------------------- |
-<<<<<<< HEAD
 | partner-id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
-=======
-| partner_id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
->>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
 | secret     | Yes      | String | HMAC (Hash Based Message Authentication Code), refer to section: <a href="#composing-secret">Composing Secret</a> |
 
 ### Request Body Parameters
@@ -524,12 +394,7 @@ Request body must be a JSON document with the following properties
       }
     ]
   },
-<<<<<<< HEAD
   "message": "1 out of 2 order(s) updated successfully",
   "reference": "15ca05af-8765-4367-994a-333ed985406a"
-=======
-  "message": "",
-  "reference": ""
->>>>>>> 13bd2b514ddf525b2b3ee60ab289f4c5f8f270b4
 }
 ```
