@@ -1288,47 +1288,45 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>The above request returns JSON structured like this:
-<code>json
-{
-  &quot;data&quot;:{
-    &quot;succeed&quot;:[
-      {
-        &quot;id&quot; : 5019,
-        &quot;sku&quot; : &quot;LEVS-319&quot;,
-        &quot;partner_sku&quot; : &quot;&quot;,
-        &quot;partner_variant_sku&quot;:&quot;&quot;,
-        &quot;name&quot;:&quot;Levi&#39;s merupakan merek jeans ternama di seluruh dunia. Ayo pakai Levi&#39;s!&quot;,
-        &quot;created_at&quot; : &quot;2019-11-28T08:04:03.225186Z&quot;, 
-        &quot;updated_at&quot; : &quot;2019-11-29T06:41:30.603645505Z&quot;
-      },
-      {
-        &quot;id&quot; : 5020,
-        &quot;sku&quot; : &quot;LEVS-319-32001&quot;,
-        &quot;partner_sku&quot; : &quot;&quot;,
-        &quot;partner_variant_sku&quot;:&quot;&quot;,
-        &quot;name&quot;:&quot;Levi&#39;s merupakan merek jeans ternama di seluruh dunia. Ayo pakai Levi&#39;s!&quot;,
-        &quot;created_at&quot; : &quot;2019-11-28T08:04:03.225186Z&quot;, 
-        &quot;updated_at&quot; : &quot;2019-11-29T06:41:30.603645505Z&quot;
-      },
-      {
-        &quot;id&quot; : 5021,
-        &quot;sku&quot; : &quot;LEVS-319-34001&quot;,
-        &quot;partner_sku&quot; : &quot;&quot;,
-        &quot;partner_variant_sku&quot;:&quot;&quot;,
-        &quot;name&quot;:&quot;Levi&#39;s merupakan merek jeans ternama di seluruh dunia. Ayo pakai Levi&#39;s!&quot;,
-        &quot;created_at&quot; : &quot;2019-11-28T08:04:03.225186Z&quot;, 
-        &quot;updated_at&quot; : &quot;2019-11-29T06:41:30.603645505Z&quot;
-      }
-    ],
-    &quot;failed&quot; :[]
-  },
-  &quot;message&quot; : &quot;Product creayed successfully&quot;,
-  &quot;reference&quot; : &quot;3c6bdd10-63b3-4c58-b89a-c2b1e99e885f&quot;
-}
-</code></p>
+<p>The above request returns JSON structured like this:</p>
 </blockquote>
-<h1 id='errors'>Errors</h1>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"succeed"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5019</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"LEVS-319"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"partner_sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"partner_variant_sku"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Levi's merupakan merek jeans ternama di seluruh dunia. Ayo pakai Levi's!"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-28T08:04:03.225186Z"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-29T06:41:30.603645505Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5020</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"LEVS-319-32001"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"partner_sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"partner_variant_sku"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Levi's merupakan merek jeans ternama di seluruh dunia. Ayo pakai Levi's!"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-28T08:04:03.225186Z"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-29T06:41:30.603645505Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5021</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"LEVS-319-34001"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"partner_sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"partner_variant_sku"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Levi's merupakan merek jeans ternama di seluruh dunia. Ayo pakai Levi's!"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-28T08:04:03.225186Z"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-29T06:41:30.603645505Z"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"failed"</span><span class="w"> </span><span class="p">:[]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Product creayed successfully"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"3c6bdd10-63b3-4c58-b89a-c2b1e99e885f"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='errors'>Errors</h1>
 <p>The Orders and Products API uses the following error codes:</p>
 
 <table><thead>
