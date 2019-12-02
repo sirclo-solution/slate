@@ -74,21 +74,21 @@
 
 Request body must be a JSON document with the following properties
 
-| Name                            | Required | Type   | Description                                   |
-| ------------------------------- | -------- | ------ | --------------------------------------------- |
-| sku                             | Yes      | String | SKU of the product in Connexi                 |
-| partner_sku                     | Yes      | String | SKU of the product in Partner                 |
-| partner_variants                | Yes      | Object |                                               |
-| partner_variants - variant_sku  | Yes      | String | SKU of the variant product                    |
-| partner_variants - variant_name | Yes      | String | Name of the variant product                   |
-| name                            | Yes      | String | Name of the product                           |
-| decription                      | Yes      | String | Information about feature, benefit of product |
-| currency                        | Yes      | String | Currency of the product                       |
-| price                           | Yes      | Double | Price of the product                          |
-| weight                          | Yes      | Double | Weight of the product                         |
-| height                          | Yes      | Double | Height of the product                         |
-| length                          | Yes      | Double | Length of the product                         |
-| width                           | Yes      | Double | Width of the product                          |
+| Name                           | Required | Type   | Description                                   |
+| ------------------------------ | -------- | ------ | --------------------------------------------- |
+| sku                            | Yes      | String | SKU of the product in Connexi                 |
+| partner_sku                    | Yes      | String | SKU of the product in Partner                 |
+| partner_variant                | Yes      | Object |                                               |
+| partner_variant - variant_sku  | Yes      | String | SKU of the variant product                    |
+| partner_variant - variant_name | Yes      | String | Name of the variant product                   |
+| name                           | Yes      | String | Name of the product                           |
+| decription                     | Yes      | String | Information about feature, benefit of product |
+| currency                       | Yes      | String | Currency of the product                       |
+| price                          | Yes      | Double | Price of the product                          |
+| weight                         | Yes      | Double | Weight of the product                         |
+| height                         | Yes      | Double | Height of the product                         |
+| length                         | Yes      | Double | Length of the product                         |
+| width                          | Yes      | Double | Width of the product                          |
 
 > Request body example:
 
@@ -98,7 +98,7 @@ Request body must be a JSON document with the following properties
     {
       "sku": "DKL0907",
       "partner_sku": "PRODABCDE0001",
-      "partner_variants": {
+      "partner_variant": {
         "variant_sku": "PRODABCDE0001-S",
         "variant_name": "Product ABC - S"
       },
@@ -114,7 +114,7 @@ Request body must be a JSON document with the following properties
     {
       "sku": "DLP0907",
       "partner_sku": "PRODABCDE0002",
-      "partner_variants": {
+      "partner_variant": {
         "variant_sku": "PRODABCDE0002-S",
         "variant_name": "Product DDA - S"
       },
