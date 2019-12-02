@@ -20,6 +20,9 @@
 | limit     | No       | Integer | Number of orders that want to be returned (by default the number is 100)                               |
 | offset    | No       | Integer | To be used for pagination (use value 10 if you want to skip 10 first datas, by default the value is 0) |
 
+> Request example
+> `GET /v1/partner/product/stock?limit=100&offset=0`
+
 > The above request returns JSON structured like this:
 
 ```json
@@ -28,32 +31,33 @@
     {
       "id": 5,
       "sku": "DKL0907",
-      "partner_sku" :"PRODABCDE0001",
-      "partner_variant_sku" : "",
+      "partner_sku": "PRODABCDE0001",
+      "partner_variant_sku": "PRODABCDE0001-S",
       "name": "Product ABC",
       "stock": 20,
       "created_at": "2019-07-09T02:09:25.071496Z",
       "update_at": "2019-09-05T06:11:51.394954Z"
     },
     {
-      "id" :8,
-      "sku" :"DLP0907",
-      "partner_sku" : "",
-      "partner_variant_sku" : "",
-      "name" : "Product DDA",
-      "stock" : 11,
-      "created_at" : "2019-08-21T12:33:31.139787Z",
-      "update_at" : "2019-08-26T09:43:06.296043Z"
+      "id": 8,
+      "sku": "DLP0907",
+      "partner_sku": "PRODABCDE0002",
+      "partner_variant_sku": "PRODABCDE0002-M",
+      "name": "Product DDA",
+      "stock": 11,
+      "created_at": "2019-08-21T12:33:31.139787Z",
+      "update_at": "2019-08-26T09:43:06.296043Z"
     }
   ],
-  "total_record" : 33,
-  "offset" : 0,
-  "limit" : 2,
+  "total_record": 33,
+  "offset": 0,
+  "limit": 2,
   "message": "",
   "reference": "e444c078-3bee-4606-949d-da120886424e"
 }
 ```
-## Create Product 
+
+## Create Product
 
 ### HTTP Request
 
@@ -70,82 +74,104 @@
 
 Request body must be a JSON document with the following properties
 
-|Name                 | Required | Type   | Description                                                      | 
-|---------------------| ---------|--------|------------------------------------------------------------------|
-| SKU                 |  Yes     | String | Stok Keeping Unit in Connexi                                     |
-| partner_sku         |  Yes     | String | SKU product used in partner                                      |
-| variant_sku         |   No     | String | SKU variant of product used in partner                           |
-| variant_name        |   No     | string | Name of variant product                                          | 
-| name                |   No     | string | Name of product                                                  |
-| decription          |   No     | string | Information about feature, benefit of product                    |
+| Name                            | Required | Type   | Description                                   |
+| ------------------------------- | -------- | ------ | --------------------------------------------- |
+| sku                             | Yes      | String | SKU of the product in Connexi                 |
+| partner_sku                     | Yes      | String | SKU of the product in Partner                 |
+| partner_variants                | Yes      | Array  |                                               |
+| partner_variants - variant_sku  | Yes      | String | SKU of the variant product                    |
+| partner_variants - variant_name | Yes      | string | Name of the variant product                   |
+| name                            | Yes      | string | Name of the product                           |
+| decription                      | Yes      | string | Information about feature, benefit of product |
+| currency                        | Yes      | string | Currency of the product                       |
+| price                           | Yes      | double | Price of the product                          |
+| weight                          | Yes      | double | Weight of the product                         |
+| height                          | Yes      | double | Height of the product                         |
+| length                          | Yes      | double | Length of the product                         |
+| width                           | Yes      | double | Width of the product                          |
 
 > Request body example:
 
-```json 
-  {
-    "products":[
-      {
-        "sku" : "LEVS-319",
-        "partner_sku":"LEVS-319",
-        "partner_variants":[
-          {
-            "variant_sku":"LEVS-319-32001",
-            "variant_name":"Levi's Jeans Regular fit 32"
-          },
-          {
-            "variant_sku" : "LEVS-319-34001",
-            "variant_name":"Levi's Jeans Black Slim Fit 34"
-          }
-        ], 
-        "name" : "Levi's",
-        "description" : "Levi's merupakan merek jeans ternama di seluruh dunia, Ayo pakai Levi's!",
-        "currency" : "IDR", 
-        "price":340000,
-        "weight" : 250, 
-        "height" : 86, 
-        "lenght" : 95, 
-        "width"  : 98,
-      }
-    ]
-  }
+```json
+{
+  "products": [
+    {
+      "sku": "DKL0907",
+      "partner_sku": "PRODABCDE0001",
+      "partner_variants": [
+        {
+          "variant_sku": "PRODABCDE0001-S",
+          "variant_name": "Product ABC - S"
+        },
+        {
+          "variant_sku": "PRODABCDE0001-M",
+          "variant_name": "Product ABC - M"
+        }
+      ],
+      "name": "Product ABC",
+      "description": "Product ABC Description",
+      "currency": "IDR",
+      "price": 340000,
+      "weight": 250,
+      "height": 86,
+      "lenght": 95,
+      "width": 98
+    },
+    {
+      "sku": "DLP0907",
+      "partner_sku": "PRODABCDE0002",
+      "partner_variants": [
+        {
+          "variant_sku": "PRODABCDE0002-S",
+          "variant_name": "Product DDA - S"
+        },
+        {
+          "variant_sku": "PRODABCDE0002-M",
+          "variant_name": "Product DDA - M"
+        }
+      ],
+      "name": "Product DDA",
+      "description": "Product DDA Description",
+      "currency": "IDR",
+      "price": 340000,
+      "weight": 250,
+      "height": 86,
+      "lenght": 95,
+      "width": 98
+    }
+  ]
+}
 ```
+
 > The above request returns JSON structured like this:
 
 ```json
 {
-  "data":{
-    "succeed":[
+  "data": {
+    "succeed": [
       {
-        "id" : 5019,
-        "sku" : "LEVS-319",
-        "partner_sku" : "",
-        "partner_variant_sku":"",
-        "name":"Levi's merupakan merek jeans ternama di seluruh dunia. Ayo pakai Levi's!",
-        "created_at" : "2019-11-28T08:04:03.225186Z", 
-        "updated_at" : "2019-11-29T06:41:30.603645505Z"
+        "id": 411,
+        "sku": "DKL0907",
+        "partner_sku": "PRODABCDE0001",
+        "partner_variant_sku": "PRODABCDE0001-S",
+        "name": "Product ABC"
       },
       {
-        "id" : 5020,
-        "sku" : "LEVS-319-32001",
-        "partner_sku" : "",
-        "partner_variant_sku":"",
-        "name":"Levi's merupakan merek jeans ternama di seluruh dunia. Ayo pakai Levi's!",
-        "created_at" : "2019-11-28T08:04:03.225186Z", 
-        "updated_at" : "2019-11-29T06:41:30.603645505Z"
-      },
-      {
-        "id" : 5021,
-        "sku" : "LEVS-319-34001",
-        "partner_sku" : "",
-        "partner_variant_sku":"",
-        "name":"Levi's merupakan merek jeans ternama di seluruh dunia. Ayo pakai Levi's!",
-        "created_at" : "2019-11-28T08:04:03.225186Z", 
-        "updated_at" : "2019-11-29T06:41:30.603645505Z"
+        "id": 412,
+        "sku": "DKL0907",
+        "partner_sku": "PRODABCDE0001",
+        "partner_variant_sku": "PRODABCDE0001-M",
+        "name": "Product ABC"
       }
     ],
-    "failed" :[]
+    "failed": [
+      {
+        "partner_sku": "PRODABCDE0002",
+        "reason": "error happened"
+      }
+    ]
   },
-  "message" : "Product creayed successfully",
-  "reference" : "3c6bdd10-63b3-4c58-b89a-c2b1e99e885f"
+  "message": "",
+  "reference": "3c6bdd10-63b3-4c58-b89a-c2b1e99e885f"
 }
 ```
