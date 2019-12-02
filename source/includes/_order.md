@@ -123,36 +123,36 @@ Request body must be a JSON document with the following properties
 
 | Name                       | Required | Type      | Description                                                                                                    |
 | -------------------------- | -------- | --------- | -------------------------------------------------------------------------------------------------------------- |
-| order_id                   | Yes      | string    | ID of the order in partner's application                                                                       |
-| order_date                 | Yes      | Timestamp | The date of order ( must be in RFC3339 format timestamp )                                                      |
-| customer_reference         | Yes      | string    | Customer reference value                                                                                       |
-| shipment_reference         | No       | string    | Shipment reference value                                                                                       |
-| status                     | No       | string    | Status of the order (by default pending if empty. The acceptable status values are:                            |
+| order_id                   | Yes      | String    | ID of the order in partner's application                                                                       |
+| order_date                 | Yes      | Timestamp | The date of order ( must be in RFC3339 format Timestamp )                                                      |
+| customer_reference         | Yes      | String    | Customer reference value                                                                                       |
+| shipment_reference         | No       | String    | Shipment reference value                                                                                       |
+| status                     | No       | String    | Status of the order (by default pending if empty. The acceptable status values are:                            |
 | 1. Pending                 |          |           | Order is received from buyer but not yet accepted/acknowledged by seller.                                      |
 | 2. Accepted                |          |           | Order is already accepted by seller. Waiting for buyer payment or seller to send ordered items.                |
 | 3. Packed                  |          |           | Order is already sent by seller. Order should have airway bill no from 3PL/shipping courier/logistics company. |
 | 4. Completed               |          |           | Ordered items is already received by buyer.                                                                    |
 | 5. Cancelled               |          |           | Order has been canceled by buyer or seller                                                                     |
-| delivery_name              | No       | string    | Name of the buyer/delivery recipient in this order                                                             |
-| delivery_mobile            | No       | string    | Mobile number of the delivery recipient                                                                        |
-| delivery_email             | No       | string    | Email address of the buyer/delivery recipient in this order                                                    |
-| delivery_street_address    | No       | string    | Street address for order delivery                                                                              |
-| delivery_city              | No       | string    | City of the delivery recipient                                                                                 |
-| delivery_region            | No       | string    | Region (province/district) of the delivery recipient                                                           |
-| delivery_country           | No       | string    | Country address of the buyer                                                                                   |
-| delivery_post_code         | No       | string    | Postal code of the delivery recipient                                                                          |
-| delivery_method            | No       | string    | Logistics service information (name of the logistics company/service used for order delivery)                  |
-| payment_method             | Yes      | string    | Name of payment method                                                                                         |
-| airwaybill_number          | No       | string    | Airwaybill number from 3PL 3PL (Logistics/Shipping company)                                                    |
-| discount_total             | No       | double    | The total discount value for this order                                                                        |
-| shipping_total             | No       | double    | The total shipping cost value for this order                                                                   |
-| line_items                 | Yes      | array     |                                                                                                                |
-| line_items - order_item_id | No       | string    | ID of the product in line item                                                                                 |
-| line_items - sku           | Yes      | string    | SKU of the purchased line item                                                                                 |
-| line_items - name          | Yes      | string    | Name of the line item                                                                                          |
-| line_items - quantity      | Yes      | integer   | Quantity of the line item                                                                                      |
-| line_items - unit_price    | Yes      | double    | Unit price of the line item (after discount)                                                                   |
-| line_items - discount      | Yes      | double    | Discount value applied on the line item                                                                        |
+| delivery_name              | No       | String    | Name of the buyer/delivery recipient in this order                                                             |
+| delivery_mobile            | No       | String    | Mobile number of the delivery recipient                                                                        |
+| delivery_email             | No       | String    | Email address of the buyer/delivery recipient in this order                                                    |
+| delivery_street_address    | No       | String    | Street address for order delivery                                                                              |
+| delivery_city              | No       | String    | City of the delivery recipient                                                                                 |
+| delivery_region            | No       | String    | Region (province/district) of the delivery recipient                                                           |
+| delivery_country           | No       | String    | Country address of the buyer                                                                                   |
+| delivery_post_code         | No       | String    | Postal code of the delivery recipient                                                                          |
+| delivery_method            | No       | String    | Logistics service information (name of the logistics company/service used for order delivery)                  |
+| payment_method             | Yes      | String    | Name of payment method                                                                                         |
+| airwaybill_number          | No       | String    | Airwaybill number from 3PL 3PL (Logistics/Shipping company)                                                    |
+| discount_total             | No       | Double    | The total discount value for this order                                                                        |
+| shipping_total             | No       | Double    | The total shipping cost value for this order                                                                   |
+| line_items                 | Yes      | Array     |                                                                                                                |
+| line_items - order_item_id | No       | String    | ID of the product in line item                                                                                 |
+| line_items - sku           | Yes      | String    | SKU of the purchased line item                                                                                 |
+| line_items - name          | Yes      | String    | Name of the line item                                                                                          |
+| line_items - quantity      | Yes      | Integer   | Quantity of the line item                                                                                      |
+| line_items - unit_price    | Yes      | Double    | Unit price of the line item (after discount)                                                                   |
+| line_items - discount      | Yes      | Double    | Discount value applied on the line item                                                                        |
 
 > Request body example:
 
@@ -332,21 +332,21 @@ Request body must be a JSON document with the following properties
 
 | Name                       | Required | Type      | Description                                                                        |
 | -------------------------- | -------- | --------- | ---------------------------------------------------------------------------------- |
-| accepted                   | No       | array     | Array of order that want to be accepted                                            |
-| accepted - id              | Yes      | int       | SIRCLO Platform order id                                                           |
-| accepted - updated_at      | Yes      | timestamp | The last updated timestamp for this order and must be in RFC3339 format timestamp  |
-| packed                     | No       | array     | Array of order that want to be packed                                              |
-| packed - id                | Yes      | int       | SIRCLO Platform order id                                                           |
-| packed - airwaybill_number | Yes      | string    | The airwaybill number for this order                                               |
-| packed - updated_at        | Yes      | timestamp | The last updated timestamp for this order and must be in RFC3339 format timestamp  |
-| completed                  | No       | array     | Array of order that want to be completed                                           |
-| completed - id             | Yes      | int       | SIRCLO Platform order id                                                           |
-| completed - received_by    | No       | string    | Name of the receiver                                                               |
-| completed - updated_at     | Yes      | timestamp | The last updated timestamp for this order and must be in RFC3339 format timestamp  |
-| cancelled                  | No       | array     | Array of order that want to be cancelled                                           |
-| cancelled - id             | Yes      | int       | SIRCLO Platform order id                                                           |
-| cancelled - cancel_reason  | No       | string    | Reason why the order is cancelled                                                  |
-| cancelled - updated_at     | Yes      | timestamp | The last updated timestamp for this order and must be in RFCC3339 format timestamp |
+| accepted                   | No       | Array     | Array of order that want to be accepted                                            |
+| accepted - id              | Yes      | Integer   | SIRCLO Platform order id                                                           |
+| accepted - updated_at      | Yes      | Timestamp | The last updated Timestamp for this order and must be in RFC3339 format Timestamp  |
+| packed                     | No       | Array     | Array of order that want to be packed                                              |
+| packed - id                | Yes      | Integer   | SIRCLO Platform order id                                                           |
+| packed - airwaybill_number | Yes      | String    | The airwaybill number for this order                                               |
+| packed - updated_at        | Yes      | Timestamp | The last updated Timestamp for this order and must be in RFC3339 format Timestamp  |
+| completed                  | No       | Array     | Array of order that want to be completed                                           |
+| completed - id             | Yes      | Integer   | SIRCLO Platform order id                                                           |
+| completed - received_by    | No       | String    | Name of the receiver                                                               |
+| completed - updated_at     | Yes      | Timestamp | The last updated Timestamp for this order and must be in RFC3339 format Timestamp  |
+| cancelled                  | No       | Array     | Array of order that want to be cancelled                                           |
+| cancelled - id             | Yes      | Integer   | SIRCLO Platform order id                                                           |
+| cancelled - cancel_reason  | No       | String    | Reason why the order is cancelled                                                  |
+| cancelled - updated_at     | Yes      | Timestamp | The last updated Timestamp for this order and must be in RFCC3339 format Timestamp |
 
 > Request body example:
 

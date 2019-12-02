@@ -78,17 +78,17 @@ Request body must be a JSON document with the following properties
 | ------------------------------- | -------- | ------ | --------------------------------------------- |
 | sku                             | Yes      | String | SKU of the product in Connexi                 |
 | partner_sku                     | Yes      | String | SKU of the product in Partner                 |
-| partner_variants                | Yes      | Array  |                                               |
+| partner_variants                | Yes      | Object |                                               |
 | partner_variants - variant_sku  | Yes      | String | SKU of the variant product                    |
-| partner_variants - variant_name | Yes      | string | Name of the variant product                   |
-| name                            | Yes      | string | Name of the product                           |
-| decription                      | Yes      | string | Information about feature, benefit of product |
-| currency                        | Yes      | string | Currency of the product                       |
-| price                           | Yes      | double | Price of the product                          |
-| weight                          | Yes      | double | Weight of the product                         |
-| height                          | Yes      | double | Height of the product                         |
-| length                          | Yes      | double | Length of the product                         |
-| width                           | Yes      | double | Width of the product                          |
+| partner_variants - variant_name | Yes      | String | Name of the variant product                   |
+| name                            | Yes      | String | Name of the product                           |
+| decription                      | Yes      | String | Information about feature, benefit of product |
+| currency                        | Yes      | String | Currency of the product                       |
+| price                           | Yes      | Double | Price of the product                          |
+| weight                          | Yes      | Double | Weight of the product                         |
+| height                          | Yes      | Double | Height of the product                         |
+| length                          | Yes      | Double | Length of the product                         |
+| width                           | Yes      | Double | Width of the product                          |
 
 > Request body example:
 
@@ -98,16 +98,10 @@ Request body must be a JSON document with the following properties
     {
       "sku": "DKL0907",
       "partner_sku": "PRODABCDE0001",
-      "partner_variants": [
-        {
-          "variant_sku": "PRODABCDE0001-S",
-          "variant_name": "Product ABC - S"
-        },
-        {
-          "variant_sku": "PRODABCDE0001-M",
-          "variant_name": "Product ABC - M"
-        }
-      ],
+      "partner_variants": {
+        "variant_sku": "PRODABCDE0001-S",
+        "variant_name": "Product ABC - S"
+      },
       "name": "Product ABC",
       "description": "Product ABC Description",
       "currency": "IDR",
@@ -120,16 +114,10 @@ Request body must be a JSON document with the following properties
     {
       "sku": "DLP0907",
       "partner_sku": "PRODABCDE0002",
-      "partner_variants": [
-        {
-          "variant_sku": "PRODABCDE0002-S",
-          "variant_name": "Product DDA - S"
-        },
-        {
-          "variant_sku": "PRODABCDE0002-M",
-          "variant_name": "Product DDA - M"
-        }
-      ],
+      "partner_variants": {
+        "variant_sku": "PRODABCDE0002-S",
+        "variant_name": "Product DDA - S"
+      },
       "name": "Product DDA",
       "description": "Product DDA Description",
       "currency": "IDR",
@@ -154,13 +142,6 @@ Request body must be a JSON document with the following properties
         "sku": "DKL0907",
         "partner_sku": "PRODABCDE0001",
         "partner_variant_sku": "PRODABCDE0001-S",
-        "name": "Product ABC"
-      },
-      {
-        "id": 412,
-        "sku": "DKL0907",
-        "partner_sku": "PRODABCDE0001",
-        "partner_variant_sku": "PRODABCDE0001-M",
         "name": "Product ABC"
       }
     ],
