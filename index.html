@@ -421,7 +421,7 @@ secret: cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
 partner_id: B98KL87
 secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 </code></pre><h1 id='orders'>Orders</h1><h2 id='get-order'>Get Order</h2><h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /v1/partner/order?since=&amp;until=&amp;limit=&amp;offset=</code></p>
+<p><code>GET /v1/partner/order</code></p>
 <h3 id='header-parameters'>Header Parameters</h3>
 <table><thead>
 <tr>
@@ -495,26 +495,21 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNH7438B"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Artia"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"shipment_tracked_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"store_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"marketplace_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"levs"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"payment_method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000</span><span class="p">,</span><span class="w">
@@ -525,49 +520,49 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
       </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29673073"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
           </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
           </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"order_item_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-       </span><span class="s2">"delivery_orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"delivery_orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"sales_order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"delivery_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"do_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"sent_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"delivery_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
               </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
               </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC partial order delivery"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"product_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w"> 
+              </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
               </span><span class="s2">"order_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
               </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stock/Commerce"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="w">
             </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="s2">"sent_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27T06:05:11Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27T06:05:11Z"</span><span class="w">
-    </span><span class="p">}</span><span class="w"> 
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"total_record"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c5170ab9-7afb-4b71-a080-3d0c06e79fa7"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='create-order'>Create Order</h2><h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST /v1/partner/order</code></p>
@@ -607,31 +602,31 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <tr>
 <td>order_id</td>
 <td>Yes</td>
-<td>string</td>
+<td>String</td>
 <td>ID of the order in partner&#39;s application</td>
 </tr>
 <tr>
 <td>order_date</td>
 <td>Yes</td>
 <td>Timestamp</td>
-<td>The date of order ( must be in RFC3339 format timestamp )</td>
+<td>The date of order ( must be in RFC3339 format Timestamp )</td>
 </tr>
 <tr>
 <td>customer_reference</td>
 <td>Yes</td>
-<td>string</td>
+<td>String</td>
 <td>Customer reference value</td>
 </tr>
 <tr>
 <td>shipment_reference</td>
 <td>No</td>
-<td>string</td>
+<td>String</td>
 <td>Shipment reference value</td>
 </tr>
 <tr>
 <td>status</td>
 <td>No</td>
-<td>string</td>
+<td>String</td>
 <td>Status of the order (by default pending if empty. The acceptable status values are:</td>
 </tr>
 <tr>
@@ -667,115 +662,121 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <tr>
 <td>delivery_name</td>
 <td>No</td>
-<td>string</td>
+<td>String</td>
 <td>Name of the buyer/delivery recipient in this order</td>
+</tr>
+<tr>
+<td>delivery_mobile</td>
+<td>No</td>
+<td>String</td>
+<td>Mobile number of the delivery recipient</td>
 </tr>
 <tr>
 <td>delivery_email</td>
 <td>No</td>
-<td>string</td>
+<td>String</td>
 <td>Email address of the buyer/delivery recipient in this order</td>
 </tr>
 <tr>
 <td>delivery_street_address</td>
 <td>No</td>
-<td>string</td>
+<td>String</td>
 <td>Street address for order delivery</td>
-</tr>
-<tr>
-<td>delivery_region</td>
-<td>No</td>
-<td>string</td>
-<td>Region (province/district) of the delivery recipient</td>
 </tr>
 <tr>
 <td>delivery_city</td>
 <td>No</td>
-<td>string</td>
+<td>String</td>
 <td>City of the delivery recipient</td>
+</tr>
+<tr>
+<td>delivery_region</td>
+<td>No</td>
+<td>String</td>
+<td>Region (province/district) of the delivery recipient</td>
 </tr>
 <tr>
 <td>delivery_country</td>
 <td>No</td>
-<td>string</td>
+<td>String</td>
 <td>Country address of the buyer</td>
 </tr>
 <tr>
 <td>delivery_post_code</td>
 <td>No</td>
-<td>string</td>
+<td>String</td>
 <td>Postal code of the delivery recipient</td>
 </tr>
 <tr>
 <td>delivery_method</td>
 <td>No</td>
-<td>string</td>
+<td>String</td>
 <td>Logistics service information (name of the logistics company/service used for order delivery)</td>
-</tr>
-<tr>
-<td>delivery_mobile</td>
-<td>No</td>
-<td>string</td>
-<td>Mobile number of the delivery recipient</td>
-</tr>
-<tr>
-<td>airwaybill_number</td>
-<td>No</td>
-<td>string</td>
-<td>Airwaybill number from 3PL 3PL (Logistics/Shipping company)</td>
 </tr>
 <tr>
 <td>payment_method</td>
 <td>Yes</td>
-<td>string</td>
+<td>String</td>
 <td>Name of payment method</td>
+</tr>
+<tr>
+<td>airwaybill_number</td>
+<td>No</td>
+<td>String</td>
+<td>Airwaybill number from 3PL 3PL (Logistics/Shipping company)</td>
+</tr>
+<tr>
+<td>discount_total</td>
+<td>No</td>
+<td>Double</td>
+<td>The total discount value for this order</td>
 </tr>
 <tr>
 <td>shipping_total</td>
 <td>No</td>
-<td>double</td>
+<td>Double</td>
 <td>The total shipping cost value for this order</td>
-</tr>
-<tr>
-<td>order_item_id</td>
-<td>No</td>
-<td>string</td>
-<td>List of id for any order item</td>
 </tr>
 <tr>
 <td>line_items</td>
 <td>Yes</td>
-<td>array</td>
+<td>Array</td>
 <td></td>
 </tr>
 <tr>
-<td>line_items - name</td>
-<td>Yes</td>
-<td>string</td>
-<td>Name of the line item</td>
+<td>line_items - order_item_id</td>
+<td>No</td>
+<td>String</td>
+<td>ID of the product in line item</td>
 </tr>
 <tr>
 <td>line_items - sku</td>
 <td>Yes</td>
-<td>string</td>
+<td>String</td>
 <td>SKU of the purchased line item</td>
+</tr>
+<tr>
+<td>line_items - name</td>
+<td>Yes</td>
+<td>String</td>
+<td>Name of the line item</td>
 </tr>
 <tr>
 <td>line_items - quantity</td>
 <td>Yes</td>
-<td>integer</td>
+<td>Integer</td>
 <td>Quantity of the line item</td>
 </tr>
 <tr>
 <td>line_items - unit_price</td>
 <td>Yes</td>
-<td>double</td>
+<td>Double</td>
 <td>Unit price of the line item (after discount)</td>
 </tr>
 <tr>
 <td>line_items - discount</td>
 <td>Yes</td>
-<td>double</td>
+<td>Double</td>
 <td>Discount value applied on the line item</td>
 </tr>
 </tbody></table>
@@ -784,8 +785,7 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <p>Request body example:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"orders"</span><span class="w"> </span><span class="p">:</span><span class="w">
-  </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-123"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z07:00"</span><span class="p">,</span><span class="w">
@@ -796,23 +796,25 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
       </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"payment_method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"order_item_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -822,25 +824,27 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
       </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agus Setiawan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"085812805429"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agusetiawan@gmail.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Anggrek No. 15"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11540"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"085812805429"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"line_items"</span><span class="p">:[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADSME-00128"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345679"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADSME-00128"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sepatu Test"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
           </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">75000</span><span class="p">,</span><span class="w">
           </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -848,80 +852,90 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <p>The above request returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w">
-  </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
       </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-123"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNH7438B"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Artia"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"payment_method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w"> 
+      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"marketplace_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"levs"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"store"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"41"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"tax_total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tax_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">115000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
           </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
           </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
           </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"order_item_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> 
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27T06:05:11Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27T06:05:11Z"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">124</span><span class="p">,</span><span class="w">
       </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LEVSORD-003101"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-22T10:27:48Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASHD1301FHF7512"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agus Setiawan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"085812805429"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agusetiawan@gmail.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Anggrek No. 15"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11540"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"085812805429"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"line_items"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345679"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tax_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">115000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
           </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADSME-00128"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sepatu Test"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
           </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">75000</span><span class="p">,</span><span class="w">
           </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"order_item_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27T06:05:11Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27T06:05:11Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">    
-  </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Order created successfully"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"8608798c-3ca1-42ce-8b7d-0ab3d65ef312"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order created successfully"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8608798c-3ca1-42ce-8b7d-0ab3d65ef312"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='update-order'>Update Order</h2><h3 id='http-request-3'>HTTP Request</h3>
 <p><code>PATCH /v1/partner/order/status</code></p>
@@ -961,92 +975,92 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <tr>
 <td>accepted</td>
 <td>No</td>
-<td>array</td>
+<td>Array</td>
 <td>Array of order that want to be accepted</td>
 </tr>
 <tr>
 <td>accepted - id</td>
 <td>Yes</td>
-<td>int</td>
+<td>Integer</td>
 <td>SIRCLO Platform order id</td>
 </tr>
 <tr>
 <td>accepted - updated_at</td>
 <td>Yes</td>
-<td>timestamp</td>
-<td>The last updated timestamp for this order and must be in RFC3339 format timestamp</td>
+<td>Timestamp</td>
+<td>The last updated Timestamp for this order and must be in RFC3339 format Timestamp</td>
 </tr>
 <tr>
 <td>packed</td>
 <td>No</td>
-<td>array</td>
+<td>Array</td>
 <td>Array of order that want to be packed</td>
 </tr>
 <tr>
 <td>packed - id</td>
 <td>Yes</td>
-<td>int</td>
+<td>Integer</td>
 <td>SIRCLO Platform order id</td>
 </tr>
 <tr>
 <td>packed - airwaybill_number</td>
 <td>Yes</td>
-<td>string</td>
+<td>String</td>
 <td>The airwaybill number for this order</td>
 </tr>
 <tr>
 <td>packed - updated_at</td>
 <td>Yes</td>
-<td>timestamp</td>
-<td>The last updated timestamp for this order and must be in RFC3339 format timestamp</td>
+<td>Timestamp</td>
+<td>The last updated Timestamp for this order and must be in RFC3339 format Timestamp</td>
 </tr>
 <tr>
 <td>completed</td>
 <td>No</td>
-<td>array</td>
+<td>Array</td>
 <td>Array of order that want to be completed</td>
 </tr>
 <tr>
 <td>completed - id</td>
 <td>Yes</td>
-<td>int</td>
+<td>Integer</td>
 <td>SIRCLO Platform order id</td>
 </tr>
 <tr>
 <td>completed - received_by</td>
 <td>No</td>
-<td>string</td>
+<td>String</td>
 <td>Name of the receiver</td>
 </tr>
 <tr>
 <td>completed - updated_at</td>
 <td>Yes</td>
-<td>timestamp</td>
-<td>The last updated timestamp for this order and must be in RFC3339 format timestamp</td>
+<td>Timestamp</td>
+<td>The last updated Timestamp for this order and must be in RFC3339 format Timestamp</td>
 </tr>
 <tr>
 <td>cancelled</td>
 <td>No</td>
-<td>array</td>
+<td>Array</td>
 <td>Array of order that want to be cancelled</td>
 </tr>
 <tr>
 <td>cancelled - id</td>
 <td>Yes</td>
-<td>int</td>
+<td>Integer</td>
 <td>SIRCLO Platform order id</td>
 </tr>
 <tr>
 <td>cancelled - cancel_reason</td>
 <td>No</td>
-<td>string</td>
+<td>String</td>
 <td>Reason why the order is cancelled</td>
 </tr>
 <tr>
 <td>cancelled - updated_at</td>
 <td>Yes</td>
-<td>timestamp</td>
-<td>The last updated timestamp for this order and must be in RFCC3339 format timestamp</td>
+<td>Timestamp</td>
+<td>The last updated Timestamp for this order and must be in RFCC3339 format Timestamp</td>
 </tr>
 </tbody></table>
 
@@ -1155,6 +1169,9 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 </tbody></table>
 
 <blockquote>
+<p>Request example
+<code>GET /v1/partner/product/stock?limit=100&amp;offset=0</code></p>
+
 <p>The above request returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -1162,27 +1179,27 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"partner_sku"</span><span class="w"> </span><span class="p">:</span><span class="s2">"PRODABCDE0001"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"partner_variant_sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"partner_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODABCDE0001"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"partner_variant_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODABCDE0001-S"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"stock"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
       </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-09T02:09:25.071496Z"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"update_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-05T06:11:51.394954Z"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="s2">"DLP0907"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"partner_sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"partner_variant_sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Product DDA"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"stock"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-21T12:33:31.139787Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"update_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-26T09:43:06.296043Z"</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DLP0907"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"partner_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODABCDE0002"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"partner_variant_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODABCDE0002-M"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product DDA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stock"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-21T12:33:31.139787Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"update_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-26T09:43:06.296043Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"total_record"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"offset"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"limit"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_record"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e444c078-3bee-4606-949d-da120886424e"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1222,111 +1239,148 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 </tr>
 </thead><tbody>
 <tr>
-<td>SKU</td>
+<td>sku</td>
 <td>Yes</td>
 <td>String</td>
-<td>Stok Keeping Unit in Connexi</td>
+<td>SKU of the product in Connexi</td>
 </tr>
 <tr>
 <td>partner_sku</td>
 <td>Yes</td>
 <td>String</td>
-<td>SKU product used in partner</td>
+<td>SKU of the product in Partner</td>
 </tr>
 <tr>
-<td>variant_sku</td>
-<td>No</td>
+<td>partner_variant</td>
+<td>Yes</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>partner_variant - variant_sku</td>
+<td>Yes</td>
 <td>String</td>
-<td>SKU variant of product used in partner</td>
+<td>SKU of the variant product</td>
 </tr>
 <tr>
-<td>variant_name</td>
-<td>No</td>
-<td>string</td>
-<td>Name of variant product</td>
+<td>partner_variant - variant_name</td>
+<td>Yes</td>
+<td>String</td>
+<td>Name of the variant product</td>
 </tr>
 <tr>
 <td>name</td>
-<td>No</td>
-<td>string</td>
-<td>Name of product</td>
+<td>Yes</td>
+<td>String</td>
+<td>Name of the product</td>
 </tr>
 <tr>
 <td>decription</td>
-<td>No</td>
-<td>string</td>
+<td>Yes</td>
+<td>String</td>
 <td>Information about feature, benefit of product</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Yes</td>
+<td>String</td>
+<td>Currency of the product</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Yes</td>
+<td>Double</td>
+<td>Price of the product</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>Yes</td>
+<td>Double</td>
+<td>Weight of the product</td>
+</tr>
+<tr>
+<td>height</td>
+<td>Yes</td>
+<td>Double</td>
+<td>Height of the product</td>
+</tr>
+<tr>
+<td>length</td>
+<td>Yes</td>
+<td>Double</td>
+<td>Length of the product</td>
+</tr>
+<tr>
+<td>width</td>
+<td>Yes</td>
+<td>Double</td>
+<td>Width of the product</td>
 </tr>
 </tbody></table>
 
 <blockquote>
 <p>Request body example:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"products"</span><span class="p">:[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"LEVS-319"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"partner_sku"</span><span class="p">:</span><span class="s2">"LEVS-319"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"partner_variants"</span><span class="p">:[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"variant_sku"</span><span class="p">:</span><span class="s2">"LEVS-319-32001"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"variant_name"</span><span class="p">:</span><span class="s2">"Levi's Jeans Regular fit 32"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"variant_sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"LEVS-319-34001"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"variant_name"</span><span class="p">:</span><span class="s2">"Levi's Jeans Black Slim Fit 34"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">],</span><span class="w"> 
-        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Levi's"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Levi's merupakan merek jeans ternama di seluruh dunia, Ayo pakai Levi's!"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w"> 
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="mi">340000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"weight"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w"> 
-        </span><span class="s2">"height"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">86</span><span class="p">,</span><span class="w"> 
-        </span><span class="s2">"lenght"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w"> 
-        </span><span class="s2">"width"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="p">,</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"partner_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODABCDE0001"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"partner_variant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"variant_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODABCDE0001-S"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"variant_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC - S"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC Description"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">340000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">86</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lenght"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DLP0907"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"partner_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODABCDE0002"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"partner_variant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"variant_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODABCDE0002-S"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"variant_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product DDA - S"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product DDA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product DDA Description"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">340000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">86</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lenght"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>The above request returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
-    </span><span class="s2">"succeed"</span><span class="p">:[</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"succeed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5019</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"LEVS-319"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"partner_sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"partner_variant_sku"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Levi's merupakan merek jeans ternama di seluruh dunia. Ayo pakai Levi's!"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-28T08:04:03.225186Z"</span><span class="p">,</span><span class="w"> 
-        </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-29T06:41:30.603645505Z"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5020</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"LEVS-319-32001"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"partner_sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"partner_variant_sku"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Levi's merupakan merek jeans ternama di seluruh dunia. Ayo pakai Levi's!"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-28T08:04:03.225186Z"</span><span class="p">,</span><span class="w"> 
-        </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-29T06:41:30.603645505Z"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5021</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"LEVS-319-34001"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"partner_sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"partner_variant_sku"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Levi's merupakan merek jeans ternama di seluruh dunia. Ayo pakai Levi's!"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-28T08:04:03.225186Z"</span><span class="p">,</span><span class="w"> 
-        </span><span class="s2">"updated_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-11-29T06:41:30.603645505Z"</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">411</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"partner_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODABCDE0001"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"partner_variant_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODABCDE0001-S"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"failed"</span><span class="w"> </span><span class="p">:[]</span><span class="w">
+    </span><span class="s2">"failed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"partner_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODABCDE0002"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error happened"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Product creayed successfully"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"3c6bdd10-63b3-4c58-b89a-c2b1e99e885f"</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3c6bdd10-63b3-4c58-b89a-c2b1e99e885f"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h1 id='errors'>Errors</h1>
 <p>The Orders and Products API uses the following error codes:</p>
