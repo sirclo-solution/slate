@@ -1,12 +1,11 @@
 # Composing Secret
 
-
 For every request sent, partner must include **_partner-id_** and **_secret_** in the HTTP request headers.
 
 - **_partner-id_** value to use is given by SIRCLO.
-For every request sent, partner must include **_partner_id_** and **_secret_** in the HTTP request headers.
+For every request sent, partner must include **_partner-id_** and **_secret_** in the HTTP request headers.
 
-- **_partner_id_** value to use is given by SIRCLO.
+- **_partner-id_** value to use is given by SIRCLO.
 - **_secret_** value to send is HMAC (Hash Based Message Authentication Code) using SHA-256 algorithm.
 - To compose the HMAC value, partner must use the HTTP Request URI joined with the request Body as the message to hash using a certain **_partner_secret_** value (given by SIRCLO)
 - The resulting hash after HMAC calculation is then base64 encoded and placed in HTTP header **_secret_** in the request.
@@ -15,11 +14,10 @@ For every request sent, partner must include **_partner_id_** and **_secret_** i
 
 Given **_partner_id_** and **_partner_secret_**:
 
-| partner_id |  partner_secret                             |
+| partner_id | partner_secret                              |
 | ---------- | ------------------------------------------- |
 | B98KL87    | a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM |
 |            |                                             |
-
 
 > With request URI **_POST /v1/partner/order_** and the HTTP Request Body Parameter example like on the right side
 
@@ -81,6 +79,7 @@ result = base64_encode(hmac) = YfbcLEz3mFnytfKRXPm/TKQQO+ST019IZ8AO6fS1aBI=
 ```
 
 > Partner must include this HMAC value in HTTP header: "**_secret_**" along with HTTP header "**_partner-id_**". Example request that the partner needs to send becomes as follows:
+
 ```text
 result = base64_encode(hmac) = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
 ```
@@ -95,7 +94,7 @@ Content-Type: application/json
 partner-id: B98KL87
 secret: YfbcLEz3mFnytfKRXPm/TKQQO+ST019IZ8AO6fS1aBI=
 
-partner_id: B98KL87
+partner-id: B98KL87
 secret: +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
 
 
@@ -130,6 +129,6 @@ GET /v1/partner/order?since=2018-10-13T13:34:52Z&until=2018-10-16T19:22:39Z&limi
 Host : api.connexi.id
 partner-id: B98KL87
 secret: cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
-partner_id: B98KL87
+partner-id: B98KL87
 secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 ```

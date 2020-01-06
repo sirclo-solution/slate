@@ -10,7 +10,7 @@
 
 | Name       | Required | Type   | Description                                                                                                       |
 | ---------- | -------- | ------ | ----------------------------------------------------------------------------------------------------------------- |
-| partner_id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
+| partner-id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
 | secret     | Yes      | String | HMAC (Hash Based Message Authentication Code), refer to section: <a href="#composing-secret">Composing Secret</a> |
 
 ### Path Parameters
@@ -67,7 +67,7 @@
 
 | Name       | Required | Type   | Description                                                                                                       |
 | ---------- | -------- | ------ | ----------------------------------------------------------------------------------------------------------------- |
-| partner_id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
+| partner-id | Yes      | String | Partner ID value (given from SIRCLO) used for partner identification                                              |
 | secret     | Yes      | String | HMAC (Hash Based Message Authentication Code), refer to section: <a href="#composing-secret">Composing Secret</a> |
 
 ### Request Body Parameters
