@@ -293,8 +293,8 @@
 
 <ul>
 <li><p><strong><em>partner-id</em></strong> value to use is given by SIRCLO.
-For every request sent, partner must include <strong><em>partner_id</em></strong> and <strong><em>secret</em></strong> in the HTTP request headers.</p></li>
-<li><p><strong><em>partner_id</em></strong> value to use is given by SIRCLO.</p></li>
+For every request sent, partner must include <strong><em>partner-id</em></strong> and <strong><em>secret</em></strong> in the HTTP request headers.</p></li>
+<li><p><strong><em>partner-id</em></strong> value to use is given by SIRCLO.</p></li>
 <li><p><strong><em>secret</em></strong> value to send is HMAC (Hash Based Message Authentication Code) using SHA-256 algorithm.</p></li>
 <li><p>To compose the HMAC value, partner must use the HTTP Request URI joined with the request Body as the message to hash using a certain <strong><em>partner_secret</em></strong> value (given by SIRCLO)</p></li>
 <li><p>The resulting hash after HMAC calculation is then base64 encoded and placed in HTTP header <strong><em>secret</em></strong> in the request.</p></li>
@@ -374,11 +374,11 @@ hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
 <pre class="highlight plaintext"><code>result = base64_encode(hmac) = YfbcLEz3mFnytfKRXPm/TKQQO+ST019IZ8AO6fS1aBI=
 </code></pre>
 <blockquote>
-<p>Partner must include this HMAC value in HTTP header: &quot;<strong><em>secret</em></strong>&quot; along with HTTP header &quot;<strong><em>partner-id</em></strong>&quot;. Example request that the partner needs to send becomes as follows:
-<code>text
-result = base64_encode(hmac) = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
-</code></p>
-
+<p>Partner must include this HMAC value in HTTP header: &quot;<strong><em>secret</em></strong>&quot; along with HTTP header &quot;<strong><em>partner-id</em></strong>&quot;. Example request that the partner needs to send becomes as follows:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>result = base64_encode(hmac) = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
+</code></pre>
+<blockquote>
 <p>Partner must include this HMAC value in HTTP header: &quot;<strong><em>secret</em></strong>&quot; along with HTTP header &quot;<strong><em>partner_id</em></strong>&quot;. Example request that the partner needs to send becomes as follows:</p>
 </blockquote>
 <pre class="highlight plaintext"><code>POST /v1/partner/order HTTP/1.1
@@ -388,7 +388,7 @@ Content-Type: application/json
 partner-id: B98KL87
 secret: YfbcLEz3mFnytfKRXPm/TKQQO+ST019IZ8AO6fS1aBI=
 
-partner_id: B98KL87
+partner-id: B98KL87
 secret: +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
 
 
@@ -418,7 +418,7 @@ secret = base64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 Host : api.connexi.id
 partner-id: B98KL87
 secret: cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
-partner_id: B98KL87
+partner-id: B98KL87
 secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 </code></pre><h1 id='orders'>Orders</h1><h2 id='get-order'>Get Order</h2><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET /v1/partner/order</code></p>
@@ -775,7 +775,7 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 </tr>
 <tr>
 <td>line_items - discount</td>
-<td>Yes</td>
+<td>No</td>
 <td>Double</td>
 <td>Discount value applied on the line item</td>
 </tr>
@@ -1133,7 +1133,7 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 </tr>
 </thead><tbody>
 <tr>
-<td>partner_id</td>
+<td>partner-id</td>
 <td>Yes</td>
 <td>String</td>
 <td>Partner ID value (given from SIRCLO) used for partner identification</td>
@@ -1215,7 +1215,7 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 </tr>
 </thead><tbody>
 <tr>
-<td>partner_id</td>
+<td>partner-id</td>
 <td>Yes</td>
 <td>String</td>
 <td>Partner ID value (given from SIRCLO) used for partner identification</td>
