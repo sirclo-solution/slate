@@ -16,43 +16,101 @@ Given **_partner_id_** and **_partner_secret_**:
 
 | partner_id | partner_secret                              |
 | ---------- | ------------------------------------------- |
-| B98KL87    | a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM |
+| B98KL87    | 1IieSn9qXCYu3FeEG1eH05QxTMldKEiNIkLSN/5xtgc=|
 |            |                                             |
 
 > With request URI **_POST /v1/partner/order_** and the HTTP Request Body Parameter example like on the right side
 
 ```json
 {
-  "order_id": "ORD-256/20190627/FMCG/OA",
-  "order_date": "2019-06-02T16:31:55Z",
-  "status": "accepted",
-  "customer_reference": "DHU9868NGY",
-  "shipment_reference": "",
-  "delivery_name": "John Smith",
-  "delivery_email": "john.fictional.smith@gmail.com",
-  "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
-  "delivery_region": "DKI Jakarta",
-  "delivery_city": "Kota Jakarta Barat - Cengkareng",
-  "delivery_country": "Indonesia",
-  "delivery_post_code": "11720",
-  "delivery_method": "JNE Reguler",
-  "delivery_mobile": "082101871618",
-  "airwaybill_number": "AWB12345678",
-  "shipping_total": 15000,
-  "line_items": [
+  "orders": [
     {
-      "sku": "DKL0907",
-      "name": "Organic Instant Noodles Special Chicken Flavor - 150 gr",
-      "quantity": 2,
-      "raw_price": 10000,
-      "discount": 100
+      "order_id": "ORD-123",
+      "order_date": "2020-01-31T10:47:48Z",
+      "customer_reference": "CAHDI831013N3H3J",
+      "shipment_reference": "CAHDI831013N3H3J",
+      "status": "pending",
+      "delivery_name": "John Smith",
+      "delivery_email": "johnsmith@outlook.com",
+      "delivery_street_address": "Jalan Anggrek No. 35",
+      "delivery_region": "DKI Jakarta",
+      "delivery_city": "Jakarta Barat",
+      "delivery_suburb": "Kembangan",
+      "delivery_country": "Indonesia",
+      "delivery_post_code": "11650",
+      "delivery_method": "JNE REG",
+      "delivery_mobile": "082130192810",
+      "payment_method": "COD",
+      "discount_total": 15000,
+      "shipping_total": 8000,
+      "line_items": [
+        {
+          "sku": "TOP0001",
+          "name": "Barang Branded",
+          "quantity": 2,
+          "unit_price": 40000,
+          "discount": 5000,
+          "order_item_id": "73910HDLJR"
+        }
+      ]
     },
     {
-      "sku": "CCF0985",
-      "name": "Organic Instant Coffee With Brown Sugar - 100 gr",
-      "quantity": 5,
-      "raw_price": 5000,
-      "discount": 0
+      "order_id": "ORD-124",
+      "order_date": "2020-01-31T04:27:11Z",
+      "customer_reference": "JSAL1349SSM2JS9",
+      "shipment_reference": "JSAL1349SSM2JS9",
+      "status": "pending",
+      "delivery_name": "John Due",
+      "delivery_email": "johndue@gmail.com",
+      "delivery_street_address": "Jalan Gajah No. 35",
+      "delivery_region": "DKI Jakarta",
+      "delivery_city": "Jakarta Selatan",
+      "delivery_suburb": "Setia Budi",
+      "delivery_country": "Indonesia",
+      "delivery_post_code": "12940",
+      "delivery_method": "JNE REG",
+      "delivery_mobile": "085310355429",
+      "payment_method": "Credit Card",
+      "shipping_total": 18000,
+      "line_items": [
+        {
+          "sku": "LVB9C50",
+          "name": "Sepatu",
+          "quantity": 2,
+          "unit_price": 85000,
+          "discount": 12000,
+          "order_item_id": "71034JFERM"
+        }
+      ]
+    },
+    {
+      "order_id": "ORD-125",
+      "order_date": "2020-01-31T07:11:48Z",
+      "customer_reference": "NCEDI83820143NSJ",
+      "shipment_reference": "NCEDI83820143NSJ",
+      "status": "pending",
+      "delivery_name": "John Wick",
+      "delivery_email": "johnwick@gmail.com",
+      "delivery_street_address": "Jalan Nelimurni No. 12",
+      "delivery_region": "DKI Jakarta",
+      "delivery_city": "Jakarta Pusat",
+      "delivery_suburb": "Menteng",
+      "delivery_country": "Indonesia",
+      "delivery_post_code": "10250",
+      "delivery_method": "JNE REG",
+      "delivery_mobile": "085812120429",
+      "payment_method": "COD",
+      "discount_total": 15000,
+      "shipping_total": 8000,
+      "line_items": [
+        {
+          "sku": "TOP0001",
+          "name": "Barang Branded",
+          "quantity": 1,
+          "unit_price": 50000,
+          "order_item_id": "78205HJSLE"
+        }
+      ]
     }
   ]
 }
@@ -61,27 +119,20 @@ Given **_partner_id_** and **_partner_secret_**:
 > The message used for HMAC calculation is taken from the HTTP request URI joined with the HTTP request body:
 
 ```text
-message_to_be_hashed = /v1/partner/order{"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","airwaybill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
-message_to_be_hashed = /v1/partner/order{"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","ariwaybill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
+message_to_be_hashed = v1/partner/order{"orders":[{"order_id":"ORD-123","order_date":"2020-01-31T10:47:48Z","customer_reference":"CAHDI831013N3H3J","shipment_reference":"CAHDI831013N3H3J","status":"pending","delivery_name":"John Smith","delivery_email":"johnsmith@outlook.com","delivery_street_address":"Jalan Anggrek No. 35","delivery_region":"DKI Jakarta","delivery_city":"Jakarta Barat","delivery_suburb":"Kembangan","delivery_country":"Indonesia","delivery_post_code":"11650","delivery_method":"JNE REG","delivery_mobile":"082130192810","payment_method":"COD","discount_total":15000,"shipping_total":8000,"line_items":[{"sku":"TOP0001","name":"Barang Branded","quantity":2,"unit_price":40000,"discount":5000,"order_item_id":"73910HDLJR"}]},{"order_id":"ORD-124","order_date":"2020-01-31T04:27:11Z","customer_reference":"JSAL1349SSM2JS9","shipment_reference":"JSAL1349SSM2JS9","status":"pending","delivery_name":"John Due","delivery_email":"johndue@gmail.com","delivery_street_address":"Jalan Gajah No. 35","delivery_region":"DKI Jakarta","delivery_city":"Jakarta Selatan","delivery_suburb":"Setia Budi","delivery_country":"Indonesia","delivery_post_code":"12940","delivery_method":"JNE REG","delivery_mobile":"085310355429","payment_method":"Credit Card","shipping_total":18000,"line_items":[{"sku":"LVB9C50","name":"Sepatu","quantity":2,"unit_price":85000,"discount":12000,"order_item_id":"71034JFERM"}]},{"order_id":"ORD-125","order_date":"2020-01-31T07:11:48Z","customer_reference":"NCEDI83820143NSJ","shipment_reference":"NCEDI83820143NSJ","status":"pending","delivery_name":"John Wick","delivery_email":"johnwick@gmail.com","delivery_street_address":"Jalan Nelimurni No. 12","delivery_region":"DKI Jakarta","delivery_city":"Jakarta Pusat","delivery_suburb":"Menteng","delivery_country":"Indonesia","delivery_post_code":"10250","delivery_method":"JNE REG","delivery_mobile":"085812120429","payment_method":"COD","discount_total":15000,"shipping_total":8000,"line_items":[{"sku":"TOP0001","name":"Barang Branded","quantity":1,"unit_price":50000,"order_item_id":"78205HJSLE"}]}]}
 ```
 
 > The **_message_to_be_hashed_** is then used with the **_partner_secret_** value when calculating the HMAC
 
 ```text
-hmac = hmac_sha256(message_to_be_hashed, a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM)
-hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
+hmac = hmac_sha256(message_to_be_hashed, partner_secret)
+hmac = hmac_sha256(message_to_be_hashed, 1IieSn9qXCYu3FeEG1eH05QxTMldKEiNIkLSN/5xtgc=)
 ```
 
 > The resulting hmac is in binary format, it is then base64 encoded
 
 ```text
-result = base64_encode(hmac) = YfbcLEz3mFnytfKRXPm/TKQQO+ST019IZ8AO6fS1aBI=
-```
-
-> Partner must include this HMAC value in HTTP header: "**_secret_**" along with HTTP header "**_partner-id_**". Example request that the partner needs to send becomes as follows:
-
-```text
-result = base64_encode(hmac) = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
+result = base64_encode(hmac) = CxWnlMigAoSQgKcFIxVme0bXYk8Ftk99daJXssYCXC8=
 ```
 
 > Partner must include this HMAC value in HTTP header: "**_secret_**" along with HTTP header "**_partner_id_**". Example request that the partner needs to send becomes as follows:
@@ -90,15 +141,11 @@ result = base64_encode(hmac) = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
 POST /v1/partner/order HTTP/1.1
 Host: api.connexi.id
 Content-Type: application/json
-
 partner-id: B98KL87
-secret: YfbcLEz3mFnytfKRXPm/TKQQO+ST019IZ8AO6fS1aBI=
-
-partner-id: B98KL87
-secret: +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
+secret: CxWnlMigAoSQgKcFIxVme0bXYk8Ftk99daJXssYCXC8=
 
 
-{"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","airway_bill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
+{"orders":[{"order_id":"ORD-123","order_date":"2020-01-31T10:47:48Z","customer_reference":"CAHDI831013N3H3J","shipment_reference":"CAHDI831013N3H3J","status":"pending","delivery_name":"John Smith","delivery_email":"johnsmith@outlook.com","delivery_street_address":"Jalan Anggrek No. 35","delivery_region":"DKI Jakarta","delivery_city":"Jakarta Barat","delivery_suburb":"Kembangan","delivery_country":"Indonesia","delivery_post_code":"11650","delivery_method":"JNE REG","delivery_mobile":"082130192810","payment_method":"COD","discount_total":15000,"shipping_total":8000,"line_items":[{"sku":"TOP0001","name":"Barang Branded","quantity":2,"unit_price":40000,"discount":5000,"order_item_id":"73910HDLJR"}]},{"order_id":"ORD-124","order_date":"2020-01-31T04:27:11Z","customer_reference":"JSAL1349SSM2JS9","shipment_reference":"JSAL1349SSM2JS9","status":"pending","delivery_name":"John Due","delivery_email":"johndue@gmail.com","delivery_street_address":"Jalan Gajah No. 35","delivery_region":"DKI Jakarta","delivery_city":"Jakarta Selatan","delivery_suburb":"Setia Budi","delivery_country":"Indonesia","delivery_post_code":"12940","delivery_method":"JNE REG","delivery_mobile":"085310355429","payment_method":"Credit Card","shipping_total":18000,"line_items":[{"sku":"LVB9C50","name":"Sepatu","quantity":2,"unit_price":85000,"discount":12000,"order_item_id":"71034JFERM"}]},{"order_id":"ORD-125","order_date":"2020-01-31T07:11:48Z","customer_reference":"NCEDI83820143NSJ","shipment_reference":"NCEDI83820143NSJ","status":"pending","delivery_name":"John Wick","delivery_email":"johnwick@gmail.com","delivery_street_address":"Jalan Nelimurni No. 12","delivery_region":"DKI Jakarta","delivery_city":"Jakarta Pusat","delivery_suburb":"Menteng","delivery_country":"Indonesia","delivery_post_code":"10250","delivery_method":"JNE REG","delivery_mobile":"085812120429","payment_method":"COD","discount_total":15000,"shipping_total":8000,"line_items":[{"sku":"TOP0001","name":"Barang Branded","quantity":1,"unit_price":50000,"order_item_id":"78205HJSLE"}]}]}
 ```
 
 Code examples of on how to calculate HMAC in various programming languages: <https://github.com/danharper/hmac-examples>
@@ -116,10 +163,10 @@ Host: api.connexi.id
 
 ```text
 message_to_be_hashed = /v1/partner/order?since=2018-10-13T13:34:52Z&until=2018-10-16T19:22:39Z&limit=100&offset=0
-hmac = hmac_sha256(message_to_be_hashed, a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM)
-secret = base64_encode(hmac) = cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
-hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
-secret = base64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
+
+hmac = hmac_sha256(message_to_be_hashed, 1IieSn9qXCYu3FeEG1eH05QxTMldKEiNIkLSN/5xtgc=)
+
+secret = base64_encode(hmac) = XoPRRDtfNWaGm4nbw7A0LY/c2U0+jg3F3Ay2d3VR3bM=
 ```
 
 > The HTTP request to send then becomes as follows:
@@ -128,7 +175,5 @@ secret = base64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 GET /v1/partner/order?since=2018-10-13T13:34:52Z&until=2018-10-16T19:22:39Z&limit=100&offset=0
 Host : api.connexi.id
 partner-id: B98KL87
-secret: cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
-partner-id: B98KL87
-secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
+secret: XoPRRDtfNWaGm4nbw7A0LY/c2U0+jg3F3Ay2d3VR3bM=
 ```

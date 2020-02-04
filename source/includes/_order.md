@@ -32,68 +32,70 @@
 {
   "data": [
     {
-      "id": 1,
-      "order_id": "ABC123",
-      "order_date": "2006-01-02T15:04:05Z",
-      "customer_reference": "JNH7438B",
-      "shipment_reference": "",
-      "status": "accepted",
-      "delivery_name": "Artia",
-      "delivery_mobile": "082101871618",
-      "delivery_email": "artia2@gmail.com",
-      "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
-      "delivery_city": "Kota Jakarta Barat - Cengkareng",
+      "id": 2886789,
+      "order_id": "ORD-123",
+      "order_date": "2020-01-31T10:47:48Z",
+      "order_number": "",
+      "customer_reference": "CAHDI831013N3H3J",
+      "shipment_reference": "CAHDI831013N3H3J",
+      "status": "pending",
+      "delivery_name": "John Smith",
+      "delivery_mobile": "082130192810",
+      "delivery_email": "john.smith@outlook.com",
+      "delivery_street_address": "Jalan Anggrek No. 35",
+      "delivery_city": "Jakarta Barat",
       "delivery_region": "DKI Jakarta",
+      "delivery_suburb": "Kembangan",
       "delivery_country": "Indonesia",
-      "delivery_post_code": "11720",
+      "delivery_post_code": "11650",
       "delivery_method": "JNE REG",
-      "payment_method": "Bank Transfer",
+      "payment_method": "COD",
       "airwaybill_number": "AWB12345678",
-      "currency_code": "IDR",
-      "subtotal": 110000,
-      "discount_total": 10000,
-      "shipping_total": 15000,
-      "tax_total": 0,
-      "total": 115000,
+      "currency_code": "",
+      "subtotal": 80000,
+      "discount_total": 15000,
+      "shipping_total": 8000,
+      "tax_total": 7272.726,
+      "total": 73000,
       "line_items": [
         {
-          "id": 3,
-          "order_item_id": "29673073",
-          "sku": "DKL0907",
-          "name": "Product ABC",
+          "id": 11776166,
+          "order_item_id": "73910HDLJR",
+          "sku": "TOP0001",
+          "name": "Barang Branded",
           "quantity": 2,
-          "unit_price": 100000,
-          "discount": 10000,
-          "created_at": "2019-07-31T07:39:29.646799Z",
-          "updated_at": "2019-07-31T07:39:29.646799Z"
+          "unit_price": 40000,
+          "discount": 5000,
+          "created_at": "2020-02-04T07:15:48.758558Z",
+          "updated_at": "2020-02-04T07:15:48.758558Z"
         }
       ],
       "delivery_orders": [
         {
           "id": 12,
-          "order_id": 1,
-          "delivery_number": "John Doe",
+          "order_id": "ORD-123",
+          "delivery_number": "John Smith",
           "airwaybill_number": "AWB12345678",
           "do_status": "pending",
           "delivery_lines": [
             {
               "id": 21,
               "name": "ABC partial order delivery",
-              "sku": "ABC123",
-              "product_name": "Product ABC",
-              "order_quantity": 1,
+              "sku": "TOP0001",
+              "product_name": "Barang Branded",
+              "order_quantity": 2,
               "location": "Stock/Commerce",
-              "created_at": "2006-01-02T15:04:05Z",
-              "updated_at": "2006-01-02T15:04:05Z"
+              "created_at": "2020-02-04T07:15:48.758558Z",
+              "updated_at": "2020-02-04T07:15:48.758558Z"
             }
           ],
-          "sent_at": "2006-01-02T15:04:05Z",
-          "created_at": "2006-01-02T15:04:05Z",
-          "updated_at": "2006-01-02T15:04:05Z"
+          "sent_at": "2020-02-04T07:16:40.758558Z",
+          "created_at": "2020-02-04T07:15:50.758558Z",
+          "updated_at": "2020-02-04T07:15:50.758558Z"
         }
       ],
-      "created_at": "2019-07-31T07:39:29.646799Z",
-      "updated_at": "2019-07-31T07:39:29.646799Z"
+      "created_at": "2020-02-04T07:15:46.196556Z",
+      "updated_at": "2020-02-04T07:15:46.196556Z"
     }
   ],
   "total_record": 1,
@@ -136,12 +138,13 @@ Request body must be a JSON document with the following properties
 | delivery_name              | No       | String    | Name of the buyer/delivery recipient in this order                                                             |
 | delivery_mobile            | No       | String    | Mobile number of the delivery recipient                                                                        |
 | delivery_email             | No       | String    | Email address of the buyer/delivery recipient in this order                                                    |
-| delivery_street_address    | No       | String    | Street address for order delivery                                                                              |
-| delivery_city              | No       | String    | City of the delivery recipient                                                                                 |
-| delivery_region            | No       | String    | Region (province/district) of the delivery recipient                                                           |
-| delivery_country           | No       | String    | Country address of the buyer                                                                                   |
-| delivery_post_code         | No       | String    | Postal code of the delivery recipient                                                                          |
-| delivery_method            | No       | String    | Logistics service information (name of the logistics company/service used for order delivery)                  |
+| delivery_street_address    | Yes       | String    | Street address for order delivery                                                                              |
+| delivery_city              | Yes       | String    | City of the delivery recipient                                                                                 |
+| delivery_region            | Yes       | String    | Region (province/district) of the delivery recipient                                                           |
+| delivery_suburb            | Yes      | String    | Sub-district of the buyer                                                                                                            |
+| delivery_country           | Yes       | String    | Country address of the buyer                                                                                   |
+| delivery_post_code         | Yes       | String    | Postal code of the delivery recipient                                                                          |
+| delivery_method            | Yes       | String    | Logistics service information (name of the logistics company/service used for order delivery)                  |
 | payment_method             | Yes      | String    | Name of payment method                                                                                         |
 | airwaybill_number          | No       | String    | Airwaybill number from 3PL 3PL (Logistics/Shipping company)                                                    |
 | discount_total             | No       | Double    | The total discount value for this order                                                                        |
@@ -161,60 +164,89 @@ Request body must be a JSON document with the following properties
   "orders": [
     {
       "order_id": "ORD-123",
-      "order_date": "2006-01-02T15:04:05Z07:00",
-      "customer_reference": "DHU9868NGY",
-      "shipment_reference": "",
-      "status": "accepted",
-      "delivery_name": "Artia",
-      "delivery_mobile": "082101871618",
-      "delivery_email": "artia2@gmail.com",
-      "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
-      "delivery_city": "Kota Jakarta Barat - Cengkareng",
+      "order_date": "2020-01-31T10:47:48Z",
+      "customer_reference": "CAHDI831013N3H3J",
+      "shipment_reference": "CAHDI831013N3H3J",
+      "status": "pending",
+      "delivery_name": "John Smith",
+      "delivery_email": "johnsmith@outlook.com",
+      "delivery_street_address": "Jalan Anggrek No. 35",
       "delivery_region": "DKI Jakarta",
+      "delivery_city": "Jakarta Barat",
+      "delivery_suburb": "Kembangan",
       "delivery_country": "Indonesia",
-      "delivery_post_code": "11720",
+      "delivery_post_code": "11650",
       "delivery_method": "JNE REG",
-      "payment_method": "Bank Transfer",
-      "airwaybill_number": "AWB12345678",
-      "shipping_total": 15000,
+      "delivery_mobile": "082130192810",
+      "payment_method": "COD",
+      "discount_total": 15000,
+      "shipping_total": 8000,
       "line_items": [
         {
-          "order_item_id": "",
-          "sku": "DKL0907",
-          "name": "Product ABC",
+          "sku": "TOP0001",
+          "name": "Barang Branded",
           "quantity": 2,
-          "unit_price": 100000,
-          "discount": 10000,
-          "created_at": "2019-07-31T07:39:29.646799Z",
-          "updated_at": "2019-07-31T07:39:29.646799Z"
+          "unit_price": 40000,
+          "discount": 5000,
+          "order_item_id": "73910HDLJR"
         }
       ]
     },
     {
-      "order_id": "LEVSORD-003101",
-      "order_date": "2019-10-22T10:27:48Z",
-      "customer_reference": "ASHD1301FHF7512",
-      "shipment_reference": "",
+      "order_id": "ORD-124",
+      "order_date": "2020-01-31T04:27:11Z",
+      "customer_reference": "JSAL1349SSM2JS9",
+      "shipment_reference": "JSAL1349SSM2JS9",
       "status": "pending",
-      "delivery_name": "Agus Setiawan",
-      "delivery_mobile": "085812805429",
-      "delivery_email": "agusetiawan@gmail.com",
-      "delivery_street_address": "Jalan Anggrek No. 15",
-      "delivery_city": "Kota Jakarta Barat",
+      "delivery_name": "John Due",
+      "delivery_email": "johndue@gmail.com",
+      "delivery_street_address": "Jalan Gajah No. 35",
       "delivery_region": "DKI Jakarta",
+      "delivery_city": "Jakarta Selatan",
+      "delivery_suburb": "Setia Budi",
       "delivery_country": "Indonesia",
-      "delivery_post_code": "11540",
+      "delivery_post_code": "12940",
       "delivery_method": "JNE REG",
-      "payment_method": "COD",
-      "airwaybill_number": "AWB12345679",
+      "delivery_mobile": "085310355429",
+      "payment_method": "Credit Card",
+      "shipping_total": 18000,
       "line_items": [
         {
-          "order_item_id": "",
-          "sku": "ADSME-00128",
-          "name": "Sepatu Test",
+          "sku": "LVB9C50",
+          "name": "Sepatu",
           "quantity": 2,
-          "unit_price": 75000,
-          "discount": 10000
+          "unit_price": 85000,
+          "discount": 12000,
+          "order_item_id": "71034JFERM"
+        }
+      ]
+    },
+    {
+      "order_id": "ORD-125",
+      "order_date": "2020-01-31T07:11:48Z",
+      "customer_reference": "NCEDI83820143NSJ",
+      "shipment_reference": "NCEDI83820143NSJ",
+      "status": "pending",
+      "delivery_name": "John Wick",
+      "delivery_email": "johnwick@gmail.com",
+      "delivery_street_address": "Jalan Nelimurni No. 12",
+      "delivery_region": "DKI Jakarta",
+      "delivery_city": "Jakarta Pusat",
+      "delivery_suburb": "Menteng",
+      "delivery_country": "Indonesia",
+      "delivery_post_code": "10250",
+      "delivery_method": "JNE REG",
+      "delivery_mobile": "085812120429",
+      "payment_method": "COD",
+      "discount_total": 15000,
+      "shipping_total": 8000,
+      "line_items": [
+        {
+          "sku": "TOP0001",
+          "name": "Barang Branded",
+          "quantity": 1,
+          "unit_price": 50000,
+          "order_item_id": "78205HJSLE"
         }
       ]
     }
@@ -226,90 +258,102 @@ Request body must be a JSON document with the following properties
 
 ```json
 {
-  "data": [
-    {
-      "id": 123,
-      "order_id": "ORD-123",
-      "order_date": "2006-01-02T15:04:05Z",
-      "customer_reference": "JNH7438B",
-      "shipment_reference": "",
-      "status": "accepted",
-      "delivery_name": "Artia",
-      "delivery_mobile": "082101871618",
-      "delivery_email": "artia2@gmail.com",
-      "delivery_street_address": "Jl. Anggrek No.106 Blok C5",
-      "delivery_city": "Kota Jakarta Barat - Cengkareng",
-      "delivery_region": "DKI Jakarta",
-      "delivery_country": "Indonesia",
-      "delivery_post_code": "11720",
-      "delivery_method": "JNE REG",
-      "payment_method": "Bank Transfer",
-      "airwaybill_number": "AWB12345678",
-      "currency_code": "IDR",
-      "subtotal": 110000,
-      "discount_total": 10000,
-      "shipping_total": 15000,
-      "tax_total": 0,
-      "total": 115000,
-      "line_items": [
-        {
-          "id": 3,
-          "order_item_id": "",
-          "sku": "DKL0907",
-          "name": "Product ABC",
-          "quantity": 2,
-          "unit_price": 100000,
-          "discount": 10000,
-          "created_at": "",
-          "updated_at": ""
-        }
-      ],
-      "created_at": "2019-05-27T06:05:11Z",
-      "updated_at": "2019-05-27T06:05:11Z"
+    "data": {
+        "succeed": [
+            {
+                "id": 2886789,
+                "order_id": "ORD-123",
+                "order_date": "2020-01-31T10:47:48Z",
+                "order_number": "",
+                "customer_reference": "CAHDI831013N3H3J",
+                "shipment_reference": "CAHDI831013N3H3J",
+                "status": "pending",
+                "delivery_name": "John Smith",
+                "delivery_mobile": "082130192810",
+                "delivery_email": "john.smith@outlook.com",
+                "delivery_street_address": "Jalan Anggrek No. 35",
+                "delivery_city": "Jakarta Barat",
+                "delivery_region": "DKI Jakarta",
+                "delivery_suburb": "Kembangan",
+                "delivery_country": "Indonesia",
+                "delivery_post_code": "11650",
+                "delivery_method": "JNE REG",
+                "payment_method": "COD",
+                "airwaybill_number": "",
+                "currency_code": "",
+                "subtotal": 80000,
+                "discount_total": 15000,
+                "shipping_total": 8000,
+                "tax_total": 7272.726,
+                "total": 73000,
+                "line_items": [
+                    {
+                        "id": 11776166,
+                        "order_item_id": "73910HDLJR",
+                        "sku": "TOP0001",
+                        "name": "Barang Branded",
+                        "quantity": 2,
+                        "unit_price": 40000,
+                        "discount": 5000,
+                        "created_at": "2020-02-04T07:15:48.758558Z",
+                        "updated_at": "2020-02-04T07:15:48.758558Z"
+                    }
+                ],
+                "created_at": "2020-02-04T07:15:46.196556Z",
+                "updated_at": "2020-02-04T07:15:46.196556Z"
+            },
+            {
+                "id": 2886790,
+                "order_id": "ORD-124",
+                "order_date": "2020-01-31T04:27:11Z",
+                "order_number": "",
+                "customer_reference": "JSAL1349SSM2JS9",
+                "shipment_reference": "JSAL1349SSM2JS9",
+                "status": "pending",
+                "delivery_name": "John Due",
+                "delivery_mobile": "085310355429",
+                "delivery_email": "johndue@gmail.com",
+                "delivery_street_address": "Jalan Gajah No. 35",
+                "delivery_city": "Jakarta Selatan",
+                "delivery_region": "DKI Jakarta",
+                "delivery_suburb": "Setia Budi",
+                "delivery_country": "Indonesia",
+                "delivery_post_code": "12940",
+                "delivery_method": "JNE REG",
+                "payment_method": "Credit Card",
+                "airwaybill_number": "",
+                "currency_code": "",
+                "subtotal": 170000,
+                "discount_total": 12000,
+                "shipping_total": 18000,
+                "tax_total": 15454.544,
+                "total": 176000,
+                "line_items": [
+                    {
+                        "id": 11776167,
+                        "order_item_id": "71034JFERM",
+                        "sku": "LVB9C50",
+                        "name": "Sepatu",
+                        "quantity": 2,
+                        "unit_price": 85000,
+                        "discount": 12000,
+                        "created_at": "2020-02-04T07:15:49.149511Z",
+                        "updated_at": "2020-02-04T07:15:49.149511Z"
+                    }
+                ],
+                "created_at": "2020-02-04T07:15:49.146403Z",
+                "updated_at": "2020-02-04T07:15:49.146403Z"
+            }
+        ],
+        "failed": [
+            {
+                "order_id": "ORD-125",
+                "reason": "existing order with remote order id: ORD-125 already exists"
+            }
+        ]
     },
-    {
-      "id": 124,
-      "order_id": "LEVSORD-003101",
-      "order_date": "2019-10-22T10:27:48Z",
-      "customer_reference": "ASHD1301FHF7512",
-      "shipment_reference": "",
-      "status": "pending",
-      "delivery_name": "Agus Setiawan",
-      "delivery_mobile": "085812805429",
-      "delivery_email": "agusetiawan@gmail.com",
-      "delivery_street_address": "Jalan Anggrek No. 15",
-      "delivery_city": "Kota Jakarta Barat",
-      "delivery_region": "DKI Jakarta",
-      "delivery_country": "Indonesia",
-      "delivery_post_code": "11540",
-      "delivery_method": "JNE REG",
-      "payment_method": "COD",
-      "airwaybill_number": "AWB12345679",
-      "currency_code": "IDR",
-      "subtotal": 110000,
-      "discount_total": 10000,
-      "shipping_total": 15000,
-      "tax_total": 0,
-      "total": 115000,
-      "line_items": [
-        {
-          "id": 4,
-          "order_item_id": "",
-          "sku": "ADSME-00128",
-          "name": "Sepatu Test",
-          "quantity": 2,
-          "unit_price": 75000,
-          "discount": 10000,
-          "created_at": "",
-          "updated_at": ""
-        }
-      ],
-      "created_at": "2019-05-27T06:05:11Z",
-      "updated_at": "2019-05-27T06:05:11Z"
-    }
-  ],
-  "message": "Order created successfully",
-  "reference": "8608798c-3ca1-42ce-8b7d-0ab3d65ef312"
+    "message": "Requested order count: 3, Created order count: 2, Failed to create order count: 1",
+    "reference": "fd8ece53-f778-4c1b-bbda-1b12c612fc3d"
 }
 ```
 
