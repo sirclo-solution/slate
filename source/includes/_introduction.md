@@ -1,6 +1,6 @@
 # Introduction
 
-## Welcome To SIRCLO API Documentation
+**Welcome To SIRCLO API Documentation**
 
 **Version:** 1.0
 
