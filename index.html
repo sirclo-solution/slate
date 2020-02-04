@@ -217,6 +217,11 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#welcome-to-sirclo-api-documentation" class="toc-h2 toc-link" data-title="Welcome To SIRCLO API Documentation">Welcome To SIRCLO API Documentation</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#composing-secret" class="toc-h1 toc-link" data-title="Composing Secret">Composing Secret</a>
@@ -266,9 +271,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <!-- Converted with the swagger-to-slate https://github.com/lavkumarv/swagger-to-slate -->
-<h1 id='introduction'>Introduction</h1>
-<p><strong>Welcome To SIRCLO API Documentation</strong></p>
-
+<h1 id='introduction'>Introduction</h1><h2 id='welcome-to-sirclo-api-documentation'>Welcome To SIRCLO API Documentation</h2>
 <p><strong>Version:</strong> 1.0</p>
 
 <p>You can used this API to connect to SIRCLO Platform.</p>
@@ -310,7 +313,7 @@ For every request sent, partner must include <strong><em>partner-id</em></strong
 </thead><tbody>
 <tr>
 <td>B98KL87</td>
-<td>a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM</td>
+<td>1IieSn9qXCYu3FeEG1eH05QxTMldKEiNIkLSN/5xtgc=</td>
 </tr>
 <tr>
 <td></td>
@@ -322,36 +325,94 @@ For every request sent, partner must include <strong><em>partner-id</em></strong
 <p>With request URI <strong><em>POST /v1/partner/order</em></strong> and the HTTP Request Body Parameter example like on the right side</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-256/20190627/FMCG/OA"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-02T16:31:55Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DHU9868NGY"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.fictional.smith@gmail.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE Reguler"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organic Instant Noodles Special Chicken Flavor - 150 gr"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"raw_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+      </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-31T10:47:48Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAHDI831013N3H3J"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAHDI831013N3H3J"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johnsmith@outlook.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Anggrek No. 35"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jakarta Barat"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kembangan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11650"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082130192810"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOP0001"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barang Branded"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73910HDLJR"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CCF0985"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organic Instant Coffee With Brown Sugar - 100 gr"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"raw_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-124"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-31T04:27:11Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JSAL1349SSM2JS9"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JSAL1349SSM2JS9"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Due"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndue@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Gajah No. 35"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jakarta Selatan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Setia Budi"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12940"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"085310355429"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Credit Card"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">18000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LVB9C50"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sepatu"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">85000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">12000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71034JFERM"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-125"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-31T07:11:48Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NCEDI83820143NSJ"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NCEDI83820143NSJ"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Wick"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johnwick@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Nelimurni No. 12"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jakarta Pusat"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Menteng"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10250"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"085812120429"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOP0001"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barang Branded"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"78205HJSLE"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -359,24 +420,18 @@ For every request sent, partner must include <strong><em>partner-id</em></strong
 <blockquote>
 <p>The message used for HMAC calculation is taken from the HTTP request URI joined with the HTTP request body:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>message_to_be_hashed = /v1/partner/order{"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","airwaybill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
-message_to_be_hashed = /v1/partner/order{"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","ariwaybill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
+<pre class="highlight plaintext"><code>message_to_be_hashed = v1/partner/order{"orders":[{"order_id":"ORD-123","order_date":"2020-01-31T10:47:48Z","customer_reference":"CAHDI831013N3H3J","shipment_reference":"CAHDI831013N3H3J","status":"pending","delivery_name":"John Smith","delivery_email":"johnsmith@outlook.com","delivery_street_address":"Jalan Anggrek No. 35","delivery_region":"DKI Jakarta","delivery_city":"Jakarta Barat","delivery_suburb":"Kembangan","delivery_country":"Indonesia","delivery_post_code":"11650","delivery_method":"JNE REG","delivery_mobile":"082130192810","payment_method":"COD","discount_total":15000,"shipping_total":8000,"line_items":[{"sku":"TOP0001","name":"Barang Branded","quantity":2,"unit_price":40000,"discount":5000,"order_item_id":"73910HDLJR"}]},{"order_id":"ORD-124","order_date":"2020-01-31T04:27:11Z","customer_reference":"JSAL1349SSM2JS9","shipment_reference":"JSAL1349SSM2JS9","status":"pending","delivery_name":"John Due","delivery_email":"johndue@gmail.com","delivery_street_address":"Jalan Gajah No. 35","delivery_region":"DKI Jakarta","delivery_city":"Jakarta Selatan","delivery_suburb":"Setia Budi","delivery_country":"Indonesia","delivery_post_code":"12940","delivery_method":"JNE REG","delivery_mobile":"085310355429","payment_method":"Credit Card","shipping_total":18000,"line_items":[{"sku":"LVB9C50","name":"Sepatu","quantity":2,"unit_price":85000,"discount":12000,"order_item_id":"71034JFERM"}]},{"order_id":"ORD-125","order_date":"2020-01-31T07:11:48Z","customer_reference":"NCEDI83820143NSJ","shipment_reference":"NCEDI83820143NSJ","status":"pending","delivery_name":"John Wick","delivery_email":"johnwick@gmail.com","delivery_street_address":"Jalan Nelimurni No. 12","delivery_region":"DKI Jakarta","delivery_city":"Jakarta Pusat","delivery_suburb":"Menteng","delivery_country":"Indonesia","delivery_post_code":"10250","delivery_method":"JNE REG","delivery_mobile":"085812120429","payment_method":"COD","discount_total":15000,"shipping_total":8000,"line_items":[{"sku":"TOP0001","name":"Barang Branded","quantity":1,"unit_price":50000,"order_item_id":"78205HJSLE"}]}]}
 </code></pre>
 <blockquote>
 <p>The <strong><em>message_to_be_hashed</em></strong> is then used with the <strong><em>partner_secret</em></strong> value when calculating the HMAC</p>
 </blockquote>
-<pre class="highlight plaintext"><code>hmac = hmac_sha256(message_to_be_hashed, a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM)
-hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
+<pre class="highlight plaintext"><code>hmac = hmac_sha256(message_to_be_hashed, partner_secret)
+hmac = hmac_sha256(message_to_be_hashed, 1IieSn9qXCYu3FeEG1eH05QxTMldKEiNIkLSN/5xtgc=)
 </code></pre>
 <blockquote>
 <p>The resulting hmac is in binary format, it is then base64 encoded</p>
 </blockquote>
-<pre class="highlight plaintext"><code>result = base64_encode(hmac) = YfbcLEz3mFnytfKRXPm/TKQQO+ST019IZ8AO6fS1aBI=
-</code></pre>
-<blockquote>
-<p>Partner must include this HMAC value in HTTP header: &quot;<strong><em>secret</em></strong>&quot; along with HTTP header &quot;<strong><em>partner-id</em></strong>&quot;. Example request that the partner needs to send becomes as follows:</p>
-</blockquote>
-<pre class="highlight plaintext"><code>result = base64_encode(hmac) = +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
+<pre class="highlight plaintext"><code>result = base64_encode(hmac) = CxWnlMigAoSQgKcFIxVme0bXYk8Ftk99daJXssYCXC8=
 </code></pre>
 <blockquote>
 <p>Partner must include this HMAC value in HTTP header: &quot;<strong><em>secret</em></strong>&quot; along with HTTP header &quot;<strong><em>partner_id</em></strong>&quot;. Example request that the partner needs to send becomes as follows:</p>
@@ -384,15 +439,11 @@ hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
 <pre class="highlight plaintext"><code>POST /v1/partner/order HTTP/1.1
 Host: api.connexi.id
 Content-Type: application/json
-
 partner-id: B98KL87
-secret: YfbcLEz3mFnytfKRXPm/TKQQO+ST019IZ8AO6fS1aBI=
-
-partner-id: B98KL87
-secret: +GrDKknDsrMW1SJv2d1GeBO8iHUR8CypU9c0LxvRklo=
+secret: CxWnlMigAoSQgKcFIxVme0bXYk8Ftk99daJXssYCXC8=
 
 
-{"order_id":"ORD-256/20190627/FMCG/OA","order_date":"2019-06-02T16:31:55+07:00","status":"accepted","customer_reference":"DHU9868NGY","shipment_reference":"","delivery_name":"John Smith","delivery_email":"john.fictional.smith@gmail.com","delivery_street_address":"Jl. Anggrek No.106 Blok C5","delivery_region":"DKI Jakarta","delivery_city":"Kota Jakarta Barat - Cengkareng","delivery_country":"Indonesia","delivery_post_code":"11720","delivery_method":"JNE Reguler","delivery_mobile":"082101871618","airway_bill_number":"AWB12345678","shipping_total":15000,"line_items":[{"sku":"DKL0907","name":"Organic Instant Noodles Special Chicken Flavor - 150 gr","quantity":2,"raw_price":10000,"discount":100},{"sku":"CCF0985","name":"Organic Instant Coffee With Brown Sugar - 100 gr","quantity":5,"raw_price":5000,"discount":0}]}
+{"orders":[{"order_id":"ORD-123","order_date":"2020-01-31T10:47:48Z","customer_reference":"CAHDI831013N3H3J","shipment_reference":"CAHDI831013N3H3J","status":"pending","delivery_name":"John Smith","delivery_email":"johnsmith@outlook.com","delivery_street_address":"Jalan Anggrek No. 35","delivery_region":"DKI Jakarta","delivery_city":"Jakarta Barat","delivery_suburb":"Kembangan","delivery_country":"Indonesia","delivery_post_code":"11650","delivery_method":"JNE REG","delivery_mobile":"082130192810","payment_method":"COD","discount_total":15000,"shipping_total":8000,"line_items":[{"sku":"TOP0001","name":"Barang Branded","quantity":2,"unit_price":40000,"discount":5000,"order_item_id":"73910HDLJR"}]},{"order_id":"ORD-124","order_date":"2020-01-31T04:27:11Z","customer_reference":"JSAL1349SSM2JS9","shipment_reference":"JSAL1349SSM2JS9","status":"pending","delivery_name":"John Due","delivery_email":"johndue@gmail.com","delivery_street_address":"Jalan Gajah No. 35","delivery_region":"DKI Jakarta","delivery_city":"Jakarta Selatan","delivery_suburb":"Setia Budi","delivery_country":"Indonesia","delivery_post_code":"12940","delivery_method":"JNE REG","delivery_mobile":"085310355429","payment_method":"Credit Card","shipping_total":18000,"line_items":[{"sku":"LVB9C50","name":"Sepatu","quantity":2,"unit_price":85000,"discount":12000,"order_item_id":"71034JFERM"}]},{"order_id":"ORD-125","order_date":"2020-01-31T07:11:48Z","customer_reference":"NCEDI83820143NSJ","shipment_reference":"NCEDI83820143NSJ","status":"pending","delivery_name":"John Wick","delivery_email":"johnwick@gmail.com","delivery_street_address":"Jalan Nelimurni No. 12","delivery_region":"DKI Jakarta","delivery_city":"Jakarta Pusat","delivery_suburb":"Menteng","delivery_country":"Indonesia","delivery_post_code":"10250","delivery_method":"JNE REG","delivery_mobile":"085812120429","payment_method":"COD","discount_total":15000,"shipping_total":8000,"line_items":[{"sku":"TOP0001","name":"Barang Branded","quantity":1,"unit_price":50000,"order_item_id":"78205HJSLE"}]}]}
 </code></pre>
 <p>Code examples of on how to calculate HMAC in various programming languages: <a href="https://github.com/danharper/hmac-examples">https://github.com/danharper/hmac-examples</a></p>
 <h2 id='another-example'>Another example</h2>
@@ -406,10 +457,10 @@ Host: api.connexi.id
 <p>The request URI of the HTTP request is &quot;<em>/v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0</em>&quot;</p>
 </blockquote>
 <pre class="highlight plaintext"><code>message_to_be_hashed = /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0
-hmac = hmac_sha256(message_to_be_hashed, a6jMwv4mFlj1VOh6jZzlJ2upVTcGfbjTtJpA2Hp5fpM)
-secret = base64_encode(hmac) = cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
-hmac = hmac_sha256(message_to_be_hashed, ABCDEFG123)
-secret = base64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
+
+hmac = hmac_sha256(message_to_be_hashed, 1IieSn9qXCYu3FeEG1eH05QxTMldKEiNIkLSN/5xtgc=)
+
+secret = base64_encode(hmac) = XoPRRDtfNWaGm4nbw7A0LY/c2U0+jg3F3Ay2d3VR3bM=
 </code></pre>
 <blockquote>
 <p>The HTTP request to send then becomes as follows:</p>
@@ -417,9 +468,7 @@ secret = base64_encode(hmac) = /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <pre class="highlight plaintext"><code>GET /v1/partner/order?since=2018-10-13T13:34:52Z&amp;until=2018-10-16T19:22:39Z&amp;limit=100&amp;offset=0
 Host : api.connexi.id
 partner-id: B98KL87
-secret: cOhIbxpx0zTZJ94wEIdxB9dAaIBDJ4SPvoDvmAO5Uz8=
-partner-id: B98KL87
-secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
+secret: XoPRRDtfNWaGm4nbw7A0LY/c2U0+jg3F3Ay2d3VR3bM=
 </code></pre><h1 id='orders'>Orders</h1><h2 id='get-order'>Get Order</h2><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET /v1/partner/order</code></p>
 <h3 id='header-parameters'>Header Parameters</h3>
@@ -494,68 +543,70 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNH7438B"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Artia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2886789</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-31T10:47:48Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAHDI831013N3H3J"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAHDI831013N3H3J"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082130192810"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.smith@outlook.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Anggrek No. 35"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jakarta Barat"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kembangan"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11650"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"tax_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">115000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">80000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tax_total"</span><span class="p">:</span><span class="w"> </span><span class="mf">7272.726</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">73000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29673073"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11776166</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73910HDLJR"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOP0001"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barang Branded"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="w">
+          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:48.758558Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:48.758558Z"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="s2">"delivery_orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"delivery_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-123"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"delivery_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"do_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"delivery_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
               </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
               </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC partial order delivery"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"order_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOP0001"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barang Branded"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"order_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
               </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stock/Commerce"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="w">
+              </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:48.758558Z"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:48.758558Z"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">],</span><span class="w">
-          </span><span class="s2">"sent_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="w">
+          </span><span class="s2">"sent_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:16:40.758558Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:50.758558Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:50.758558Z"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:46.196556Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:46.196556Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"total_record"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -679,37 +730,43 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 </tr>
 <tr>
 <td>delivery_street_address</td>
-<td>No</td>
+<td>Yes</td>
 <td>String</td>
 <td>Street address for order delivery</td>
 </tr>
 <tr>
 <td>delivery_city</td>
-<td>No</td>
+<td>Yes</td>
 <td>String</td>
 <td>City of the delivery recipient</td>
 </tr>
 <tr>
 <td>delivery_region</td>
-<td>No</td>
+<td>Yes</td>
 <td>String</td>
 <td>Region (province/district) of the delivery recipient</td>
 </tr>
 <tr>
+<td>delivery_suburb</td>
+<td>Yes</td>
+<td>String</td>
+<td>Sub-district of the buyer</td>
+</tr>
+<tr>
 <td>delivery_country</td>
-<td>No</td>
+<td>Yes</td>
 <td>String</td>
 <td>Country address of the buyer</td>
 </tr>
 <tr>
 <td>delivery_post_code</td>
-<td>No</td>
+<td>Yes</td>
 <td>String</td>
 <td>Postal code of the delivery recipient</td>
 </tr>
 <tr>
 <td>delivery_method</td>
-<td>No</td>
+<td>Yes</td>
 <td>String</td>
 <td>Logistics service information (name of the logistics company/service used for order delivery)</td>
 </tr>
@@ -788,60 +845,89 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
   </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-123"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z07:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DHU9868NGY"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Artia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-31T10:47:48Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAHDI831013N3H3J"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAHDI831013N3H3J"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johnsmith@outlook.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Anggrek No. 35"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jakarta Barat"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kembangan"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11650"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082130192810"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOP0001"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barang Branded"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-31T07:39:29.646799Z"</span><span class="w">
+          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73910HDLJR"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LEVSORD-003101"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-22T10:27:48Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASHD1301FHF7512"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-124"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-31T04:27:11Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JSAL1349SSM2JS9"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JSAL1349SSM2JS9"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agus Setiawan"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"085812805429"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agusetiawan@gmail.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Anggrek No. 15"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Due"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndue@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Gajah No. 35"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jakarta Selatan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Setia Budi"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11540"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12940"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345679"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"085310355429"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Credit Card"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">18000</span><span class="p">,</span><span class="w">
       </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADSME-00128"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sepatu Test"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LVB9C50"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sepatu"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">75000</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">85000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">12000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71034JFERM"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-125"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-31T07:11:48Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NCEDI83820143NSJ"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NCEDI83820143NSJ"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Wick"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johnwick@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Nelimurni No. 12"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jakarta Pusat"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Menteng"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10250"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"085812120429"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOP0001"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barang Branded"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"78205HJSLE"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -852,90 +938,102 @@ secret: /XjtjtmnE43I3SaTEp0u2Ia0FrjWQlU4yEgVQrOEHi4=
 <p>The above request returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-123"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006-01-02T15:04:05Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNH7438B"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Artia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082101871618"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artia2@gmail.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jl. Anggrek No.106 Blok C5"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat - Cengkareng"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11720"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345678"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"tax_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">115000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKL0907"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product ABC"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27T06:05:11Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27T06:05:11Z"</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"succeed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2886789</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-123"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-31T10:47:48Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAHDI831013N3H3J"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAHDI831013N3H3J"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082130192810"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.smith@outlook.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Anggrek No. 35"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jakarta Barat"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kembangan"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11650"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">80000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tax_total"</span><span class="p">:</span><span class="w"> </span><span class="mf">7272.726</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">73000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11776166</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73910HDLJR"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOP0001"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barang Branded"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:48.758558Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:48.758558Z"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:46.196556Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:46.196556Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2886790</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-124"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-31T04:27:11Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JSAL1349SSM2JS9"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JSAL1349SSM2JS9"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Due"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"085310355429"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndue@gmail.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Gajah No. 35"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jakarta Selatan"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Setia Budi"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12940"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Credit Card"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">170000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">12000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">18000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tax_total"</span><span class="p">:</span><span class="w"> </span><span class="mf">15454.544</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">176000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11776167</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71034JFERM"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LVB9C50"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sepatu"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">85000</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">12000</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:49.149511Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:49.149511Z"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:49.146403Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-04T07:15:49.146403Z"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"failed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD-125"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"existing order with remote order id: ORD-125 already exists"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">124</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LEVSORD-003101"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-22T10:27:48Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASHD1301FHF7512"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"shipment_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agus Setiawan"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"085812805429"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agusetiawan@gmail.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jalan Anggrek No. 15"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kota Jakarta Barat"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indonesia"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11540"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JNE REG"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"airwaybill_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWB12345679"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDR"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">110000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"discount_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"shipping_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"tax_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">115000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADSME-00128"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sepatu Test"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">75000</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27T06:05:11Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-27T06:05:11Z"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order created successfully"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8608798c-3ca1-42ce-8b7d-0ab3d65ef312"</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Requested order count: 3, Created order count: 2, Failed to create order count: 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fd8ece53-f778-4c1b-bbda-1b12c612fc3d"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='update-order'>Update Order</h2><h3 id='http-request-3'>HTTP Request</h3>
 <p><code>PATCH /v1/partner/order/status</code></p>
