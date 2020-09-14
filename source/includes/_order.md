@@ -154,6 +154,7 @@ Request body must be a JSON document with the following properties
 | line_items - sku           | Yes      | String    | SKU of the purchased line item                                                                                 |
 | line_items - name          | Yes      | String    | Name of the line item                                                                                          |
 | line_items - quantity      | Yes      | Integer   | Quantity of the line item                                                                                      |
+| line_items - raw_price    | Yes      | Double    | Price of the line item (before discount)
 | line_items - unit_price    | Yes      | Double    | Unit price of the line item (after discount)                                                                   |
 | line_items - discount      | No       | Double    | Discount value applied on the line item                                                                        |
 
