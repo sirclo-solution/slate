@@ -255,6 +255,17 @@
               </ul>
           </li>
           <li>
+            <a href="#inventory" class="toc-h1 toc-link" data-title="Inventory">Inventory</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#update-stocks" class="toc-h2 toc-link" data-title="Update Stocks">Update Stocks</a>
+                  </li>
+                  <li>
+                    <a href="#get-update-history" class="toc-h2 toc-link" data-title="Get Update History">Get Update History</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -1476,6 +1487,223 @@ secret: XoPRRDtfNWaGm4nbw7A0LY/c2U0+jg3F3Ay2d3VR3bM=
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3c6bdd10-63b3-4c58-b89a-c2b1e99e885f"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='inventory'>Inventory</h1><h2 id='update-stocks'>Update Stocks</h2><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST /v1/partner/inventory/updatestocks</code></p>
+<h3 id='header-parameters'>Header Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>partner-id</td>
+<td>Yes</td>
+<td>String</td>
+<td>Partner ID value (given from SIRCLO) used for partner identification</td>
+</tr>
+<tr>
+<td>secret</td>
+<td>Yes</td>
+<td>String</td>
+<td>HMAC (Hash Based Message Authentication Code), refer to section: <a href="#composing-secret">Composing Secret</a></td>
+</tr>
+</tbody></table>
+<h3 id='request-body-parameters'>Request Body Parameters</h3>
+<p>Request body must be a JSON document with the following properties</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sku</td>
+<td>Yes</td>
+<td>String</td>
+<td>Stock keeping unit (SKU) of the product in Connexi</td>
+</tr>
+<tr>
+<td>sync_stock</td>
+<td>No</td>
+<td>String</td>
+<td>Synchronization between the stock marketplace and default &#39;false&#39;</td>
+</tr>
+<tr>
+<td>warehouse</td>
+<td>Yes</td>
+<td>String</td>
+<td>Name of warehouse provide multi warehouse in Connexi, for those who don&#39;t use multi warehouse, fill in &quot;default&quot;</td>
+</tr>
+<tr>
+<td>available_stock</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Available stock of the product in Connexi (the integer not negatif and by default &#39;0&#39;)</td>
+</tr>
+<tr>
+<td>buffer_stock</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>buffer stock of the product in Connexi (not bigger than available_stock, the integer not negatif and by default &#39;0&#39;)</td>
+</tr>
+<tr>
+<td>channel_stock</td>
+<td>Yes</td>
+<td>Array</td>
+<td>stock of the product displayed in each marketplace</td>
+</tr>
+<tr>
+<td>channel_stock - code</td>
+<td>Yes</td>
+<td>String</td>
+<td>Marketplace code in Connexi</td>
+</tr>
+<tr>
+<td>channel_stock - qty</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>The number stock of product displayed in marketplace</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Request body example:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sku1"</span><span class="p">,</span><span class="w"> 
+   </span><span class="s2">"sync_stock"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> 
+   </span><span class="s2">"warehouse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w"> 
+   </span><span class="s2">"available_stock"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> 
+   </span><span class="s2">"buffer_stock"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+   </span><span class="s2">"channel_stock"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+     </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bklp"</span><span class="p">,</span><span class="w"> 
+       </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"> 
+     </span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blib"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>The above request returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"transaction_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"591d4ab5-841e-499a-bfa2-99a4fb879e44"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><h2 id='get-update-history'>Get Update History</h2><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET /v1/partner/inventory/history</code></p>
+<h3 id='header-parameters-2'>Header Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>partner-id</td>
+<td>Yes</td>
+<td>String</td>
+<td>Partner ID value (given from SIRCLO) used for partner identification</td>
+</tr>
+<tr>
+<td>secret</td>
+<td>Yes</td>
+<td>String</td>
+<td>HMAC (Hash Based Message Authentication Code), refer to section: <a href="#composing-secret">Composing Secret</a></td>
+</tr>
+</tbody></table>
+<h3 id='path-parameters'>Path Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>updated_at</td>
+<td>No</td>
+<td>Timestamp</td>
+<td>The last updated Timestamp for this stock and must be in RFC3339 format Timestamp</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>No</td>
+<td>Integer</td>
+<td>Number of stock history that want to be returned (by default the number is 100)</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>No</td>
+<td>Integer</td>
+<td>To be used for pagination (use value 10 if you want to skip 10 first datas, by default the value is 0)</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Request example
+<code>GET /v1//partner/inventory/history?updated_at=2021-02-05T15:04:05Z&amp;offset=0&amp;limit=10</code></p>
+
+<p>The above request returns JSON structured like this: </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">233</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> 
+           </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+           </span><span class="s2">"transaction_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2a4048b2-bdaf-4d31-922c-58472691f217"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"action_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partner_update_stocks"</span><span class="p">,</span><span class="w"> 
+           </span><span class="s2">"upload_file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+           </span><span class="s2">"total_sku"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+           </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-09T03:18:40.424625Z"</span><span class="p">,</span><span class="w"> 
+           </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-09T03:19:20.240855Z"</span><span class="p">,</span><span class="w"> 
+           </span><span class="s2">"finished_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-09T03:19:20Z"</span><span class="p">,</span><span class="w"> 
+           </span><span class="s2">"update_stock_history_item"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11701</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"update_stock_history_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">  
+                   </span><span class="s2">"store_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Toko"</span><span class="p">,</span><span class="w"> 
+                   </span><span class="s2">"warehouse_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"warehouse_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"variant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">334621</span><span class="p">,</span><span class="w"> 
+                   </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfg"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"remote_variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">item_id</span><span class="se">\"</span><span class="s2">: 12346, </span><span class="se">\"</span><span class="s2">variation_id</span><span class="se">\"</span><span class="s2">: 0}"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"row_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+                   </span><span class="s2">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shpe"</span><span class="p">,</span><span class="w"> 
+                   </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"retrier_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"progress"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"client_reponse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">item</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">item_id</span><span class="se">\"</span><span class="s2">:12345,</span><span class="se">\"</span><span class="s2">modified_time</span><span class="se">\"</span><span class="s2">:1612840732}}"</span><span class="p">,</span><span class="w"> 
+                   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully Updated"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> 
+                   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-09T03:18:40.529807Z"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-09T03:18:52.879618Z"</span><span class="p">,</span><span class="w">
+                   </span><span class="s2">"finished_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-09T03:18:52Z"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+           </span><span class="p">]</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="s2">"total_record"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w"> 
+   </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"591d4ab5-841e-499a-bfa2-99a4fb879e44"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h1 id='errors'>Errors</h1>
 <p>The Orders and Products API uses the following error codes:</p>
