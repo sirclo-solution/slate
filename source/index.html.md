@@ -9,6 +9,7 @@ includes:
   - secret
   - order
   - product
+  - inventory
   - errors
 
 search: true
