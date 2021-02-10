@@ -81,7 +81,7 @@ Request body must be a JSON document with the following properties
 | offset    | Yes      | Integer | To be used for pagination (use value 10 if you want to skip 10 first datas, by default the value is 0) |
 
 > Request example
-> `GET /v1//partner/inventory/history?updated_at=2021-02-05T15:04:05Z&offset=0&limit=10`
+> `GET /v1/partner/inventory/history?updated_at=2021-02-05T15:04:05Z&offset=0&limit=10`
 
 > The above request returns JSON structured like this: 
 
