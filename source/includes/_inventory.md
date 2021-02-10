@@ -87,7 +87,8 @@ Request body must be a JSON document with the following properties
 
 ```json 
 {
-   "data": {
+   "data": [
+        {
            "id": 233,
            "tenant_id": 123, 
            "user_id": 0, 
